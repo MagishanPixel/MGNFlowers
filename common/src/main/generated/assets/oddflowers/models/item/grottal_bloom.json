@@ -1,3 +1,6 @@
 {
-  "parent": "oddflowers:block/grottal_bloom"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "oddflowers:item/grottal_bloom"
+  }
 }

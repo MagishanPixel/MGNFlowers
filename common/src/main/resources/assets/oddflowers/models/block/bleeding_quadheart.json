@@ -1,0 +1,7 @@
+{
+  "parent": "oddflowers:block/templates/slightly_cross",
+  "textures": {
+    "0": "oddflowers:block/bleeding_quadheart",
+    "particle": "oddflowers:block/bleeding_quadheart"
+  }
+}

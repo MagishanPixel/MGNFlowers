@@ -30,17 +30,41 @@ public class ModModelProvider extends FabricModelProvider {
         genBlockCustomModel(gen, ModBlocks.MOTH_IRIS.asBlock());
         genBlockCustomModel(gen, ModBlocks.GROTTAL_BLOOM.asBlock());
 
+        genBlockCustomModel(gen, ModBlocks.BLEEDING_QUADHEART.asBlock());
+        genBlockCustomModel(gen, ModBlocks.CANDY_BLEEDING_QUADHEART.asBlock());
+        genBlockCustomModel(gen, ModBlocks.HOLLOW_BLEEDING_QUADHEART.asBlock());
+
         gen.createCrossBlock(ModBlocks.BLUE_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.WHITE_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.RED_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.PINK_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.ORANGE_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
 
         createTallFlower(gen, ModBlocks.ORANGE_TALL_TULIP.asBlock(), "orange", "tall_tulip");
+        createTallFlower(gen, ModBlocks.WHITE_TALL_TULIP.asBlock(), "white", "tall_tulip");
+        createTallFlower(gen, ModBlocks.PINK_TALL_TULIP.asBlock(), "pink", "tall_tulip");
+        createTallFlower(gen, ModBlocks.PURPLE_TALL_TULIP.asBlock(), "purple", "tall_tulip");
+        createTallFlower(gen, ModBlocks.RED_TALL_TULIP.asBlock(), "red", "tall_tulip");
+        createTallFlower(gen, ModBlocks.GLOWING_TALL_TULIP.asBlock(), "glowing", "tall_tulip");
+        createTallFlower(gen, ModBlocks.TURQUOISE_TALL_TULIP.asBlock(), "turquoise", "tall_tulip");
 
         createTallFlower(gen, ModBlocks.RED_GINGER_TULIP.asBlock(), "red", "ginger_tulip");
+        createTallFlower(gen, ModBlocks.ORANGE_GINGER_TULIP.asBlock(), "orange", "ginger_tulip");
+        createTallFlower(gen, ModBlocks.WHITE_GINGER_TULIP.asBlock(), "white", "ginger_tulip");
+        createTallFlower(gen, ModBlocks.PINK_GINGER_TULIP.asBlock(), "pink", "ginger_tulip");
 
         createFlowerBed(gen, ModBlocks.WATER_HYACINTH.asBlock());
         createFlowerBed(gen, ModBlocks.LAVA_HYACINTH.asBlock());
 
         gen.createSimpleFlatItemModel(ModBlocks.BLUE_TWIN_CENDALION.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.WHITE_TWIN_CENDALION.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.RED_TWIN_CENDALION.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.PINK_TWIN_CENDALION.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.ORANGE_TWIN_CENDALION.asBlock());
 
+        gen.createSimpleFlatItemModel(ModBlocks.BLEEDING_QUADHEART.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.CANDY_BLEEDING_QUADHEART.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.HOLLOW_BLEEDING_QUADHEART.asBlock());
     }
 
     @Override
@@ -50,6 +74,19 @@ public class ModModelProvider extends FabricModelProvider {
 
         gen.generateFlatItem(ModBlocks.WATER_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.LAVA_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
+
+        gen.generateFlatItem(ModBlocks.RED_TALL_TULIP.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.WHITE_TALL_TULIP.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.ORANGE_TALL_TULIP.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.GLOWING_TALL_TULIP.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.PINK_TALL_TULIP.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.PURPLE_TALL_TULIP.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.TURQUOISE_TALL_TULIP.asItem(), ModelTemplates.FLAT_ITEM);
+
+        gen.generateFlatItem(ModBlocks.PINK_GINGER_TULIP.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.RED_GINGER_TULIP.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.ORANGE_GINGER_TULIP.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.WHITE_GINGER_TULIP.asItem(), ModelTemplates.FLAT_ITEM);;
     }
 
     private void createFlowerBed(BlockModelGenerators gen, Block flowerBedBlock) {

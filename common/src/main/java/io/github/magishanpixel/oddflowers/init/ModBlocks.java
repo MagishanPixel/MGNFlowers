@@ -2,13 +2,13 @@ package io.github.magishanpixel.oddflowers.init;
 
 import io.github.magishanpixel.oddflowers.block.TallFloweryBlock;
 import io.github.magishanpixel.oddflowers.block.WaterHyacinthBlock;
-import net.blay09.mods.balm.world.item.BalmCreativeModeTabRegistrar;
+import io.github.magishanpixel.oddflowers.misc.PrefList;
+import io.github.magishanpixel.oddflowers.misc.StraddColor;
 import net.blay09.mods.balm.world.level.block.BalmBlockRegistrar;
 import net.blay09.mods.balm.world.level.block.DeferredBlock;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -18,7 +18,6 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.Properties;
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
 
@@ -29,28 +28,63 @@ public class ModBlocks {
     public static DeferredBlock GROTTAL_BLOOM;
 
     public static DeferredBlock BLUE_TWIN_CENDALION;
+    public static DeferredBlock ORANGE_TWIN_CENDALION;
+    public static DeferredBlock WHITE_TWIN_CENDALION;
+    public static DeferredBlock RED_TWIN_CENDALION;
+    public static DeferredBlock PINK_TWIN_CENDALION;
+
     public static DeferredBlock ORANGE_TALL_TULIP;
+    public static DeferredBlock RED_TALL_TULIP;
+    public static DeferredBlock WHITE_TALL_TULIP;
+    public static DeferredBlock PINK_TALL_TULIP;
+    public static DeferredBlock PURPLE_TALL_TULIP;
+    public static DeferredBlock TURQUOISE_TALL_TULIP;
+
+    public static DeferredBlock GLOWING_TALL_TULIP;
+
     public static DeferredBlock RED_GINGER_TULIP;
+    public static DeferredBlock WHITE_GINGER_TULIP;
+    public static DeferredBlock PINK_GINGER_TULIP;
+    public static DeferredBlock ORANGE_GINGER_TULIP;
+
     public static DeferredBlock WATER_HYACINTH;
     public static DeferredBlock LAVA_HYACINTH;
+
+    public static DeferredBlock BLEEDING_QUADHEART;
+    public static DeferredBlock CANDY_BLEEDING_QUADHEART;
+    public static DeferredBlock HOLLOW_BLEEDING_QUADHEART;
 
     public static void init(BalmBlockRegistrar blocks) {
         FloweryConstruct construct = new FloweryConstruct(blocks);
         MOTH_IRIS = construct.registerBasic("moth_iris", MobEffects.LEVITATION, 2);
         GROTTAL_BLOOM = construct.registerBasic("grottal_bloom", MobEffects.GLOWING, 4, GlowValue.of(6, true));
-        BLUE_TWIN_CENDALION = construct.registerBasic("blue_twin_cendalion", MobEffects.WATER_BREATHING, 4);
-        ORANGE_TALL_TULIP = construct.registerSameProperty("orange_tall_tulip",
-                a -> new TallFloweryBlock(MobEffects.FIRE_RESISTANCE, 1, a)
-        );
-        RED_GINGER_TULIP = construct.registerSameProperty("red_tall_tulip",
-                a -> new TallFloweryBlock(MobEffects.HEALTH_BOOST, 2, a)
-        );
-        WATER_HYACINTH = construct.registerSameProperty("water_hyacinth",
-                a -> new WaterHyacinthBlock(a, WaterHyacinthBlock.TYPE.WATER)
-        );
-        LAVA_HYACINTH = construct.registerSameProperty("lava_hyacinth",
-                a -> new WaterHyacinthBlock(a, WaterHyacinthBlock.TYPE.LAVA)
-        );
+
+        BLUE_TWIN_CENDALION = construct.registerBasic(PrefList.TWIN_CENDALION.colorOf(StraddColor.blue), MobEffects.WATER_BREATHING, 4);
+        ORANGE_TWIN_CENDALION = construct.registerBasic(PrefList.TWIN_CENDALION.colorOf(StraddColor.orange), MobEffects.FIRE_RESISTANCE, 5);
+        WHITE_TWIN_CENDALION = construct.registerBasic(PrefList.TWIN_CENDALION.colorOf(StraddColor.white), MobEffects.CONFUSION, 6);
+        RED_TWIN_CENDALION = construct.registerBasic(PrefList.TWIN_CENDALION.colorOf(StraddColor.red), MobEffects.ABSORPTION, 2);
+        PINK_TWIN_CENDALION = construct.registerBasic(PrefList.TWIN_CENDALION.colorOf(StraddColor.pink), MobEffects.HEAL, 2);
+
+        ORANGE_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.colorOf(StraddColor.orange), a -> new TallFloweryBlock(MobEffects.FIRE_RESISTANCE, 1, a));
+        RED_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.colorOf(StraddColor.red), a -> new TallFloweryBlock(MobEffects.DAMAGE_RESISTANCE, 4, a));
+        WHITE_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.colorOf(StraddColor.white), a -> new TallFloweryBlock(MobEffects.LEVITATION, 3, a));
+        PINK_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.colorOf(StraddColor.pink), a -> new TallFloweryBlock(MobEffects.HEALTH_BOOST, 2, a));
+        PURPLE_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.colorOf(StraddColor.purple), a -> new TallFloweryBlock(MobEffects.DIG_SLOWDOWN, 4, a));
+        TURQUOISE_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.of("turquoise",false), a -> new TallFloweryBlock(MobEffects.WATER_BREATHING, 6, a));
+        GLOWING_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.of("glowing",false), a -> new TallFloweryBlock(MobEffects.GLOWING, 4, a));
+
+        RED_GINGER_TULIP = construct.registerSameProperty(PrefList.GINGER_TULIP.colorOf(StraddColor.red), a -> new TallFloweryBlock(MobEffects.HEALTH_BOOST, 2, a));
+        WHITE_GINGER_TULIP = construct.registerSameProperty(PrefList.GINGER_TULIP.colorOf(StraddColor.white), a -> new TallFloweryBlock(MobEffects.GLOWING, 4, a));
+        PINK_GINGER_TULIP = construct.registerSameProperty(PrefList.GINGER_TULIP.colorOf(StraddColor.pink), a -> new TallFloweryBlock(MobEffects.HEAL, 2, a));
+        ORANGE_GINGER_TULIP = construct.registerSameProperty(PrefList.GINGER_TULIP.colorOf(StraddColor.orange), a -> new TallFloweryBlock(MobEffects.FIRE_RESISTANCE, 6, a));
+
+        WATER_HYACINTH = blocks.register("water_hyacinth", a -> new WaterHyacinthBlock(a, WaterHyacinthBlock.TYPE.WATER), properties -> setPropFlower(properties).offsetType(BlockBehaviour.OffsetType.NONE)).asDeferredBlock();
+        LAVA_HYACINTH = blocks.register("lava_hyacinth", a -> new WaterHyacinthBlock(a, WaterHyacinthBlock.TYPE.LAVA), properties -> setPropFlower(properties).offsetType(BlockBehaviour.OffsetType.NONE)).asDeferredBlock();
+
+        BLEEDING_QUADHEART = construct.registerBasic("bleeding_quadheart", MobEffects.HEAL, 3);
+        CANDY_BLEEDING_QUADHEART = construct.registerBasic(PrefList.Bleeding_Quadheart.of("candy", false), MobEffects.HEALTH_BOOST, 3);
+        HOLLOW_BLEEDING_QUADHEART = construct.registerBasic(PrefList.Bleeding_Quadheart.of("hollow", false), MobEffects.WITHER, 8);
+
     }
 
     private static BlockBehaviour.Properties setPropFlower(BlockBehaviour.Properties prop) {

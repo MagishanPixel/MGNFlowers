@@ -1,3 +1,6 @@
 {
-  "parent": "oddflowers:block/water_hyacinth"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "oddflowers:item/water_hyacinth"
+  }
 }

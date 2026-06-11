@@ -1,3 +1,6 @@
 {
-  "parent": "oddflowers:block/red_tall_tulip"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "oddflowers:item/red_ginger_tulip"
+  }
 }

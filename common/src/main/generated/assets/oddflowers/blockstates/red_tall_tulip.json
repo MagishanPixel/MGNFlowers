@@ -2,7 +2,7 @@
   "multipart": [
     {
       "apply": {
-        "model": "oddflowers:block/ginger_tulips/bases/ginger_tulip_bottom"
+        "model": "oddflowers:block/tall_tulips/bases/tall_tulip_bottom"
       },
       "when": {
         "stem": "1"
@@ -10,7 +10,7 @@
     },
     {
       "apply": {
-        "model": "oddflowers:block/ginger_tulips/bases/ginger_tulip_middle"
+        "model": "oddflowers:block/tall_tulips/bases/tall_tulip_middle"
       },
       "when": {
         "stem": "2"
@@ -18,7 +18,7 @@
     },
     {
       "apply": {
-        "model": "oddflowers:block/ginger_tulips/red_ginger_tulip_top"
+        "model": "oddflowers:block/tall_tulips/red_tall_tulip_top"
       },
       "when": {
         "stem": "3"

@@ -1,3 +1,6 @@
 {
-  "parent": "oddflowers:block/lava_hyacinth"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "oddflowers:item/lava_hyacinth"
+  }
 }

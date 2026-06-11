@@ -1,0 +1,28 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "oddflowers:block/tall_tulips/bases/tall_tulip_bottom"
+      },
+      "when": {
+        "stem": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/tall_tulips/bases/tall_tulip_middle"
+      },
+      "when": {
+        "stem": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/tall_tulips/white_tall_tulip_top"
+      },
+      "when": {
+        "stem": "3"
+      }
+    }
+  ]
+}

@@ -26,7 +26,6 @@ public class TallFloweryBlock extends FlowerBlock {
 
     public TallFloweryBlock(Holder<MobEffect> suspiciousStewEffect, int effectDuration, Properties properties) {
         super(suspiciousStewEffect, effectDuration, properties);
-        //this.registerDefaultState(this.defaultBlockState().setValue(STEM, 1));
         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(STEM, 1));
     }
 

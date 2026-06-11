@@ -12,15 +12,11 @@ public class OddLib {
         return min + random.nextDouble() * (max - min);
     }
 
-    public enum RENDER_LAYER {
-        CUTOUT,
-        TRANSCULENT,
-        IGNORE
-    }
-
     public enum BLOCK_ITEM {
         DEFAULT,
         PLACE_ON_WATER,
         WATER_HYACINTH
     }
+
+
 }

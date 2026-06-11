@@ -9,7 +9,7 @@ public class OddFlowers_FABRIC implements ModInitializer {
     
     @Override
     public void onInitialize() {
-        //CommonClass.init();
+        OddFlowers.init();
         Balm.initializeMod(Constants.MOD_ID, EmptyLoadContext.INSTANCE, new OddFlowers());
 
         Constants.LOG.info("Hello Fabric world!");

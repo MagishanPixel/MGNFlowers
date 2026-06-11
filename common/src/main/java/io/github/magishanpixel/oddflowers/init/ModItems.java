@@ -1,5 +1,8 @@
 package io.github.magishanpixel.oddflowers.init;
 
+import io.github.magishanpixel.oddflowers.block.WaterHyacinthBlock;
+import io.github.magishanpixel.oddflowers.item.WaterHyacinthBlockItem;
+import io.github.magishanpixel.oddflowers.misc.PrefList;
 import net.blay09.mods.balm.world.item.BalmCreativeModeTabRegistrar;
 import net.blay09.mods.balm.world.item.BalmItemRegistrar;
 import net.blay09.mods.balm.world.item.DeferredItem;
@@ -16,11 +19,32 @@ public class ModItems {
 
         construct.registerBlockItem("moth_iris", ModBlocks.MOTH_IRIS);
         construct.registerBlockItem("grottal_bloom", ModBlocks.GROTTAL_BLOOM);
+
         construct.registerBlockItem("blue_twin_cendalion", ModBlocks.BLUE_TWIN_CENDALION);
+        construct.registerBlockItem("white_twin_cendalion", ModBlocks.WHITE_TWIN_CENDALION);
+        construct.registerBlockItem("orange_twin_cendalion", ModBlocks.ORANGE_TWIN_CENDALION);
+        construct.registerBlockItem("pink_twin_cendalion", ModBlocks.PINK_TWIN_CENDALION);
+        construct.registerBlockItem("red_twin_cendalion", ModBlocks.RED_TWIN_CENDALION);
+
         construct.registerBlockItem("orange_tall_tulip", ModBlocks.ORANGE_TALL_TULIP);
+        construct.registerBlockItem("red_tall_tulip", ModBlocks.RED_TALL_TULIP);
+        construct.registerBlockItem("white_tall_tulip", ModBlocks.WHITE_TALL_TULIP);
+        construct.registerBlockItem("pink_tall_tulip", ModBlocks.PINK_TALL_TULIP);
+        construct.registerBlockItem("purple_tall_tulip", ModBlocks.PURPLE_TALL_TULIP);
+        construct.registerBlockItem("turquoise_tall_tulip", ModBlocks.TURQUOISE_TALL_TULIP);
+        construct.registerBlockItem("glowing_tall_tulip", ModBlocks.GLOWING_TALL_TULIP);
+
         construct.registerBlockItem("red_ginger_tulip", ModBlocks.RED_GINGER_TULIP);
-        construct.registerBlockItem("water_hyacinth", ModBlocks.WATER_HYACINTH);
-        construct.registerBlockItem("lava_hyacinth", ModBlocks.LAVA_HYACINTH);
+        construct.registerBlockItem("white_ginger_tulip", ModBlocks.WHITE_GINGER_TULIP);
+        construct.registerBlockItem("pink_ginger_tulip", ModBlocks.PINK_GINGER_TULIP);
+        construct.registerBlockItem("orange_ginger_tulip", ModBlocks.ORANGE_GINGER_TULIP);
+
+        items.register("water_hyacinth", a -> new WaterHyacinthBlockItem(ModBlocks.WATER_HYACINTH.asBlock(), a));
+        items.register("lava_hyacinth", a -> new WaterHyacinthBlockItem(ModBlocks.LAVA_HYACINTH.asBlock(), a));
+
+        construct.registerBlockItem("bleeding_quadheart", ModBlocks.BLEEDING_QUADHEART);
+        construct.registerBlockItem(PrefList.Bleeding_Quadheart.of("candy", false), ModBlocks.CANDY_BLEEDING_QUADHEART);
+        construct.registerBlockItem(PrefList.Bleeding_Quadheart.of("hollow", false), ModBlocks.HOLLOW_BLEEDING_QUADHEART);
 
     }
 
@@ -29,11 +53,32 @@ public class ModItems {
                 (itemDisplayParameters, output) -> {
                     output.accept(ModBlocks.MOTH_IRIS.asItem());
                     output.accept(ModBlocks.GROTTAL_BLOOM.asItem());
+
                     output.accept(ModBlocks.BLUE_TWIN_CENDALION.asItem());
+                    output.accept(ModBlocks.WHITE_TWIN_CENDALION.asItem());
+                    output.accept(ModBlocks.ORANGE_TWIN_CENDALION.asItem());
+                    output.accept(ModBlocks.PINK_TWIN_CENDALION.asItem());
+                    output.accept(ModBlocks.RED_TWIN_CENDALION.asItem());
+
                     output.accept(ModBlocks.ORANGE_TALL_TULIP.asItem());
+                    output.accept(ModBlocks.RED_TALL_TULIP.asItem());
+                    output.accept(ModBlocks.WHITE_TALL_TULIP.asItem());
+                    output.accept(ModBlocks.PINK_TALL_TULIP.asItem());
+                    output.accept(ModBlocks.PURPLE_TALL_TULIP.asItem());
+                    output.accept(ModBlocks.TURQUOISE_TALL_TULIP.asItem());
+                    output.accept(ModBlocks.GLOWING_TALL_TULIP.asItem());
+
                     output.accept(ModBlocks.RED_GINGER_TULIP.asItem());
+                    output.accept(ModBlocks.WHITE_GINGER_TULIP.asItem());
+                    output.accept(ModBlocks.PINK_GINGER_TULIP.asItem());
+                    output.accept(ModBlocks.ORANGE_GINGER_TULIP.asItem());
+
                     output.accept(ModBlocks.WATER_HYACINTH.asItem());
                     output.accept(ModBlocks.LAVA_HYACINTH.asItem());
+
+                    output.accept(ModBlocks.BLEEDING_QUADHEART.asItem());
+                    output.accept(ModBlocks.CANDY_BLEEDING_QUADHEART.asItem());
+                    output.accept(ModBlocks.HOLLOW_BLEEDING_QUADHEART.asItem());
                 }));
     }
 
