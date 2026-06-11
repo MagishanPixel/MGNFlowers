@@ -1,0 +1,38 @@
+{
+	"format_version": "1.9.0",
+	"ambientocclusion": false,
+	"textures": {
+		"0": "oddflowers:block/orange_tall_tulips_top",
+		"particle": "oddflowers:block/orange_tall_tulips_top"
+	},
+	"elements": [
+		{
+			"from": [8, 0, 0.5],
+			"to": [8, 16, 15.5],
+			"rotation": {"angle": -45, "axis": "y", "origin": [8, 8, 8]},
+			"shade": false,
+			"faces": {
+				"north": {"uv": [1, 0, 1, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 15, 16], "texture": "#0"},
+				"south": {"uv": [1, 0, 1, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 15, 16], "texture": "#0"},
+				"up": {"uv": [1, 0, 1, 15], "texture": "#0"},
+				"down": {"uv": [1, 0, 1, 15], "texture": "#0"}
+			}
+		},
+		{
+			"from": [8, 0, 0.5],
+			"to": [8, 16, 15.5],
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 8, 8]},
+			"shade": false,
+			"faces": {
+				"north": {"uv": [1, 0, 1, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 15, 16], "texture": "#0"},
+				"south": {"uv": [1, 0, 1, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 15, 16], "texture": "#0"},
+				"up": {"uv": [1, 0, 1, 15], "texture": "#0"},
+				"down": {"uv": [1, 0, 1, 15], "texture": "#0"}
+			}
+		}
+	]
+}

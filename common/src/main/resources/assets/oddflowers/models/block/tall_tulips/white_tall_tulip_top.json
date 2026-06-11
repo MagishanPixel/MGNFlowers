@@ -1,0 +1,7 @@
+{
+  "parent": "oddflowers:block/templates/slightly_cross",
+  "textures": {
+    "0": "oddflowers:block/white_tall_tulip_top",
+    "particle": "oddflowers:block/white_tall_tulip_top"
+  }
+}

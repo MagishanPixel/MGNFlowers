@@ -1,0 +1,7 @@
+{
+  "parent": "oddflowers:block/water_hyacinth3",
+  "textures": {
+    "0": "oddflowers:block/lava_hyacinth",
+    "particle": "oddflowers:block/lava_hyacinth"
+  }
+}
