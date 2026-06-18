@@ -1,0 +1,28 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "oddflowers:block/tall_alliums/bases/tall_allium_bottom"
+      },
+      "when": {
+        "stem": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/tall_alliums/bases/tall_allium_middle"
+      },
+      "when": {
+        "stem": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/tall_alliums/blue_tall_allium_top"
+      },
+      "when": {
+        "stem": "3"
+      }
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -20,11 +21,11 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
-public class TallFloweryBlock extends FlowerBlock {
+public class TallerFlowerBlock extends FlowerBlock {
     public static final IntegerProperty STEM = IntegerProperty.create("stem", 1, 3);
     private static final VoxelShape TALL_SHAPE = Block.box((double)4.0F, (double)0.0F, (double)4.0F, (double)12.0F, (double)16.0F, (double)12.0F);
 
-    public TallFloweryBlock(Holder<MobEffect> suspiciousStewEffect, int effectDuration, Properties properties) {
+    public TallerFlowerBlock(Holder<MobEffect> suspiciousStewEffect, int effectDuration, Properties properties) {
         super(suspiciousStewEffect, effectDuration, properties);
         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(STEM, 1));
     }
@@ -60,6 +61,8 @@ public class TallFloweryBlock extends FlowerBlock {
             resState = resState.setValue(STEM, 1);
         }   else if (!upState.is(this) && (downState.is(this))) {
             resState = resState.setValue(STEM, 3);
+        } else if (!upState.is(this) && !downState.is(this)) {
+            level.destroyBlock(pos, true);
         }
 
         return resState;
@@ -73,7 +76,15 @@ public class TallFloweryBlock extends FlowerBlock {
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
         if (!level.getBlockState(pos.below()).is(this)) {
-            if (stack.getCount() > 1 && level.getBlockState(pos.above()).canBeReplaced()) {
+            boolean extraBool = false;
+
+            if (placer != null) {
+                if (placer.hasInfiniteMaterials()) {
+                    extraBool = true;
+                }
+            }
+
+            if ((stack.getCount() > 1 || extraBool) && level.getBlockState(pos.above()).canBeReplaced()) {
                 level.setBlock(pos.above(), this.defaultBlockState().setValue(STEM, 3), 3);
                 stack.shrink(1);
             } else {

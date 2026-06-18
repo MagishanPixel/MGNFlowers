@@ -1,0 +1,7 @@
+{
+  "parent": "oddflowers:block/bee_balm",
+  "textures": {
+    "0": "oddflowers:block/crimson_balm",
+    "particle": "oddflowers:block/crimson_balm"
+  }
+}

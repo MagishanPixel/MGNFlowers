@@ -42,8 +42,25 @@ public class ModTranslateProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.LAVA_HYACINTH.asBlock(), "Lava Hyacinth");
 
         translationBuilder.add(ModBlocks.BLEEDING_QUADHEART.asBlock(), "Bleeding Quadheart");
-        translationBuilder.add(ModBlocks.CANDY_BLEEDING_QUADHEART.asBlock(), PrefList.Bleeding_Quadheart.of("candy", true));
-        translationBuilder.add(ModBlocks.HOLLOW_BLEEDING_QUADHEART.asBlock(), PrefList.Bleeding_Quadheart.of("hollow", true));
+        translationBuilder.add(ModBlocks.CANDY_BLEEDING_QUADHEART.asBlock(), PrefList.BLEEDING_QUADHEART.of("candy", true));
+        translationBuilder.add(ModBlocks.HOLLOW_BLEEDING_QUADHEART.asBlock(), PrefList.BLEEDING_QUADHEART.of("hollow", true));
+
+        translationBuilder.add(ModBlocks.BEE_BALM.asBlock(), "Bee Balm");
+        translationBuilder.add(ModBlocks.CRIMSON_BALM.asBlock(), "Crimson Balm");
+        translationBuilder.add(ModBlocks.WARPED_BALM.asBlock(), "Warped Balm");
+
+        translationBuilder.add(ModBlocks.LAMPBLOSSOM.asBlock(), "Lampblossom");
+
+        translationBuilder.add(ModBlocks.PINK_ROMENTA.asBlock(), PrefList.ROMENTA.colorOf_Cap(StraddColor.pink));
+        translationBuilder.add(ModBlocks.BLUE_ROMENTA.asBlock(), PrefList.ROMENTA.colorOf_Cap(StraddColor.blue));
+        translationBuilder.add(ModBlocks.ORANGE_ROMENTA.asBlock(), PrefList.ROMENTA.colorOf_Cap(StraddColor.orange));
+
+        translationBuilder.add(ModBlocks.TITAN_ARUM.asBlock(), "Titan Arum");
+
+        translationBuilder.add(ModBlocks.JUNGOISEAU.asBlock(), "Jungoiseau");
+
+        translationBuilder.add(ModBlocks.TALL_ALLIUM.asBlock(), "Tall Allium");
+        translationBuilder.add(ModBlocks.BLUE_TALL_ALLIUM.asBlock(), "Blue Tall Allium");
 
     }
 }

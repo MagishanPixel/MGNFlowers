@@ -1,17 +1,34 @@
 package io.github.magishanpixel.oddflowers.client;
 
+import io.github.magishanpixel.oddflowers.client.particle.FlyParticle;
+import io.github.magishanpixel.oddflowers.client.particle.StarFallingParticle;
 import io.github.magishanpixel.oddflowers.init.ModBlocks;
+import io.github.magishanpixel.oddflowers.init.ModParticles;
 import io.github.magishanpixel.oddflowers.misc.OddLib;
 import net.blay09.mods.balm.api.client.module.BalmClientModule;
+import net.blay09.mods.balm.api.event.BalmEvents;
+import net.blay09.mods.balm.client.particle.BalmParticleProviderRegistrar;
 import net.blay09.mods.balm.client.renderer.chunk.BalmBlockRenderTypeRegistrar;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 
 public class OddFlowersClient implements BalmClientModule {
 
+    public static void init() {
+
+    }
+
     @Override
     public ResourceLocation getId() {
         return OddLib.newId("client");
+    }
+
+    @Override
+    public void registerParticleProviders(BalmParticleProviderRegistrar particles) {
+        particles.register(ModParticles.BEE, a -> new FlyParticle.Provider(a, false));
+        particles.register(ModParticles.CRIMSON_FIREFLY, a -> new FlyParticle.Provider(a, true));
+        particles.register(ModParticles.WARPED_FIREFLY, a -> new FlyParticle.Provider(a, true));
+        particles.register(ModParticles.STAR_FALLING, StarFallingParticle.Provider::new);
     }
 
     @Override
@@ -44,6 +61,22 @@ public class OddFlowersClient implements BalmClientModule {
         rend.setRenderLayer(ModBlocks.BLEEDING_QUADHEART, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.CANDY_BLEEDING_QUADHEART, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.HOLLOW_BLEEDING_QUADHEART, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.BEE_BALM, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.WARPED_BALM, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.CRIMSON_BALM, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.LAMPBLOSSOM, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.PINK_ROMENTA, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.BLUE_ROMENTA, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.ORANGE_ROMENTA, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.TITAN_ARUM, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.JUNGOISEAU, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.TALL_ALLIUM, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.BLUE_TALL_ALLIUM, RenderType.cutout());
     }
 
 

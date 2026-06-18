@@ -1,6 +1,6 @@
 package io.github.magishanpixel.oddflowers.datagen.gens;
 
-import io.github.magishanpixel.oddflowers.block.TallFloweryBlock;
+import io.github.magishanpixel.oddflowers.block.TallerFlowerBlock;
 import io.github.magishanpixel.oddflowers.init.ModBlocks;
 import io.github.magishanpixel.oddflowers.misc.OddLib;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -34,11 +34,25 @@ public class ModModelProvider extends FabricModelProvider {
         genBlockCustomModel(gen, ModBlocks.CANDY_BLEEDING_QUADHEART.asBlock());
         genBlockCustomModel(gen, ModBlocks.HOLLOW_BLEEDING_QUADHEART.asBlock());
 
+        genBlockCustomModel(gen, ModBlocks.BEE_BALM.asBlock());
+        genBlockCustomModel(gen, ModBlocks.WARPED_BALM.asBlock());
+        genBlockCustomModel(gen, ModBlocks.CRIMSON_BALM.asBlock());
+
+        genBlockCustomModel(gen, ModBlocks.LAMPBLOSSOM.asBlock());
+
+        gen.createDoublePlant(ModBlocks.TITAN_ARUM.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
+
         gen.createCrossBlock(ModBlocks.BLUE_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
         gen.createCrossBlock(ModBlocks.WHITE_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
         gen.createCrossBlock(ModBlocks.RED_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
         gen.createCrossBlock(ModBlocks.PINK_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
         gen.createCrossBlock(ModBlocks.ORANGE_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
+
+        gen.createCrossBlock(ModBlocks.BLUE_ROMENTA.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.PINK_ROMENTA.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.ORANGE_ROMENTA.asBlock(), BlockModelGenerators.TintState.TINTED);
+
+        gen.createCrossBlock(ModBlocks.JUNGOISEAU.asBlock(), BlockModelGenerators.TintState.TINTED);
 
         createTallFlower(gen, ModBlocks.ORANGE_TALL_TULIP.asBlock(), "orange", "tall_tulip");
         createTallFlower(gen, ModBlocks.WHITE_TALL_TULIP.asBlock(), "white", "tall_tulip");
@@ -53,6 +67,9 @@ public class ModModelProvider extends FabricModelProvider {
         createTallFlower(gen, ModBlocks.WHITE_GINGER_TULIP.asBlock(), "white", "ginger_tulip");
         createTallFlower(gen, ModBlocks.PINK_GINGER_TULIP.asBlock(), "pink", "ginger_tulip");
 
+        createTallFlower(gen, ModBlocks.TALL_ALLIUM.asBlock(), "", "tall_allium");
+        createTallFlower(gen, ModBlocks.BLUE_TALL_ALLIUM.asBlock(), "blue", "tall_allium");
+
         createFlowerBed(gen, ModBlocks.WATER_HYACINTH.asBlock());
         createFlowerBed(gen, ModBlocks.LAVA_HYACINTH.asBlock());
 
@@ -65,6 +82,13 @@ public class ModModelProvider extends FabricModelProvider {
         gen.createSimpleFlatItemModel(ModBlocks.BLEEDING_QUADHEART.asBlock());
         gen.createSimpleFlatItemModel(ModBlocks.CANDY_BLEEDING_QUADHEART.asBlock());
         gen.createSimpleFlatItemModel(ModBlocks.HOLLOW_BLEEDING_QUADHEART.asBlock());
+
+        gen.createSimpleFlatItemModel(ModBlocks.BLUE_ROMENTA.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.PINK_ROMENTA.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.ORANGE_ROMENTA.asBlock());
+
+        gen.createSimpleFlatItemModel(ModBlocks.JUNGOISEAU.asBlock());
+
     }
 
     @Override
@@ -87,6 +111,17 @@ public class ModModelProvider extends FabricModelProvider {
         gen.generateFlatItem(ModBlocks.RED_GINGER_TULIP.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.ORANGE_GINGER_TULIP.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.WHITE_GINGER_TULIP.asItem(), ModelTemplates.FLAT_ITEM);;
+
+        gen.generateFlatItem(ModBlocks.BEE_BALM.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.CRIMSON_BALM.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.WARPED_BALM.asItem(), ModelTemplates.FLAT_ITEM);
+
+        gen.generateFlatItem(ModBlocks.LAMPBLOSSOM.asItem(), ModelTemplates.FLAT_ITEM);
+       // gen.generateFlatItem(ModBlocks.TITAN_ARUM.asItem(), ModelTemplates.FLAT_ITEM);
+
+        gen.generateFlatItem(ModBlocks.TALL_ALLIUM.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.BLUE_TALL_ALLIUM.asItem(), ModelTemplates.FLAT_ITEM);
+
     }
 
     private void createFlowerBed(BlockModelGenerators gen, Block flowerBedBlock) {
@@ -118,16 +153,16 @@ public class ModModelProvider extends FabricModelProvider {
     private void createTallFlower(BlockModelGenerators gen, Block block, String color, String base) {
         ResourceLocation bottom = getModelPath(base + "s/bases/" + base + "_bottom");
         ResourceLocation middle = getModelPath(base + "s/bases/" + base +  "_middle");
-        ResourceLocation top = getModelPath(base + "s/" + color + "_" + base + "_top");
+        ResourceLocation top = getModelPath(base + "s/" + (color.isEmpty() ? "" : color + "_") + base + "_top");
 
         if (color.equals("glowing")) {
             bottom = getModelPath(base + "s/bases/glowing_" + base + "_bottom");
             middle = getModelPath(base + "s/bases/glowing_" + base + "_middle");
         }
         gen.blockStateOutput.accept(MultiPartGenerator.multiPart(block)
-                .with(Condition.condition().term(TallFloweryBlock.STEM, 1), Variant.variant().with(VariantProperties.MODEL, bottom))
-                .with(Condition.condition().term(TallFloweryBlock.STEM, 2), Variant.variant().with(VariantProperties.MODEL, middle))
-                .with(Condition.condition().term(TallFloweryBlock.STEM, 3), Variant.variant().with(VariantProperties.MODEL, top))
+                .with(Condition.condition().term(TallerFlowerBlock.STEM, 1), Variant.variant().with(VariantProperties.MODEL, bottom))
+                .with(Condition.condition().term(TallerFlowerBlock.STEM, 2), Variant.variant().with(VariantProperties.MODEL, middle))
+                .with(Condition.condition().term(TallerFlowerBlock.STEM, 3), Variant.variant().with(VariantProperties.MODEL, top))
         );
         //this.blockStateOutput.accept(
         // MultiPartGenerator.multiPart(flowerBedBlock)

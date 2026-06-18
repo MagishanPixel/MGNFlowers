@@ -1,8 +1,8 @@
 package io.github.magishanpixel.oddflowers.init;
 
-import io.github.magishanpixel.oddflowers.block.WaterHyacinthBlock;
 import io.github.magishanpixel.oddflowers.item.WaterHyacinthBlockItem;
 import io.github.magishanpixel.oddflowers.misc.PrefList;
+import io.github.magishanpixel.oddflowers.misc.StraddColor;
 import net.blay09.mods.balm.world.item.BalmCreativeModeTabRegistrar;
 import net.blay09.mods.balm.world.item.BalmItemRegistrar;
 import net.blay09.mods.balm.world.item.DeferredItem;
@@ -43,9 +43,25 @@ public class ModItems {
         items.register("lava_hyacinth", a -> new WaterHyacinthBlockItem(ModBlocks.LAVA_HYACINTH.asBlock(), a));
 
         construct.registerBlockItem("bleeding_quadheart", ModBlocks.BLEEDING_QUADHEART);
-        construct.registerBlockItem(PrefList.Bleeding_Quadheart.of("candy", false), ModBlocks.CANDY_BLEEDING_QUADHEART);
-        construct.registerBlockItem(PrefList.Bleeding_Quadheart.of("hollow", false), ModBlocks.HOLLOW_BLEEDING_QUADHEART);
+        construct.registerBlockItem(PrefList.BLEEDING_QUADHEART.of("candy", false), ModBlocks.CANDY_BLEEDING_QUADHEART);
+        construct.registerBlockItem(PrefList.BLEEDING_QUADHEART.of("hollow", false), ModBlocks.HOLLOW_BLEEDING_QUADHEART);
 
+        construct.registerBlockItem("bee_balm", ModBlocks.BEE_BALM);
+        construct.registerBlockItem("crimson_balm", ModBlocks.CRIMSON_BALM);
+        construct.registerBlockItem("warped_balm", ModBlocks.WARPED_BALM);
+
+        construct.registerBlockItem("lampblossom", ModBlocks.LAMPBLOSSOM);
+
+        construct.registerBlockItem(PrefList.ROMENTA.colorOf(StraddColor.pink), ModBlocks.PINK_ROMENTA);
+        construct.registerBlockItem(PrefList.ROMENTA.colorOf(StraddColor.blue), ModBlocks.BLUE_ROMENTA);
+        construct.registerBlockItem(PrefList.ROMENTA.colorOf(StraddColor.orange), ModBlocks.ORANGE_ROMENTA);
+
+        construct.registerBlockItem("titan_arum", ModBlocks.TITAN_ARUM);
+
+        construct.registerBlockItem("jungoiseau", ModBlocks.JUNGOISEAU);
+
+        construct.registerBlockItem("tall_allium", ModBlocks.TALL_ALLIUM);
+        construct.registerBlockItem("blue_tall_allium", ModBlocks.BLUE_TALL_ALLIUM);
     }
 
     public static void init(BalmCreativeModeTabRegistrar tab) {
@@ -79,6 +95,23 @@ public class ModItems {
                     output.accept(ModBlocks.BLEEDING_QUADHEART.asItem());
                     output.accept(ModBlocks.CANDY_BLEEDING_QUADHEART.asItem());
                     output.accept(ModBlocks.HOLLOW_BLEEDING_QUADHEART.asItem());
+
+                    output.accept(ModBlocks.BEE_BALM);
+                    output.accept(ModBlocks.CRIMSON_BALM);
+                    output.accept(ModBlocks.WARPED_BALM);
+
+                    output.accept(ModBlocks.LAMPBLOSSOM);
+
+                    output.accept(ModBlocks.PINK_ROMENTA);
+                    output.accept(ModBlocks.BLUE_ROMENTA);
+                    output.accept(ModBlocks.ORANGE_ROMENTA);
+
+                    output.accept(ModBlocks.TITAN_ARUM);
+
+                    output.accept(ModBlocks.JUNGOISEAU);
+
+                    output.accept(ModBlocks.TALL_ALLIUM);
+                    output.accept(ModBlocks.BLUE_TALL_ALLIUM);
                 }));
     }
 

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "oddflowers:block/titan_arum_bottom"
+    },
+    "half=upper": {
+      "model": "oddflowers:block/titan_arum_top"
+    }
+  }
+}
