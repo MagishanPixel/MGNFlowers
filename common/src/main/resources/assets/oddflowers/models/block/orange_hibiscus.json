@@ -1,0 +1,7 @@
+{
+  "parent": "oddflowers:block/templates/hibiscus",
+  "textures": {
+    "0": "oddflowers:block/orange_hibiscus",
+    "particle": "oddflowers:block/orange_hibiscus"
+  }
+}

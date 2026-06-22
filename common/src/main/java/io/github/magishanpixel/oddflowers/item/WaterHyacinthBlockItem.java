@@ -29,15 +29,10 @@ public class WaterHyacinthBlockItem extends BlockItem {
         BlockHitResult blockhitresult = getPlayerPOVHitResult(level, plr, ClipContext.Fluid.SOURCE_ONLY);
 
         if (!plr.level().getBlockState(blockhitresult.getBlockPos()).getFluidState().isSource()) {
-            Constants.LOG.info("UHM NO, CHECK");
             res = getPlayerPOVHitResult(level, plr, ClipContext.Fluid.ANY);
         } else {
-            Constants.LOG.info("OK");
             res = blockhitresult.withPosition(blockhitresult.getBlockPos().above());
         }
-
-        Constants.LOG.info(res.getType().name());
-        Constants.LOG.info(res.getBlockPos().toString());
 
         InteractionResult interactionresult = super.useOn(new UseOnContext(plr, hand, res));
         return new InteractionResultHolder(interactionresult, plr.getItemInHand(hand));

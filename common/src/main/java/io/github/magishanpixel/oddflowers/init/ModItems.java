@@ -20,11 +20,11 @@ public class ModItems {
         construct.registerBlockItem("moth_iris", ModBlocks.MOTH_IRIS);
         construct.registerBlockItem("grottal_bloom", ModBlocks.GROTTAL_BLOOM);
 
-        construct.registerBlockItem("blue_twin_cendalion", ModBlocks.BLUE_TWIN_CENDALION);
-        construct.registerBlockItem("white_twin_cendalion", ModBlocks.WHITE_TWIN_CENDALION);
-        construct.registerBlockItem("orange_twin_cendalion", ModBlocks.ORANGE_TWIN_CENDALION);
-        construct.registerBlockItem("pink_twin_cendalion", ModBlocks.PINK_TWIN_CENDALION);
-        construct.registerBlockItem("red_twin_cendalion", ModBlocks.RED_TWIN_CENDALION);
+        construct.registerBlockItem("blue_twin_celalion", ModBlocks.BLUE_TWIN_CELALION);
+        construct.registerBlockItem("white_twin_celalion", ModBlocks.WHITE_TWIN_CELALION);
+        construct.registerBlockItem("orange_twin_celalion", ModBlocks.ORANGE_TWIN_CELALION);
+        construct.registerBlockItem("pink_twin_celalion", ModBlocks.PINK_TWIN_CELALION);
+        construct.registerBlockItem("red_twin_celalion", ModBlocks.RED_TWIN_CELALION);
 
         construct.registerBlockItem("orange_tall_tulip", ModBlocks.ORANGE_TALL_TULIP);
         construct.registerBlockItem("red_tall_tulip", ModBlocks.RED_TALL_TULIP);
@@ -62,19 +62,36 @@ public class ModItems {
 
         construct.registerBlockItem("tall_allium", ModBlocks.TALL_ALLIUM);
         construct.registerBlockItem("blue_tall_allium", ModBlocks.BLUE_TALL_ALLIUM);
+
+        construct.registerBlockItem("welwitschia", ModBlocks.WELWITSCHIA);
+        construct.registerBlockItem("torch_ginger", ModBlocks.TORCH_GINGER);
+
+        construct.registerBlockItem(PrefList.HIBISCUS.colorOf(StraddColor.blue), ModBlocks.BLUE_HIBISCUS);
+        construct.registerBlockItem(PrefList.HIBISCUS.colorOf(StraddColor.orange), ModBlocks.ORANGE_HIBISCUS);
+        construct.registerBlockItem(PrefList.HIBISCUS.colorOf(StraddColor.pink), ModBlocks.PINK_HIBISCUS);
+
+        construct.registerBlockItem("dandelion_bed", ModBlocks.DANDELION_BED);
+
+        construct.registerBlockItem(PrefList.HYACINTH.colorOf(StraddColor.blue), ModBlocks.BLUE_TALL_HYACINTH);
+        construct.registerBlockItem(PrefList.HYACINTH.colorOf(StraddColor.pink), ModBlocks.PINK_TALL_HYACINTH);
+        construct.registerBlockItem(PrefList.HYACINTH.colorOf(StraddColor.white), ModBlocks.WHITE_TALL_HYACINTH);
+        construct.registerBlockItem(PrefList.HYACINTH.colorOf(StraddColor.yellow), ModBlocks.YELLOW_TALL_HYACINTH);
+        construct.registerBlockItem(PrefList.HYACINTH.colorOf(StraddColor.red), ModBlocks.RED_TALL_HYACINTH);
+        construct.registerBlockItem(PrefList.HYACINTH.colorOf(StraddColor.purple), ModBlocks.PURPLE_TALL_HYACINTH);
     }
 
     public static void init(BalmCreativeModeTabRegistrar tab) {
         tab.register("main_tab", (resourceLocation, builder) -> builder.icon(() -> new ItemStack(ModBlocks.MOTH_IRIS.asItem())).title(Component.translatable("tab.oddflowers")).displayItems(
                 (itemDisplayParameters, output) -> {
-                    output.accept(ModBlocks.MOTH_IRIS.asItem());
-                    output.accept(ModBlocks.GROTTAL_BLOOM.asItem());
+                    output.accept(ModBlocks.BLUE_TWIN_CELALION.asItem());
+                    output.accept(ModBlocks.WHITE_TWIN_CELALION.asItem());
+                    output.accept(ModBlocks.ORANGE_TWIN_CELALION.asItem());
+                    output.accept(ModBlocks.PINK_TWIN_CELALION.asItem());
+                    output.accept(ModBlocks.RED_TWIN_CELALION.asItem());
 
-                    output.accept(ModBlocks.BLUE_TWIN_CENDALION.asItem());
-                    output.accept(ModBlocks.WHITE_TWIN_CENDALION.asItem());
-                    output.accept(ModBlocks.ORANGE_TWIN_CENDALION.asItem());
-                    output.accept(ModBlocks.PINK_TWIN_CENDALION.asItem());
-                    output.accept(ModBlocks.RED_TWIN_CENDALION.asItem());
+                    output.accept(ModBlocks.BLUE_HIBISCUS);
+                    output.accept(ModBlocks.ORANGE_HIBISCUS);
+                    output.accept(ModBlocks.PINK_HIBISCUS);
 
                     output.accept(ModBlocks.ORANGE_TALL_TULIP.asItem());
                     output.accept(ModBlocks.RED_TALL_TULIP.asItem());
@@ -89,8 +106,24 @@ public class ModItems {
                     output.accept(ModBlocks.PINK_GINGER_TULIP.asItem());
                     output.accept(ModBlocks.ORANGE_GINGER_TULIP.asItem());
 
+                    output.accept(ModBlocks.PINK_ROMENTA);
+                    output.accept(ModBlocks.BLUE_ROMENTA);
+                    output.accept(ModBlocks.ORANGE_ROMENTA);
+
+                    output.accept(ModBlocks.BLUE_TALL_HYACINTH);
+                    output.accept(ModBlocks.PINK_TALL_HYACINTH);
+                    output.accept(ModBlocks.RED_TALL_HYACINTH);
+                    output.accept(ModBlocks.YELLOW_TALL_HYACINTH);
+                    output.accept(ModBlocks.WHITE_TALL_HYACINTH);
+                    output.accept(ModBlocks.PURPLE_TALL_HYACINTH);
+
+                    output.accept(ModBlocks.TALL_ALLIUM);
+                    output.accept(ModBlocks.BLUE_TALL_ALLIUM);
+
                     output.accept(ModBlocks.WATER_HYACINTH.asItem());
                     output.accept(ModBlocks.LAVA_HYACINTH.asItem());
+                    output.accept(ModBlocks.TORCH_GINGER);
+                    output.accept(ModBlocks.DANDELION_BED);
 
                     output.accept(ModBlocks.BLEEDING_QUADHEART.asItem());
                     output.accept(ModBlocks.CANDY_BLEEDING_QUADHEART.asItem());
@@ -100,18 +133,14 @@ public class ModItems {
                     output.accept(ModBlocks.CRIMSON_BALM);
                     output.accept(ModBlocks.WARPED_BALM);
 
-                    output.accept(ModBlocks.LAMPBLOSSOM);
-
-                    output.accept(ModBlocks.PINK_ROMENTA);
-                    output.accept(ModBlocks.BLUE_ROMENTA);
-                    output.accept(ModBlocks.ORANGE_ROMENTA);
-
                     output.accept(ModBlocks.TITAN_ARUM);
-
                     output.accept(ModBlocks.JUNGOISEAU);
+                    output.accept(ModBlocks.LAMPBLOSSOM);
+                    output.accept(ModBlocks.WELWITSCHIA);
+                    output.accept(ModBlocks.MOTH_IRIS.asItem());
+                    output.accept(ModBlocks.GROTTAL_BLOOM.asItem());
 
-                    output.accept(ModBlocks.TALL_ALLIUM);
-                    output.accept(ModBlocks.BLUE_TALL_ALLIUM);
+
                 }));
     }
 

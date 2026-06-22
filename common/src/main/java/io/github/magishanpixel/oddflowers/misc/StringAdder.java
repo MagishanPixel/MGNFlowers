@@ -29,7 +29,7 @@ public class StringAdder {
 
             for (String a : var) {
                 if (!a.isBlank()) {
-                    Constants.LOG.info(a);
+                    //Constants.LOG.info(a);
                     String firstChar = a.substring(0,1).toUpperCase();
                     String mySTR = firstChar + a.substring(1);
 

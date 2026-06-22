@@ -1,0 +1,28 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "oddflowers:block/blue_tall_hyacinth/bottom"
+      },
+      "when": {
+        "stem": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/blue_tall_hyacinth/middle"
+      },
+      "when": {
+        "stem": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/blue_tall_hyacinth/top"
+      },
+      "when": {
+        "stem": "3"
+      }
+    }
+  ]
+}

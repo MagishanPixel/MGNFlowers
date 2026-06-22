@@ -6,7 +6,6 @@ import io.github.magishanpixel.oddflowers.init.ModBlocks;
 import io.github.magishanpixel.oddflowers.init.ModParticles;
 import io.github.magishanpixel.oddflowers.misc.OddLib;
 import net.blay09.mods.balm.api.client.module.BalmClientModule;
-import net.blay09.mods.balm.api.event.BalmEvents;
 import net.blay09.mods.balm.client.particle.BalmParticleProviderRegistrar;
 import net.blay09.mods.balm.client.renderer.chunk.BalmBlockRenderTypeRegistrar;
 import net.minecraft.client.renderer.RenderType;
@@ -36,11 +35,11 @@ public class OddFlowersClient implements BalmClientModule {
         rend.setRenderLayer(ModBlocks.MOTH_IRIS, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.GROTTAL_BLOOM, RenderType.cutout());
 
-        rend.setRenderLayer(ModBlocks.RED_TWIN_CENDALION, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.BLUE_TWIN_CENDALION, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.ORANGE_TWIN_CENDALION, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.WHITE_TWIN_CENDALION, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.PINK_TWIN_CENDALION, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.RED_TWIN_CELALION, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.BLUE_TWIN_CELALION, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.ORANGE_TWIN_CELALION, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.WHITE_TWIN_CELALION, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.PINK_TWIN_CELALION, RenderType.cutout());
 
         rend.setRenderLayer(ModBlocks.WHITE_TALL_TULIP, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.PURPLE_TALL_TULIP, RenderType.cutout());
@@ -77,6 +76,23 @@ public class OddFlowersClient implements BalmClientModule {
 
         rend.setRenderLayer(ModBlocks.TALL_ALLIUM, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.BLUE_TALL_ALLIUM, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.WELWITSCHIA, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.TORCH_GINGER, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.BLUE_HIBISCUS, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.PINK_HIBISCUS, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.ORANGE_HIBISCUS, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.DANDELION_BED, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.BLUE_TALL_HYACINTH, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.PINK_TALL_HYACINTH, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.RED_TALL_HYACINTH, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.WHITE_TALL_HYACINTH, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.PURPLE_TALL_HYACINTH, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.YELLOW_TALL_HYACINTH, RenderType.cutout());
+
     }
 
 

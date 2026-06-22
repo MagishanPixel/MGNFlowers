@@ -1,23 +1,27 @@
 package io.github.magishanpixel.oddflowers.datagen.gens;
 
+import io.github.magishanpixel.oddflowers.block.CustomFlowerBedBlock;
 import io.github.magishanpixel.oddflowers.block.TallerFlowerBlock;
 import io.github.magishanpixel.oddflowers.init.ModBlocks;
 import io.github.magishanpixel.oddflowers.misc.OddLib;
+import io.github.magishanpixel.oddflowers.misc.PrefList;
+import io.github.magishanpixel.oddflowers.misc.StraddColor;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.models.BlockModelGenerators;
 import net.minecraft.data.models.ItemModelGenerators;
-import net.minecraft.data.models.blockstates.Condition;
-import net.minecraft.data.models.blockstates.MultiPartGenerator;
-import net.minecraft.data.models.blockstates.Variant;
-import net.minecraft.data.models.blockstates.VariantProperties;
+import net.minecraft.data.models.blockstates.*;
 import net.minecraft.data.models.model.ModelLocationUtils;
 import net.minecraft.data.models.model.ModelTemplates;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.IntStream;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -26,7 +30,6 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators gen) {
-
         genBlockCustomModel(gen, ModBlocks.MOTH_IRIS.asBlock());
         genBlockCustomModel(gen, ModBlocks.GROTTAL_BLOOM.asBlock());
 
@@ -38,20 +41,25 @@ public class ModModelProvider extends FabricModelProvider {
         genBlockCustomModel(gen, ModBlocks.WARPED_BALM.asBlock());
         genBlockCustomModel(gen, ModBlocks.CRIMSON_BALM.asBlock());
 
+        genBlockCustomModel(gen, ModBlocks.BLUE_HIBISCUS.asBlock());
+        genBlockCustomModel(gen, ModBlocks.ORANGE_HIBISCUS.asBlock());
+        genBlockCustomModel(gen, ModBlocks.PINK_HIBISCUS.asBlock());
+
         genBlockCustomModel(gen, ModBlocks.LAMPBLOSSOM.asBlock());
 
         gen.createDoublePlant(ModBlocks.TITAN_ARUM.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
 
-        gen.createCrossBlock(ModBlocks.BLUE_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
-        gen.createCrossBlock(ModBlocks.WHITE_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
-        gen.createCrossBlock(ModBlocks.RED_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
-        gen.createCrossBlock(ModBlocks.PINK_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
-        gen.createCrossBlock(ModBlocks.ORANGE_TWIN_CENDALION.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.BLUE_TWIN_CELALION.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.WHITE_TWIN_CELALION.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.RED_TWIN_CELALION.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.PINK_TWIN_CELALION.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.ORANGE_TWIN_CELALION.asBlock(), BlockModelGenerators.TintState.TINTED);
 
         gen.createCrossBlock(ModBlocks.BLUE_ROMENTA.asBlock(), BlockModelGenerators.TintState.TINTED);
         gen.createCrossBlock(ModBlocks.PINK_ROMENTA.asBlock(), BlockModelGenerators.TintState.TINTED);
         gen.createCrossBlock(ModBlocks.ORANGE_ROMENTA.asBlock(), BlockModelGenerators.TintState.TINTED);
 
+        gen.createCrossBlock(ModBlocks.WELWITSCHIA.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
         gen.createCrossBlock(ModBlocks.JUNGOISEAU.asBlock(), BlockModelGenerators.TintState.TINTED);
 
         createTallFlower(gen, ModBlocks.ORANGE_TALL_TULIP.asBlock(), "orange", "tall_tulip");
@@ -70,14 +78,23 @@ public class ModModelProvider extends FabricModelProvider {
         createTallFlower(gen, ModBlocks.TALL_ALLIUM.asBlock(), "", "tall_allium");
         createTallFlower(gen, ModBlocks.BLUE_TALL_ALLIUM.asBlock(), "blue", "tall_allium");
 
-        createFlowerBed(gen, ModBlocks.WATER_HYACINTH.asBlock());
-        createFlowerBed(gen, ModBlocks.LAVA_HYACINTH.asBlock());
+        createSingleTypeTallFlower(gen, ModBlocks.BLUE_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf(StraddColor.blue));
+        createSingleTypeTallFlower(gen, ModBlocks.PINK_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf(StraddColor.pink));
+        createSingleTypeTallFlower(gen, ModBlocks.PURPLE_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf(StraddColor.purple));
+        createSingleTypeTallFlower(gen, ModBlocks.YELLOW_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf(StraddColor.yellow));
+        createSingleTypeTallFlower(gen, ModBlocks.WHITE_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf(StraddColor.white));
+        createSingleTypeTallFlower(gen, ModBlocks.RED_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf(StraddColor.red));
 
-        gen.createSimpleFlatItemModel(ModBlocks.BLUE_TWIN_CENDALION.asBlock());
-        gen.createSimpleFlatItemModel(ModBlocks.WHITE_TWIN_CENDALION.asBlock());
-        gen.createSimpleFlatItemModel(ModBlocks.RED_TWIN_CENDALION.asBlock());
-        gen.createSimpleFlatItemModel(ModBlocks.PINK_TWIN_CENDALION.asBlock());
-        gen.createSimpleFlatItemModel(ModBlocks.ORANGE_TWIN_CENDALION.asBlock());
+        createCustomFlowerBed(gen, ModBlocks.WATER_HYACINTH.asBlock(), 4);
+        createCustomFlowerBed(gen, ModBlocks.LAVA_HYACINTH.asBlock(), 4);
+        createCustomFlowerBed(gen, ModBlocks.TORCH_GINGER.asBlock(), 3);
+        createCustomFlowerBed(gen, ModBlocks.DANDELION_BED.asBlock(), 4);
+
+        gen.createSimpleFlatItemModel(ModBlocks.BLUE_TWIN_CELALION.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.WHITE_TWIN_CELALION.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.RED_TWIN_CELALION.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.PINK_TWIN_CELALION.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.ORANGE_TWIN_CELALION.asBlock());
 
         gen.createSimpleFlatItemModel(ModBlocks.BLEEDING_QUADHEART.asBlock());
         gen.createSimpleFlatItemModel(ModBlocks.CANDY_BLEEDING_QUADHEART.asBlock());
@@ -88,6 +105,8 @@ public class ModModelProvider extends FabricModelProvider {
         gen.createSimpleFlatItemModel(ModBlocks.ORANGE_ROMENTA.asBlock());
 
         gen.createSimpleFlatItemModel(ModBlocks.JUNGOISEAU.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.WELWITSCHIA.asBlock());
+
 
     }
 
@@ -121,10 +140,25 @@ public class ModModelProvider extends FabricModelProvider {
 
         gen.generateFlatItem(ModBlocks.TALL_ALLIUM.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.BLUE_TALL_ALLIUM.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.TORCH_GINGER.asItem(), ModelTemplates.FLAT_ITEM);
+
+        gen.generateFlatItem(ModBlocks.ORANGE_HIBISCUS.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.BLUE_HIBISCUS.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.PINK_HIBISCUS.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.DANDELION_BED.asItem(), ModelTemplates.FLAT_ITEM);
+
+
+        gen.generateFlatItem(ModBlocks.BLUE_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.PINK_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.PURPLE_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.YELLOW_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.WHITE_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.RED_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
+
 
     }
 
-    private void createFlowerBed(BlockModelGenerators gen, Block flowerBedBlock) {
+    private void createWaterBed(BlockModelGenerators gen, Block flowerBedBlock) {
         ResourceLocation blockId = BuiltInRegistries.BLOCK.getKey(flowerBedBlock);
 
         ResourceLocation resourceLocation = getModelPath(blockId.getPath() + "1");
@@ -134,12 +168,44 @@ public class ModModelProvider extends FabricModelProvider {
 
         gen.blockStateOutput.accept(MultiPartGenerator.multiPart(flowerBedBlock)
                 .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 1, new Integer[]{2, 3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation))
-                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 1, new Integer[]{2, 3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), Variant.variant().with(VariantProperties.MODEL, resourceLocation)
-                        .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 1, new Integer[]{2, 3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation)
-                        .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 1, new Integer[]{2, 3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST), Variant.variant().with(VariantProperties.MODEL, resourceLocation)
-                        .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 2, new Integer[]{3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation2))
-                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 2, new Integer[]{3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), Variant.variant().with(VariantProperties.MODEL, resourceLocation2).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 2, new Integer[]{3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation2)
-                        .with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 2, new Integer[]{3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST), Variant.variant().with(VariantProperties.MODEL, resourceLocation2).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 3, new Integer[]{4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation3)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 3, new Integer[]{4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), Variant.variant().with(VariantProperties.MODEL, resourceLocation3).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 3, new Integer[]{4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation3).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 3, new Integer[]{4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST), Variant.variant().with(VariantProperties.MODEL, resourceLocation3).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 4).term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation4)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 4).term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), Variant.variant().with(VariantProperties.MODEL, resourceLocation4).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 4).term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation4).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 4).term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST), Variant.variant().with(VariantProperties.MODEL, resourceLocation4).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270)));
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 1, new Integer[]{2, 3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), Variant.variant().with(VariantProperties.MODEL, resourceLocation).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 1, new Integer[]{2, 3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 1, new Integer[]{2, 3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST), Variant.variant().with(VariantProperties.MODEL, resourceLocation).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 2, new Integer[]{3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation2))
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 2, new Integer[]{3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), Variant.variant().with(VariantProperties.MODEL, resourceLocation2).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 2, new Integer[]{3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation2).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 2, new Integer[]{3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST), Variant.variant().with(VariantProperties.MODEL, resourceLocation2).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 3, new Integer[]{4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation3))
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 3, new Integer[]{4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), Variant.variant().with(VariantProperties.MODEL, resourceLocation3).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 3, new Integer[]{4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation3).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 3, new Integer[]{4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST), Variant.variant().with(VariantProperties.MODEL, resourceLocation3).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270))
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 4).term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation4))
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 4).term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), Variant.variant().with(VariantProperties.MODEL, resourceLocation4).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 4).term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation4).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
+                .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 4).term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST), Variant.variant().with(VariantProperties.MODEL, resourceLocation4).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270)));
+    }
+
+    private void createCustomFlowerBed(BlockModelGenerators gen, Block flowerBedBlock, int maxCount) {
+        ResourceLocation blockId = BuiltInRegistries.BLOCK.getKey(flowerBedBlock);
+
+        MultiPartGenerator stateGen = MultiPartGenerator.multiPart(flowerBedBlock);
+
+        for (int i = 1; i <= maxCount; i++) {
+            //Integer[] array = IntStream.rangeClosed(i + 1, maxCount).boxed().toArray(Integer[]::new);
+
+            ResourceLocation texture = getModelPath(blockId.getPath() + i);
+
+            stateGen = stateGen
+                    .with(Condition.condition().term(CustomFlowerBedBlock.AMOUNT, i).term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), Variant.variant().with(VariantProperties.MODEL, texture))
+                    .with(Condition.condition().term(CustomFlowerBedBlock.AMOUNT, i).term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), Variant.variant().with(VariantProperties.MODEL, texture).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R90))
+                    .with(Condition.condition().term(CustomFlowerBedBlock.AMOUNT, i).term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), Variant.variant().with(VariantProperties.MODEL, texture).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R180))
+                    .with(Condition.condition().term(CustomFlowerBedBlock.AMOUNT, i).term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST), Variant.variant().with(VariantProperties.MODEL, texture).with(VariantProperties.Y_ROT, VariantProperties.Rotation.R270));
+
+        }
+
+
+        gen.blockStateOutput.accept(stateGen);
+
     }
 
     private ResourceLocation getModelPath(String path) {
@@ -164,11 +230,18 @@ public class ModModelProvider extends FabricModelProvider {
                 .with(Condition.condition().term(TallerFlowerBlock.STEM, 2), Variant.variant().with(VariantProperties.MODEL, middle))
                 .with(Condition.condition().term(TallerFlowerBlock.STEM, 3), Variant.variant().with(VariantProperties.MODEL, top))
         );
-        //this.blockStateOutput.accept(
-        // MultiPartGenerator.multiPart(flowerBedBlock)
-        // .with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 1, new Integer[]{2, 3, 4})
-        // .term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 1, new Integer[]{2, 3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), Variant.variant().with(VariantProperties.MODEL, resourceLocation).with(VariantProperties.Y_ROT, Rotation.R90)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 1, new Integer[]{2, 3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation).with(VariantProperties.Y_ROT, Rotation.R180)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 1, new Integer[]{2, 3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST), Variant.variant().with(VariantProperties.MODEL, resourceLocation).with(VariantProperties.Y_ROT, Rotation.R270)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 2, new Integer[]{3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation2)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 2, new Integer[]{3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), Variant.variant().with(VariantProperties.MODEL, resourceLocation2).with(VariantProperties.Y_ROT, Rotation.R90)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 2, new Integer[]{3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation2).with(VariantProperties.Y_ROT, Rotation.R180)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 2, new Integer[]{3, 4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST), Variant.variant().with(VariantProperties.MODEL, resourceLocation2).with(VariantProperties.Y_ROT, Rotation.R270)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 3, new Integer[]{4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation3)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 3, new Integer[]{4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), Variant.variant().with(VariantProperties.MODEL, resourceLocation3).with(VariantProperties.Y_ROT, Rotation.R90)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 3, new Integer[]{4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation3).with(VariantProperties.Y_ROT, Rotation.R180)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 3, new Integer[]{4}).term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST), Variant.variant().with(VariantProperties.MODEL, resourceLocation3).with(VariantProperties.Y_ROT, Rotation.R270)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 4).term(BlockStateProperties.HORIZONTAL_FACING, Direction.NORTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation4)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 4).term(BlockStateProperties.HORIZONTAL_FACING, Direction.EAST), Variant.variant().with(VariantProperties.MODEL, resourceLocation4).with(VariantProperties.Y_ROT, Rotation.R90)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 4).term(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH), Variant.variant().with(VariantProperties.MODEL, resourceLocation4).with(VariantProperties.Y_ROT, Rotation.R180)).with(Condition.condition().term(BlockStateProperties.FLOWER_AMOUNT, 4).term(BlockStateProperties.HORIZONTAL_FACING, Direction.WEST), Variant.variant().with(VariantProperties.MODEL, resourceLocation4).with(VariantProperties.Y_ROT, Rotation.R270)));
     }
 
+    private void createSingleTypeTallFlower(BlockModelGenerators gen, Block block, String name) {
+        ResourceLocation bottom = getModelPath(name + "/" + "bottom");
+        ResourceLocation middle = getModelPath(name + "/" +  "middle");
+        ResourceLocation top = getModelPath(name + "/" + "top");
+
+        gen.blockStateOutput.accept(MultiPartGenerator.multiPart(block)
+                .with(Condition.condition().term(TallerFlowerBlock.STEM, 1), Variant.variant().with(VariantProperties.MODEL, bottom))
+                .with(Condition.condition().term(TallerFlowerBlock.STEM, 2), Variant.variant().with(VariantProperties.MODEL, middle))
+                .with(Condition.condition().term(TallerFlowerBlock.STEM, 3), Variant.variant().with(VariantProperties.MODEL, top))
+        );
+    }
 
 }

@@ -16,14 +16,16 @@ public class ModTranslateProvider extends FabricLanguageProvider {
 
     @Override
     public void generateTranslations(HolderLookup.Provider provider, TranslationBuilder translationBuilder) {
+        translationBuilder.add("tab.oddflowers", "Odd Flowers");
+
         translationBuilder.add(ModBlocks.MOTH_IRIS.asBlock(), "Moth Iris");
         translationBuilder.add(ModBlocks.GROTTAL_BLOOM.asBlock(), "Grottal Bloom");
 
-        translationBuilder.add(ModBlocks.BLUE_TWIN_CENDALION.asBlock(), "Blue Twin Cendalion");
-        translationBuilder.add(ModBlocks.ORANGE_TWIN_CENDALION.asBlock(), "Orange Twin Cendalion");
-        translationBuilder.add(ModBlocks.WHITE_TWIN_CENDALION.asBlock(), "White Twin Cendalion");
-        translationBuilder.add(ModBlocks.RED_TWIN_CENDALION.asBlock(), "Red Twin Cendalion");
-        translationBuilder.add(ModBlocks.PINK_TWIN_CENDALION.asBlock(), "Pink Twin Cendalion");
+        translationBuilder.add(ModBlocks.BLUE_TWIN_CELALION.asBlock(), "Blue Twin Celalion");
+        translationBuilder.add(ModBlocks.ORANGE_TWIN_CELALION.asBlock(), "Orange Twin Celalion");
+        translationBuilder.add(ModBlocks.WHITE_TWIN_CELALION.asBlock(), "White Twin Celalion");
+        translationBuilder.add(ModBlocks.RED_TWIN_CELALION.asBlock(), "Red Twin Celalion");
+        translationBuilder.add(ModBlocks.PINK_TWIN_CELALION.asBlock(), "Pink Twin Celalion");
 
         translationBuilder.add(ModBlocks.ORANGE_TALL_TULIP.asBlock(), "Orange Tall Tulip");
         translationBuilder.add(ModBlocks.RED_TALL_TULIP.asBlock(), PrefList.TALL_TULIP.colorOf_Cap(StraddColor.red));
@@ -61,6 +63,22 @@ public class ModTranslateProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ModBlocks.TALL_ALLIUM.asBlock(), "Tall Allium");
         translationBuilder.add(ModBlocks.BLUE_TALL_ALLIUM.asBlock(), "Blue Tall Allium");
+
+        translationBuilder.add(ModBlocks.WELWITSCHIA.asBlock(), "Welwitschia");
+        translationBuilder.add(ModBlocks.TORCH_GINGER.asBlock(), "Torch Ginger");
+
+        translationBuilder.add(ModBlocks.BLUE_HIBISCUS.asBlock(), PrefList.HIBISCUS.colorOf_Cap(StraddColor.blue));
+        translationBuilder.add(ModBlocks.PINK_HIBISCUS.asBlock(), PrefList.HIBISCUS.colorOf_Cap(StraddColor.pink));
+        translationBuilder.add(ModBlocks.ORANGE_HIBISCUS.asBlock(), PrefList.HIBISCUS.colorOf_Cap(StraddColor.orange));
+
+        translationBuilder.add(ModBlocks.DANDELION_BED.asBlock(), "Dandelion Bed");
+
+        translationBuilder.add(ModBlocks.BLUE_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.blue));
+        translationBuilder.add(ModBlocks.PINK_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.pink));
+        translationBuilder.add(ModBlocks.PURPLE_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.purple));
+        translationBuilder.add(ModBlocks.YELLOW_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.yellow));
+        translationBuilder.add(ModBlocks.WHITE_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.white));
+        translationBuilder.add(ModBlocks.RED_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.red));
 
     }
 }
