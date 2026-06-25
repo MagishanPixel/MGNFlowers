@@ -1,9 +1,6 @@
 package io.github.magishanpixel.oddflowers.init;
 
-import io.github.magishanpixel.oddflowers.block.AmbientFlowerBlock;
-import io.github.magishanpixel.oddflowers.block.CustomFlowerBedBlock;
-import io.github.magishanpixel.oddflowers.block.TallerFlowerBlock;
-import io.github.magishanpixel.oddflowers.block.WaterHyacinthBlock;
+import io.github.magishanpixel.oddflowers.block.*;
 import io.github.magishanpixel.oddflowers.misc.PrefList;
 import io.github.magishanpixel.oddflowers.misc.StraddColor;
 import net.blay09.mods.balm.world.level.block.BalmBlockRegistrar;
@@ -68,7 +65,7 @@ public class ModBlocks {
     public static DeferredBlock BLUE_ROMENTA;
     public static DeferredBlock ORANGE_ROMENTA;
 
-    public static DeferredBlock JUNGOISEAU;
+    public static DeferredBlock BIRD_OF_PARADISE;
     public static DeferredBlock TITAN_ARUM;
 
     public static DeferredBlock TALL_ALLIUM;
@@ -89,6 +86,9 @@ public class ModBlocks {
     public static DeferredBlock RED_TALL_HYACINTH;
     public static DeferredBlock PINK_TALL_HYACINTH;
     public static DeferredBlock YELLOW_TALL_HYACINTH;
+
+    public static DeferredBlock WHITE_VINE_LOTUS;
+    public static DeferredBlock PINK_VINE_LOTUS;
 
     public static void init(BalmBlockRegistrar blocks) {
         FloweryConstruct construct = new FloweryConstruct(blocks);
@@ -142,7 +142,7 @@ public class ModBlocks {
 
         TITAN_ARUM = construct.registerSameProperty("titan_arum", TallFlowerBlock::new, false);
 
-        JUNGOISEAU = construct.registerBasic("jungoiseau", MobEffects.SLOW_FALLING, 5);
+        BIRD_OF_PARADISE = construct.registerBasic("jungoiseau", MobEffects.SLOW_FALLING, 5);
 
         TALL_ALLIUM = construct.registerSameProperty("tall_allium", a -> new TallerFlowerBlock(MobEffects.FIRE_RESISTANCE, 4, a));
         BLUE_TALL_ALLIUM = construct.registerSameProperty("blue_tall_allium", a -> new TallerFlowerBlock(MobEffects.WATER_BREATHING, 6, a));
@@ -165,6 +165,8 @@ public class ModBlocks {
         YELLOW_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.yellow), a -> new TallerFlowerBlock(MobEffects.CONFUSION, 4, a));
         PINK_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.pink), a -> new TallerFlowerBlock(MobEffects.HEALTH_BOOST, 4, a));
 
+        WHITE_VINE_LOTUS = construct.registerSameProperty(PrefList.VINE_LOTUS.colorOf(StraddColor.white), a -> new VineLotusBlock(MobEffects.NIGHT_VISION, 3, a), false);
+        PINK_VINE_LOTUS = construct.registerSameProperty(PrefList.VINE_LOTUS.colorOf(StraddColor.pink), a -> new VineLotusBlock(MobEffects.REGENERATION, 2, a), false);
     }
 
     private static BlockBehaviour.Properties setPropFlower(BlockBehaviour.Properties prop) {

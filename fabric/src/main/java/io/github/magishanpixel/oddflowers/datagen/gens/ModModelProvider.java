@@ -19,10 +19,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.IntStream;
-
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
         super(output);
@@ -60,7 +56,7 @@ public class ModModelProvider extends FabricModelProvider {
         gen.createCrossBlock(ModBlocks.ORANGE_ROMENTA.asBlock(), BlockModelGenerators.TintState.TINTED);
 
         gen.createCrossBlock(ModBlocks.WELWITSCHIA.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
-        gen.createCrossBlock(ModBlocks.JUNGOISEAU.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.BIRD_OF_PARADISE.asBlock(), BlockModelGenerators.TintState.TINTED);
 
         createTallFlower(gen, ModBlocks.ORANGE_TALL_TULIP.asBlock(), "orange", "tall_tulip");
         createTallFlower(gen, ModBlocks.WHITE_TALL_TULIP.asBlock(), "white", "tall_tulip");
@@ -77,6 +73,9 @@ public class ModModelProvider extends FabricModelProvider {
 
         createTallFlower(gen, ModBlocks.TALL_ALLIUM.asBlock(), "", "tall_allium");
         createTallFlower(gen, ModBlocks.BLUE_TALL_ALLIUM.asBlock(), "blue", "tall_allium");
+
+        createTallFlower(gen, ModBlocks.WHITE_VINE_LOTUS.asBlock(), "white", "vine_lotus");
+        createTallFlower(gen, ModBlocks.PINK_VINE_LOTUS.asBlock(), "pink", "vine_lotus");
 
         createSingleTypeTallFlower(gen, ModBlocks.BLUE_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf(StraddColor.blue));
         createSingleTypeTallFlower(gen, ModBlocks.PINK_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf(StraddColor.pink));
@@ -104,7 +103,7 @@ public class ModModelProvider extends FabricModelProvider {
         gen.createSimpleFlatItemModel(ModBlocks.PINK_ROMENTA.asBlock());
         gen.createSimpleFlatItemModel(ModBlocks.ORANGE_ROMENTA.asBlock());
 
-        gen.createSimpleFlatItemModel(ModBlocks.JUNGOISEAU.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.BIRD_OF_PARADISE.asBlock());
         gen.createSimpleFlatItemModel(ModBlocks.WELWITSCHIA.asBlock());
 
 
@@ -147,6 +146,8 @@ public class ModModelProvider extends FabricModelProvider {
         gen.generateFlatItem(ModBlocks.PINK_HIBISCUS.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.DANDELION_BED.asItem(), ModelTemplates.FLAT_ITEM);
 
+        gen.generateFlatItem(ModBlocks.PINK_VINE_LOTUS.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.WHITE_VINE_LOTUS.asItem(), ModelTemplates.FLAT_ITEM);
 
         gen.generateFlatItem(ModBlocks.BLUE_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.PINK_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);

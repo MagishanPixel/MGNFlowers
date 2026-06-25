@@ -58,7 +58,7 @@ public class ModItems {
 
         construct.registerBlockItem("titan_arum", ModBlocks.TITAN_ARUM);
 
-        construct.registerBlockItem("jungoiseau", ModBlocks.JUNGOISEAU);
+        construct.registerBlockItem("bird_of_paradise", ModBlocks.BIRD_OF_PARADISE);
 
         construct.registerBlockItem("tall_allium", ModBlocks.TALL_ALLIUM);
         construct.registerBlockItem("blue_tall_allium", ModBlocks.BLUE_TALL_ALLIUM);
@@ -78,6 +78,9 @@ public class ModItems {
         construct.registerBlockItem(PrefList.HYACINTH.colorOf(StraddColor.yellow), ModBlocks.YELLOW_TALL_HYACINTH);
         construct.registerBlockItem(PrefList.HYACINTH.colorOf(StraddColor.red), ModBlocks.RED_TALL_HYACINTH);
         construct.registerBlockItem(PrefList.HYACINTH.colorOf(StraddColor.purple), ModBlocks.PURPLE_TALL_HYACINTH);
+
+        construct.registerBlockItem(PrefList.VINE_LOTUS.colorOf(StraddColor.white), ModBlocks.WHITE_VINE_LOTUS);
+        construct.registerBlockItem(PrefList.VINE_LOTUS.colorOf(StraddColor.pink), ModBlocks.PINK_VINE_LOTUS);
     }
 
     public static void init(BalmCreativeModeTabRegistrar tab) {
@@ -120,6 +123,9 @@ public class ModItems {
                     output.accept(ModBlocks.TALL_ALLIUM);
                     output.accept(ModBlocks.BLUE_TALL_ALLIUM);
 
+                    output.accept(ModBlocks.WHITE_VINE_LOTUS);
+                    output.accept(ModBlocks.PINK_VINE_LOTUS);
+
                     output.accept(ModBlocks.WATER_HYACINTH.asItem());
                     output.accept(ModBlocks.LAVA_HYACINTH.asItem());
                     output.accept(ModBlocks.TORCH_GINGER);
@@ -134,7 +140,7 @@ public class ModItems {
                     output.accept(ModBlocks.WARPED_BALM);
 
                     output.accept(ModBlocks.TITAN_ARUM);
-                    output.accept(ModBlocks.JUNGOISEAU);
+                    output.accept(ModBlocks.BIRD_OF_PARADISE);
                     output.accept(ModBlocks.LAMPBLOSSOM);
                     output.accept(ModBlocks.WELWITSCHIA);
                     output.accept(ModBlocks.MOTH_IRIS.asItem());

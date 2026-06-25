@@ -72,7 +72,7 @@ public class OddFlowersClient implements BalmClientModule {
         rend.setRenderLayer(ModBlocks.ORANGE_ROMENTA, RenderType.cutout());
 
         rend.setRenderLayer(ModBlocks.TITAN_ARUM, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.JUNGOISEAU, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.BIRD_OF_PARADISE, RenderType.cutout());
 
         rend.setRenderLayer(ModBlocks.TALL_ALLIUM, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.BLUE_TALL_ALLIUM, RenderType.cutout());
@@ -92,6 +92,9 @@ public class OddFlowersClient implements BalmClientModule {
         rend.setRenderLayer(ModBlocks.WHITE_TALL_HYACINTH, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.PURPLE_TALL_HYACINTH, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.YELLOW_TALL_HYACINTH, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.PINK_VINE_LOTUS, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.WHITE_VINE_LOTUS, RenderType.cutout());
 
     }
 

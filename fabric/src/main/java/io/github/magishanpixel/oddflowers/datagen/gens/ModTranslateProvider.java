@@ -59,7 +59,7 @@ public class ModTranslateProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ModBlocks.TITAN_ARUM.asBlock(), "Titan Arum");
 
-        translationBuilder.add(ModBlocks.JUNGOISEAU.asBlock(), "Jungoiseau");
+        translationBuilder.add(ModBlocks.BIRD_OF_PARADISE.asBlock(), "Bird Of Paradise");
 
         translationBuilder.add(ModBlocks.TALL_ALLIUM.asBlock(), "Tall Allium");
         translationBuilder.add(ModBlocks.BLUE_TALL_ALLIUM.asBlock(), "Blue Tall Allium");
@@ -80,5 +80,7 @@ public class ModTranslateProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.WHITE_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.white));
         translationBuilder.add(ModBlocks.RED_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.red));
 
+        translationBuilder.add(ModBlocks.WHITE_VINE_LOTUS.asBlock(), PrefList.VINE_LOTUS.colorOf_Cap(StraddColor.white));
+        translationBuilder.add(ModBlocks.PINK_VINE_LOTUS.asBlock(), PrefList.VINE_LOTUS.colorOf_Cap(StraddColor.pink));
     }
 }
