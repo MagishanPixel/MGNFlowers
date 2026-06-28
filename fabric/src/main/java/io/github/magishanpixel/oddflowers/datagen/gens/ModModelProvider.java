@@ -19,6 +19,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
+import java.util.List;
+import java.util.stream.IntStream;
+
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
         super(output);
@@ -34,12 +37,14 @@ public class ModModelProvider extends FabricModelProvider {
         genBlockCustomModel(gen, ModBlocks.HOLLOW_BLEEDING_QUADHEART.asBlock());
 
         genBlockCustomModel(gen, ModBlocks.BEE_BALM.asBlock());
-        genBlockCustomModel(gen, ModBlocks.WARPED_BALM.asBlock());
-        genBlockCustomModel(gen, ModBlocks.CRIMSON_BALM.asBlock());
 
         genBlockCustomModel(gen, ModBlocks.BLUE_HIBISCUS.asBlock());
         genBlockCustomModel(gen, ModBlocks.ORANGE_HIBISCUS.asBlock());
         genBlockCustomModel(gen, ModBlocks.PINK_HIBISCUS.asBlock());
+        genBlockCustomModel(gen, ModBlocks.PINK_LACECAP_HYDRANGEA.asBlock());
+        genBlockCustomModel(gen, ModBlocks.WHITE_LACECAP_HYDRANGEA.asBlock());
+        genBlockCustomModel(gen, ModBlocks.BLUE_LACECAP_HYDRANGEA.asBlock());
+        genBlockCustomModel(gen, ModBlocks.FIRE_LILY.asBlock());
 
         genBlockCustomModel(gen, ModBlocks.LAMPBLOSSOM.asBlock());
 
@@ -88,6 +93,7 @@ public class ModModelProvider extends FabricModelProvider {
         createCustomFlowerBed(gen, ModBlocks.LAVA_HYACINTH.asBlock(), 4);
         createCustomFlowerBed(gen, ModBlocks.TORCH_GINGER.asBlock(), 3);
         createCustomFlowerBed(gen, ModBlocks.DANDELION_BED.asBlock(), 4);
+        createCustomFlowerBed(gen, ModBlocks.WATER_POPPY.asBlock(), 4);
 
         gen.createSimpleFlatItemModel(ModBlocks.BLUE_TWIN_CELALION.asBlock());
         gen.createSimpleFlatItemModel(ModBlocks.WHITE_TWIN_CELALION.asBlock());
@@ -105,6 +111,8 @@ public class ModModelProvider extends FabricModelProvider {
 
         gen.createSimpleFlatItemModel(ModBlocks.BIRD_OF_PARADISE.asBlock());
         gen.createSimpleFlatItemModel(ModBlocks.WELWITSCHIA.asBlock());
+
+        createSunflowerBed(gen);
 
 
     }
@@ -131,11 +139,8 @@ public class ModModelProvider extends FabricModelProvider {
         gen.generateFlatItem(ModBlocks.WHITE_GINGER_TULIP.asItem(), ModelTemplates.FLAT_ITEM);;
 
         gen.generateFlatItem(ModBlocks.BEE_BALM.asItem(), ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(ModBlocks.CRIMSON_BALM.asItem(), ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(ModBlocks.WARPED_BALM.asItem(), ModelTemplates.FLAT_ITEM);
 
         gen.generateFlatItem(ModBlocks.LAMPBLOSSOM.asItem(), ModelTemplates.FLAT_ITEM);
-       // gen.generateFlatItem(ModBlocks.TITAN_ARUM.asItem(), ModelTemplates.FLAT_ITEM);
 
         gen.generateFlatItem(ModBlocks.TALL_ALLIUM.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.BLUE_TALL_ALLIUM.asItem(), ModelTemplates.FLAT_ITEM);
@@ -156,6 +161,12 @@ public class ModModelProvider extends FabricModelProvider {
         gen.generateFlatItem(ModBlocks.WHITE_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.RED_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
 
+        gen.generateFlatItem(ModBlocks.WATER_POPPY.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.SUNFLOWER_BED.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.FIRE_LILY.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.BLUE_LACECAP_HYDRANGEA.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.WHITE_LACECAP_HYDRANGEA.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.PINK_LACECAP_HYDRANGEA.asItem(), ModelTemplates.FLAT_ITEM);
 
     }
 
@@ -192,8 +203,6 @@ public class ModModelProvider extends FabricModelProvider {
         MultiPartGenerator stateGen = MultiPartGenerator.multiPart(flowerBedBlock);
 
         for (int i = 1; i <= maxCount; i++) {
-            //Integer[] array = IntStream.rangeClosed(i + 1, maxCount).boxed().toArray(Integer[]::new);
-
             ResourceLocation texture = getModelPath(blockId.getPath() + i);
 
             stateGen = stateGen
@@ -207,6 +216,44 @@ public class ModModelProvider extends FabricModelProvider {
 
         gen.blockStateOutput.accept(stateGen);
 
+    }
+
+    private void createSunflowerBed(BlockModelGenerators gen) {
+        Block block = ModBlocks.SUNFLOWER_BED.asBlock();
+
+        String id = "sunflower_bed";
+
+        ResourceLocation group1 = getModelPath(id + 1);
+        ResourceLocation group2 = getModelPath(id + 2);
+        ResourceLocation group3 = getModelPath(id + 3);
+        ResourceLocation group4 = getModelPath(id + 4);
+
+        MultiPartGenerator v = MultiPartGenerator.multiPart(block);
+
+        for (Direction dir : List.of(Direction.NORTH,Direction.SOUTH,Direction.EAST,Direction.WEST)) {
+            List<ResourceLocation> myList;
+
+            switch (dir) {
+                case NORTH -> myList = List.of(group2, group3, group4, group1);
+                case SOUTH -> myList = List.of(group4, group1, group2, group3);
+                case EAST -> myList = List.of(group1, group2, group3, group4);
+                case WEST -> myList = List.of(group3, group4, group1, group2);
+                default -> myList = List.of();
+            }
+
+            for (int i = 1; i <= 4; i++) {
+               v = v.with(Condition.condition().term(CustomFlowerBedBlock.AMOUNT, i, i < 4 ? IntStream.rangeClosed(Math.min(i + 1, 4), 4).boxed().toArray(Integer[]::new) : new Integer[]{}).term(BlockStateProperties.HORIZONTAL_FACING, dir), Variant.variant().with(VariantProperties.MODEL, myList.get(i - 1)));
+            }
+
+            /*
+            v = v
+                    .with(Condition.condition().term(CustomFlowerBedBlock.AMOUNT, 1), Variant.variant().with(VariantProperties.MODEL, getModelPath(id + 1)))
+                    .with(Condition.condition().term(CustomFlowerBedBlock.AMOUNT, 2), Variant.variant().with(VariantProperties.MODEL, getModelPath(id + 2)))
+                    .with(Condition.condition().term(CustomFlowerBedBlock.AMOUNT, 3), Variant.variant().with(VariantProperties.MODEL, getModelPath(id + 3)))
+                    .with(Condition.condition().term(CustomFlowerBedBlock.AMOUNT, 4), Variant.variant().with(VariantProperties.MODEL, getModelPath(id + 4)));*/
+        }
+
+        gen.blockStateOutput.accept(v);
     }
 
     private ResourceLocation getModelPath(String path) {

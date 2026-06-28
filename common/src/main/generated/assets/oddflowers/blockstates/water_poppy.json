@@ -1,0 +1,160 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy1"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy1",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy1",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy1",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy2"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy2",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy2",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy2",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy3"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy3",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy3",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy3",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy4"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy4",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy4",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/water_poppy4",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "4"
+      }
+    }
+  ]
+}

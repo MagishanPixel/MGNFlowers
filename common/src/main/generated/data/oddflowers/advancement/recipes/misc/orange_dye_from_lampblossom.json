@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lampblossom": {
+      "conditions": {
+        "items": [
+          {
+            "items": "oddflowers:lampblossom"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "oddflowers:orange_dye_from_lampblossom"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lampblossom"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oddflowers:orange_dye_from_lampblossom"
+    ]
+  }
+}

@@ -47,8 +47,6 @@ public class ModItems {
         construct.registerBlockItem(PrefList.BLEEDING_QUADHEART.of("hollow", false), ModBlocks.HOLLOW_BLEEDING_QUADHEART);
 
         construct.registerBlockItem("bee_balm", ModBlocks.BEE_BALM);
-        construct.registerBlockItem("crimson_balm", ModBlocks.CRIMSON_BALM);
-        construct.registerBlockItem("warped_balm", ModBlocks.WARPED_BALM);
 
         construct.registerBlockItem("lampblossom", ModBlocks.LAMPBLOSSOM);
 
@@ -81,6 +79,14 @@ public class ModItems {
 
         construct.registerBlockItem(PrefList.VINE_LOTUS.colorOf(StraddColor.white), ModBlocks.WHITE_VINE_LOTUS);
         construct.registerBlockItem(PrefList.VINE_LOTUS.colorOf(StraddColor.pink), ModBlocks.PINK_VINE_LOTUS);
+
+        construct.registerBlockItem(PrefList.LACECAP_HYDRANGEA.colorOf(StraddColor.white), ModBlocks.WHITE_LACECAP_HYDRANGEA);
+        construct.registerBlockItem(PrefList.LACECAP_HYDRANGEA.colorOf(StraddColor.blue), ModBlocks.BLUE_LACECAP_HYDRANGEA);
+        construct.registerBlockItem(PrefList.LACECAP_HYDRANGEA.colorOf(StraddColor.pink), ModBlocks.PINK_LACECAP_HYDRANGEA);
+
+        construct.registerBlockItem("fire_lily", ModBlocks.FIRE_LILY);
+        items.register("water_poppy", a -> new WaterHyacinthBlockItem(ModBlocks.WATER_POPPY.asBlock(), a));
+        construct.registerBlockItem("sunflower_bed", ModBlocks.SUNFLOWER_BED);
     }
 
     public static void init(BalmCreativeModeTabRegistrar tab) {
@@ -123,22 +129,27 @@ public class ModItems {
                     output.accept(ModBlocks.TALL_ALLIUM);
                     output.accept(ModBlocks.BLUE_TALL_ALLIUM);
 
+                    output.accept(ModBlocks.BLUE_LACECAP_HYDRANGEA);
+                    output.accept(ModBlocks.PINK_LACECAP_HYDRANGEA);
+                    output.accept(ModBlocks.WHITE_LACECAP_HYDRANGEA);
+
                     output.accept(ModBlocks.WHITE_VINE_LOTUS);
                     output.accept(ModBlocks.PINK_VINE_LOTUS);
-
-                    output.accept(ModBlocks.WATER_HYACINTH.asItem());
-                    output.accept(ModBlocks.LAVA_HYACINTH.asItem());
-                    output.accept(ModBlocks.TORCH_GINGER);
-                    output.accept(ModBlocks.DANDELION_BED);
 
                     output.accept(ModBlocks.BLEEDING_QUADHEART.asItem());
                     output.accept(ModBlocks.CANDY_BLEEDING_QUADHEART.asItem());
                     output.accept(ModBlocks.HOLLOW_BLEEDING_QUADHEART.asItem());
 
-                    output.accept(ModBlocks.BEE_BALM);
-                    output.accept(ModBlocks.CRIMSON_BALM);
-                    output.accept(ModBlocks.WARPED_BALM);
+                    output.accept(ModBlocks.WATER_HYACINTH.asItem());
+                    output.accept(ModBlocks.LAVA_HYACINTH.asItem());
 
+                    output.accept(ModBlocks.WATER_POPPY);
+                    output.accept(ModBlocks.TORCH_GINGER);
+                    output.accept(ModBlocks.DANDELION_BED);
+                    output.accept(ModBlocks.SUNFLOWER_BED);
+
+                    output.accept(ModBlocks.FIRE_LILY);
+                    output.accept(ModBlocks.BEE_BALM);
                     output.accept(ModBlocks.TITAN_ARUM);
                     output.accept(ModBlocks.BIRD_OF_PARADISE);
                     output.accept(ModBlocks.LAMPBLOSSOM);

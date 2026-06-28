@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lava_hyacinth": {
+      "conditions": {
+        "items": [
+          {
+            "items": "oddflowers:lava_hyacinth"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "oddflowers:orange_dye_from_lava_hyacinth"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lava_hyacinth"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oddflowers:orange_dye_from_lava_hyacinth"
+    ]
+  }
+}

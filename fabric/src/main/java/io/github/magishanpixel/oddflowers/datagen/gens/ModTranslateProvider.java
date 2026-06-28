@@ -48,8 +48,6 @@ public class ModTranslateProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.HOLLOW_BLEEDING_QUADHEART.asBlock(), PrefList.BLEEDING_QUADHEART.of("hollow", true));
 
         translationBuilder.add(ModBlocks.BEE_BALM.asBlock(), "Bee Balm");
-        translationBuilder.add(ModBlocks.CRIMSON_BALM.asBlock(), "Crimson Balm");
-        translationBuilder.add(ModBlocks.WARPED_BALM.asBlock(), "Warped Balm");
 
         translationBuilder.add(ModBlocks.LAMPBLOSSOM.asBlock(), "Lampblossom");
 
@@ -82,5 +80,15 @@ public class ModTranslateProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ModBlocks.WHITE_VINE_LOTUS.asBlock(), PrefList.VINE_LOTUS.colorOf_Cap(StraddColor.white));
         translationBuilder.add(ModBlocks.PINK_VINE_LOTUS.asBlock(), PrefList.VINE_LOTUS.colorOf_Cap(StraddColor.pink));
+
+        translationBuilder.add(ModBlocks.PINK_LACECAP_HYDRANGEA.asBlock(), PrefList.LACECAP_HYDRANGEA.colorOf_Cap(StraddColor.pink));
+        translationBuilder.add(ModBlocks.WHITE_LACECAP_HYDRANGEA.asBlock(), PrefList.LACECAP_HYDRANGEA.colorOf_Cap(StraddColor.white));
+        translationBuilder.add(ModBlocks.BLUE_LACECAP_HYDRANGEA.asBlock(), PrefList.LACECAP_HYDRANGEA.colorOf_Cap(StraddColor.blue));
+
+        translationBuilder.add(ModBlocks.FIRE_LILY.asBlock(), "Fire Lily");
+        translationBuilder.add(ModBlocks.SUNFLOWER_BED.asBlock(), "Sunflower Bed");
+        translationBuilder.add(ModBlocks.WATER_POPPY.asBlock(), "Water Poppy");
+
+
     }
 }

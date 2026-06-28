@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "oddflowers:light_blue_dye_from_turquoise_tall_tulip"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_turquoise_tall_tulip": {
+      "conditions": {
+        "items": [
+          {
+            "items": "oddflowers:turquoise_tall_tulip"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_turquoise_tall_tulip"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oddflowers:light_blue_dye_from_turquoise_tall_tulip"
+    ]
+  }
+}

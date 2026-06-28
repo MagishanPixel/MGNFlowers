@@ -18,14 +18,24 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 public class VineLotusBlock extends TallerFlowerBlock implements SimpleWaterloggedBlock {
     private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+    private static final VoxelShape TOP_SHAPE = Block.box((double)0.0F, (double)0.0F, (double)0.0F, (double)16.0F, (double)5.0F, (double)16.0F);
 
     public VineLotusBlock(Holder<MobEffect> suspiciousStewEffect, int effectDuration, Properties properties) {
         super(suspiciousStewEffect, effectDuration, properties);
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+        Vec3 vec3 = state.getOffset(level, pos);
+        return state.getValue(STEM) == 3 ? TOP_SHAPE.move(vec3.x, vec3.y, vec3.z) : super.getShape(state, level, pos, context);
     }
 
     @Override

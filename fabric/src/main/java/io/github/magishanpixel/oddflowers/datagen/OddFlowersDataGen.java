@@ -1,6 +1,8 @@
 package io.github.magishanpixel.oddflowers.datagen;
 
+import io.github.magishanpixel.oddflowers.datagen.gens.ModBlockLootableProvider;
 import io.github.magishanpixel.oddflowers.datagen.gens.ModModelProvider;
+import io.github.magishanpixel.oddflowers.datagen.gens.ModRecipeProvider;
 import io.github.magishanpixel.oddflowers.datagen.gens.ModTranslateProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
@@ -11,5 +13,7 @@ public class OddFlowersDataGen implements DataGeneratorEntrypoint {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
         pack.addProvider(ModModelProvider::new);
         pack.addProvider(ModTranslateProvider::new);
+        pack.addProvider(ModBlockLootableProvider::new);
+        pack.addProvider(ModRecipeProvider::new);
     }
 }

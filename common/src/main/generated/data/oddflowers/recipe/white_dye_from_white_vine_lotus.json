@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "oddflowers:white_vine_lotus"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:white_dye"
+  }
+}

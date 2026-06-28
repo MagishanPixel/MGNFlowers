@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "oddflowers:green_dye_from_titan_arum"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_titan_arum": {
+      "conditions": {
+        "items": [
+          {
+            "items": "oddflowers:titan_arum"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_titan_arum"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "oddflowers:green_dye_from_titan_arum"
+    ]
+  }
+}

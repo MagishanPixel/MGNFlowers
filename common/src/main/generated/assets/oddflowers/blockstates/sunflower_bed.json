@@ -1,0 +1,148 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed2"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "1|2|3|4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed3"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "2|3|4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed4"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "3|4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed1"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed4"
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "1|2|3|4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed1"
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "2|3|4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed2"
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "3|4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed3"
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed1"
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "1|2|3|4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed2"
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "2|3|4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed3"
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "3|4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed4"
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed3"
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "1|2|3|4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed4"
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "2|3|4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed1"
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "3|4"
+      }
+    },
+    {
+      "apply": {
+        "model": "oddflowers:block/sunflower_bed2"
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "4"
+      }
+    }
+  ]
+}

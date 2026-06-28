@@ -1,9 +1,6 @@
 package io.github.magishanpixel.oddflowers.client;
 
-import io.github.magishanpixel.oddflowers.client.particle.FlyParticle;
-import io.github.magishanpixel.oddflowers.client.particle.StarFallingParticle;
 import io.github.magishanpixel.oddflowers.init.ModBlocks;
-import io.github.magishanpixel.oddflowers.init.ModParticles;
 import io.github.magishanpixel.oddflowers.misc.OddLib;
 import net.blay09.mods.balm.api.client.module.BalmClientModule;
 import net.blay09.mods.balm.client.particle.BalmParticleProviderRegistrar;
@@ -20,14 +17,6 @@ public class OddFlowersClient implements BalmClientModule {
     @Override
     public ResourceLocation getId() {
         return OddLib.newId("client");
-    }
-
-    @Override
-    public void registerParticleProviders(BalmParticleProviderRegistrar particles) {
-        particles.register(ModParticles.BEE, a -> new FlyParticle.Provider(a, false));
-        particles.register(ModParticles.CRIMSON_FIREFLY, a -> new FlyParticle.Provider(a, true));
-        particles.register(ModParticles.WARPED_FIREFLY, a -> new FlyParticle.Provider(a, true));
-        particles.register(ModParticles.STAR_FALLING, StarFallingParticle.Provider::new);
     }
 
     @Override
@@ -62,8 +51,6 @@ public class OddFlowersClient implements BalmClientModule {
         rend.setRenderLayer(ModBlocks.HOLLOW_BLEEDING_QUADHEART, RenderType.cutout());
 
         rend.setRenderLayer(ModBlocks.BEE_BALM, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.WARPED_BALM, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.CRIMSON_BALM, RenderType.cutout());
 
         rend.setRenderLayer(ModBlocks.LAMPBLOSSOM, RenderType.cutout());
 
@@ -95,6 +82,15 @@ public class OddFlowersClient implements BalmClientModule {
 
         rend.setRenderLayer(ModBlocks.PINK_VINE_LOTUS, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.WHITE_VINE_LOTUS, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.WATER_POPPY, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.SUNFLOWER_BED, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.FIRE_LILY, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.BLUE_LACECAP_HYDRANGEA, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.WHITE_LACECAP_HYDRANGEA, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.PINK_LACECAP_HYDRANGEA, RenderType.cutout());
 
     }
 

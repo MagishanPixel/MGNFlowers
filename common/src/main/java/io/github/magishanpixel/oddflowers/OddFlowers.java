@@ -2,11 +2,9 @@ package io.github.magishanpixel.oddflowers;
 
 import io.github.magishanpixel.oddflowers.init.ModBlocks;
 import io.github.magishanpixel.oddflowers.init.ModItems;
-import io.github.magishanpixel.oddflowers.init.ModParticles;
 import io.github.magishanpixel.oddflowers.misc.Constants;
-import io.github.magishanpixel.oddflowers.misc.StringAdder;
+import io.github.magishanpixel.oddflowers.platform.Services;
 import net.blay09.mods.balm.api.module.BalmModule;
-import net.blay09.mods.balm.core.particles.BalmParticleTypeRegistrar;
 import net.blay09.mods.balm.world.item.BalmCreativeModeTabRegistrar;
 import net.blay09.mods.balm.world.item.BalmItemRegistrar;
 import net.blay09.mods.balm.world.level.block.BalmBlockRegistrar;
@@ -35,10 +33,5 @@ public class OddFlowers implements BalmModule {
     @Override
     public void registerItems(BalmItemRegistrar items) {
         ModItems.init(items);
-    }
-
-    @Override
-    public void registerParticleTypes(BalmParticleTypeRegistrar particleTypes) {
-        ModParticles.init(particleTypes);
     }
 }

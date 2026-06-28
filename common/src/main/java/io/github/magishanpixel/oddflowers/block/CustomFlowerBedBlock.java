@@ -25,7 +25,7 @@ public class CustomFlowerBedBlock extends BushBlock implements BonemealableBlock
     public static final IntegerProperty AMOUNT = IntegerProperty.create("flower_amount", 1, 8);
     public static final DirectionProperty  FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final MapCodec<CustomFlowerBedBlock> CODEC = simpleCodec(CustomFlowerBedBlock::new);
-    private static final VoxelShape SHAPE = Block.box((double)0.0F, (double)0.0F, (double)2.0F, (double)16.0F, (double)5.0F, (double)16.0F);
+    private static final VoxelShape SHAPE = Block.box((double)0.0F, (double)0.0F, (double)0.0F, (double)16.0F, (double)5.0F, (double)16.0F);
 
     public CustomFlowerBedBlock(Properties properties) {
         super(properties);
