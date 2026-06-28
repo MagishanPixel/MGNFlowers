@@ -1,7 +1,0 @@
-{
-  "parent": "oddflowers:block/white_lacecap_hydrangea",
-  "textures": {
-    "0": "oddflowers:block/blue_lacecap_hydrangea",
-    "particle": "oddflowers:block/blue_lacecap_hydrangea"
-  }
-}

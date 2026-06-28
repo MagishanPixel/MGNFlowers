@@ -1,0 +1,7 @@
+{
+  "parent": "mgnflowers:block/templates/slightly_cross",
+  "textures": {
+    "0": "mgnflowers:block/vine_lotus_stem_bottom",
+    "particle": "mgnflowers:block/vine_lotus_stem_bottom"
+  }
+}

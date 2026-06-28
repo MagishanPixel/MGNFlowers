@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "mgnflowers:block/titan_arum_bottom"
+  }
+}

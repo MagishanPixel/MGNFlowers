@@ -1,7 +1,0 @@
-{
-  "parent": "oddflowers:block/templates/slightly_cross",
-  "textures": {
-    "0": "oddflowers:block/pink_ginger_tulip_top",
-    "particle": "oddflowers:block/pink_ginger_tulip_top"
-  }
-}

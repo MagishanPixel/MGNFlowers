@@ -1,0 +1,36 @@
+package io.github.magishanpixel.mgnflowers;
+
+import io.github.magishanpixel.mgnflowers.init.ModBlocks;
+import io.github.magishanpixel.mgnflowers.init.ModItems;
+import io.github.magishanpixel.mgnflowers.misc.Constants;
+import net.blay09.mods.balm.api.module.BalmModule;
+import net.blay09.mods.balm.world.item.BalmCreativeModeTabRegistrar;
+import net.blay09.mods.balm.world.item.BalmItemRegistrar;
+import net.blay09.mods.balm.world.level.block.BalmBlockRegistrar;
+import net.minecraft.resources.ResourceLocation;
+
+public class MGNFlowers implements BalmModule {
+    public static void init() {
+
+    }
+
+    @Override
+    public ResourceLocation getId() {
+        return ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "common");
+    }
+
+    @Override
+    public void registerBlocks(BalmBlockRegistrar factory) {
+        ModBlocks.init(factory);
+    }
+
+    @Override
+    public void registerCreativeModeTabs(BalmCreativeModeTabRegistrar creativeModeTabs) {
+        ModItems.init(creativeModeTabs);
+    }
+
+    @Override
+    public void registerItems(BalmItemRegistrar items) {
+        ModItems.init(items);
+    }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "mgnflowers:block/templates/slightly_cross",
+  "textures": {
+    "0": "mgnflowers:block/ginger_tulip_bottom",
+    "particle": "mgnflowers:block/ginger_tulip_bottom"
+  }
+}

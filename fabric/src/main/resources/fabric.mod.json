@@ -15,13 +15,13 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "io.github.magishanpixel.oddflowers.OddFlowers_FABRIC"
+            "io.github.magishanpixel.mgnflowers.MGNFlowers_FABRIC"
         ],
         "client" : [
-            "io.github.magishanpixel.oddflowers.client.OddFlowersClient_FABRIC"
+            "io.github.magishanpixel.mgnflowers.client.MGNFlowersClient_FABRIC"
         ],
         "fabric-datagen": [
-            "io.github.magishanpixel.oddflowers.datagen.OddFlowersDataGen"
+            "io.github.magishanpixel.mgnflowers.datagen.OddFlowersDataGen"
         ]
     },
     "mixins": [
@@ -34,9 +34,6 @@
         "minecraft": "${minecraft_version}",
         "java": ">=${java_version}",
         "balm-fabric": "*"
-    },
-    "suggests": {
-        "another-mod": "*"
     }
 }
   

@@ -1,6 +1,0 @@
-{
-	"parent": "oddflowers:block/blue_tall_hyacinth/bottom",
-	"textures": {
-		"1": "oddflowers:block/pink_tall_hyacinth"
-	}
-}

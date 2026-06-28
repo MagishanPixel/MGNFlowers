@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "mgnflowers:item/red_tall_hyacinth"
+  }
+}

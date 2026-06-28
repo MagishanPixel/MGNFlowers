@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "mgnflowers:block/titan_arum_bottom"
+    },
+    "half=upper": {
+      "model": "mgnflowers:block/titan_arum_top"
+    }
+  }
+}

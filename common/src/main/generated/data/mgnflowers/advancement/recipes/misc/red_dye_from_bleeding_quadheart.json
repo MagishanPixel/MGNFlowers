@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bleeding_quadheart": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mgnflowers:bleeding_quadheart"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mgnflowers:red_dye_from_bleeding_quadheart"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bleeding_quadheart"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mgnflowers:red_dye_from_bleeding_quadheart"
+    ]
+  }
+}

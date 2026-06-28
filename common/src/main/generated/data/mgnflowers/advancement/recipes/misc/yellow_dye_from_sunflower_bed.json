@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sunflower_bed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mgnflowers:sunflower_bed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mgnflowers:yellow_dye_from_sunflower_bed"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sunflower_bed"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mgnflowers:yellow_dye_from_sunflower_bed"
+    ]
+  }
+}

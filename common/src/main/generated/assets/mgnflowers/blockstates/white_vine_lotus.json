@@ -1,0 +1,28 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "mgnflowers:block/vine_lotuss/bases/vine_lotus_bottom"
+      },
+      "when": {
+        "stem": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/vine_lotuss/bases/vine_lotus_middle"
+      },
+      "when": {
+        "stem": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/vine_lotuss/white_vine_lotus_top"
+      },
+      "when": {
+        "stem": "3"
+      }
+    }
+  ]
+}

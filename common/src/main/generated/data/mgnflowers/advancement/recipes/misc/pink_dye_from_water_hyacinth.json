@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mgnflowers:pink_dye_from_water_hyacinth"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_water_hyacinth": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mgnflowers:water_hyacinth"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_water_hyacinth"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mgnflowers:pink_dye_from_water_hyacinth"
+    ]
+  }
+}

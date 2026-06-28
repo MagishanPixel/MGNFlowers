@@ -1,0 +1,7 @@
+{
+  "parent": "mgnflowers:block/white_lacecap_hydrangea",
+  "textures": {
+    "0": "mgnflowers:block/blue_lacecap_hydrangea",
+    "particle": "mgnflowers:block/blue_lacecap_hydrangea"
+  }
+}

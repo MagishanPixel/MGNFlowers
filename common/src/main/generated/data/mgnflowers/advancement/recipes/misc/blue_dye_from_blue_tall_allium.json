@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blue_tall_allium": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mgnflowers:blue_tall_allium"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mgnflowers:blue_dye_from_blue_tall_allium"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blue_tall_allium"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mgnflowers:blue_dye_from_blue_tall_allium"
+    ]
+  }
+}

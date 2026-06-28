@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/tinted_cross",
-  "textures": {
-    "cross": "oddflowers:block/pink_romenta"
-  }
-}

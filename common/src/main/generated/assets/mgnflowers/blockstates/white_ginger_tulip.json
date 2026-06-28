@@ -1,0 +1,28 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "mgnflowers:block/ginger_tulips/bases/ginger_tulip_bottom"
+      },
+      "when": {
+        "stem": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/ginger_tulips/bases/ginger_tulip_middle"
+      },
+      "when": {
+        "stem": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/ginger_tulips/white_ginger_tulip_top"
+      },
+      "when": {
+        "stem": "3"
+      }
+    }
+  ]
+}

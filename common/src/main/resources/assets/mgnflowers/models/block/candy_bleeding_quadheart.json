@@ -1,0 +1,7 @@
+{
+  "parent": "mgnflowers:block/templates/slightly_cross",
+  "textures": {
+    "0": "mgnflowers:block/candy_bleeding_quadheart",
+    "particle": "mgnflowers:block/candy_bleeding_quadheart"
+  }
+}
