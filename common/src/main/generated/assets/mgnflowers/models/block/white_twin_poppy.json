@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/tinted_cross",
+  "textures": {
+    "cross": "mgnflowers:block/white_twin_poppy"
+  }
+}

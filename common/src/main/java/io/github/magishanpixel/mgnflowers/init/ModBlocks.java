@@ -1,17 +1,21 @@
 package io.github.magishanpixel.mgnflowers.init;
 
 import io.github.magishanpixel.mgnflowers.block.*;
+import io.github.magishanpixel.mgnflowers.item.WaterFlowerBedBlockItem;
 import io.github.magishanpixel.mgnflowers.misc.Constants;
 import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import io.github.magishanpixel.mgnflowers.misc.PrefList;
 import io.github.magishanpixel.mgnflowers.misc.StraddColor;
 import net.blay09.mods.balm.world.level.block.BalmBlockRegistrar;
+import net.blay09.mods.balm.world.level.block.BalmBlockRegistration;
 import net.blay09.mods.balm.world.level.block.DeferredBlock;
 import net.minecraft.core.Holder;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.SoundType;
@@ -21,20 +25,21 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.ToIntFunction;
 
 public class ModBlocks {
 
-    // CUSTOM
     public static DeferredBlock MOTH_IRIS;
+    public static DeferredBlock IRIS;
     public static DeferredBlock GROTTAL_BLOOM;
 
-    public static DeferredBlock BLUE_TWIN_CELALION;
-    public static DeferredBlock ORANGE_TWIN_CELALION;
-    public static DeferredBlock WHITE_TWIN_CELALION;
-    public static DeferredBlock RED_TWIN_CELALION;
-    public static DeferredBlock PINK_TWIN_CELALION;
+    public static DeferredBlock BLUE_TWIN_POPPY;
+    public static DeferredBlock ORANGE_TWIN_POPPY;
+    public static DeferredBlock WHITE_TWIN_POPPY;
+    public static DeferredBlock RED_TWIN_POPPY;
+    public static DeferredBlock PINK_TWIN_POPPY;
 
     public static DeferredBlock ORANGE_TALL_TULIP;
     public static DeferredBlock RED_TALL_TULIP;
@@ -45,10 +50,10 @@ public class ModBlocks {
 
     public static DeferredBlock GLOWING_TALL_TULIP;
 
-    public static DeferredBlock RED_GINGER_TULIP;
-    public static DeferredBlock WHITE_GINGER_TULIP;
-    public static DeferredBlock PINK_GINGER_TULIP;
-    public static DeferredBlock ORANGE_GINGER_TULIP;
+    public static DeferredBlock RED_GINGER_LILY;
+    public static DeferredBlock WHITE_GINGER_LILY;
+    public static DeferredBlock PINK_GINGER_LILY;
+    public static DeferredBlock ORANGE_GINGER_LILY;
 
     public static DeferredBlock WATER_HYACINTH;
     public static DeferredBlock LAVA_HYACINTH;
@@ -102,14 +107,15 @@ public class ModBlocks {
     public static void init(BalmBlockRegistrar blocks) {
         FloweryConstruct construct = new FloweryConstruct(blocks);
 
-        MOTH_IRIS = construct.registerBasic("moth_iris", MobEffects.LEVITATION, 2, DyeColor.LIGHT_GRAY);
+        MOTH_IRIS = construct.registerBasic("moth_iris", MobEffects.LEVITATION, 2, flowerProp().dye(DyeColor.LIGHT_GRAY).disableOffset().build());
+        IRIS = construct.registerBasic("iris", MobEffects.ABSORPTION, 2, flowerProp().dye(DyeColor.PURPLE).disableOffset().build());
         GROTTAL_BLOOM = construct.registerBasic("grottal_bloom", MobEffects.GLOWING, 4, flowerProp().setGlow(GlowValue.of(6, true)).dye(DyeColor.CYAN).build());
 
-        BLUE_TWIN_CELALION = construct.registerBasic(PrefList.TWIN_CELALION.colorOf(StraddColor.blue), MobEffects.WATER_BREATHING, 4, DyeColor.BLUE);
-        ORANGE_TWIN_CELALION = construct.registerBasic(PrefList.TWIN_CELALION.colorOf(StraddColor.orange), MobEffects.FIRE_RESISTANCE, 5, DyeColor.ORANGE);
-        WHITE_TWIN_CELALION = construct.registerBasic(PrefList.TWIN_CELALION.colorOf(StraddColor.white), MobEffects.CONFUSION, 6, DyeColor.WHITE);
-        RED_TWIN_CELALION = construct.registerBasic(PrefList.TWIN_CELALION.colorOf(StraddColor.red), MobEffects.ABSORPTION, 2, DyeColor.RED);
-        PINK_TWIN_CELALION = construct.registerBasic(PrefList.TWIN_CELALION.colorOf(StraddColor.pink), MobEffects.HEAL, 2, DyeColor.PINK);
+        BLUE_TWIN_POPPY = construct.registerBasic(PrefList.TWIN_POPPY.colorOf(StraddColor.blue), MobEffects.WATER_BREATHING, 4, DyeColor.BLUE);
+        ORANGE_TWIN_POPPY = construct.registerBasic(PrefList.TWIN_POPPY.colorOf(StraddColor.orange), MobEffects.FIRE_RESISTANCE, 5, DyeColor.ORANGE);
+        WHITE_TWIN_POPPY = construct.registerBasic(PrefList.TWIN_POPPY.colorOf(StraddColor.white), MobEffects.CONFUSION, 6, DyeColor.WHITE);
+        RED_TWIN_POPPY = construct.registerBasic(PrefList.TWIN_POPPY.colorOf(StraddColor.red), MobEffects.ABSORPTION, 2, DyeColor.RED);
+        PINK_TWIN_POPPY = construct.registerBasic(PrefList.TWIN_POPPY.colorOf(StraddColor.pink), MobEffects.HEAL, 2, DyeColor.PINK);
 
         ORANGE_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.colorOf(StraddColor.orange), a -> new TallerFlowerBlock(MobEffects.FIRE_RESISTANCE, 1, a), DyeColor.ORANGE);
         RED_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.colorOf(StraddColor.red), a -> new TallerFlowerBlock(MobEffects.DAMAGE_RESISTANCE, 4, a), DyeColor.RED);
@@ -119,13 +125,13 @@ public class ModBlocks {
         TURQUOISE_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.of("turquoise", false), a -> new TallerFlowerBlock(MobEffects.WATER_BREATHING, 6, a), DyeColor.LIGHT_BLUE);
         GLOWING_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.of("glowing", false), a -> new TallerFlowerBlock(MobEffects.GLOWING, 4, a), DyeColor.ORANGE);
 
-        RED_GINGER_TULIP = construct.registerSameProperty(PrefList.GINGER_TULIP.colorOf(StraddColor.red), a -> new TallerFlowerBlock(MobEffects.HEALTH_BOOST, 2, a), DyeColor.RED);
-        WHITE_GINGER_TULIP = construct.registerSameProperty(PrefList.GINGER_TULIP.colorOf(StraddColor.white), a -> new TallerFlowerBlock(MobEffects.GLOWING, 4, a), DyeColor.WHITE);
-        PINK_GINGER_TULIP = construct.registerSameProperty(PrefList.GINGER_TULIP.colorOf(StraddColor.pink), a -> new TallerFlowerBlock(MobEffects.HEAL, 2, a), DyeColor.PINK);
-        ORANGE_GINGER_TULIP = construct.registerSameProperty(PrefList.GINGER_TULIP.colorOf(StraddColor.orange), a -> new TallerFlowerBlock(MobEffects.FIRE_RESISTANCE, 6, a), DyeColor.ORANGE);
+        RED_GINGER_LILY = construct.registerSameProperty(PrefList.GINGER_LILY.colorOf(StraddColor.red), a -> new TallerFlowerBlock(MobEffects.HEALTH_BOOST, 2, a), DyeColor.RED);
+        WHITE_GINGER_LILY = construct.registerSameProperty(PrefList.GINGER_LILY.colorOf(StraddColor.white), a -> new TallerFlowerBlock(MobEffects.GLOWING, 4, a), DyeColor.WHITE);
+        PINK_GINGER_LILY = construct.registerSameProperty(PrefList.GINGER_LILY.colorOf(StraddColor.pink), a -> new TallerFlowerBlock(MobEffects.HEAL, 2, a), DyeColor.PINK);
+        ORANGE_GINGER_LILY = construct.registerSameProperty(PrefList.GINGER_LILY.colorOf(StraddColor.orange), a -> new TallerFlowerBlock(MobEffects.FIRE_RESISTANCE, 6, a), DyeColor.ORANGE);
 
-        WATER_HYACINTH = construct.registerSameProperty("water_hyacinth", a -> new WaterHyacinthBlock(a, WaterHyacinthBlock.TYPE.WATER), flowerProp().disableOffset().disableDrop().dye(DyeColor.PINK).build());
-        LAVA_HYACINTH = construct.registerSameProperty("lava_hyacinth", a -> new WaterHyacinthBlock(a, WaterHyacinthBlock.TYPE.LAVA), flowerProp().disableOffset().disableDrop().dye(DyeColor.ORANGE).build());
+        WATER_HYACINTH = construct.registerSameProperty("water_hyacinth", a -> new WaterFlowerBedBlock(a, WaterFlowerBedBlock.TYPE.WATER), flowerProp().setBlockItem(WaterFlowerBedBlockItem::new).disableOffset().disableDrop().dye(DyeColor.PINK).build());
+        LAVA_HYACINTH = construct.registerSameProperty("lava_hyacinth", a -> new WaterFlowerBedBlock(a, WaterFlowerBedBlock.TYPE.LAVA), flowerProp().setBlockItem(WaterFlowerBedBlockItem::new).disableOffset().disableDrop().dye(DyeColor.ORANGE).build());
 
         BLEEDING_QUADHEART = construct.registerBasic("bleeding_quadheart", MobEffects.HEAL, 3, DyeColor.RED);
         CANDY_BLEEDING_QUADHEART = construct.registerBasic(PrefList.BLEEDING_QUADHEART.of("candy", false), MobEffects.HEALTH_BOOST, 3, DyeColor.PINK);
@@ -168,8 +174,8 @@ public class ModBlocks {
 
         SUNFLOWER_BED = construct.registerSameProperty("sunflower_bed", a -> new CustomFlowerBedBlock(a, 4),
                 flowerProp().disableOffset().disableDrop().dye(DyeColor.YELLOW).build());
-        WATER_POPPY = construct.registerSameProperty("water_poppy", a -> new WaterHyacinthBlock(a, WaterHyacinthBlock.TYPE.WATER),
-                flowerProp().disableOffset().disableDrop().dye(DyeColor.RED).build());
+        WATER_POPPY = construct.registerSameProperty("water_poppy", a -> new WaterFlowerBedBlock(a, WaterFlowerBedBlock.TYPE.WATER),
+                flowerProp().disableOffset().disableDrop().dye(DyeColor.RED).setBlockItem(WaterFlowerBedBlockItem::new).build());
 
         FIRE_LILY = construct.registerBasic("fire_lily", MobEffects.ABSORPTION, 3, DyeColor.ORANGE);
         WHITE_LACECAP_HYDRANGEA = construct.registerBasic(PrefList.LACECAP_HYDRANGEA.colorOf(StraddColor.white), MobEffects.LEVITATION, 5, DyeColor.WHITE);
@@ -214,7 +220,7 @@ public class ModBlocks {
                 MagishanLib.dataGenList.put(name, flowerProp);
             }
 
-            return blocks.register(name, constructors,
+            BalmBlockRegistration reg = blocks.register(name, constructors,
                     it -> {
                         BlockBehaviour.Properties prop = setPropFlower(it).offsetType(!flowerProp.isOffset ? BlockBehaviour.OffsetType.NONE : BlockBehaviour.OffsetType.XZ);
 
@@ -224,7 +230,13 @@ public class ModBlocks {
                         }
 
                         return prop;
-                    }).withDefaultItem().asDeferredBlock();
+                    });
+
+            reg = flowerProp.blockItem != null ? reg.withItem(flowerProp.blockItem) : reg.withDefaultItem();
+
+            return reg.asDeferredBlock();
+
+
         }
     }
 
@@ -234,12 +246,14 @@ public class ModBlocks {
         public final DyeColor dyeCol;
         public final boolean isOffset;
         public final boolean customDrop;
+        public final BiFunction<Block, Item.Properties, BlockItem> blockItem;
 
-        public FlowerProperty(GlowValue glowVal, DyeColor dyeCol, boolean isOffset, boolean hasCustomDrop) {
+        public FlowerProperty(GlowValue glowVal, DyeColor dyeCol, boolean isOffset, boolean hasCustomDrop, BiFunction<Block, Item.Properties, BlockItem> blockItem) {
             this.glowVal = glowVal;
             this.dyeCol = dyeCol;
             this.isOffset = isOffset;
             this.customDrop = hasCustomDrop;
+            this.blockItem = blockItem;
         }
 
         public static class Builder {
@@ -247,6 +261,7 @@ public class ModBlocks {
             private boolean isOffset = true;
             private DyeColor dyeCol = DyeColor.WHITE;
             private boolean customDrop = false;
+            private BiFunction<Block, Item.Properties, BlockItem> blockItem = null;
 
             public Builder setGlow(GlowValue val) {
                 this.glowVal = val;
@@ -268,8 +283,13 @@ public class ModBlocks {
                 return this;
             }
 
+            public Builder setBlockItem(BiFunction<Block, Item.Properties, BlockItem> item) {
+                this.blockItem = item;
+                return this;
+            }
+
             public FlowerProperty build() {
-                return new FlowerProperty(glowVal, dyeCol, isOffset, customDrop);
+                return new FlowerProperty(glowVal, dyeCol, isOffset, customDrop, blockItem);
             }
         }
     }

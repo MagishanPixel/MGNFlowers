@@ -21,7 +21,7 @@
             "io.github.magishanpixel.mgnflowers.client.MGNFlowersClient_FABRIC"
         ],
         "fabric-datagen": [
-            "io.github.magishanpixel.mgnflowers.datagen.OddFlowersDataGen"
+            "io.github.magishanpixel.mgnflowers.datagen.NGNFlowersDataGen"
         ]
     },
     "mixins": [

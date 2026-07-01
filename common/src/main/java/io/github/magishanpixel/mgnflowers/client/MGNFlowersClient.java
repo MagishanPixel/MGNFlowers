@@ -21,13 +21,14 @@ public class MGNFlowersClient implements BalmClientModule {
     @Override
     public void registerBlockRenderTypes(BalmBlockRenderTypeRegistrar rend) {
         rend.setRenderLayer(ModBlocks.MOTH_IRIS, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.IRIS, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.GROTTAL_BLOOM, RenderType.cutout());
 
-        rend.setRenderLayer(ModBlocks.RED_TWIN_CELALION, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.BLUE_TWIN_CELALION, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.ORANGE_TWIN_CELALION, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.WHITE_TWIN_CELALION, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.PINK_TWIN_CELALION, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.RED_TWIN_POPPY, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.BLUE_TWIN_POPPY, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.ORANGE_TWIN_POPPY, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.WHITE_TWIN_POPPY, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.PINK_TWIN_POPPY, RenderType.cutout());
 
         rend.setRenderLayer(ModBlocks.WHITE_TALL_TULIP, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.PURPLE_TALL_TULIP, RenderType.cutout());
@@ -37,10 +38,10 @@ public class MGNFlowersClient implements BalmClientModule {
         rend.setRenderLayer(ModBlocks.ORANGE_TALL_TULIP, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.GLOWING_TALL_TULIP, RenderType.cutout());
 
-        rend.setRenderLayer(ModBlocks.ORANGE_GINGER_TULIP, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.WHITE_GINGER_TULIP, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.PINK_GINGER_TULIP, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.RED_GINGER_TULIP, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.ORANGE_GINGER_LILY, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.WHITE_GINGER_LILY, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.PINK_GINGER_LILY, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.RED_GINGER_LILY, RenderType.cutout());
 
         rend.setRenderLayer(ModBlocks.WATER_HYACINTH, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.LAVA_HYACINTH, RenderType.cutout());

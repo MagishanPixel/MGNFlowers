@@ -21,11 +21,11 @@ public class ModTranslateProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.MOTH_IRIS.asBlock(), "Moth Iris");
         translationBuilder.add(ModBlocks.GROTTAL_BLOOM.asBlock(), "Grottal Bloom");
 
-        translationBuilder.add(ModBlocks.BLUE_TWIN_CELALION.asBlock(), "Blue Twin Celalion");
-        translationBuilder.add(ModBlocks.ORANGE_TWIN_CELALION.asBlock(), "Orange Twin Celalion");
-        translationBuilder.add(ModBlocks.WHITE_TWIN_CELALION.asBlock(), "White Twin Celalion");
-        translationBuilder.add(ModBlocks.RED_TWIN_CELALION.asBlock(), "Red Twin Celalion");
-        translationBuilder.add(ModBlocks.PINK_TWIN_CELALION.asBlock(), "Pink Twin Celalion");
+        translationBuilder.add(ModBlocks.BLUE_TWIN_POPPY.asBlock(), "Blue Twin Poppy");
+        translationBuilder.add(ModBlocks.ORANGE_TWIN_POPPY.asBlock(), "Orange Twin Poppy");
+        translationBuilder.add(ModBlocks.WHITE_TWIN_POPPY.asBlock(), "White Twin Poppy");
+        translationBuilder.add(ModBlocks.RED_TWIN_POPPY.asBlock(), "Red Twin Poppy");
+        translationBuilder.add(ModBlocks.PINK_TWIN_POPPY.asBlock(), "Pink Twin Poppy");
 
         translationBuilder.add(ModBlocks.ORANGE_TALL_TULIP.asBlock(), "Orange Tall Tulip");
         translationBuilder.add(ModBlocks.RED_TALL_TULIP.asBlock(), PrefList.TALL_TULIP.colorOf_Cap(StraddColor.red));
@@ -35,10 +35,10 @@ public class ModTranslateProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.GLOWING_TALL_TULIP.asBlock(), PrefList.TALL_TULIP.of("glowing", true));
         translationBuilder.add(ModBlocks.PURPLE_TALL_TULIP.asBlock(), PrefList.TALL_TULIP.colorOf_Cap(StraddColor.purple));
 
-        translationBuilder.add(ModBlocks.RED_GINGER_TULIP.asBlock(), PrefList.GINGER_TULIP.colorOf_Cap(StraddColor.red));
-        translationBuilder.add(ModBlocks.WHITE_GINGER_TULIP.asBlock(), PrefList.GINGER_TULIP.colorOf_Cap(StraddColor.white));
-        translationBuilder.add(ModBlocks.ORANGE_GINGER_TULIP.asBlock(), PrefList.GINGER_TULIP.colorOf_Cap(StraddColor.orange));
-        translationBuilder.add(ModBlocks.PINK_GINGER_TULIP.asBlock(), PrefList.GINGER_TULIP.colorOf_Cap(StraddColor.pink));
+        translationBuilder.add(ModBlocks.RED_GINGER_LILY.asBlock(), PrefList.GINGER_LILY.colorOf_Cap(StraddColor.red));
+        translationBuilder.add(ModBlocks.WHITE_GINGER_LILY.asBlock(), PrefList.GINGER_LILY.colorOf_Cap(StraddColor.white));
+        translationBuilder.add(ModBlocks.ORANGE_GINGER_LILY.asBlock(), PrefList.GINGER_LILY.colorOf_Cap(StraddColor.orange));
+        translationBuilder.add(ModBlocks.PINK_GINGER_LILY.asBlock(), PrefList.GINGER_LILY.colorOf_Cap(StraddColor.pink));
 
         translationBuilder.add(ModBlocks.WATER_HYACINTH.asBlock(), "Water Hyacinth");
         translationBuilder.add(ModBlocks.LAVA_HYACINTH.asBlock(), "Lava Hyacinth");
@@ -89,6 +89,7 @@ public class ModTranslateProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.SUNFLOWER_BED.asBlock(), "Sunflower Bed");
         translationBuilder.add(ModBlocks.WATER_POPPY.asBlock(), "Water Poppy");
 
+        translationBuilder.add(ModBlocks.IRIS.asBlock(), "Iris");
 
     }
 }
