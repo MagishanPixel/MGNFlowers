@@ -39,6 +39,9 @@ public class ModItems {
                     output.accept(ModBlocks.BLUE_ROMENTA);
                     output.accept(ModBlocks.ORANGE_ROMENTA);
 
+                    output.accept(ModBlocks.PINK_CYCLAMEN);
+                    output.accept(ModBlocks.WHITE_CYCLAMEN);
+
                     output.accept(ModBlocks.BLUE_TALL_HYACINTH);
                     output.accept(ModBlocks.PINK_TALL_HYACINTH);
                     output.accept(ModBlocks.RED_TALL_HYACINTH);
@@ -60,23 +63,28 @@ public class ModItems {
                     output.accept(ModBlocks.CANDY_BLEEDING_QUADHEART.asItem());
                     output.accept(ModBlocks.HOLLOW_BLEEDING_QUADHEART.asItem());
 
-                    output.accept(ModBlocks.WATER_HYACINTH.asItem());
-                    output.accept(ModBlocks.LAVA_HYACINTH.asItem());
+                    output.accept(ModBlocks.IRIS.asItem());
+                    output.accept(ModBlocks.MOTH_IRIS.asItem());
+                    output.accept(ModBlocks.SAVANNAH_SUNSET_IRIS.asItem());
 
-                    output.accept(ModBlocks.WATER_POPPY);
                     output.accept(ModBlocks.TORCH_GINGER);
                     output.accept(ModBlocks.DANDELION_BED);
                     output.accept(ModBlocks.SUNFLOWER_BED);
+                    output.accept(ModBlocks.WOOD_SORREL);
+
+                    output.accept(ModBlocks.WATER_HYACINTH.asItem());
+                    output.accept(ModBlocks.LAVA_HYACINTH.asItem());
+                    output.accept(ModBlocks.WATER_POPPY);
 
                     output.accept(ModBlocks.FIRE_LILY);
                     output.accept(ModBlocks.BEE_BALM);
-                    output.accept(ModBlocks.TITAN_ARUM);
                     output.accept(ModBlocks.BIRD_OF_PARADISE);
                     output.accept(ModBlocks.LAMPBLOSSOM);
                     output.accept(ModBlocks.WELWITSCHIA);
-                    output.accept(ModBlocks.MOTH_IRIS.asItem());
-                    output.accept(ModBlocks.IRIS.asItem());
+                    output.accept(ModBlocks.TRILLIUM);
                     output.accept(ModBlocks.GROTTAL_BLOOM.asItem());
+                    output.accept(ModBlocks.SAND_VERBENA);
+                    output.accept(ModBlocks.WILD_DAGGA);
 
 
                 }));

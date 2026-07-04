@@ -1,6 +1,7 @@
 package io.github.magishanpixel.mgnflowers.datagen.gens;
 
 import io.github.magishanpixel.mgnflowers.init.ModBlocks;
+import io.github.magishanpixel.mgnflowers.misc.FlowerProperty;
 import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -24,7 +25,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     @Override
     public void buildRecipes(RecipeOutput recipeOutput) {
         if (MagishanLib.dataGenList != null) {
-            for (Map.Entry<String, ModBlocks.FlowerProperty> entry : MagishanLib.dataGenList.entrySet()) {
+            for (Map.Entry<String, FlowerProperty> entry : MagishanLib.dataGenList.entrySet()) {
                 DyeColor col = entry.getValue().dyeCol;
                 Item itemDye = switch (col) {
                     case WHITE -> Items.WHITE_DYE;

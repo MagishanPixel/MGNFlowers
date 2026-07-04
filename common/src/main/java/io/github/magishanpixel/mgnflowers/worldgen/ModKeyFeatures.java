@@ -12,15 +12,30 @@ public class ModKeyFeatures {
 
     public static final KeyFeature DANDELION_BED_PATCH = of("dandelion_bed_patch");
     public static final KeyFeature SUNFLOWER_BED_PATCH = of("sunflower_bed_patch");
+    public static final KeyFeature TALL_TULIP_PATCH = of("tall_tulip_patch");
+
     public static final KeyFeature WATER_HYACINTH_PATCH = of("water_hyacinth_patch");
     public static final KeyFeature WATER_POPPY_PATCH = of("water_poppy_patch");
 
-    public static final KeyFeature TALL_TULIP_PATCH = of("tall_tulip_patch");
     public static final KeyFeature TALL_ALLIUM_PATCH = of("tall_allium_patch");
 
     public static final KeyFeature DARK_FOREST_FLOWER_PATCH = of("dark_forest_flower_patch");
+    public static final KeyFeature CYCLAMEN_PATCH = of("cyclamen_patch");
+
+    public static final KeyFeature WELWITSCHIA_PATCH = of("welwitschia_patch");
+    public static final KeyFeature SAND_VERBENA_PATCH = of("sand_verbena_patch");
 
     public static final KeyFeature VINE_LOTUSES = of("vine_lotuses");
+
+    public static final KeyFeature TORCH_GINGER_PATCH = of("torch_ginger_patch");
+    public static final KeyFeature JUNGLE_FLOWER_PATCH = of("jungle_flower_patch");
+    public static final KeyFeature GINGER_LILY_PATCH = of("ginger_lily_patch");
+
+    public static final KeyFeature TAIGA_FLOWER_PATCH = of("taiga_flower_patch");
+    public static final KeyFeature WOOD_SORREL_PATCH = of("wood_sorrel_patch");
+
+    public static final KeyFeature SHORT_HYACINTH_PATCH = of("short_hyacinth_patch");
+    public static final KeyFeature TALL_HYACINTH_PATCH = of("tall_hyacinth_patch");
 
     public record KeyFeature(ResourceKey<ConfiguredFeature<?,?>> config, ResourceKey<PlacedFeature> placedFeature) { }
 

@@ -2,6 +2,7 @@ package io.github.magishanpixel.mgnflowers.datagen.gens;
 
 import io.github.magishanpixel.mgnflowers.block.CustomFlowerBedBlock;
 import io.github.magishanpixel.mgnflowers.init.ModBlocks;
+import io.github.magishanpixel.mgnflowers.misc.FlowerProperty;
 import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
@@ -33,7 +34,7 @@ public class ModBlockLootableProvider extends FabricBlockLootTableProvider {
         createCustomFlowerBedDrops(ModBlocks.WATER_HYACINTH.asBlock());
 
         if (MagishanLib.dataGenList != null) {
-            for (Map.Entry<String, ModBlocks.FlowerProperty> entry : MagishanLib.dataGenList.entrySet()) {
+            for (Map.Entry<String, FlowerProperty> entry : MagishanLib.dataGenList.entrySet()) {
                 if (!entry.getValue().customDrop) {
                     dropSelf(BuiltInRegistries.BLOCK.get(MagishanLib.newId(entry.getKey())));
                 }

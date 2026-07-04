@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:flower",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "mgnflowers:noise_taller_flower_feature",
+        "config": {
+          "flowers": [
+            "mgnflowers:blue_tall_hyacinth",
+            "mgnflowers:pink_tall_hyacinth",
+            "mgnflowers:red_tall_hyacinth",
+            "mgnflowers:purple_tall_hyacinth",
+            "mgnflowers:yellow_tall_hyacinth",
+            "mgnflowers:white_tall_hyacinth"
+          ],
+          "max_height": 4,
+          "noise": {
+            "amplitudes": [
+              1.0,
+              0.0
+            ],
+            "firstOctave": 0
+          },
+          "scale": 0.020833334,
+          "seed": 2345
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "tries": 96,
+    "xz_spread": 6,
+    "y_spread": 2
+  }
+}

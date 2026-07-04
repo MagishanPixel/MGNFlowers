@@ -4,7 +4,9 @@ import io.github.magishanpixel.mgnflowers.block.CustomFlowerBedBlock;
 import io.github.magishanpixel.mgnflowers.init.ModBlocks;
 import io.github.magishanpixel.mgnflowers.worldgen.ModFeatures;
 import io.github.magishanpixel.mgnflowers.worldgen.ModKeyFeatures;
+import io.github.magishanpixel.mgnflowers.worldgen.features.config.NoiseTallerFlowerConfig;
 import io.github.magishanpixel.mgnflowers.worldgen.features.config.TallerFlowerConfig;
+import io.github.magishanpixel.mgnflowers.worldgen.features.provider.NoiseBlockProvider;
 import net.blay09.mods.balm.world.level.block.DeferredBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -22,6 +24,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConf
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraft.world.level.levelgen.synth.NormalNoise;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,6 +93,58 @@ public class ConfiguredFeatureBootstrap {
                 ModBlocks.WHITE_LACECAP_HYDRANGEA,
                 ModBlocks.HOLLOW_BLEEDING_QUADHEART
         ));
+
+        createPatch(context, ModKeyFeatures.WELWITSCHIA_PATCH.config(), 16, 5, 2, List.of(ModBlocks.WELWITSCHIA.defaultBlockState()));
+
+        createPatch(context, ModKeyFeatures.CYCLAMEN_PATCH.config(), 64, 6, 2, quickBlockStateList(
+                ModBlocks.PINK_CYCLAMEN,
+                ModBlocks.WHITE_CYCLAMEN
+        ));
+
+        createBedPatch(context, ModKeyFeatures.SAND_VERBENA_PATCH.config(), 100, 5, 2, ModBlocks.SAND_VERBENA.asBlock(), 4);
+        createBedPatch(context, ModKeyFeatures.TORCH_GINGER_PATCH.config(), 78, 5, 2, ModBlocks.TORCH_GINGER.asBlock(), 3);
+        createPatch(context, ModKeyFeatures.JUNGLE_FLOWER_PATCH.config(), 64, 6, 2, quickBlockStateList(
+                ModBlocks.BIRD_OF_PARADISE,
+                ModBlocks.FIRE_LILY
+        ));
+        createPatch(context, ModKeyFeatures.GINGER_LILY_PATCH.config(), 64, 6, 2,
+                ModFeatures.TALLER_FLOWER_FEATURE.get(),
+                new TallerFlowerConfig(3,
+                        List.of(
+                                ModBlocks.ORANGE_GINGER_LILY.asHolder(),
+                                ModBlocks.RED_GINGER_LILY.asHolder(),
+                                ModBlocks.WHITE_GINGER_LILY.asHolder(),
+                                ModBlocks.PINK_GINGER_LILY.asHolder()
+                        ))
+        );
+
+        createPatch(context, ModKeyFeatures.TAIGA_FLOWER_PATCH.config(), 48, 7, 2, quickBlockStateList(
+                ModBlocks.TRILLIUM
+        ));
+
+        createBedPatch(context, ModKeyFeatures.WOOD_SORREL_PATCH.config(), 78, 5, 2, ModBlocks.WOOD_SORREL.asBlock(), 4);
+
+        createPatch(context, ModKeyFeatures.SHORT_HYACINTH_PATCH.config(), 48, 7, 2, quickBlockStateList(
+                ModBlocks.BLUE_TALL_HYACINTH,
+                ModBlocks.PINK_TALL_HYACINTH,
+                ModBlocks.RED_TALL_HYACINTH,
+                ModBlocks.PURPLE_TALL_HYACINTH,
+                ModBlocks.YELLOW_TALL_HYACINTH,
+                ModBlocks.WHITE_TALL_HYACINTH
+        ));
+
+
+        createPatch(context, ModKeyFeatures.TALL_HYACINTH_PATCH.config(), 96, 6, 2,
+                ModFeatures.NOISE_TALLER_FLOWER_FEATURE.get(),
+                new NoiseTallerFlowerConfig(4, 2345L, new NormalNoise.NoiseParameters(0, (double)1.0F, 0), 0.020833334F,List.of(
+                        ModBlocks.BLUE_TALL_HYACINTH.asHolder(),
+                        ModBlocks.PINK_TALL_HYACINTH.asHolder(),
+                        ModBlocks.RED_TALL_HYACINTH.asHolder(),
+                        ModBlocks.PURPLE_TALL_HYACINTH.asHolder(),
+                        ModBlocks.YELLOW_TALL_HYACINTH.asHolder(),
+                        ModBlocks.WHITE_TALL_HYACINTH.asHolder()
+                ))
+        );
     }
 
     private static List<BlockState> quickBlockStateList(DeferredBlock... blocks) {

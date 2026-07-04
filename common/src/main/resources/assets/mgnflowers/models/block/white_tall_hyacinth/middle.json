@@ -1,6 +1,0 @@
-{
-	"parent": "mgnflowers:block/blue_tall_hyacinth/middle",
-	"textures": {
-		"1": "mgnflowers:block/white_tall_hyacinth"
-	}
-}

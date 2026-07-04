@@ -2,7 +2,7 @@ package io.github.magishanpixel.mgnflowers;
 
 import io.github.magishanpixel.mgnflowers.init.ModBlocks;
 import io.github.magishanpixel.mgnflowers.init.ModItems;
-import io.github.magishanpixel.mgnflowers.misc.Constants;
+import io.github.magishanpixel.mgnflowers.misc.MGNConstants;
 import io.github.magishanpixel.mgnflowers.worldgen.ModFeatures;
 import io.github.magishanpixel.mgnflowers.worldgen.ModWorldGen;
 import net.blay09.mods.balm.api.module.BalmModule;
@@ -17,7 +17,7 @@ public class MGNFlowers implements BalmModule {
 
     @Override
     public ResourceLocation getId() {
-        return ResourceLocation.fromNamespaceAndPath(Constants.MOD_ID, "common");
+        return ResourceLocation.fromNamespaceAndPath(MGNConstants.MOD_ID, "common");
     }
 
     @Override

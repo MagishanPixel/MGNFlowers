@@ -1,0 +1,160 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena1"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena1",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena1",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena1",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena2"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena2",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena2",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena2",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena3"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena3",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena3",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena3",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena4"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena4",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena4",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/sand_verbena4",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "4"
+      }
+    }
+  ]
+}

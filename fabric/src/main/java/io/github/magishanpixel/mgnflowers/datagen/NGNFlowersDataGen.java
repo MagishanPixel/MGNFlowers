@@ -17,6 +17,7 @@ public class NGNFlowersDataGen implements DataGeneratorEntrypoint {
         pack.addProvider(ModBlockLootableProvider::new);
         pack.addProvider(ModRecipeProvider::new);
         pack.addProvider(ModDynamicRegistryProvider::new);
+        pack.addProvider(ModBlockTagProvider::new);
     }
 
     @Override

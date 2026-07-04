@@ -13,11 +13,10 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 
 public class ModWorldGen {
     public static void boot(BalmWorldGen worldGen) {
-        worldGen.modifyBiome(MagishanLib.newId("flower_patches"),matches(ModBiomeTags.IS_FLOWER_FOREST),
+        worldGen.modifyBiome(MagishanLib.newId("flower_forest_patches"),matches(ModBiomeTags.IS_FLOWER_FOREST),
                 (biomeholder, modifier) -> {
-                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.ROMENTA_PATCH.placedFeature());
-                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.TALL_TULIP_PATCH.placedFeature());
-                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.TALL_ALLIUM_PATCH.placedFeature());
+                    //modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.ROMENTA_PATCH.placedFeature());
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.TALL_HYACINTH_PATCH.placedFeature());
                 }
         );
 
@@ -52,6 +51,35 @@ public class ModWorldGen {
         worldGen.modifyBiome(MagishanLib.newId("dark_forest_flowers"), matches(Biomes.DARK_FOREST),
                 (biomeholder, modifier) -> {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.DARK_FOREST_FLOWER_PATCH.placedFeature());
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.CYCLAMEN_PATCH.placedFeature());
+                }
+        );
+
+
+        worldGen.modifyBiome(MagishanLib.newId("desert_flowers"), matches(ModBiomeTags.IS_DESERT),
+                (biomeholder, modifier) -> {
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.WELWITSCHIA_PATCH.placedFeature());
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.SAND_VERBENA_PATCH.placedFeature());
+                }
+        );
+
+        worldGen.modifyBiome(MagishanLib.newId("jungle_flowers"), matches(ModBiomeTags.IS_JUNGLE),
+                (biomeholder, modifier) -> {
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.JUNGLE_FLOWER_PATCH.placedFeature());
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.TORCH_GINGER_PATCH.placedFeature());
+                }
+        );
+
+        worldGen.modifyBiome(MagishanLib.newId("sparse_jungle_flower"), matches(Biomes.SPARSE_JUNGLE),
+                (biomeholder, modifier) -> {
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.GINGER_LILY_PATCH.placedFeature());
+                }
+        );
+
+        worldGen.modifyBiome(MagishanLib.newId("taiga_flowers"), matches(ModBiomeTags.IS_TAIGA),
+                (biomeholder, modifier) -> {
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.TAIGA_FLOWER_PATCH.placedFeature());
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.WOOD_SORREL_PATCH.placedFeature());
                 }
         );
 

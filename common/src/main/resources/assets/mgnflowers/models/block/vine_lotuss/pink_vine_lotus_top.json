@@ -1,7 +1,0 @@
-{
-  "parent": "mgnflowers:block/vine_lotuss/white_vine_lotus_top",
-  "textures": {
-    "0": "mgnflowers:block/pink_vine_lotus",
-    "particle": "mgnflowers:block/pink_vine_lotus"
-  }
-}

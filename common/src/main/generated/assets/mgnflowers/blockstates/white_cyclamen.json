@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "mgnflowers:block/white_cyclamen"
+      },
+      {
+        "model": "mgnflowers:block/white_cyclamen",
+        "y": 90
+      },
+      {
+        "model": "mgnflowers:block/white_cyclamen",
+        "y": 180
+      },
+      {
+        "model": "mgnflowers:block/white_cyclamen",
+        "y": 270
+      }
+    ]
+  }
+}

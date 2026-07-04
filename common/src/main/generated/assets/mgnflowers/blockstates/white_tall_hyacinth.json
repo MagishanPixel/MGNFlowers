@@ -2,7 +2,15 @@
   "multipart": [
     {
       "apply": {
-        "model": "mgnflowers:block/white_tall_hyacinth/bottom"
+        "model": "mgnflowers:block/taller_flower/single/white_tall_hyacinth/short"
+      },
+      "when": {
+        "stem": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/taller_flower/single/white_tall_hyacinth/bottom"
       },
       "when": {
         "stem": "1"
@@ -10,7 +18,7 @@
     },
     {
       "apply": {
-        "model": "mgnflowers:block/white_tall_hyacinth/middle"
+        "model": "mgnflowers:block/taller_flower/single/white_tall_hyacinth/middle"
       },
       "when": {
         "stem": "2"
@@ -18,7 +26,7 @@
     },
     {
       "apply": {
-        "model": "mgnflowers:block/white_tall_hyacinth/top"
+        "model": "mgnflowers:block/taller_flower/single/white_tall_hyacinth/top"
       },
       "when": {
         "stem": "3"

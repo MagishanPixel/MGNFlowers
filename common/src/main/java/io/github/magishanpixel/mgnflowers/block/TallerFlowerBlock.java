@@ -21,12 +21,18 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.Nullable;
 
 public class TallerFlowerBlock extends FlowerBlock {
-    public static final IntegerProperty STEM = IntegerProperty.create("stem", 1, 3);
-    private static final VoxelShape TALL_SHAPE = Block.box((double)4.0F, (double)0.0F, (double)4.0F, (double)12.0F, (double)16.0F, (double)12.0F);
+    public static final IntegerProperty STEM = IntegerProperty.create("stem", 0, 3);
+    private static final VoxelShape TALL_SHAPE = Block.box((double)3.0F, (double)0.0F, (double)3.0F, (double)13.0F, (double)16.0F, (double)13.0F);
+    public final boolean canBeShort;
 
     public TallerFlowerBlock(Holder<MobEffect> suspiciousStewEffect, int effectDuration, Properties properties) {
+        this(suspiciousStewEffect, effectDuration, false, properties);
+    }
+
+    public TallerFlowerBlock(Holder<MobEffect> suspiciousStewEffect, int effectDuration, boolean canBeShort, Properties properties) {
         super(suspiciousStewEffect, effectDuration, properties);
-        this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(STEM, 1));
+        this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(STEM, canBeShort ? 0 : 1));
+        this.canBeShort = canBeShort;
     }
 
     @Override
@@ -49,19 +55,23 @@ public class TallerFlowerBlock extends FlowerBlock {
     }
 
     private BlockState updateStem(BlockState state, LevelAccessor level, BlockPos pos) {
-        BlockState upState = level.getBlockState(pos.above());
-        BlockState downState = level.getBlockState(pos.below());
+        BlockState up = level.getBlockState(pos.above());
+        BlockState down = level.getBlockState(pos.below());
 
         BlockState resState = state;
 
-        if (upState.is(this) && downState.is(this)) {
+        if (up.is(this) && down.is(this)) {
             resState = resState.setValue(STEM, 2);
-        } else if (upState.is(this) && (!downState.is(this))) {
+        } else if (up.is(this) && (!down.is(this))) {
             resState = resState.setValue(STEM, 1);
-        }   else if (!upState.is(this) && (downState.is(this))) {
+        }   else if (!up.is(this) && (down.is(this))) {
             resState = resState.setValue(STEM, 3);
-        } else if (!upState.is(this) && !downState.is(this)) {
-            level.destroyBlock(pos, true);
+        } else if (!up.is(this) && !down.is(this)) {
+            if (canBeShort) {
+                resState = resState.setValue(STEM, 0);
+            } else {
+                level.destroyBlock(pos, true);
+            }
         }
 
         return resState;
@@ -74,6 +84,8 @@ public class TallerFlowerBlock extends FlowerBlock {
 
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
+        if (canBeShort) return;
+
         if (!level.getBlockState(pos.below()).is(this)) {
             boolean extraBool = false;
 

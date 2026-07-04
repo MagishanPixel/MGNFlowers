@@ -27,7 +27,7 @@ public class ModTranslateProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.RED_TWIN_POPPY.asBlock(), "Red Twin Poppy");
         translationBuilder.add(ModBlocks.PINK_TWIN_POPPY.asBlock(), "Pink Twin Poppy");
 
-        translationBuilder.add(ModBlocks.ORANGE_TALL_TULIP.asBlock(), "Orange Tall Tulip");
+        translationBuilder.add(ModBlocks.ORANGE_TALL_TULIP.asBlock(), PrefList.TALL_TULIP.colorOf_Cap(StraddColor.orange));
         translationBuilder.add(ModBlocks.RED_TALL_TULIP.asBlock(), PrefList.TALL_TULIP.colorOf_Cap(StraddColor.red));
         translationBuilder.add(ModBlocks.WHITE_TALL_TULIP.asBlock(), PrefList.TALL_TULIP.colorOf_Cap(StraddColor.white));
         translationBuilder.add(ModBlocks.PINK_TALL_TULIP.asBlock(), PrefList.TALL_TULIP.colorOf_Cap(StraddColor.pink));
@@ -54,8 +54,6 @@ public class ModTranslateProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.PINK_ROMENTA.asBlock(), PrefList.ROMENTA.colorOf_Cap(StraddColor.pink));
         translationBuilder.add(ModBlocks.BLUE_ROMENTA.asBlock(), PrefList.ROMENTA.colorOf_Cap(StraddColor.blue));
         translationBuilder.add(ModBlocks.ORANGE_ROMENTA.asBlock(), PrefList.ROMENTA.colorOf_Cap(StraddColor.orange));
-
-        translationBuilder.add(ModBlocks.TITAN_ARUM.asBlock(), "Titan Arum");
 
         translationBuilder.add(ModBlocks.BIRD_OF_PARADISE.asBlock(), "Bird Of Paradise");
 
@@ -91,5 +89,14 @@ public class ModTranslateProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ModBlocks.IRIS.asBlock(), "Iris");
 
+        translationBuilder.add(ModBlocks.PINK_CYCLAMEN.asBlock(), PrefList.CYCLAMEN.colorOf_Cap(StraddColor.pink));
+        translationBuilder.add(ModBlocks.WHITE_CYCLAMEN.asBlock(), PrefList.CYCLAMEN.colorOf_Cap(StraddColor.white));
+
+        translationBuilder.add(ModBlocks.TRILLIUM.asBlock(), "Trillium");
+        translationBuilder.add(ModBlocks.WOOD_SORREL.asBlock(), "Wood Sorrel");
+
+        translationBuilder.add(ModBlocks.SAVANNAH_SUNSET_IRIS.asBlock(), "Savannah Sunset Iris");
+        translationBuilder.add(ModBlocks.SAND_VERBENA.asBlock(), "Sand Verbena");
+        translationBuilder.add(ModBlocks.WILD_DAGGA.asBlock(), "Wild Dagga");
     }
 }

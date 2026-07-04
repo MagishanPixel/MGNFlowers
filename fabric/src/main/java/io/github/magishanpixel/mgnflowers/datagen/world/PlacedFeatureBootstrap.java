@@ -31,18 +31,30 @@ public class PlacedFeatureBootstrap {
         basicPlaced(context, config, ModKeyFeatures.WATER_HYACINTH_PATCH, 3);
         basicPlaced(context, config, ModKeyFeatures.WATER_POPPY_PATCH, 3);
 
-        register(context, config, ModKeyFeatures.VINE_LOTUSES, List.of(
-                RarityFilter.onAverageOnceEvery(8),
-                InSquarePlacement.spread(),
-                BiomeFilter.biome(),
-                PlacementUtils.HEIGHTMAP_WORLD_SURFACE
-        ));
+
+        basicPlaced(context, config, ModKeyFeatures.VINE_LOTUSES, 8);
 
         basicPlaced(context, config, ModKeyFeatures.DARK_FOREST_FLOWER_PATCH, 15);
+        basicPlaced(context, config, ModKeyFeatures.CYCLAMEN_PATCH, 14);
+
+        basicPlaced(context, config, ModKeyFeatures.WELWITSCHIA_PATCH);
+        basicPlaced(context, config, ModKeyFeatures.SAND_VERBENA_PATCH, 48);
+
+        basicPlaced(context, config, ModKeyFeatures.TORCH_GINGER_PATCH, 15);
+
+        basicPlaced(context, config, ModKeyFeatures.WOOD_SORREL_PATCH, 15);
+        basicPlaced(context, config, ModKeyFeatures.TAIGA_FLOWER_PATCH);
+
+        basicPlaced(context, config, ModKeyFeatures.SHORT_HYACINTH_PATCH, 8);
+        basicPlaced(context, config, ModKeyFeatures.TALL_HYACINTH_PATCH, 8);
+
+        basicPlaced(context, config, ModKeyFeatures.JUNGLE_FLOWER_PATCH);
+        basicPlaced(context, config, ModKeyFeatures.GINGER_LILY_PATCH);
+
     }
 
     private static void basicPlaced(BootstrapContext<PlacedFeature> context, HolderGetter<ConfiguredFeature<?,?>> config, ModKeyFeatures.KeyFeature keyFeature) {
-        basicPlaced(context,config,keyFeature, 32);
+        basicPlaced(context,config,keyFeature, 24);
     }
 
     private static void basicPlaced(BootstrapContext<PlacedFeature> context, HolderGetter<ConfiguredFeature<?,?>> config, ModKeyFeatures.KeyFeature keyFeature, int chance) {

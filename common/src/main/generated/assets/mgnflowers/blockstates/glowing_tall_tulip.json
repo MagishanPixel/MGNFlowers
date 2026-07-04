@@ -2,7 +2,15 @@
   "multipart": [
     {
       "apply": {
-        "model": "mgnflowers:block/tall_tulips/bases/glowing_tall_tulip_bottom"
+        "model": "mgnflowers:block/taller_flower/single/glowing_tall_tulip/bottom"
+      },
+      "when": {
+        "stem": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/taller_flower/single/glowing_tall_tulip/bottom"
       },
       "when": {
         "stem": "1"
@@ -10,7 +18,7 @@
     },
     {
       "apply": {
-        "model": "mgnflowers:block/tall_tulips/bases/glowing_tall_tulip_middle"
+        "model": "mgnflowers:block/taller_flower/single/glowing_tall_tulip/middle"
       },
       "when": {
         "stem": "2"
@@ -18,7 +26,7 @@
     },
     {
       "apply": {
-        "model": "mgnflowers:block/tall_tulips/glowing_tall_tulip_top"
+        "model": "mgnflowers:block/taller_flower/single/glowing_tall_tulip/top"
       },
       "when": {
         "stem": "3"

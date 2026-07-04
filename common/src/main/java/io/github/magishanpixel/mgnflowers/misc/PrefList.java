@@ -11,6 +11,7 @@ public class PrefList {
     public static final PrefixAdder HYACINTH = of("_tall_hyacinth");
     public static final PrefixAdder VINE_LOTUS = of("_vine_lotus");
     public static final PrefixAdder LACECAP_HYDRANGEA = of("_lacecap_hydrangea");
+    public static final PrefixAdder CYCLAMEN = of("_cyclamen");
 
     private static PrefixAdder of(String v) {
         return  new PrefixAdder(v);

@@ -27,7 +27,7 @@ public class VineLotusBlock extends TallerFlowerBlock implements SimpleWaterlogg
     private static final VoxelShape TOP_SHAPE = Block.box((double)0.0F, (double)0.0F, (double)0.0F, (double)16.0F, (double)5.0F, (double)16.0F);
 
     public VineLotusBlock(Holder<MobEffect> suspiciousStewEffect, int effectDuration, Properties properties) {
-        super(suspiciousStewEffect, effectDuration, properties);
+        super(suspiciousStewEffect, effectDuration, true, properties);
         this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
     }
 

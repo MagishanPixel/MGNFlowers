@@ -2,7 +2,15 @@
   "multipart": [
     {
       "apply": {
-        "model": "mgnflowers:block/vine_lotuss/bases/vine_lotus_bottom"
+        "model": "mgnflowers:block/taller_flower/multi/vine_lotus/pink_vine_lotus_short"
+      },
+      "when": {
+        "stem": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/taller_flower/multi/vine_lotus/bases/vine_lotus_bottom"
       },
       "when": {
         "stem": "1"
@@ -10,7 +18,7 @@
     },
     {
       "apply": {
-        "model": "mgnflowers:block/vine_lotuss/bases/vine_lotus_middle"
+        "model": "mgnflowers:block/taller_flower/multi/vine_lotus/bases/vine_lotus_middle"
       },
       "when": {
         "stem": "2"
@@ -18,7 +26,7 @@
     },
     {
       "apply": {
-        "model": "mgnflowers:block/vine_lotuss/pink_vine_lotus_top"
+        "model": "mgnflowers:block/taller_flower/multi/vine_lotus/pink_vine_lotus_top"
       },
       "when": {
         "stem": "3"

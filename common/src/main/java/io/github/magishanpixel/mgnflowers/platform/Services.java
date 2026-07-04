@@ -1,6 +1,6 @@
 package io.github.magishanpixel.mgnflowers.platform;
 
-import io.github.magishanpixel.mgnflowers.misc.Constants;
+import io.github.magishanpixel.mgnflowers.misc.MGNConstants;
 import io.github.magishanpixel.mgnflowers.platform.services.IPlatformHelper;
 
 import java.util.ServiceLoader;
@@ -12,7 +12,7 @@ public class Services {
         final T loadedService = ServiceLoader.load(clazz)
                 .findFirst()
                 .orElseThrow(() -> new NullPointerException("Failed to load service for " + clazz.getName()));
-        Constants.LOG.debug("Loaded {} for service {}", loadedService, clazz);
+        MGNConstants.LOG.debug("Loaded {} for service {}", loadedService, clazz);
         return loadedService;
     }
 }

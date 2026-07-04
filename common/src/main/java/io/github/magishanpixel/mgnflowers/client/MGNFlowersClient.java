@@ -58,7 +58,6 @@ public class MGNFlowersClient implements BalmClientModule {
         rend.setRenderLayer(ModBlocks.BLUE_ROMENTA, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.ORANGE_ROMENTA, RenderType.cutout());
 
-        rend.setRenderLayer(ModBlocks.TITAN_ARUM, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.BIRD_OF_PARADISE, RenderType.cutout());
 
         rend.setRenderLayer(ModBlocks.TALL_ALLIUM, RenderType.cutout());
@@ -92,6 +91,14 @@ public class MGNFlowersClient implements BalmClientModule {
         rend.setRenderLayer(ModBlocks.WHITE_LACECAP_HYDRANGEA, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.PINK_LACECAP_HYDRANGEA, RenderType.cutout());
 
+        rend.setRenderLayer(ModBlocks.TRILLIUM, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.WOOD_SORREL, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.PINK_CYCLAMEN, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.WHITE_CYCLAMEN, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.WILD_DAGGA, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.SAVANNAH_SUNSET_IRIS, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.SAND_VERBENA, RenderType.cutout());
     }
 
 

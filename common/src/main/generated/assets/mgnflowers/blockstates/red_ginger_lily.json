@@ -2,7 +2,15 @@
   "multipart": [
     {
       "apply": {
-        "model": "mgnflowers:block/ginger_tulips/bases/ginger_tulip_bottom"
+        "model": "mgnflowers:block/taller_flower/multi/ginger_lily/bases/ginger_lily_bottom"
+      },
+      "when": {
+        "stem": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/taller_flower/multi/ginger_lily/bases/ginger_lily_bottom"
       },
       "when": {
         "stem": "1"
@@ -10,7 +18,7 @@
     },
     {
       "apply": {
-        "model": "mgnflowers:block/ginger_tulips/bases/ginger_tulip_middle"
+        "model": "mgnflowers:block/taller_flower/multi/ginger_lily/bases/ginger_lily_middle"
       },
       "when": {
         "stem": "2"
@@ -18,7 +26,7 @@
     },
     {
       "apply": {
-        "model": "mgnflowers:block/ginger_tulips/red_ginger_tulip_top"
+        "model": "mgnflowers:block/taller_flower/multi/ginger_lily/red_ginger_lily_top"
       },
       "when": {
         "stem": "3"

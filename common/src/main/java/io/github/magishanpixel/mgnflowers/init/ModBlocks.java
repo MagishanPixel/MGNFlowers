@@ -2,10 +2,7 @@ package io.github.magishanpixel.mgnflowers.init;
 
 import io.github.magishanpixel.mgnflowers.block.*;
 import io.github.magishanpixel.mgnflowers.item.WaterFlowerBedBlockItem;
-import io.github.magishanpixel.mgnflowers.misc.Constants;
-import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
-import io.github.magishanpixel.mgnflowers.misc.PrefList;
-import io.github.magishanpixel.mgnflowers.misc.StraddColor;
+import io.github.magishanpixel.mgnflowers.misc.*;
 import net.blay09.mods.balm.world.level.block.BalmBlockRegistrar;
 import net.blay09.mods.balm.world.level.block.BalmBlockRegistration;
 import net.blay09.mods.balm.world.level.block.DeferredBlock;
@@ -13,21 +10,16 @@ import net.minecraft.core.Holder;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.TallFlowerBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 
-import java.util.function.BiFunction;
 import java.util.function.Function;
-import java.util.function.ToIntFunction;
 
 public class ModBlocks {
 
@@ -71,7 +63,6 @@ public class ModBlocks {
     public static DeferredBlock ORANGE_ROMENTA;
 
     public static DeferredBlock BIRD_OF_PARADISE;
-    public static DeferredBlock TITAN_ARUM;
 
     public static DeferredBlock TALL_ALLIUM;
     public static DeferredBlock BLUE_TALL_ALLIUM;
@@ -104,12 +95,23 @@ public class ModBlocks {
 
     public static DeferredBlock SUNFLOWER_BED;
 
+    public static DeferredBlock PINK_CYCLAMEN;
+    public static DeferredBlock WHITE_CYCLAMEN;
+
+    public static DeferredBlock TRILLIUM;
+    public static DeferredBlock WOOD_SORREL;
+
+    public static DeferredBlock SAVANNAH_SUNSET_IRIS;
+    public static DeferredBlock SAND_VERBENA;
+    public static DeferredBlock WILD_DAGGA;
+
     public static void init(BalmBlockRegistrar blocks) {
         FloweryConstruct construct = new FloweryConstruct(blocks);
 
         MOTH_IRIS = construct.registerBasic("moth_iris", MobEffects.LEVITATION, 2, flowerProp().dye(DyeColor.LIGHT_GRAY).disableOffset().build());
         IRIS = construct.registerBasic("iris", MobEffects.ABSORPTION, 2, flowerProp().dye(DyeColor.PURPLE).disableOffset().build());
-        GROTTAL_BLOOM = construct.registerBasic("grottal_bloom", MobEffects.GLOWING, 4, flowerProp().setGlow(GlowValue.of(6, true)).dye(DyeColor.CYAN).build());
+        SAVANNAH_SUNSET_IRIS = construct.registerBasic("savannah_sunset_iris", MobEffects.ABSORPTION, 2, flowerProp().dye(DyeColor.PURPLE).disableOffset().build());
+        GROTTAL_BLOOM = construct.registerBasic("grottal_bloom", MobEffects.GLOWING, 4, flowerProp().setGlow(FlowerProperty.GlowValue.of(6, true)).dye(DyeColor.CYAN).build());
 
         BLUE_TWIN_POPPY = construct.registerBasic(PrefList.TWIN_POPPY.colorOf(StraddColor.blue), MobEffects.WATER_BREATHING, 4, DyeColor.BLUE);
         ORANGE_TWIN_POPPY = construct.registerBasic(PrefList.TWIN_POPPY.colorOf(StraddColor.orange), MobEffects.FIRE_RESISTANCE, 5, DyeColor.ORANGE);
@@ -139,22 +141,21 @@ public class ModBlocks {
 
         BEE_BALM = construct.registerBasic("bee_balm", MobEffects.DIG_SLOWDOWN, 4, DyeColor.YELLOW);
 
-        LAMPBLOSSOM = construct.registerBasic("lampblossom", MobEffects.GLOWING, 4, flowerProp().setGlow(GlowValue.of(6, true)).dye(DyeColor.ORANGE).build());
+        LAMPBLOSSOM = construct.registerBasic("lampblossom", MobEffects.GLOWING, 4, flowerProp().setGlow(FlowerProperty.GlowValue.of(6, true)).dye(DyeColor.ORANGE).build());
 
         PINK_ROMENTA = construct.registerBasic(PrefList.ROMENTA.colorOf(StraddColor.pink), MobEffects.HEAL, 3, DyeColor.PINK);
         BLUE_ROMENTA = construct.registerBasic(PrefList.ROMENTA.colorOf(StraddColor.blue), MobEffects.CONFUSION, 8, DyeColor.BLUE);
         ORANGE_ROMENTA = construct.registerBasic(PrefList.ROMENTA.colorOf(StraddColor.orange), MobEffects.WATER_BREATHING, 4, DyeColor.ORANGE);
-
-        TITAN_ARUM = construct.registerSameProperty("titan_arum", TallFlowerBlock::new, flowerProp().disableOffset().disableDrop().dye(DyeColor.GREEN).build());
 
         BIRD_OF_PARADISE = construct.registerBasic("bird_of_paradise", MobEffects.SLOW_FALLING, 5, DyeColor.ORANGE);
 
         TALL_ALLIUM = construct.registerSameProperty("tall_allium", a -> new TallerFlowerBlock(MobEffects.FIRE_RESISTANCE, 4, a), DyeColor.MAGENTA);
         BLUE_TALL_ALLIUM = construct.registerSameProperty("blue_tall_allium", a -> new TallerFlowerBlock(MobEffects.WATER_BREATHING, 6, a), DyeColor.BLUE);
 
-        WELWITSCHIA = construct.registerSameProperty("welwitschia", a -> new MayPlaceFlowerBlock(MobEffects.FIRE_RESISTANCE, 3, (state, level, pos, defaultBool) -> state.is(BlockTags.SAND) || defaultBool, a), DyeColor.BROWN);
+        WELWITSCHIA = construct.registerSameProperty("welwitschia", a -> new CustomFlowerBlock(MobEffects.FIRE_RESISTANCE, 3, (state, level, pos, defaultBool) -> state.is(BlockTags.SAND) || defaultBool, a), DyeColor.BROWN);
         TORCH_GINGER = construct.registerSameProperty("torch_ginger", a -> new CustomFlowerBedBlock(a, 3),
                 flowerProp().disableDrop().disableOffset().dye(DyeColor.RED).build());
+
         BLUE_HIBISCUS = construct.registerBasic(PrefList.HIBISCUS.colorOf(StraddColor.blue), MobEffects.HEAL, 1, DyeColor.BLUE);
         ORANGE_HIBISCUS = construct.registerBasic(PrefList.HIBISCUS.colorOf(StraddColor.orange), MobEffects.FIRE_RESISTANCE, 2, DyeColor.ORANGE);
         PINK_HIBISCUS = construct.registerBasic(PrefList.HIBISCUS.colorOf(StraddColor.pink), MobEffects.HEALTH_BOOST, 4, DyeColor.PINK);
@@ -162,12 +163,12 @@ public class ModBlocks {
         DANDELION_BED = construct.registerSameProperty("dandelion_bed", a -> new CustomFlowerBedBlock(a, 4),
                 flowerProp().disableDrop().disableOffset().dye(DyeColor.WHITE).build());
 
-        PURPLE_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.purple), a -> new TallerFlowerBlock(MobEffects.DIG_SLOWDOWN, 4, a), DyeColor.PURPLE);
-        BLUE_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.blue), a -> new TallerFlowerBlock(MobEffects.NIGHT_VISION, 4, a), DyeColor.BLUE);
-        RED_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.red), a -> new TallerFlowerBlock(MobEffects.HEAL, 4, a), DyeColor.RED);
-        WHITE_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.white), a -> new TallerFlowerBlock(MobEffects.LEVITATION, 4, a), DyeColor.WHITE);
-        YELLOW_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.yellow), a -> new TallerFlowerBlock(MobEffects.CONFUSION, 4, a), DyeColor.YELLOW);
-        PINK_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.pink), a -> new TallerFlowerBlock(MobEffects.HEALTH_BOOST, 4, a), DyeColor.PINK);
+        PURPLE_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.purple), a -> new TallerFlowerBlock(MobEffects.DIG_SLOWDOWN, 4, true, a), DyeColor.PURPLE);
+        BLUE_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.blue), a -> new TallerFlowerBlock(MobEffects.NIGHT_VISION, 4, true, a), DyeColor.BLUE);
+        RED_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.red), a -> new TallerFlowerBlock(MobEffects.HEAL, 4, true, a), DyeColor.RED);
+        WHITE_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.white), a -> new TallerFlowerBlock(MobEffects.LEVITATION, 4, true, a), DyeColor.WHITE);
+        YELLOW_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.yellow), a -> new TallerFlowerBlock(MobEffects.CONFUSION, 4, true, a), DyeColor.YELLOW);
+        PINK_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.pink), a -> new TallerFlowerBlock(MobEffects.HEALTH_BOOST, 4, true, a), DyeColor.PINK);
 
         WHITE_VINE_LOTUS = construct.registerSameProperty(PrefList.VINE_LOTUS.colorOf(StraddColor.white), a -> new VineLotusBlock(MobEffects.NIGHT_VISION, 3, a), flowerProp().disableOffset().dye(DyeColor.WHITE).build());
         PINK_VINE_LOTUS = construct.registerSameProperty(PrefList.VINE_LOTUS.colorOf(StraddColor.pink), a -> new VineLotusBlock(MobEffects.REGENERATION, 2, a), flowerProp().disableOffset().dye(DyeColor.PINK).build());
@@ -181,6 +182,17 @@ public class ModBlocks {
         WHITE_LACECAP_HYDRANGEA = construct.registerBasic(PrefList.LACECAP_HYDRANGEA.colorOf(StraddColor.white), MobEffects.LEVITATION, 5, DyeColor.WHITE);
         PINK_LACECAP_HYDRANGEA = construct.registerBasic(PrefList.LACECAP_HYDRANGEA.colorOf(StraddColor.pink), MobEffects.HEALTH_BOOST, 5, DyeColor.PINK);
         BLUE_LACECAP_HYDRANGEA = construct.registerBasic(PrefList.LACECAP_HYDRANGEA.colorOf(StraddColor.blue), MobEffects.NIGHT_VISION, 5, DyeColor.BLUE);
+
+        PINK_CYCLAMEN = construct.registerBasic(PrefList.CYCLAMEN.colorOf(StraddColor.pink), MobEffects.DIG_SLOWDOWN, 4, flowerProp().disableOffset().dye(DyeColor.PINK).build());
+        WHITE_CYCLAMEN = construct.registerBasic(PrefList.CYCLAMEN.colorOf(StraddColor.white), MobEffects.CONFUSION, 10, flowerProp().disableOffset().dye(DyeColor.WHITE).build());
+
+        TRILLIUM = construct.registerBasic("trillium", MobEffects.HEAL, 1, flowerProp().dye(DyeColor.WHITE).disableOffset().build());
+        WOOD_SORREL = construct.registerSameProperty("wood_sorrel", a -> new CustomFlowerBedBlock(a, 4),
+                flowerProp().disableOffset().disableDrop().dye(DyeColor.YELLOW).build());
+
+        SAND_VERBENA = construct.registerSameProperty("sand_verbena", a -> new SandFlowerBedBlock(a, 4),
+                flowerProp().disableOffset().disableDrop().dye(DyeColor.PINK).build());
+        WILD_DAGGA = construct.registerSameProperty("wild_dagga", a -> new TallerFlowerBlock(MobEffects.FIRE_RESISTANCE, 4, a), DyeColor.ORANGE);
 
     }
 
@@ -200,7 +212,7 @@ public class ModBlocks {
         }
 
         public DeferredBlock registerSameProperty(String name, Function<BlockBehaviour.Properties, Block> constructor, DyeColor dyeColor) {
-            return registerAsFlower(name, constructor, new FlowerProperty.Builder().dye(dyeColor).build());
+            return registerAsFlower(name, constructor, new FlowerProperty.Builder().dye(dyeColor).notSmall().build());
         }
 
         public DeferredBlock registerSameProperty(String name, Function<BlockBehaviour.Properties, Block> constructor, FlowerProperty prop) {
@@ -216,7 +228,7 @@ public class ModBlocks {
         }
 
         public DeferredBlock registerAsFlower(String name, Function<BlockBehaviour.Properties, Block> constructors, FlowerProperty flowerProp) {
-            if (Constants.isDevelopment) {
+            if (MGNConstants.isDevelopment) {
                 MagishanLib.dataGenList.put(name, flowerProp);
             }
 
@@ -241,74 +253,7 @@ public class ModBlocks {
     }
 
 
-    public static class FlowerProperty {
-        public final GlowValue glowVal;
-        public final DyeColor dyeCol;
-        public final boolean isOffset;
-        public final boolean customDrop;
-        public final BiFunction<Block, Item.Properties, BlockItem> blockItem;
 
-        public FlowerProperty(GlowValue glowVal, DyeColor dyeCol, boolean isOffset, boolean hasCustomDrop, BiFunction<Block, Item.Properties, BlockItem> blockItem) {
-            this.glowVal = glowVal;
-            this.dyeCol = dyeCol;
-            this.isOffset = isOffset;
-            this.customDrop = hasCustomDrop;
-            this.blockItem = blockItem;
-        }
 
-        public static class Builder {
-            private GlowValue glowVal = null;
-            private boolean isOffset = true;
-            private DyeColor dyeCol = DyeColor.WHITE;
-            private boolean customDrop = false;
-            private BiFunction<Block, Item.Properties, BlockItem> blockItem = null;
 
-            public Builder setGlow(GlowValue val) {
-                this.glowVal = val;
-                return this;
-            }
-
-            public Builder dye(DyeColor col) {
-                this.dyeCol = col;
-                return this;
-            }
-
-            public Builder disableOffset() {
-                this.isOffset = false;
-                return this;
-            }
-
-            public Builder disableDrop() {
-                this.customDrop = true;
-                return this;
-            }
-
-            public Builder setBlockItem(BiFunction<Block, Item.Properties, BlockItem> item) {
-                this.blockItem = item;
-                return this;
-            }
-
-            public FlowerProperty build() {
-                return new FlowerProperty(glowVal, dyeCol, isOffset, customDrop, blockItem);
-            }
-        }
-    }
-
-    private static class GlowValue {
-        public final ToIntFunction<BlockState> glowness;
-        public final BlockBehaviour.StatePredicate emit;
-
-        public static GlowValue of(int glow, boolean emit) {
-            return new GlowValue(value -> glow, (blockState, blockGetter, blockPos) -> emit);
-        }
-
-        public static GlowValue of(ToIntFunction<BlockState> glowness, BlockBehaviour.StatePredicate emit) {
-            return new GlowValue(glowness, emit);
-        }
-
-        public GlowValue(ToIntFunction<BlockState> glowness, BlockBehaviour.StatePredicate emit) {
-            this.glowness = glowness;
-            this.emit = emit;
-        }
-    }
 }
