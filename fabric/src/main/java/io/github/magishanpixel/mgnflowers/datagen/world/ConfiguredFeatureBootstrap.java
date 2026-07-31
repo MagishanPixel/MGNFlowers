@@ -23,6 +23,9 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
+import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseBasedStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseThresholdProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 
@@ -50,7 +53,7 @@ public class ConfiguredFeatureBootstrap {
         createPatch(context, ModKeyFeatures.SUNFLOWER_BED_PATCH.config(), 75, 6, 2, builderBedPatch(ModBlocks.SUNFLOWER_BED.asBlock(), 4, 2).add(Blocks.SUNFLOWER.defaultBlockState()));
 
         createPatch(context, ModKeyFeatures.TALL_TULIP_PATCH.config(), 48, 7, 2,
-                ModFeatures.TALLER_FLOWER_FEATURE.get(),
+                ModFeatures.TALLER_FLOWER_FEATURE,
                 new TallerFlowerConfig(4,
                         List.of(
                                 ModBlocks.PURPLE_TALL_TULIP.asHolder(),
@@ -63,15 +66,18 @@ public class ConfiguredFeatureBootstrap {
         );
 
         createPatch(context, ModKeyFeatures.TALL_ALLIUM_PATCH.config(), 56, 7, 2,
-                ModFeatures.TALLER_FLOWER_FEATURE.get(),
-                new TallerFlowerConfig(4,
+                ModFeatures.NOISE_TALLER_FLOWER_FEATURE,
+                new NoiseTallerFlowerConfig(4,
+                        2345L,
+                        new NormalNoise.NoiseParameters(-10, (double)1.0F, new double[0]),
+                        1.0F,
                         List.of(
                                 ModBlocks.TALL_ALLIUM.asHolder(),
                                 ModBlocks.BLUE_TALL_ALLIUM.asHolder()
                         ))
         );
 
-        createPatch(context, ModKeyFeatures.VINE_LOTUSES.config(), 15, 9, 1, ModFeatures.VINE_LOTUS_FEATURE.get(), new NoneFeatureConfiguration());
+        createPatch(context, ModKeyFeatures.VINE_LOTUSES.config(), 15, 9, 1, ModFeatures.VINE_LOTUS_FEATURE, new NoneFeatureConfiguration());
 
         register(context, ModKeyFeatures.WATER_HYACINTH_PATCH.config(), Feature.RANDOM_PATCH, FeatureUtils.simplePatchConfiguration(
                 Feature.SIMPLE_BLOCK,
@@ -108,7 +114,7 @@ public class ConfiguredFeatureBootstrap {
                 ModBlocks.FIRE_LILY
         ));
         createPatch(context, ModKeyFeatures.GINGER_LILY_PATCH.config(), 64, 6, 2,
-                ModFeatures.TALLER_FLOWER_FEATURE.get(),
+                ModFeatures.TALLER_FLOWER_FEATURE,
                 new TallerFlowerConfig(3,
                         List.of(
                                 ModBlocks.ORANGE_GINGER_LILY.asHolder(),
@@ -124,27 +130,27 @@ public class ConfiguredFeatureBootstrap {
 
         createBedPatch(context, ModKeyFeatures.WOOD_SORREL_PATCH.config(), 78, 5, 2, ModBlocks.WOOD_SORREL.asBlock(), 4);
 
-        createPatch(context, ModKeyFeatures.SHORT_HYACINTH_PATCH.config(), 48, 7, 2, quickBlockStateList(
-                ModBlocks.BLUE_TALL_HYACINTH,
-                ModBlocks.PINK_TALL_HYACINTH,
-                ModBlocks.RED_TALL_HYACINTH,
-                ModBlocks.PURPLE_TALL_HYACINTH,
-                ModBlocks.YELLOW_TALL_HYACINTH,
-                ModBlocks.WHITE_TALL_HYACINTH
-        ));
-
-
-        createPatch(context, ModKeyFeatures.TALL_HYACINTH_PATCH.config(), 96, 6, 2,
-                ModFeatures.NOISE_TALLER_FLOWER_FEATURE.get(),
-                new NoiseTallerFlowerConfig(4, 2345L, new NormalNoise.NoiseParameters(0, (double)1.0F, 0), 0.020833334F,List.of(
-                        ModBlocks.BLUE_TALL_HYACINTH.asHolder(),
-                        ModBlocks.PINK_TALL_HYACINTH.asHolder(),
-                        ModBlocks.RED_TALL_HYACINTH.asHolder(),
-                        ModBlocks.PURPLE_TALL_HYACINTH.asHolder(),
-                        ModBlocks.YELLOW_TALL_HYACINTH.asHolder(),
-                        ModBlocks.WHITE_TALL_HYACINTH.asHolder()
-                ))
+        createPatch(context, ModKeyFeatures.FLOWER_FOREST_PATCH.config(), 96, 6, 2,
+                Feature.SIMPLE_BLOCK,
+                new SimpleBlockConfiguration(new NoiseProvider(2345L, new NormalNoise.NoiseParameters(0, (double)1.0F, 0), 0.020833334F, quickBlockStateList(
+                        ModBlocks.ORANGE_ROMENTA,
+                        ModBlocks.PINK_ROMENTA,
+                        ModBlocks.BLUE_ROMENTA,
+                        ModBlocks.BLUE_TWIN_POPPY,
+                        ModBlocks.RED_TWIN_POPPY,
+                        ModBlocks.PINK_TWIN_POPPY,
+                        ModBlocks.ORANGE_TWIN_POPPY,
+                        ModBlocks.BLUE_HYACINTH,
+                        ModBlocks.PINK_HYACINTH,
+                        ModBlocks.RED_HYACINTH,
+                        ModBlocks.PURPLE_HYACINTH,
+                        ModBlocks.YELLOW_HYACINTH,
+                        ModBlocks.WHITE_HYACINTH
+                )))
         );
+
+        createPatch(context, ModKeyFeatures.SAVANNA_IRIS_PATCH.config(), 32, 6, 2, quickBlockStateList(ModBlocks.SAVANNAH_SUNSET_IRIS));
+        createPatch(context, ModKeyFeatures.WILD_DAGGA_PATCH.config(), 48, 7, 2, ModFeatures.TALLER_FLOWER_FEATURE, new TallerFlowerConfig(5, List.of(ModBlocks.WILD_DAGGA.asHolder())));
     }
 
     private static List<BlockState> quickBlockStateList(DeferredBlock... blocks) {

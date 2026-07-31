@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_red_hyacinth": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mgnflowers:red_hyacinth"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mgnflowers:red_dye_from_red_hyacinth"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_red_hyacinth"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mgnflowers:red_dye_from_red_hyacinth"
+    ]
+  }
+}

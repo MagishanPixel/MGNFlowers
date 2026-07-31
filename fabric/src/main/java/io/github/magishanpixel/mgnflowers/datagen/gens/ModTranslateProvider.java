@@ -63,18 +63,14 @@ public class ModTranslateProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.WELWITSCHIA.asBlock(), "Welwitschia");
         translationBuilder.add(ModBlocks.TORCH_GINGER.asBlock(), "Torch Ginger");
 
-        translationBuilder.add(ModBlocks.BLUE_HIBISCUS.asBlock(), PrefList.HIBISCUS.colorOf_Cap(StraddColor.blue));
-        translationBuilder.add(ModBlocks.PINK_HIBISCUS.asBlock(), PrefList.HIBISCUS.colorOf_Cap(StraddColor.pink));
-        translationBuilder.add(ModBlocks.ORANGE_HIBISCUS.asBlock(), PrefList.HIBISCUS.colorOf_Cap(StraddColor.orange));
-
         translationBuilder.add(ModBlocks.DANDELION_BED.asBlock(), "Dandelion Bed");
 
-        translationBuilder.add(ModBlocks.BLUE_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.blue));
-        translationBuilder.add(ModBlocks.PINK_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.pink));
-        translationBuilder.add(ModBlocks.PURPLE_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.purple));
-        translationBuilder.add(ModBlocks.YELLOW_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.yellow));
-        translationBuilder.add(ModBlocks.WHITE_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.white));
-        translationBuilder.add(ModBlocks.RED_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.red));
+        translationBuilder.add(ModBlocks.BLUE_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.blue));
+        translationBuilder.add(ModBlocks.PINK_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.pink));
+        translationBuilder.add(ModBlocks.PURPLE_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.purple));
+        translationBuilder.add(ModBlocks.YELLOW_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.yellow));
+        translationBuilder.add(ModBlocks.WHITE_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.white));
+        translationBuilder.add(ModBlocks.RED_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf_Cap(StraddColor.red));
 
         translationBuilder.add(ModBlocks.WHITE_VINE_LOTUS.asBlock(), PrefList.VINE_LOTUS.colorOf_Cap(StraddColor.white));
         translationBuilder.add(ModBlocks.PINK_VINE_LOTUS.asBlock(), PrefList.VINE_LOTUS.colorOf_Cap(StraddColor.pink));

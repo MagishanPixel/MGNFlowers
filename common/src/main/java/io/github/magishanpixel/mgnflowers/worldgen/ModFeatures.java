@@ -8,23 +8,21 @@ import io.github.magishanpixel.mgnflowers.worldgen.features.config.NoiseTallerFl
 import io.github.magishanpixel.mgnflowers.worldgen.features.config.TallerFlowerConfig;
 import net.blay09.mods.balm.api.DeferredObject;
 import net.blay09.mods.balm.api.world.BalmWorldGen;
+import net.blay09.mods.balm.core.BalmRegistrar;
+import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
 public class ModFeatures {
-    public static DeferredObject<Feature<TallerFlowerConfig>> TALLER_FLOWER_FEATURE;
-    public static DeferredObject<Feature<NoiseTallerFlowerConfig>> NOISE_TALLER_FLOWER_FEATURE;
-    public static DeferredObject<Feature<NoneFeatureConfiguration>> VINE_LOTUS_FEATURE;
+    public static Feature<TallerFlowerConfig> TALLER_FLOWER_FEATURE = new TallerFlowerFeature(TallerFlowerConfig.CODEC);
+    public static Feature<NoiseTallerFlowerConfig> NOISE_TALLER_FLOWER_FEATURE = new NoiseTallerFlowerFeature(NoiseTallerFlowerConfig.CODEC);
+    public static Feature<NoneFeatureConfiguration> VINE_LOTUS_FEATURE = new VineLotusFeature(NoneFeatureConfiguration.CODEC);
 
-    public static void boot(BalmWorldGen worldGen) {
-        TALLER_FLOWER_FEATURE = worldGen.registerFeature(MagishanLib.newId("taller_flower_feature"), () -> new TallerFlowerFeature(TallerFlowerConfig.CODEC));
-        VINE_LOTUS_FEATURE = worldGen.registerFeature(MagishanLib.newId("vine_lotus_feature"), () -> new VineLotusFeature(NoneFeatureConfiguration.CODEC));
-        NOISE_TALLER_FLOWER_FEATURE = worldGen.registerFeature(MagishanLib.newId("noise_taller_flower_feature"), () -> new NoiseTallerFlowerFeature(NoiseTallerFlowerConfig.CODEC));
-    }
-
-    public static ResourceKey<Feature<?>> registerKey(String name) {
-        return ResourceKey.create(Registries.FEATURE, MagishanLib.newId(name));
+    public static void boot(BalmRegistrar.Scoped<Feature<?>> reg) {
+        reg.register("taller_flower_feature", (v) -> TALLER_FLOWER_FEATURE);
+        reg.register("vine_lotus_feature", (v) -> NOISE_TALLER_FLOWER_FEATURE);
+        reg.register("noise_taller_flower_feature", (v) -> VINE_LOTUS_FEATURE);
     }
 }

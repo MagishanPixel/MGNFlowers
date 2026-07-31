@@ -3,13 +3,21 @@
   "config": {
     "feature": {
       "feature": {
-        "type": "mgnflowers:taller_flower_feature",
+        "type": "mgnflowers:vine_lotus_feature",
         "config": {
           "flowers": [
             "mgnflowers:tall_allium",
             "mgnflowers:blue_tall_allium"
           ],
-          "max_height": 4
+          "max_height": 4,
+          "noise": {
+            "amplitudes": [
+              1.0
+            ],
+            "firstOctave": -10
+          },
+          "scale": 1.0,
+          "seed": 2345
         }
       },
       "placement": [

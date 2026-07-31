@@ -1,7 +1,0 @@
-{
-  "parent": "mgnflowers:block/templates/slightly_cross",
-  "textures": {
-    "0": "mgnflowers:block/ginger_lily_middle",
-    "particle": "mgnflowers:block/ginger_lily_middle"
-  }
-}

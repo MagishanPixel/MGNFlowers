@@ -66,18 +66,14 @@ public class MGNFlowersClient implements BalmClientModule {
         rend.setRenderLayer(ModBlocks.WELWITSCHIA, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.TORCH_GINGER, RenderType.cutout());
 
-        rend.setRenderLayer(ModBlocks.BLUE_HIBISCUS, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.PINK_HIBISCUS, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.ORANGE_HIBISCUS, RenderType.cutout());
-
         rend.setRenderLayer(ModBlocks.DANDELION_BED, RenderType.cutout());
 
-        rend.setRenderLayer(ModBlocks.BLUE_TALL_HYACINTH, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.PINK_TALL_HYACINTH, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.RED_TALL_HYACINTH, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.WHITE_TALL_HYACINTH, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.PURPLE_TALL_HYACINTH, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.YELLOW_TALL_HYACINTH, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.BLUE_HYACINTH, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.PINK_HYACINTH, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.RED_HYACINTH, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.WHITE_HYACINTH, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.PURPLE_HYACINTH, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.YELLOW_HYACINTH, RenderType.cutout());
 
         rend.setRenderLayer(ModBlocks.PINK_VINE_LOTUS, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.WHITE_VINE_LOTUS, RenderType.cutout());

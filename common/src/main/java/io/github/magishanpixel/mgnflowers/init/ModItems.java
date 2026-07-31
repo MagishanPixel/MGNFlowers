@@ -18,10 +18,6 @@ public class ModItems {
                     output.accept(ModBlocks.PINK_TWIN_POPPY.asItem());
                     output.accept(ModBlocks.RED_TWIN_POPPY.asItem());
 
-                    output.accept(ModBlocks.BLUE_HIBISCUS);
-                    output.accept(ModBlocks.ORANGE_HIBISCUS);
-                    output.accept(ModBlocks.PINK_HIBISCUS);
-
                     output.accept(ModBlocks.ORANGE_TALL_TULIP.asItem());
                     output.accept(ModBlocks.RED_TALL_TULIP.asItem());
                     output.accept(ModBlocks.WHITE_TALL_TULIP.asItem());
@@ -42,12 +38,12 @@ public class ModItems {
                     output.accept(ModBlocks.PINK_CYCLAMEN);
                     output.accept(ModBlocks.WHITE_CYCLAMEN);
 
-                    output.accept(ModBlocks.BLUE_TALL_HYACINTH);
-                    output.accept(ModBlocks.PINK_TALL_HYACINTH);
-                    output.accept(ModBlocks.RED_TALL_HYACINTH);
-                    output.accept(ModBlocks.YELLOW_TALL_HYACINTH);
-                    output.accept(ModBlocks.WHITE_TALL_HYACINTH);
-                    output.accept(ModBlocks.PURPLE_TALL_HYACINTH);
+                    output.accept(ModBlocks.BLUE_HYACINTH);
+                    output.accept(ModBlocks.PINK_HYACINTH);
+                    output.accept(ModBlocks.RED_HYACINTH);
+                    output.accept(ModBlocks.YELLOW_HYACINTH);
+                    output.accept(ModBlocks.WHITE_HYACINTH);
+                    output.accept(ModBlocks.PURPLE_HYACINTH);
 
                     output.accept(ModBlocks.TALL_ALLIUM);
                     output.accept(ModBlocks.BLUE_TALL_ALLIUM);

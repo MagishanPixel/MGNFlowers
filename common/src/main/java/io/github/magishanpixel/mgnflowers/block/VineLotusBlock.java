@@ -38,11 +38,8 @@ public class VineLotusBlock extends TallerFlowerBlock implements SimpleWaterlogg
 
     @Override
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        if (state.getValue(WATERLOGGED)) {
-            return !level.getBlockState(pos.below()).is(Blocks.WATER);
-        }
-
-        return super.canSurvive(state, level, pos);
+        BlockState bottomState = level.getBlockState(pos.below());
+        return bottomState.isFaceSturdy(level, pos, Direction.UP) || bottomState.is(this);
     }
 
     @Override

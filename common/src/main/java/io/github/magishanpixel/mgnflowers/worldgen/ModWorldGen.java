@@ -4,8 +4,6 @@ import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import net.blay09.mods.balm.api.world.BalmWorldGen;
 import net.blay09.mods.balm.api.world.BiomePredicate;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
@@ -15,8 +13,7 @@ public class ModWorldGen {
     public static void boot(BalmWorldGen worldGen) {
         worldGen.modifyBiome(MagishanLib.newId("flower_forest_patches"),matches(ModBiomeTags.IS_FLOWER_FOREST),
                 (biomeholder, modifier) -> {
-                    //modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.ROMENTA_PATCH.placedFeature());
-                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.TALL_HYACINTH_PATCH.placedFeature());
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.FLOWER_FOREST_PATCH.placedFeature());
                 }
         );
 
@@ -80,6 +77,13 @@ public class ModWorldGen {
                 (biomeholder, modifier) -> {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.TAIGA_FLOWER_PATCH.placedFeature());
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.WOOD_SORREL_PATCH.placedFeature());
+                }
+        );
+
+        worldGen.modifyBiome(MagishanLib.newId("taiga_flowers"), matches(ModBiomeTags.IS_SAVANNA),
+                (biomeholder, modifier) -> {
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.WILD_DAGGA_PATCH.placedFeature());
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.SAVANNA_IRIS_PATCH.placedFeature());
                 }
         );
 

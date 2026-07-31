@@ -1,20 +1,14 @@
 package io.github.magishanpixel.mgnflowers.datagen.world;
 
 import io.github.magishanpixel.mgnflowers.worldgen.ModKeyFeatures;
-import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.placement.*;
-import net.minecraft.world.level.material.Fluids;
 
 import java.util.List;
 
@@ -25,12 +19,11 @@ public class PlacedFeatureBootstrap {
         basicPlaced(context, config, ModKeyFeatures.ROMENTA_PATCH);
         basicPlaced(context, config, ModKeyFeatures.TWIN_POPPY_PATCH);
         basicPlaced(context, config, ModKeyFeatures.DANDELION_BED_PATCH, 20);
-        basicPlaced(context, config, ModKeyFeatures.TALL_ALLIUM_PATCH);
+        basicPlaced(context, config, ModKeyFeatures.TALL_ALLIUM_PATCH, 4);
         basicPlaced(context, config, ModKeyFeatures.TALL_TULIP_PATCH);
         basicPlaced(context, config, ModKeyFeatures.SUNFLOWER_BED_PATCH, 7);
         basicPlaced(context, config, ModKeyFeatures.WATER_HYACINTH_PATCH, 3);
         basicPlaced(context, config, ModKeyFeatures.WATER_POPPY_PATCH, 3);
-
 
         basicPlaced(context, config, ModKeyFeatures.VINE_LOTUSES, 8);
 
@@ -45,11 +38,13 @@ public class PlacedFeatureBootstrap {
         basicPlaced(context, config, ModKeyFeatures.WOOD_SORREL_PATCH, 15);
         basicPlaced(context, config, ModKeyFeatures.TAIGA_FLOWER_PATCH);
 
-        basicPlaced(context, config, ModKeyFeatures.SHORT_HYACINTH_PATCH, 8);
-        basicPlaced(context, config, ModKeyFeatures.TALL_HYACINTH_PATCH, 8);
+        //basicPlaced(context, config, ModKeyFeatures.SHORT_HYACINTH_PATCH, 8);
+        basicPlaced(context, config, ModKeyFeatures.FLOWER_FOREST_PATCH, 9);
 
         basicPlaced(context, config, ModKeyFeatures.JUNGLE_FLOWER_PATCH);
         basicPlaced(context, config, ModKeyFeatures.GINGER_LILY_PATCH);
+        basicPlaced(context, config, ModKeyFeatures.SAVANNA_IRIS_PATCH);
+        basicPlaced(context, config, ModKeyFeatures.WILD_DAGGA_PATCH);
 
     }
 

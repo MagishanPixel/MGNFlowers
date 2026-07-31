@@ -34,8 +34,10 @@ public class ModKeyFeatures {
     public static final KeyFeature TAIGA_FLOWER_PATCH = of("taiga_flower_patch");
     public static final KeyFeature WOOD_SORREL_PATCH = of("wood_sorrel_patch");
 
-    public static final KeyFeature SHORT_HYACINTH_PATCH = of("short_hyacinth_patch");
-    public static final KeyFeature TALL_HYACINTH_PATCH = of("tall_hyacinth_patch");
+    public static final KeyFeature FLOWER_FOREST_PATCH = of("flower_forest_patch");
+
+    public static final KeyFeature SAVANNA_IRIS_PATCH = of("savanna_iris_patch");
+    public static final KeyFeature WILD_DAGGA_PATCH = of("wild_dagga_patch");
 
     public record KeyFeature(ResourceKey<ConfiguredFeature<?,?>> config, ResourceKey<PlacedFeature> placedFeature) { }
 

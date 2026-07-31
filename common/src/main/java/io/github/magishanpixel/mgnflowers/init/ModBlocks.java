@@ -14,7 +14,6 @@ import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.TallFlowerBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
@@ -70,18 +69,14 @@ public class ModBlocks {
     public static DeferredBlock WELWITSCHIA;
     public static DeferredBlock TORCH_GINGER;
 
-    public static DeferredBlock BLUE_HIBISCUS;
-    public static DeferredBlock ORANGE_HIBISCUS;
-    public static DeferredBlock PINK_HIBISCUS;
-
     public static DeferredBlock DANDELION_BED;
 
-    public static DeferredBlock BLUE_TALL_HYACINTH;
-    public static DeferredBlock WHITE_TALL_HYACINTH;
-    public static DeferredBlock PURPLE_TALL_HYACINTH;
-    public static DeferredBlock RED_TALL_HYACINTH;
-    public static DeferredBlock PINK_TALL_HYACINTH;
-    public static DeferredBlock YELLOW_TALL_HYACINTH;
+    public static DeferredBlock BLUE_HYACINTH;
+    public static DeferredBlock WHITE_HYACINTH;
+    public static DeferredBlock PURPLE_HYACINTH;
+    public static DeferredBlock RED_HYACINTH;
+    public static DeferredBlock PINK_HYACINTH;
+    public static DeferredBlock YELLOW_HYACINTH;
 
     public static DeferredBlock WHITE_VINE_LOTUS;
     public static DeferredBlock PINK_VINE_LOTUS;
@@ -156,19 +151,17 @@ public class ModBlocks {
         TORCH_GINGER = construct.registerSameProperty("torch_ginger", a -> new CustomFlowerBedBlock(a, 3),
                 flowerProp().disableDrop().disableOffset().dye(DyeColor.RED).build());
 
-        BLUE_HIBISCUS = construct.registerBasic(PrefList.HIBISCUS.colorOf(StraddColor.blue), MobEffects.HEAL, 1, DyeColor.BLUE);
-        ORANGE_HIBISCUS = construct.registerBasic(PrefList.HIBISCUS.colorOf(StraddColor.orange), MobEffects.FIRE_RESISTANCE, 2, DyeColor.ORANGE);
-        PINK_HIBISCUS = construct.registerBasic(PrefList.HIBISCUS.colorOf(StraddColor.pink), MobEffects.HEALTH_BOOST, 4, DyeColor.PINK);
-
         DANDELION_BED = construct.registerSameProperty("dandelion_bed", a -> new CustomFlowerBedBlock(a, 4),
                 flowerProp().disableDrop().disableOffset().dye(DyeColor.WHITE).build());
 
-        PURPLE_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.purple), a -> new TallerFlowerBlock(MobEffects.DIG_SLOWDOWN, 4, true, a), DyeColor.PURPLE);
-        BLUE_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.blue), a -> new TallerFlowerBlock(MobEffects.NIGHT_VISION, 4, true, a), DyeColor.BLUE);
-        RED_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.red), a -> new TallerFlowerBlock(MobEffects.HEAL, 4, true, a), DyeColor.RED);
-        WHITE_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.white), a -> new TallerFlowerBlock(MobEffects.LEVITATION, 4, true, a), DyeColor.WHITE);
-        YELLOW_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.yellow), a -> new TallerFlowerBlock(MobEffects.CONFUSION, 4, true, a), DyeColor.YELLOW);
-        PINK_TALL_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.pink), a -> new TallerFlowerBlock(MobEffects.HEALTH_BOOST, 4, true, a), DyeColor.PINK);
+        var SHAPE_hyacinth = Block.box(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
+
+        PURPLE_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.purple), a -> new CustomFlowerBlock(MobEffects.DIG_SLOWDOWN, 4, null, SHAPE_hyacinth, a), DyeColor.PURPLE);
+        BLUE_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.blue), a -> new CustomFlowerBlock(MobEffects.NIGHT_VISION, 4, null, SHAPE_hyacinth, a), DyeColor.BLUE);
+        RED_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.red), a -> new CustomFlowerBlock(MobEffects.HEAL, 4, null, SHAPE_hyacinth, a), DyeColor.RED);
+        WHITE_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.white), a -> new CustomFlowerBlock(MobEffects.LEVITATION, 4, null, SHAPE_hyacinth, a), DyeColor.WHITE);
+        YELLOW_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.yellow), a -> new CustomFlowerBlock(MobEffects.CONFUSION, 4, null, SHAPE_hyacinth, a), DyeColor.YELLOW);
+        PINK_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.pink), a -> new CustomFlowerBlock(MobEffects.HEALTH_BOOST, 4, null, SHAPE_hyacinth, a), DyeColor.PINK);
 
         WHITE_VINE_LOTUS = construct.registerSameProperty(PrefList.VINE_LOTUS.colorOf(StraddColor.white), a -> new VineLotusBlock(MobEffects.NIGHT_VISION, 3, a), flowerProp().disableOffset().dye(DyeColor.WHITE).build());
         PINK_VINE_LOTUS = construct.registerSameProperty(PrefList.VINE_LOTUS.colorOf(StraddColor.pink), a -> new VineLotusBlock(MobEffects.REGENERATION, 2, a), flowerProp().disableOffset().dye(DyeColor.PINK).build());

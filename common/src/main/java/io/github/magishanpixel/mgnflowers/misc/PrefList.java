@@ -8,7 +8,7 @@ public class PrefList {
     public static final PrefixAdder BLEEDING_QUADHEART = of("_bleeding_quadheart");
     public static final PrefixAdder ROMENTA = of("_romenta");
     public static final PrefixAdder HIBISCUS = of("_hibiscus");
-    public static final PrefixAdder HYACINTH = of("_tall_hyacinth");
+    public static final PrefixAdder HYACINTH = of("_hyacinth");
     public static final PrefixAdder VINE_LOTUS = of("_vine_lotus");
     public static final PrefixAdder LACECAP_HYDRANGEA = of("_lacecap_hydrangea");
     public static final PrefixAdder CYCLAMEN = of("_cyclamen");

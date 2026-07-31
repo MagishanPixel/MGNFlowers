@@ -27,7 +27,8 @@ public class CustomFlowerBlock extends FlowerBlock {
 
     @Override
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        return MY_SHAPE == null ? super.getShape(state, level, pos, context) : MY_SHAPE;
+        Vec3 v = state.getOffset(level, pos);
+        return MY_SHAPE == null ? super.getShape(state, level, pos, context) : MY_SHAPE.move(v.x(), v.y(), v.z());
     }
 
     @Override

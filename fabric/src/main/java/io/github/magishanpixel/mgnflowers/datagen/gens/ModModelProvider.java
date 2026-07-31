@@ -48,9 +48,6 @@ public class ModModelProvider extends FabricModelProvider {
 
         genBlockCustomModel(gen, ModBlocks.BEE_BALM.asBlock());
 
-        genBlockCustomModel(gen, ModBlocks.BLUE_HIBISCUS.asBlock());
-        genBlockCustomModel(gen, ModBlocks.ORANGE_HIBISCUS.asBlock());
-        genBlockCustomModel(gen, ModBlocks.PINK_HIBISCUS.asBlock());
         genBlockCustomModel(gen, ModBlocks.PINK_LACECAP_HYDRANGEA.asBlock());
         genBlockCustomModel(gen, ModBlocks.WHITE_LACECAP_HYDRANGEA.asBlock());
         genBlockCustomModel(gen, ModBlocks.BLUE_LACECAP_HYDRANGEA.asBlock());
@@ -89,12 +86,12 @@ public class ModModelProvider extends FabricModelProvider {
         createTallFlower(gen, ModBlocks.WHITE_VINE_LOTUS.asBlock(), "white", "vine_lotus", false);
         createTallFlower(gen, ModBlocks.PINK_VINE_LOTUS.asBlock(), "pink", "vine_lotus", false);
 
-        createSingleTypeTallFlower(gen, ModBlocks.BLUE_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf(StraddColor.blue), false);
-        createSingleTypeTallFlower(gen, ModBlocks.PINK_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf(StraddColor.pink), false);
-        createSingleTypeTallFlower(gen, ModBlocks.PURPLE_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf(StraddColor.purple), false);
-        createSingleTypeTallFlower(gen, ModBlocks.YELLOW_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf(StraddColor.yellow), false);
-        createSingleTypeTallFlower(gen, ModBlocks.WHITE_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf(StraddColor.white), false);
-        createSingleTypeTallFlower(gen, ModBlocks.RED_TALL_HYACINTH.asBlock(), PrefList.HYACINTH.colorOf(StraddColor.red), false);
+        genBlockCustomModel(gen, ModBlocks.BLUE_HYACINTH.asBlock());
+        genBlockCustomModel(gen, ModBlocks.PINK_HYACINTH.asBlock());
+        genBlockCustomModel(gen, ModBlocks.PURPLE_HYACINTH.asBlock());
+        genBlockCustomModel(gen, ModBlocks.YELLOW_HYACINTH.asBlock());
+        genBlockCustomModel(gen, ModBlocks.WHITE_HYACINTH.asBlock());
+        genBlockCustomModel(gen, ModBlocks.RED_HYACINTH.asBlock());
 
         createSingleTypeTallFlower(gen, ModBlocks.GLOWING_TALL_TULIP.asBlock(), "glowing_tall_tulip");
         createSingleTypeTallFlower(gen, ModBlocks.WILD_DAGGA.asBlock(), "wild_dagga", false);
@@ -161,20 +158,17 @@ public class ModModelProvider extends FabricModelProvider {
         gen.generateFlatItem(ModBlocks.BLUE_TALL_ALLIUM.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.TORCH_GINGER.asItem(), ModelTemplates.FLAT_ITEM);
 
-        gen.generateFlatItem(ModBlocks.ORANGE_HIBISCUS.asItem(), ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(ModBlocks.BLUE_HIBISCUS.asItem(), ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(ModBlocks.PINK_HIBISCUS.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.DANDELION_BED.asItem(), ModelTemplates.FLAT_ITEM);
 
         gen.generateFlatItem(ModBlocks.PINK_VINE_LOTUS.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.WHITE_VINE_LOTUS.asItem(), ModelTemplates.FLAT_ITEM);
 
-        gen.generateFlatItem(ModBlocks.BLUE_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(ModBlocks.PINK_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(ModBlocks.PURPLE_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(ModBlocks.YELLOW_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(ModBlocks.WHITE_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(ModBlocks.RED_TALL_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.BLUE_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.PINK_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.PURPLE_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.YELLOW_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.WHITE_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.RED_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
 
         gen.generateFlatItem(ModBlocks.WATER_POPPY.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.SUNFLOWER_BED.asItem(), ModelTemplates.FLAT_ITEM);
