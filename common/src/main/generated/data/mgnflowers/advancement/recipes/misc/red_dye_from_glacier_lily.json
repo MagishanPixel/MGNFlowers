@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_glacier_lily": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mgnflowers:glacier_lily"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mgnflowers:red_dye_from_glacier_lily"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_glacier_lily"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mgnflowers:red_dye_from_glacier_lily"
+    ]
+  }
+}

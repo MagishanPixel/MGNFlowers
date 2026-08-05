@@ -72,14 +72,17 @@ public class ModItems {
                     output.accept(ModBlocks.LAVA_HYACINTH.asItem());
                     output.accept(ModBlocks.WATER_POPPY);
 
-                    output.accept(ModBlocks.FIRE_LILY);
                     output.accept(ModBlocks.BEE_BALM);
+                    output.accept(ModBlocks.RED_BEE_BALM);
+                    output.accept(ModBlocks.FIRE_LILY);
+                    output.accept(ModBlocks.GLACIER_LILY);
                     output.accept(ModBlocks.BIRD_OF_PARADISE);
                     output.accept(ModBlocks.LAMPBLOSSOM);
                     output.accept(ModBlocks.WELWITSCHIA);
                     output.accept(ModBlocks.TRILLIUM);
                     output.accept(ModBlocks.GROTTAL_BLOOM.asItem());
                     output.accept(ModBlocks.SAND_VERBENA);
+                    output.accept(ModBlocks.WINTER_ACONITE);
                     output.accept(ModBlocks.WILD_DAGGA);
 
 

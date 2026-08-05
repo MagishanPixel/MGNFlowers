@@ -18,27 +18,6 @@
             "seed": 2345,
             "states": [
               {
-                "Name": "mgnflowers:orange_romenta"
-              },
-              {
-                "Name": "mgnflowers:pink_romenta"
-              },
-              {
-                "Name": "mgnflowers:blue_romenta"
-              },
-              {
-                "Name": "mgnflowers:blue_twin_poppy"
-              },
-              {
-                "Name": "mgnflowers:red_twin_poppy"
-              },
-              {
-                "Name": "mgnflowers:pink_twin_poppy"
-              },
-              {
-                "Name": "mgnflowers:orange_twin_poppy"
-              },
-              {
                 "Name": "mgnflowers:blue_hyacinth"
               },
               {
@@ -55,9 +34,6 @@
               },
               {
                 "Name": "mgnflowers:white_hyacinth"
-              },
-              {
-                "Name": "mgnflowers:red_bee_balm"
               }
             ]
           }

@@ -14,6 +14,15 @@ public class ModWorldGen {
         worldGen.modifyBiome(MagishanLib.newId("flower_forest_patches"),matches(ModBiomeTags.IS_FLOWER_FOREST),
                 (biomeholder, modifier) -> {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.FLOWER_FOREST_PATCH.placedFeature());
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.HYACINTH_PATCH.placedFeature());
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.RARE_BEE_BALM.placedFeature());
+                }
+        );
+
+        worldGen.modifyBiome(MagishanLib.newId("snowy_flowers"),matches(Biomes.SNOWY_TAIGA),
+                (biomeholder, modifier) -> {
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.GLACIER_LILYS_PATCH.placedFeature());
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.WINTER_ACONITE_PATCH.placedFeature());
                 }
         );
 
@@ -73,20 +82,19 @@ public class ModWorldGen {
                 }
         );
 
-        worldGen.modifyBiome(MagishanLib.newId("taiga_flowers"), matches(ModBiomeTags.IS_TAIGA),
+        worldGen.modifyBiome(MagishanLib.newId("taiga_flowers"), (resourceLocation, biome) -> biome.is(ModBiomeTags.IS_TAIGA) && !biome.is(ModBiomeTags.IS_SNOWY),
                 (biomeholder, modifier) -> {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.TAIGA_FLOWER_PATCH.placedFeature());
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.WOOD_SORREL_PATCH.placedFeature());
                 }
         );
 
-        worldGen.modifyBiome(MagishanLib.newId("taiga_flowers"), matches(ModBiomeTags.IS_SAVANNA),
+        worldGen.modifyBiome(MagishanLib.newId("savanna_flowers"), matches(ModBiomeTags.IS_SAVANNA),
                 (biomeholder, modifier) -> {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.WILD_DAGGA_PATCH.placedFeature());
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.SAVANNA_IRIS_PATCH.placedFeature());
                 }
         );
-
     }
 
     private static BiomePredicate matches(ResourceKey<Biome> key) {

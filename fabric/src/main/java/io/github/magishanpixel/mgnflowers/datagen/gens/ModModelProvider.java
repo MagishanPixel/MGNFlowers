@@ -55,18 +55,18 @@ public class ModModelProvider extends FabricModelProvider {
 
         genBlockCustomModel(gen, ModBlocks.LAMPBLOSSOM.asBlock());
 
-        gen.createCrossBlock(ModBlocks.BLUE_TWIN_POPPY.asBlock(), BlockModelGenerators.TintState.TINTED);
-        gen.createCrossBlock(ModBlocks.WHITE_TWIN_POPPY.asBlock(), BlockModelGenerators.TintState.TINTED);
-        gen.createCrossBlock(ModBlocks.RED_TWIN_POPPY.asBlock(), BlockModelGenerators.TintState.TINTED);
-        gen.createCrossBlock(ModBlocks.PINK_TWIN_POPPY.asBlock(), BlockModelGenerators.TintState.TINTED);
-        gen.createCrossBlock(ModBlocks.ORANGE_TWIN_POPPY.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.BLUE_TWIN_POPPY.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
+        gen.createCrossBlock(ModBlocks.WHITE_TWIN_POPPY.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
+        gen.createCrossBlock(ModBlocks.RED_TWIN_POPPY.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
+        gen.createCrossBlock(ModBlocks.PINK_TWIN_POPPY.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
+        gen.createCrossBlock(ModBlocks.ORANGE_TWIN_POPPY.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
 
-        gen.createCrossBlock(ModBlocks.BLUE_ROMENTA.asBlock(), BlockModelGenerators.TintState.TINTED);
-        gen.createCrossBlock(ModBlocks.PINK_ROMENTA.asBlock(), BlockModelGenerators.TintState.TINTED);
-        gen.createCrossBlock(ModBlocks.ORANGE_ROMENTA.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.BLUE_ROMENTA.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
+        gen.createCrossBlock(ModBlocks.PINK_ROMENTA.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
+        gen.createCrossBlock(ModBlocks.ORANGE_ROMENTA.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
 
         gen.createCrossBlock(ModBlocks.WELWITSCHIA.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
-        gen.createCrossBlock(ModBlocks.BIRD_OF_PARADISE.asBlock(), BlockModelGenerators.TintState.TINTED);
+        gen.createCrossBlock(ModBlocks.BIRD_OF_PARADISE.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
 
         createTallFlower(gen, ModBlocks.ORANGE_TALL_TULIP.asBlock(), "orange", "tall_tulip");
         createTallFlower(gen, ModBlocks.WHITE_TALL_TULIP.asBlock(), "white", "tall_tulip");
@@ -98,6 +98,7 @@ public class ModModelProvider extends FabricModelProvider {
         createCustomFlowerBed(gen, ModBlocks.SAND_VERBENA.asBlock(), 4);
 
         createSunflowerBed(gen);
+        gen.createCrossBlock(ModBlocks.GLACIER_LILY.asBlock(), BlockModelGenerators.TintState.NOT_TINTED);
 
         createSlightlyCrossModel(gen, getBlockPath("fireweed_bottom"), getBlockPath("fireweed_bottom"));
         createSlightlyCrossModel(gen, getBlockPath("fireweed_top"), getBlockPath("fireweed_top"));
@@ -108,6 +109,10 @@ public class ModModelProvider extends FabricModelProvider {
         createCustomFlowerBed(gen, ModBlocks.DANDELION_BED.asBlock(), 4);
         createCustomFlowerBed(gen, ModBlocks.WATER_POPPY.asBlock(), 4);
         createCustomFlowerBed(gen, ModBlocks.WOOD_SORREL.asBlock(), 4);
+        createCustomFlowerBed(gen, ModBlocks.WINTER_ACONITE.asBlock(), 4);
+
+
+        genBlockCustomModel(gen, ModBlocks.RED_BEE_BALM.asBlock());
 
         gen.createSimpleFlatItemModel(ModBlocks.BLUE_TWIN_POPPY.asBlock());
         gen.createSimpleFlatItemModel(ModBlocks.WHITE_TWIN_POPPY.asBlock());
@@ -126,6 +131,7 @@ public class ModModelProvider extends FabricModelProvider {
         gen.createSimpleFlatItemModel(ModBlocks.BIRD_OF_PARADISE.asBlock());
         gen.createSimpleFlatItemModel(ModBlocks.WELWITSCHIA.asBlock());
 
+        gen.createSimpleFlatItemModel(ModBlocks.GLACIER_LILY.asBlock());
     }
 
     @Override
@@ -185,6 +191,9 @@ public class ModModelProvider extends FabricModelProvider {
         gen.generateFlatItem(ModBlocks.WILD_DAGGA.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.SAVANNAH_SUNSET_IRIS.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.SAND_VERBENA.asItem(), ModelTemplates.FLAT_ITEM);
+
+        gen.generateFlatItem(ModBlocks.RED_BEE_BALM.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.WINTER_ACONITE.asItem(), ModelTemplates.FLAT_ITEM);
     }
 
     private void createCustomFlowerBed(BlockModelGenerators gen, Block flowerBedBlock, int maxCount) {

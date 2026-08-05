@@ -94,5 +94,8 @@ public class ModTranslateProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.SAVANNAH_SUNSET_IRIS.asBlock(), "Savannah Sunset Iris");
         translationBuilder.add(ModBlocks.SAND_VERBENA.asBlock(), "Sand Verbena");
         translationBuilder.add(ModBlocks.WILD_DAGGA.asBlock(), "Wild Dagga");
+        translationBuilder.add(ModBlocks.RED_BEE_BALM.asBlock(), "Red Bee Balm");
+        translationBuilder.add(ModBlocks.GLACIER_LILY.asBlock(), "Glacier Lily");
+        translationBuilder.add(ModBlocks.WINTER_ACONITE.asBlock(), "Winter Aconite");
     }
 }

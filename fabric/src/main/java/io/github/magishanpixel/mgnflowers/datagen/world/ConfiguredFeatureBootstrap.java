@@ -23,10 +23,7 @@ import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfigur
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
-import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseBasedStateProvider;
-import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseProvider;
-import net.minecraft.world.level.levelgen.feature.stateproviders.NoiseThresholdProvider;
-import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.*;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 
 import java.util.ArrayList;
@@ -145,12 +142,34 @@ public class ConfiguredFeatureBootstrap {
                         ModBlocks.RED_HYACINTH,
                         ModBlocks.PURPLE_HYACINTH,
                         ModBlocks.YELLOW_HYACINTH,
+                        ModBlocks.WHITE_HYACINTH,
+                        ModBlocks.RED_BEE_BALM
+                )))
+        );
+
+        createPatch(context, ModKeyFeatures.HYACINTH_PATCH.config(), 96, 6, 2,
+                Feature.SIMPLE_BLOCK,
+                new SimpleBlockConfiguration(new NoiseProvider(2345L, new NormalNoise.NoiseParameters(0, (double)1.0F, 0), 0.020833334F, quickBlockStateList(
+                        ModBlocks.BLUE_HYACINTH,
+                        ModBlocks.PINK_HYACINTH,
+                        ModBlocks.RED_HYACINTH,
+                        ModBlocks.PURPLE_HYACINTH,
+                        ModBlocks.YELLOW_HYACINTH,
                         ModBlocks.WHITE_HYACINTH
                 )))
         );
 
         createPatch(context, ModKeyFeatures.SAVANNA_IRIS_PATCH.config(), 32, 6, 2, quickBlockStateList(ModBlocks.SAVANNAH_SUNSET_IRIS));
         createPatch(context, ModKeyFeatures.WILD_DAGGA_PATCH.config(), 48, 7, 2, ModFeatures.TALLER_FLOWER_FEATURE, new TallerFlowerConfig(5, List.of(ModBlocks.WILD_DAGGA.asHolder())));
+
+        createPatch(context, ModKeyFeatures.GLACIER_LILYS_PATCH.config(), 32, 6, 2, quickBlockStateList(ModBlocks.GLACIER_LILY));
+        createBedPatch(context, ModKeyFeatures.WINTER_ACONITE_PATCH.config(), 64, 6, 2, ModBlocks.WINTER_ACONITE.asBlock(), 4);
+
+        register(context, ModKeyFeatures.RARE_BEE_BALM.config(), Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.BEE_BALM.defaultBlockState())));
+        register(context, ModKeyFeatures.LUSH_FLOWERS_PATCH.config(), Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
+                BlockStateProvider.simple(
+                        ModBlocks.GROTTAL_BLOOM.defaultBlockState()
+                )));
     }
 
     private static List<BlockState> quickBlockStateList(DeferredBlock... blocks) {

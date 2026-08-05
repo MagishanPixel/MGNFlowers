@@ -100,6 +100,10 @@ public class ModBlocks {
     public static DeferredBlock SAND_VERBENA;
     public static DeferredBlock WILD_DAGGA;
 
+    public static DeferredBlock RED_BEE_BALM;
+    public static DeferredBlock GLACIER_LILY;
+    public static DeferredBlock WINTER_ACONITE;
+
     public static void init(BalmBlockRegistrar blocks) {
         FloweryConstruct construct = new FloweryConstruct(blocks);
 
@@ -186,7 +190,9 @@ public class ModBlocks {
         SAND_VERBENA = construct.registerSameProperty("sand_verbena", a -> new SandFlowerBedBlock(a, 4),
                 flowerProp().disableOffset().disableDrop().dye(DyeColor.PINK).build());
         WILD_DAGGA = construct.registerSameProperty("wild_dagga", a -> new TallerFlowerBlock(MobEffects.FIRE_RESISTANCE, 4, a), DyeColor.ORANGE);
-
+        RED_BEE_BALM = construct.registerBasic("red_bee_balm", MobEffects.HEAL, 1, DyeColor.RED);
+        GLACIER_LILY = construct.registerBasic("glacier_lily", MobEffects.FIRE_RESISTANCE, 3, DyeColor.RED);
+        WINTER_ACONITE = construct.registerSameProperty("winter_aconite", a -> new CustomFlowerBedBlock(a, 4), flowerProp().disableOffset().dye(DyeColor.YELLOW).build());
     }
 
     private static FlowerProperty.Builder flowerProp() {

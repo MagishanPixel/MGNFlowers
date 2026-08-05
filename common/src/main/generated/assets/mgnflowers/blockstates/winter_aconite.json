@@ -1,0 +1,160 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite1"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite1",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite1",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite1",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite2"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite2",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite2",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite2",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite3"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite3",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite3",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite3",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite4"
+      },
+      "when": {
+        "facing": "north",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite4",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite4",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "flower_amount": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/winter_aconite4",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "flower_amount": "4"
+      }
+    }
+  ]
+}

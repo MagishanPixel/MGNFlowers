@@ -1,4 +1,4 @@
-// 1.21.1	2026-07-31T10:44:09.8403339	MGN's Flowers/Block Loot Tables
+// 1.21.1	2026-08-05T20:05:52.556422	MGN's Flowers/Block Loot Tables
 063aae1a76be3651c3441ba5f384ba306ca5fdf0 data\mgnflowers\loot_table\blocks\pink_lacecap_hydrangea.json
 e1ab976da34418a86032287df8e9cd3bb1ad7064 data\mgnflowers\loot_table\blocks\blue_twin_poppy.json
 6e0cfb10193899f046fcc62e6da2ae9c5e262028 data\mgnflowers\loot_table\blocks\blue_romenta.json
@@ -9,6 +9,7 @@ e1ab976da34418a86032287df8e9cd3bb1ad7064 data\mgnflowers\loot_table\blocks\blue_
 c9cf49db864cc00d03d0c9ce6378504ee3434933 data\mgnflowers\loot_table\blocks\blue_hyacinth.json
 f9aaaee257f99624227024d7209c301f3f3d110d data\mgnflowers\loot_table\blocks\pink_hyacinth.json
 2d665f7ce6f1a4c9f419c97883032f6a80882938 data\mgnflowers\loot_table\blocks\candy_bleeding_quadheart.json
+bbd84f8d5e91773a4ad28b8a178f2e22cb7ca5d8 data\mgnflowers\loot_table\blocks\glacier_lily.json
 16cfc4d53a253f1181395f705090160ba9996ff1 data\mgnflowers\loot_table\blocks\dandelion_bed.json
 df33432f6c94924e24dd9f49ccec40ac0011e6b8 data\mgnflowers\loot_table\blocks\purple_tall_tulip.json
 2db76c4c870cb8e674c5e661f2c747dbec1d9d62 data\mgnflowers\loot_table\blocks\water_poppy.json
@@ -17,6 +18,7 @@ bf24a5ef20c72d25b34c37d13d226ed845858a92 data\mgnflowers\loot_table\blocks\pink_
 362db9463b3a7fb6f0bd4304747c7ae91c3d1e1b data\mgnflowers\loot_table\blocks\white_tall_tulip.json
 e5ed6b34b60912555bd824877840e8acacd9fd05 data\mgnflowers\loot_table\blocks\grottal_bloom.json
 ae0e1ec48cfb7eda818d0247fd9133dbf0ca319b data\mgnflowers\loot_table\blocks\red_hyacinth.json
+33f1a6597ac6958f8efba06da1db31fd9bbef9bc data\mgnflowers\loot_table\blocks\red_bee_balm.json
 b362bc318e3135a5d29afa496e4a514e16aed1f5 data\mgnflowers\loot_table\blocks\glowing_tall_tulip.json
 802d4f144bd81e278b78fcd37a183572d44f6a5f data\mgnflowers\loot_table\blocks\turquoise_tall_tulip.json
 e4c4cbdf84382606dedd1331b1d94b8ad55e67b8 data\mgnflowers\loot_table\blocks\white_hyacinth.json
@@ -34,6 +36,7 @@ a4b1943018a7320f2482bcfb48d30b9b4cd5f840 data\mgnflowers\loot_table\blocks\white
 9cad9e3707b200b33fd52ef186696cd6b57dd650 data\mgnflowers\loot_table\blocks\pink_ginger_lily.json
 7fcdceac85648b4648e5155b6b17a25f5e5beccc data\mgnflowers\loot_table\blocks\sunflower_bed.json
 d1dc44afa043ca025859c3779d2e8c9948d024f7 data\mgnflowers\loot_table\blocks\hollow_bleeding_quadheart.json
+5a3f86071ef39523a82184be0d2dc535c3641b4a data\mgnflowers\loot_table\blocks\winter_aconite.json
 5c1f18bb5c27427ce92ef1777cfc8484800a8482 data\mgnflowers\loot_table\blocks\pink_tall_tulip.json
 377c4bcf0f66ef3e215a681b6557a4630a557099 data\mgnflowers\loot_table\blocks\orange_ginger_lily.json
 41f314ae700e3b120dd615512436d07340babeec data\mgnflowers\loot_table\blocks\bird_of_paradise.json

@@ -14,7 +14,9 @@ public class ModBiomeTags {
     public static final TagKey<Biome> IS_SWAMP = cKey("is_swamp");
     public static final TagKey<Biome> IS_JUNGLE = cKey("is_jungle");
     public static final TagKey<Biome> IS_TAIGA = cKey("is_taiga");
+    public static final TagKey<Biome> IS_SNOWY = cKey("is_snowy");
     public static final TagKey<Biome> IS_SAVANNA = cKey("is_savanna");
+    public static final TagKey<Biome> IS_LUSH = cKey("is_lush");
 
     private static TagKey<Biome> Key(String name) {
         return TagKey.create(Registries.BIOME, MagishanLib.newId(name));

@@ -95,6 +95,10 @@ public class MGNFlowersClient implements BalmClientModule {
         rend.setRenderLayer(ModBlocks.WILD_DAGGA, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.SAVANNAH_SUNSET_IRIS, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.SAND_VERBENA, RenderType.cutout());
+
+        rend.setRenderLayer(ModBlocks.GLACIER_LILY, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.RED_BEE_BALM, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.WINTER_ACONITE, RenderType.cutout());
     }
 
 
