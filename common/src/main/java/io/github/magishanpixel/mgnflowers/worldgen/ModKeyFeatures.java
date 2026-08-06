@@ -46,6 +46,7 @@ public class ModKeyFeatures {
     public static final KeyFeature RARE_BEE_BALM = of("rare_bee_balm");
 
     public static final KeyFeature LUSH_FLOWERS_PATCH = of("lush_flowers_patch");
+    public static final KeyFeature VINE_LUSH_LOTUSES = of("vine_lush_lotuses");
 
     public record KeyFeature(ResourceKey<ConfiguredFeature<?,?>> config, ResourceKey<PlacedFeature> placedFeature) { }
 

@@ -11,7 +11,7 @@ import net.minecraft.world.level.levelgen.GenerationStep;
 
 public class ModWorldGen {
     public static void boot(BalmWorldGen worldGen) {
-        worldGen.modifyBiome(MagishanLib.newId("flower_forest_patches"),matches(ModBiomeTags.IS_FLOWER_FOREST),
+        worldGen.modifyBiome(MagishanLib.newId("flower_forest_patches"),matches(ModTags.IS_FLOWER_FOREST),
                 (biomeholder, modifier) -> {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.FLOWER_FOREST_PATCH.placedFeature());
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.HYACINTH_PATCH.placedFeature());
@@ -32,7 +32,7 @@ public class ModWorldGen {
                 }
         );
 
-        worldGen.modifyBiome(MagishanLib.newId("plains_flowers"), matches(ModBiomeTags.IS_PLAINS),
+        worldGen.modifyBiome(MagishanLib.newId("plains_flowers"), matches(ModTags.IS_PLAINS),
                 (biomeholder, modifier) -> {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.TWIN_POPPY_PATCH.placedFeature());
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.TALL_TULIP_PATCH.placedFeature());
@@ -46,7 +46,7 @@ public class ModWorldGen {
         );
 
 
-        worldGen.modifyBiome(MagishanLib.newId("swamp_flowers"), matches(ModBiomeTags.IS_SWAMP),
+        worldGen.modifyBiome(MagishanLib.newId("swamp_flowers"), matches(ModTags.IS_SWAMP),
                 (biomeholder, modifier) -> {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.VINE_LOTUSES.placedFeature());
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.WATER_POPPY_PATCH.placedFeature());
@@ -62,14 +62,14 @@ public class ModWorldGen {
         );
 
 
-        worldGen.modifyBiome(MagishanLib.newId("desert_flowers"), matches(ModBiomeTags.IS_DESERT),
+        worldGen.modifyBiome(MagishanLib.newId("desert_flowers"), matches(ModTags.IS_DESERT),
                 (biomeholder, modifier) -> {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.WELWITSCHIA_PATCH.placedFeature());
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.SAND_VERBENA_PATCH.placedFeature());
                 }
         );
 
-        worldGen.modifyBiome(MagishanLib.newId("jungle_flowers"), matches(ModBiomeTags.IS_JUNGLE),
+        worldGen.modifyBiome(MagishanLib.newId("jungle_flowers"), matches(ModTags.IS_JUNGLE),
                 (biomeholder, modifier) -> {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.JUNGLE_FLOWER_PATCH.placedFeature());
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.TORCH_GINGER_PATCH.placedFeature());
@@ -82,23 +82,24 @@ public class ModWorldGen {
                 }
         );
 
-        worldGen.modifyBiome(MagishanLib.newId("taiga_flowers"), (resourceLocation, biome) -> biome.is(ModBiomeTags.IS_TAIGA) && !biome.is(ModBiomeTags.IS_SNOWY),
+        worldGen.modifyBiome(MagishanLib.newId("taiga_flowers"), (resourceLocation, biome) -> biome.is(ModTags.IS_TAIGA) && !biome.is(ModTags.IS_SNOWY),
                 (biomeholder, modifier) -> {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.TAIGA_FLOWER_PATCH.placedFeature());
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.WOOD_SORREL_PATCH.placedFeature());
                 }
         );
 
-        worldGen.modifyBiome(MagishanLib.newId("savanna_flowers"), matches(ModBiomeTags.IS_SAVANNA),
+        worldGen.modifyBiome(MagishanLib.newId("savanna_flowers"), matches(ModTags.IS_SAVANNA),
                 (biomeholder, modifier) -> {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.WILD_DAGGA_PATCH.placedFeature());
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.SAVANNA_IRIS_PATCH.placedFeature());
                 }
         );
 
-        worldGen.modifyBiome(MagishanLib.newId("lush_cave_flowers"), matches(ModBiomeTags.IS_LUSH),
+        worldGen.modifyBiome(MagishanLib.newId("lush_cave_flowers"), matches(ModTags.IS_LUSH),
                 (biomeholder, modifier) -> {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.LUSH_FLOWERS_PATCH.placedFeature());
+                    modifier.addFeature(GenerationStep.Decoration.TOP_LAYER_MODIFICATION, ModKeyFeatures.VINE_LUSH_LOTUSES.placedFeature());
                 }
         );
 

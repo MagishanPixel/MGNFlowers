@@ -1,5 +1,5 @@
 {
-  "parent": "mgnflowers:block/taller_flower/multi/vine_lotus/white_vine_lotus_short",
+  "parent": "mgnflowers:block/white_vine_lotus_short",
   "textures": {
     "0": "mgnflowers:block/pink_vine_lotus",
     "particle": "mgnflowers:block/pink_vine_lotus"

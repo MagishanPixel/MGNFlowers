@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 
@@ -47,7 +48,6 @@ public class ModBlocks {
     public static DeferredBlock ORANGE_GINGER_LILY;
 
     public static DeferredBlock WATER_HYACINTH;
-    public static DeferredBlock LAVA_HYACINTH;
 
     public static DeferredBlock BLEEDING_QUADHEART;
     public static DeferredBlock CANDY_BLEEDING_QUADHEART;
@@ -80,6 +80,7 @@ public class ModBlocks {
 
     public static DeferredBlock WHITE_VINE_LOTUS;
     public static DeferredBlock PINK_VINE_LOTUS;
+    public static DeferredBlock GLOWING_VINE_LOTUS;
 
     public static DeferredBlock WATER_POPPY;
     public static DeferredBlock FIRE_LILY;
@@ -110,7 +111,7 @@ public class ModBlocks {
         MOTH_IRIS = construct.registerBasic("moth_iris", MobEffects.LEVITATION, 2, flowerProp().dye(DyeColor.LIGHT_GRAY).disableOffset().build());
         IRIS = construct.registerBasic("iris", MobEffects.ABSORPTION, 2, flowerProp().dye(DyeColor.PURPLE).disableOffset().build());
         SAVANNAH_SUNSET_IRIS = construct.registerBasic("savannah_sunset_iris", MobEffects.ABSORPTION, 2, flowerProp().dye(DyeColor.PURPLE).disableOffset().build());
-        GROTTAL_BLOOM = construct.registerBasic("grottal_bloom", MobEffects.GLOWING, 4, flowerProp().setGlow(FlowerProperty.GlowValue.of(6, true)).dye(DyeColor.CYAN).build());
+        GROTTAL_BLOOM = construct.registerBasic("grottal_bloom", MobEffects.GLOWING, 4, flowerProp().setGlow(FlowerProperty.GlowValue.of(12, true)).dye(DyeColor.CYAN).build());
 
         BLUE_TWIN_POPPY = construct.registerBasic(PrefList.TWIN_POPPY.colorOf(StraddColor.blue), MobEffects.WATER_BREATHING, 4, DyeColor.BLUE);
         ORANGE_TWIN_POPPY = construct.registerBasic(PrefList.TWIN_POPPY.colorOf(StraddColor.orange), MobEffects.FIRE_RESISTANCE, 5, DyeColor.ORANGE);
@@ -124,7 +125,7 @@ public class ModBlocks {
         PINK_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.colorOf(StraddColor.pink), a -> new TallerFlowerBlock(MobEffects.HEALTH_BOOST, 2, a), DyeColor.PINK);
         PURPLE_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.colorOf(StraddColor.purple), a -> new TallerFlowerBlock(MobEffects.DIG_SLOWDOWN, 4, a), DyeColor.PURPLE);
         TURQUOISE_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.of("turquoise", false), a -> new TallerFlowerBlock(MobEffects.WATER_BREATHING, 6, a), DyeColor.LIGHT_BLUE);
-        GLOWING_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.of("glowing", false), a -> new TallerFlowerBlock(MobEffects.GLOWING, 4, a), DyeColor.ORANGE);
+        GLOWING_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.of("glowing", false), a -> new TallerFlowerBlock(MobEffects.GLOWING, 4, a.lightLevel(v -> v.getValue(TallerFlowerBlock.STEM) == 3 ? 12 : 0)), DyeColor.ORANGE);
 
         RED_GINGER_LILY = construct.registerSameProperty(PrefList.GINGER_LILY.colorOf(StraddColor.red), a -> new TallerFlowerBlock(MobEffects.HEALTH_BOOST, 2, a), DyeColor.RED);
         WHITE_GINGER_LILY = construct.registerSameProperty(PrefList.GINGER_LILY.colorOf(StraddColor.white), a -> new TallerFlowerBlock(MobEffects.GLOWING, 4, a), DyeColor.WHITE);
@@ -132,7 +133,6 @@ public class ModBlocks {
         ORANGE_GINGER_LILY = construct.registerSameProperty(PrefList.GINGER_LILY.colorOf(StraddColor.orange), a -> new TallerFlowerBlock(MobEffects.FIRE_RESISTANCE, 6, a), DyeColor.ORANGE);
 
         WATER_HYACINTH = construct.registerSameProperty("water_hyacinth", a -> new WaterFlowerBedBlock(a, WaterFlowerBedBlock.TYPE.WATER), flowerProp().setBlockItem(WaterFlowerBedBlockItem::new).disableOffset().disableDrop().dye(DyeColor.PINK).build());
-        LAVA_HYACINTH = construct.registerSameProperty("lava_hyacinth", a -> new WaterFlowerBedBlock(a, WaterFlowerBedBlock.TYPE.LAVA), flowerProp().setBlockItem(WaterFlowerBedBlockItem::new).disableOffset().disableDrop().dye(DyeColor.ORANGE).build());
 
         BLEEDING_QUADHEART = construct.registerBasic("bleeding_quadheart", MobEffects.HEAL, 3, DyeColor.RED);
         CANDY_BLEEDING_QUADHEART = construct.registerBasic(PrefList.BLEEDING_QUADHEART.of("candy", false), MobEffects.HEALTH_BOOST, 3, DyeColor.PINK);
@@ -140,7 +140,7 @@ public class ModBlocks {
 
         BEE_BALM = construct.registerBasic("bee_balm", MobEffects.DIG_SLOWDOWN, 4, DyeColor.YELLOW);
 
-        LAMPBLOSSOM = construct.registerBasic("lampblossom", MobEffects.GLOWING, 4, flowerProp().setGlow(FlowerProperty.GlowValue.of(6, true)).dye(DyeColor.ORANGE).build());
+        LAMPBLOSSOM = construct.registerBasic("lampblossom", MobEffects.GLOWING, 4, flowerProp().setGlow(FlowerProperty.GlowValue.of(12, true)).dye(DyeColor.ORANGE).build());
 
         PINK_ROMENTA = construct.registerBasic(PrefList.ROMENTA.colorOf(StraddColor.pink), MobEffects.HEAL, 3, DyeColor.PINK);
         BLUE_ROMENTA = construct.registerBasic(PrefList.ROMENTA.colorOf(StraddColor.blue), MobEffects.CONFUSION, 8, DyeColor.BLUE);
@@ -169,6 +169,7 @@ public class ModBlocks {
 
         WHITE_VINE_LOTUS = construct.registerSameProperty(PrefList.VINE_LOTUS.colorOf(StraddColor.white), a -> new VineLotusBlock(MobEffects.NIGHT_VISION, 3, a), flowerProp().disableOffset().dye(DyeColor.WHITE).build());
         PINK_VINE_LOTUS = construct.registerSameProperty(PrefList.VINE_LOTUS.colorOf(StraddColor.pink), a -> new VineLotusBlock(MobEffects.REGENERATION, 2, a), flowerProp().disableOffset().dye(DyeColor.PINK).build());
+        GLOWING_VINE_LOTUS = construct.registerSameProperty(PrefList.VINE_LOTUS.of("glowing", false), a -> new VineLotusBlock(MobEffects.GLOWING, 4, a.emissiveRendering((blockState, blockGetter, blockPos) -> true).lightLevel(ModBlocks::glowingVineLotus)), flowerProp().disableOffset().dye(DyeColor.ORANGE).build());
 
         SUNFLOWER_BED = construct.registerSameProperty("sunflower_bed", a -> new CustomFlowerBedBlock(a, 4),
                 flowerProp().disableOffset().disableDrop().dye(DyeColor.YELLOW).build());
@@ -251,7 +252,15 @@ public class ModBlocks {
         }
     }
 
+    private static int glowingVineLotus(BlockState state) {
+        int a = state.getValue(TallerFlowerBlock.STEM);
 
+        if (a == 0 || a == 3) {
+            return 12;
+        }
+
+        return 6;
+    }
 
 
 

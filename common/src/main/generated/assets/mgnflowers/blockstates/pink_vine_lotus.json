@@ -2,34 +2,47 @@
   "multipart": [
     {
       "apply": {
-        "model": "mgnflowers:block/taller_flower/multi/vine_lotus/pink_vine_lotus_short"
+        "model": "mgnflowers:block/pink_vine_lotus_short"
       },
       "when": {
+        "sheared": "false",
         "stem": "0"
       }
     },
     {
       "apply": {
-        "model": "mgnflowers:block/taller_flower/multi/vine_lotus/bases/vine_lotus_bottom"
+        "model": "mgnflowers:block/vine_lotus_bottom"
       },
       "when": {
+        "sheared": "false",
         "stem": "1"
       }
     },
     {
       "apply": {
-        "model": "mgnflowers:block/taller_flower/multi/vine_lotus/bases/vine_lotus_middle"
+        "model": "mgnflowers:block/vine_lotus_middle"
       },
       "when": {
+        "sheared": "false",
         "stem": "2"
       }
     },
     {
       "apply": {
-        "model": "mgnflowers:block/taller_flower/multi/vine_lotus/pink_vine_lotus_top"
+        "model": "mgnflowers:block/pink_vine_lotus_top"
       },
       "when": {
+        "sheared": "false",
         "stem": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/pink_vine_lotus_cut"
+      },
+      "when": {
+        "sheared": "true",
+        "stem": "0"
       }
     }
   ]

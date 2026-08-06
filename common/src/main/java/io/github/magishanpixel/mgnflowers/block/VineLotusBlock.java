@@ -1,15 +1,28 @@
 package io.github.magishanpixel.mgnflowers.block;
 
+import io.github.magishanpixel.mgnflowers.misc.MGNConstants;
+import io.github.magishanpixel.mgnflowers.worldgen.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LevelEvent;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
@@ -17,6 +30,7 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
+import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -24,11 +38,13 @@ import org.jetbrains.annotations.Nullable;
 
 public class VineLotusBlock extends TallerFlowerBlock implements SimpleWaterloggedBlock {
     private static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    private static final VoxelShape TOP_SHAPE = Block.box((double)0.0F, (double)0.0F, (double)0.0F, (double)16.0F, (double)5.0F, (double)16.0F);
+    public static final BooleanProperty SHEARED = BooleanProperty.create("sheared");
+    private static final VoxelShape TOP_SHAPE = Block.box(1, 0, 1, 15, 5, 15);
+    private static final VoxelShape SHORT_SHAPE = Block.box(3, 0, 3, 13, 11, 13);
 
     public VineLotusBlock(Holder<MobEffect> suspiciousStewEffect, int effectDuration, Properties properties) {
         super(suspiciousStewEffect, effectDuration, true, properties);
-        this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false));
+        this.registerDefaultState(this.defaultBlockState().setValue(WATERLOGGED, false).setValue(SHEARED, false));
     }
 
     @Override
@@ -39,19 +55,27 @@ public class VineLotusBlock extends TallerFlowerBlock implements SimpleWaterlogg
     @Override
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockState bottomState = level.getBlockState(pos.below());
-        return bottomState.isFaceSturdy(level, pos, Direction.UP) || bottomState.is(this);
+
+        if (bottomState.is(this)) {
+            return !bottomState.getValue(SHEARED);
+        }
+
+        return Block.canSupportCenter(level, pos.below(), Direction.UP);
     }
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        Vec3 vec3 = state.getOffset(level, pos);
-        return state.getValue(STEM) == 3 ? TOP_SHAPE.move(vec3.x, vec3.y, vec3.z) : super.getShape(state, level, pos, context);
+        if (state.getValue(STEM) == 0 && !state.getValue(SHEARED)) {
+            return SHORT_SHAPE;
+        }
+
+        return (state.getValue(STEM) == 3 || state.getValue(SHEARED)) ? TOP_SHAPE : super.getShape(state, level, pos, context);
     }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         super.createBlockStateDefinition(builder);
-        builder.add(WATERLOGGED);
+        builder.add(WATERLOGGED, SHEARED);
     }
 
     @Override
@@ -74,5 +98,24 @@ public class VineLotusBlock extends TallerFlowerBlock implements SimpleWaterlogg
         }
 
         return v;
+    }
+
+    @Override
+    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
+
+        if (!state.getValue(SHEARED)) {
+            if (stack.is(ModTags.SHEAR_TOOL)) {
+                if (state.getValue(STEM) == 0) {
+                    if (!level.isClientSide()) {
+                        level.setBlock(pos, state.setValue(SHEARED, true), 3);
+                        stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
+                        level.levelEvent(LevelEvent.PARTICLES_DESTROY_BLOCK, pos, Block.getId(state));
+                        level.playSound(null, pos, SoundEvents.BOGGED_SHEAR, SoundSource.PLAYERS, 1, 1);
+                    }
+                    return ItemInteractionResult.sidedSuccess(level.isClientSide());
+                }
+            }
+        }
+        return super.useItemOn(stack, state, level, pos, player, hand, hitResult);
     }
 }

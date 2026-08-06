@@ -6,7 +6,6 @@ import io.github.magishanpixel.mgnflowers.worldgen.ModFeatures;
 import io.github.magishanpixel.mgnflowers.worldgen.ModKeyFeatures;
 import io.github.magishanpixel.mgnflowers.worldgen.features.config.NoiseTallerFlowerConfig;
 import io.github.magishanpixel.mgnflowers.worldgen.features.config.TallerFlowerConfig;
-import io.github.magishanpixel.mgnflowers.worldgen.features.provider.NoiseBlockProvider;
 import net.blay09.mods.balm.world.level.block.DeferredBlock;
 import net.minecraft.core.Direction;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -167,6 +166,7 @@ public class ConfiguredFeatureBootstrap {
 
         register(context, ModKeyFeatures.RARE_BEE_BALM.config(), Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.BEE_BALM.defaultBlockState())));
         register(context, ModKeyFeatures.LUSH_FLOWERS_PATCH.config(), ModFeatures.LUSH_FLOWERS_FEATURE, new NoneFeatureConfiguration());
+        register(context, ModKeyFeatures.VINE_LUSH_LOTUSES.config(), ModFeatures.LUSH_VINE_LOTUS_FEATURE, new NoneFeatureConfiguration());
     }
 
     private static List<BlockState> quickBlockStateList(DeferredBlock... blocks) {

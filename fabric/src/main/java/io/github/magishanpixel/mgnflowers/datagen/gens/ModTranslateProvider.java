@@ -41,7 +41,6 @@ public class ModTranslateProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.PINK_GINGER_LILY.asBlock(), PrefList.GINGER_LILY.colorOf_Cap(StraddColor.pink));
 
         translationBuilder.add(ModBlocks.WATER_HYACINTH.asBlock(), "Water Hyacinth");
-        translationBuilder.add(ModBlocks.LAVA_HYACINTH.asBlock(), "Lava Hyacinth");
 
         translationBuilder.add(ModBlocks.BLEEDING_QUADHEART.asBlock(), "Bleeding Quadheart");
         translationBuilder.add(ModBlocks.CANDY_BLEEDING_QUADHEART.asBlock(), PrefList.BLEEDING_QUADHEART.of("candy", true));
@@ -74,6 +73,7 @@ public class ModTranslateProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ModBlocks.WHITE_VINE_LOTUS.asBlock(), PrefList.VINE_LOTUS.colorOf_Cap(StraddColor.white));
         translationBuilder.add(ModBlocks.PINK_VINE_LOTUS.asBlock(), PrefList.VINE_LOTUS.colorOf_Cap(StraddColor.pink));
+        translationBuilder.add(ModBlocks.GLOWING_VINE_LOTUS.asBlock(), PrefList.VINE_LOTUS.of("glowing", true));
 
         translationBuilder.add(ModBlocks.PINK_LACECAP_HYDRANGEA.asBlock(), PrefList.LACECAP_HYDRANGEA.colorOf_Cap(StraddColor.pink));
         translationBuilder.add(ModBlocks.WHITE_LACECAP_HYDRANGEA.asBlock(), PrefList.LACECAP_HYDRANGEA.colorOf_Cap(StraddColor.white));

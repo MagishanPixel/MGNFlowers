@@ -3,6 +3,7 @@ package io.github.magishanpixel.mgnflowers.datagen.gens;
 import com.google.gson.JsonObject;
 import io.github.magishanpixel.mgnflowers.block.CustomFlowerBedBlock;
 import io.github.magishanpixel.mgnflowers.block.TallerFlowerBlock;
+import io.github.magishanpixel.mgnflowers.block.VineLotusBlock;
 import io.github.magishanpixel.mgnflowers.init.ModBlocks;
 import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import io.github.magishanpixel.mgnflowers.misc.PrefList;
@@ -83,8 +84,11 @@ public class ModModelProvider extends FabricModelProvider {
         createTallFlower(gen, ModBlocks.TALL_ALLIUM.asBlock(), "", "tall_allium");
         createTallFlower(gen, ModBlocks.BLUE_TALL_ALLIUM.asBlock(), "blue", "tall_allium");
 
-        createTallFlower(gen, ModBlocks.WHITE_VINE_LOTUS.asBlock(), "white", "vine_lotus", false);
-        createTallFlower(gen, ModBlocks.PINK_VINE_LOTUS.asBlock(), "pink", "vine_lotus", false);
+        //createTallFlower(gen, ModBlocks.WHITE_VINE_LOTUS.asBlock(), "white", "vine_lotus", false);
+        //createTallFlower(gen, ModBlocks.PINK_VINE_LOTUS.asBlock(), "pink", "vine_lotus", false);
+        createVineLotus(gen, ModBlocks.WHITE_VINE_LOTUS.asBlock(), "white");
+        createVineLotus(gen, ModBlocks.PINK_VINE_LOTUS.asBlock(), "pink");
+        createVineLotus(gen, ModBlocks.GLOWING_VINE_LOTUS.asBlock(), "glowing");
 
         genBlockCustomModel(gen, ModBlocks.BLUE_HYACINTH.asBlock());
         genBlockCustomModel(gen, ModBlocks.PINK_HYACINTH.asBlock());
@@ -104,13 +108,11 @@ public class ModModelProvider extends FabricModelProvider {
         createSlightlyCrossModel(gen, getBlockPath("fireweed_top"), getBlockPath("fireweed_top"));
 
         createCustomFlowerBed(gen, ModBlocks.WATER_HYACINTH.asBlock(), 4);
-        createCustomFlowerBed(gen, ModBlocks.LAVA_HYACINTH.asBlock(), 4);
         createCustomFlowerBed(gen, ModBlocks.TORCH_GINGER.asBlock(), 3);
         createCustomFlowerBed(gen, ModBlocks.DANDELION_BED.asBlock(), 4);
         createCustomFlowerBed(gen, ModBlocks.WATER_POPPY.asBlock(), 4);
         createCustomFlowerBed(gen, ModBlocks.WOOD_SORREL.asBlock(), 4);
         createCustomFlowerBed(gen, ModBlocks.WINTER_ACONITE.asBlock(), 4);
-
 
         genBlockCustomModel(gen, ModBlocks.RED_BEE_BALM.asBlock());
 
@@ -141,7 +143,6 @@ public class ModModelProvider extends FabricModelProvider {
         gen.generateFlatItem(ModBlocks.GROTTAL_BLOOM.asItem(), ModelTemplates.FLAT_ITEM);
 
         gen.generateFlatItem(ModBlocks.WATER_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
-        gen.generateFlatItem(ModBlocks.LAVA_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
 
         gen.generateFlatItem(ModBlocks.RED_TALL_TULIP.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.WHITE_TALL_TULIP.asItem(), ModelTemplates.FLAT_ITEM);
@@ -168,6 +169,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         gen.generateFlatItem(ModBlocks.PINK_VINE_LOTUS.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.WHITE_VINE_LOTUS.asItem(), ModelTemplates.FLAT_ITEM);
+        gen.generateFlatItem(ModBlocks.GLOWING_VINE_LOTUS.asItem(), ModelTemplates.FLAT_ITEM);
 
         gen.generateFlatItem(ModBlocks.BLUE_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.PINK_HYACINTH.asItem(), ModelTemplates.FLAT_ITEM);
@@ -317,6 +319,31 @@ public class ModModelProvider extends FabricModelProvider {
                 .with(Condition.condition().term(TallerFlowerBlock.STEM, 2), Variant.variant().with(VariantProperties.MODEL, middle))
                 .with(Condition.condition().term(TallerFlowerBlock.STEM, 3), Variant.variant().with(VariantProperties.MODEL, top))
         );
+    }
+
+    private void createVineLotus(BlockModelGenerators gen, Block block, String color) {
+        String stemBonus = color.equals("glowing") ? "glowing_" : "";
+        String strBottom = stemBonus + "vine_lotus_bottom";
+        String strMiddle = stemBonus + "vine_lotus_middle";
+        String strTop = color + "_vine_lotus_top";
+        String strShort = color + "_vine_lotus_short";
+        String strCut = color + "_vine_lotus_cut";
+
+        ResourceLocation bottom = getBlockPath(strBottom);
+        ResourceLocation middle = getBlockPath(strMiddle);
+        ResourceLocation top = getBlockPath(strTop);
+        ResourceLocation shortStem = getBlockPath(strShort);
+        ResourceLocation cut = getBlockPath(strCut);
+
+        gen.blockStateOutput.accept(MultiPartGenerator.multiPart(block)
+                .with(Condition.condition().term(VineLotusBlock.SHEARED, false).term(TallerFlowerBlock.STEM, 0), Variant.variant().with(VariantProperties.MODEL, shortStem))
+                .with(Condition.condition().term(VineLotusBlock.SHEARED, false).term(TallerFlowerBlock.STEM, 1), Variant.variant().with(VariantProperties.MODEL, bottom))
+                .with(Condition.condition().term(VineLotusBlock.SHEARED, false).term(TallerFlowerBlock.STEM, 2), Variant.variant().with(VariantProperties.MODEL, middle))
+                .with(Condition.condition().term(VineLotusBlock.SHEARED, false).term(TallerFlowerBlock.STEM, 3), Variant.variant().with(VariantProperties.MODEL, top))
+                .with(Condition.condition().term(VineLotusBlock.SHEARED, true).term(TallerFlowerBlock.STEM, 0), Variant.variant().with(VariantProperties.MODEL, cut))
+        );
+
+
     }
 
     private void createSingleTypeTallFlower(BlockModelGenerators gen, Block block, String name) {

@@ -54,6 +54,7 @@ public class ModItems {
 
                     output.accept(ModBlocks.WHITE_VINE_LOTUS);
                     output.accept(ModBlocks.PINK_VINE_LOTUS);
+                    output.accept(ModBlocks.GLOWING_VINE_LOTUS);
 
                     output.accept(ModBlocks.BLEEDING_QUADHEART.asItem());
                     output.accept(ModBlocks.CANDY_BLEEDING_QUADHEART.asItem());
@@ -69,7 +70,6 @@ public class ModItems {
                     output.accept(ModBlocks.WOOD_SORREL);
 
                     output.accept(ModBlocks.WATER_HYACINTH.asItem());
-                    output.accept(ModBlocks.LAVA_HYACINTH.asItem());
                     output.accept(ModBlocks.WATER_POPPY);
 
                     output.accept(ModBlocks.BEE_BALM);

@@ -58,6 +58,7 @@ public class PlacedFeatureBootstrap {
         basicPlaced(context, config, ModKeyFeatures.RARE_BEE_BALM, 120);
 
         register(context, config, ModKeyFeatures.LUSH_FLOWERS_PATCH, List.of(CountPlacement.of(125), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.matchesBlocks(Blocks.SHORT_GRASS, Blocks.MOSS_CARPET, Blocks.AIR), 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
+        register(context, config, ModKeyFeatures.VINE_LUSH_LOTUSES, List.of(CountPlacement.of(125), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.matchesBlocks(Blocks.WATER, Blocks.CLAY), 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
 
     }
 

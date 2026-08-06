@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_lava_hyacinth": {
+    "has_glowing_vine_lotus": {
       "conditions": {
         "items": [
           {
-            "items": "mgnflowers:lava_hyacinth"
+            "items": "mgnflowers:glowing_vine_lotus"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mgnflowers:orange_dye_from_lava_hyacinth"
+        "recipe": "mgnflowers:orange_dye_from_glowing_vine_lotus"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_lava_hyacinth"
+      "has_glowing_vine_lotus"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mgnflowers:orange_dye_from_lava_hyacinth"
+      "mgnflowers:orange_dye_from_glowing_vine_lotus"
     ]
   }
 }
