@@ -1,4 +1,4 @@
-// 1.21.1	2026-08-05T20:05:52.5544253	MGN's Flowers/Recipes
+// 1.21.1	2026-08-06T09:23:50.5022903	MGN's Flowers/Recipes
 047c3f1ac299280628f1fd38e5c8493206f38e1d data\mgnflowers\recipe\white_dye_from_white_hyacinth.json
 0e53c67e9f8f63fb9b9fd38176b8878ae4615618 data\mgnflowers\recipe\orange_dye_from_orange_twin_poppy.json
 6a3c6b9ca77bd95fe94f5b41df39d6eb31442a65 data\mgnflowers\advancement\recipes\misc\pink_dye_from_candy_bleeding_quadheart.json
@@ -8,8 +8,8 @@ e5ba92be65b4f834ab944861a43a042bad163072 data\mgnflowers\advancement\recipes\mis
 69d6f0353d2509e0d622572696ceb2b0303e3b47 data\mgnflowers\advancement\recipes\misc\pink_dye_from_pink_lacecap_hydrangea.json
 d73ced5eff0d045233b18a57c48a733e62c56985 data\mgnflowers\recipe\yellow_dye_from_wood_sorrel.json
 ebd56cf4fadcc2b7a0159fa1eb8f3372c313602f data\mgnflowers\advancement\recipes\misc\yellow_dye_from_yellow_hyacinth.json
-31788d744922741e0ea622e0d33924d4e49bcd77 data\mgnflowers\recipe\orange_dye_from_fire_lily.json
 4a4a7c492d897503d4bb46243b94e9a2be3d5e17 data\mgnflowers\advancement\recipes\misc\orange_dye_from_fire_lily.json
+31788d744922741e0ea622e0d33924d4e49bcd77 data\mgnflowers\recipe\orange_dye_from_fire_lily.json
 1f9ed77d8a79a29aa1cedb50e6d653818481a1a2 data\mgnflowers\recipe\blue_dye_from_blue_hyacinth.json
 f32a3a6adce7b7e1681795e3f25b789d6eaad7e1 data\mgnflowers\recipe\magenta_dye_from_tall_allium.json
 148afd78632aeb6b4b569f26ae0a3ceb67c1eb75 data\mgnflowers\recipe\orange_dye_from_bird_of_paradise.json

@@ -95,6 +95,13 @@ public class ModWorldGen {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.SAVANNA_IRIS_PATCH.placedFeature());
                 }
         );
+
+        worldGen.modifyBiome(MagishanLib.newId("lush_cave_flowers"), matches(ModBiomeTags.IS_LUSH),
+                (biomeholder, modifier) -> {
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.LUSH_FLOWERS_PATCH.placedFeature());
+                }
+        );
+
     }
 
     private static BiomePredicate matches(ResourceKey<Biome> key) {

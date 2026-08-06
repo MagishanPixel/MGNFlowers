@@ -166,10 +166,7 @@ public class ConfiguredFeatureBootstrap {
         createBedPatch(context, ModKeyFeatures.WINTER_ACONITE_PATCH.config(), 64, 6, 2, ModBlocks.WINTER_ACONITE.asBlock(), 4);
 
         register(context, ModKeyFeatures.RARE_BEE_BALM.config(), Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.BEE_BALM.defaultBlockState())));
-        register(context, ModKeyFeatures.LUSH_FLOWERS_PATCH.config(), Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(
-                BlockStateProvider.simple(
-                        ModBlocks.GROTTAL_BLOOM.defaultBlockState()
-                )));
+        register(context, ModKeyFeatures.LUSH_FLOWERS_PATCH.config(), ModFeatures.LUSH_FLOWERS_FEATURE, new NoneFeatureConfiguration());
     }
 
     private static List<BlockState> quickBlockStateList(DeferredBlock... blocks) {
