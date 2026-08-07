@@ -95,8 +95,11 @@ public class ConfiguredFeatureBootstrap {
                 ModBlocks.BLUE_LACECAP_HYDRANGEA,
                 ModBlocks.PINK_LACECAP_HYDRANGEA,
                 ModBlocks.WHITE_LACECAP_HYDRANGEA,
-                ModBlocks.HOLLOW_BLEEDING_QUADHEART
+                ModBlocks.HOLLOW_BLEEDING_HEART,
+                ModBlocks.BLEEDING_HEART
         ));
+
+        createPatch(context, ModKeyFeatures.CANDY_BLEEDING_HEART_PATCH.config(), 96, 6, 2, quickBlockStateList(ModBlocks.CANDY_BLEEDING_HEART));
 
         createPatch(context, ModKeyFeatures.WELWITSCHIA_PATCH.config(), 16, 5, 2, List.of(ModBlocks.WELWITSCHIA.defaultBlockState()));
 
@@ -161,7 +164,6 @@ public class ConfiguredFeatureBootstrap {
         );
 
         createPatch(context, ModKeyFeatures.SAVANNA_IRIS_PATCH.config(), 32, 6, 2, quickBlockStateList(ModBlocks.SAVANNAH_SUNSET_IRIS));
-        //createPatch(context, ModKeyFeatures.WILD_DAGGA_PATCH.config(), 48, 7, 2, ModFeatures.TALLER_FLOWER_FEATURE, new TallerFlowerConfig(5, List.of(ModBlocks.WILD_DAGGA.asHolder())));
 
         createPatch(context, ModKeyFeatures.GLACIER_LILYS_PATCH.config(), 32, 6, 2, quickBlockStateList(ModBlocks.GLACIER_LILY));
         createBedPatch(context, ModKeyFeatures.WINTER_ACONITE_PATCH.config(), 64, 6, 2, ModBlocks.WINTER_ACONITE.asBlock(), 4);

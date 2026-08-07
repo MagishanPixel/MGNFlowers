@@ -2,7 +2,6 @@ package io.github.magishanpixel.mgnflowers.client;
 
 import io.github.magishanpixel.mgnflowers.MGNFlowers;
 import io.github.magishanpixel.mgnflowers.init.ModBlocks;
-import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import net.blay09.mods.balm.api.client.module.BalmClientModule;
 import net.blay09.mods.balm.client.renderer.chunk.BalmBlockRenderTypeRegistrar;
 import net.minecraft.client.renderer.RenderType;
@@ -46,9 +45,9 @@ public class MGNFlowersClient implements BalmClientModule {
 
         rend.setRenderLayer(ModBlocks.WATER_HYACINTH, RenderType.cutout());
 
-        rend.setRenderLayer(ModBlocks.BLEEDING_QUADHEART, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.CANDY_BLEEDING_QUADHEART, RenderType.cutout());
-        rend.setRenderLayer(ModBlocks.HOLLOW_BLEEDING_QUADHEART, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.BLEEDING_HEART, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.CANDY_BLEEDING_HEART, RenderType.cutout());
+        rend.setRenderLayer(ModBlocks.HOLLOW_BLEEDING_HEART, RenderType.cutout());
 
         rend.setRenderLayer(ModBlocks.BEE_BALM, RenderType.cutout());
 

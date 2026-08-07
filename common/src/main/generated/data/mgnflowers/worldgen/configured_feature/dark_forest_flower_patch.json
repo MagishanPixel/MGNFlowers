@@ -40,7 +40,13 @@
               },
               {
                 "data": {
-                  "Name": "mgnflowers:hollow_bleeding_quadheart"
+                  "Name": "mgnflowers:hollow_bleeding_heart"
+                },
+                "weight": 1
+              },
+              {
+                "data": {
+                  "Name": "mgnflowers:bleeding_heart"
                 },
                 "weight": 1
               }

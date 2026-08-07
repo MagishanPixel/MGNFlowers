@@ -20,7 +20,6 @@ public class PlacedFeatureBootstrap {
     public static void boot(BootstrapContext<PlacedFeature> context) {
         var config = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        //basicPlaced(context, config, ModKeyFeatures.ROMENTA_PATCH);
         basicPlaced(context, config, ModKeyFeatures.TWIN_POPPY_PATCH);
         basicPlaced(context, config, ModKeyFeatures.DANDELION_BED_PATCH, 5);
         basicPlaced(context, config, ModKeyFeatures.TALL_ALLIUM_PATCH, 4);
@@ -52,12 +51,12 @@ public class PlacedFeatureBootstrap {
         basicPlaced(context, config, ModKeyFeatures.GLACIER_LILYS_PATCH);
         basicPlaced(context, config, ModKeyFeatures.WINTER_ACONITE_PATCH);
 
+        basicPlaced(context, config, ModKeyFeatures.CANDY_BLEEDING_HEART_PATCH, 2);
+
         basicPlaced(context, config, ModKeyFeatures.RARE_BEE_BALM, 90); // rare flower lmao
 
         register(context, config, ModKeyFeatures.LUSH_FLOWERS_PATCH, List.of(CountPlacement.of(125), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.matchesBlocks(Blocks.SHORT_GRASS, Blocks.MOSS_CARPET, Blocks.AIR), 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
         register(context, config, ModKeyFeatures.LUSH_VINE_LOTUSES, List.of(CountPlacement.of(62), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
-        //register(context, config, ModKeyFeatures.LUSH_FLOWERS_PATCH, List.of(CountPlacement.of(90), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
-
     }
 
     private static void basicPlaced(BootstrapContext<PlacedFeature> context, HolderGetter<ConfiguredFeature<?,?>> config, ModKeyFeatures.KeyFeature keyFeature) {

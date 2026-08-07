@@ -23,7 +23,6 @@ import net.minecraft.world.level.material.PushReaction;
 import java.util.function.Function;
 
 public class ModBlocks {
-
     public static DeferredBlock MOTH_IRIS;
     public static DeferredBlock IRIS;
     public static DeferredBlock GROTTAL_BLOOM;
@@ -50,9 +49,9 @@ public class ModBlocks {
 
     public static DeferredBlock WATER_HYACINTH;
 
-    public static DeferredBlock BLEEDING_QUADHEART;
-    public static DeferredBlock CANDY_BLEEDING_QUADHEART;
-    public static DeferredBlock HOLLOW_BLEEDING_QUADHEART;
+    public static DeferredBlock BLEEDING_HEART;
+    public static DeferredBlock CANDY_BLEEDING_HEART;
+    public static DeferredBlock HOLLOW_BLEEDING_HEART;
 
     public static DeferredBlock BEE_BALM;
 
@@ -134,9 +133,9 @@ public class ModBlocks {
 
         WATER_HYACINTH = construct.registerSameProperty("water_hyacinth", a -> new WaterFlowerBedBlock(a, WaterFlowerBedBlock.TYPE.WATER), flowerProp().setBlockItem(WaterFlowerBedBlockItem::new).notSmall().disableOffset().disableDrop().dye(DyeColor.PINK).build());
 
-        BLEEDING_QUADHEART = construct.registerBasic("bleeding_quadheart", MobEffects.HEAL, 3, DyeColor.RED);
-        CANDY_BLEEDING_QUADHEART = construct.registerBasic(PrefList.BLEEDING_QUADHEART.of("candy", false), MobEffects.HEALTH_BOOST, 3, DyeColor.PINK);
-        HOLLOW_BLEEDING_QUADHEART = construct.registerBasic(PrefList.BLEEDING_QUADHEART.of("hollow", false), MobEffects.WITHER, 8, DyeColor.BLACK);
+        BLEEDING_HEART = construct.registerBasic("bleeding_heart", MobEffects.HEAL, 3, DyeColor.RED);
+        CANDY_BLEEDING_HEART = construct.registerBasic(PrefList.BLEEDING_HEART.of("candy", false), MobEffects.HEALTH_BOOST, 3, DyeColor.PINK);
+        HOLLOW_BLEEDING_HEART = construct.registerBasic(PrefList.BLEEDING_HEART.of("hollow", false), MobEffects.WITHER, 8, DyeColor.BLACK);
 
         BEE_BALM = construct.registerBasic("bee_balm", MobEffects.DIG_SLOWDOWN, 4, DyeColor.YELLOW);
 

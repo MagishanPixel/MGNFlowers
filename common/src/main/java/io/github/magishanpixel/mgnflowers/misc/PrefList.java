@@ -5,7 +5,7 @@ public class PrefList {
     public static final PrefixAdder GINGER_LILY = of("_ginger_lily");
     public static final PrefixAdder TALL_TULIP = of("_tall_tulip");
     public static final PrefixAdder TWIN_POPPY = of("_twin_poppy");
-    public static final PrefixAdder BLEEDING_QUADHEART = of("_bleeding_quadheart");
+    public static final PrefixAdder BLEEDING_HEART = of("_bleeding_heart");
     public static final PrefixAdder ROMENTA = of("_romenta");
     public static final PrefixAdder HYACINTH = of("_hyacinth");
     public static final PrefixAdder VINE_LOTUS = of("_vine_lotus");

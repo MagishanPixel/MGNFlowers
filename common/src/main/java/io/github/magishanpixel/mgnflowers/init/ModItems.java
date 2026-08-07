@@ -56,9 +56,9 @@ public class ModItems {
                     output.accept(ModBlocks.PINK_VINE_LOTUS);
                     output.accept(ModBlocks.GLOWING_VINE_LOTUS);
 
-                    output.accept(ModBlocks.BLEEDING_QUADHEART.asItem());
-                    output.accept(ModBlocks.CANDY_BLEEDING_QUADHEART.asItem());
-                    output.accept(ModBlocks.HOLLOW_BLEEDING_QUADHEART.asItem());
+                    output.accept(ModBlocks.BLEEDING_HEART.asItem());
+                    output.accept(ModBlocks.CANDY_BLEEDING_HEART.asItem());
+                    output.accept(ModBlocks.HOLLOW_BLEEDING_HEART.asItem());
 
                     output.accept(ModBlocks.IRIS.asItem());
                     output.accept(ModBlocks.MOTH_IRIS.asItem());

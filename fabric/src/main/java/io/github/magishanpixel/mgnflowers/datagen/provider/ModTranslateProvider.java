@@ -42,9 +42,9 @@ public class ModTranslateProvider extends FabricLanguageProvider {
 
         translationBuilder.add(ModBlocks.WATER_HYACINTH.asBlock(), "Water Hyacinth");
 
-        translationBuilder.add(ModBlocks.BLEEDING_QUADHEART.asBlock(), "Bleeding Quadheart");
-        translationBuilder.add(ModBlocks.CANDY_BLEEDING_QUADHEART.asBlock(), PrefList.BLEEDING_QUADHEART.of("candy", true));
-        translationBuilder.add(ModBlocks.HOLLOW_BLEEDING_QUADHEART.asBlock(), PrefList.BLEEDING_QUADHEART.of("hollow", true));
+        translationBuilder.add(ModBlocks.BLEEDING_HEART.asBlock(), "Bleeding Heart");
+        translationBuilder.add(ModBlocks.CANDY_BLEEDING_HEART.asBlock(), PrefList.BLEEDING_HEART.of("candy", true));
+        translationBuilder.add(ModBlocks.HOLLOW_BLEEDING_HEART.asBlock(), PrefList.BLEEDING_HEART.of("hollow", true));
 
         translationBuilder.add(ModBlocks.BEE_BALM.asBlock(), "Bee Balm");
 

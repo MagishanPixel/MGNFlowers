@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_bleeding_quadheart": {
+    "has_candy_bleeding_heart": {
       "conditions": {
         "items": [
           {
-            "items": "mgnflowers:bleeding_quadheart"
+            "items": "mgnflowers:candy_bleeding_heart"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mgnflowers:red_dye_from_bleeding_quadheart"
+        "recipe": "mgnflowers:pink_dye_from_candy_bleeding_heart"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_bleeding_quadheart"
+      "has_candy_bleeding_heart"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mgnflowers:red_dye_from_bleeding_quadheart"
+      "mgnflowers:pink_dye_from_candy_bleeding_heart"
     ]
   }
 }

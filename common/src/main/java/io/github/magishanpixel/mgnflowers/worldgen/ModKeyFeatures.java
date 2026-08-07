@@ -46,6 +46,8 @@ public class ModKeyFeatures {
     public static final KeyFeature LUSH_FLOWERS_PATCH = of("lush_flowers_patch");
     public static final KeyFeature LUSH_VINE_LOTUSES = of("lush-vine_lotuses");
 
+    public static final KeyFeature CANDY_BLEEDING_HEART_PATCH = of("candy_bleeding_heart_patch");
+
     public record KeyFeature(ResourceKey<ConfiguredFeature<?,?>> config, ResourceKey<PlacedFeature> placedFeature) { }
 
     private static KeyFeature of(String name) {

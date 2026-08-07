@@ -6,7 +6,6 @@ import io.github.magishanpixel.mgnflowers.block.CustomFlowerBedBlock;
 import io.github.magishanpixel.mgnflowers.block.TallerFlowerBlock;
 import io.github.magishanpixel.mgnflowers.block.VineLotusBlock;
 import io.github.magishanpixel.mgnflowers.init.ModBlocks;
-import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.core.Direction;
@@ -42,9 +41,9 @@ public class ModModelProvider extends FabricModelProvider {
         genRotVariantBlock(gen, ModBlocks.WHITE_CYCLAMEN.asBlock());
         genRotVariantBlock(gen, ModBlocks.PINK_CYCLAMEN.asBlock());
 
-        genBlockCustomModel(gen, ModBlocks.BLEEDING_QUADHEART.asBlock());
-        genBlockCustomModel(gen, ModBlocks.CANDY_BLEEDING_QUADHEART.asBlock());
-        genBlockCustomModel(gen, ModBlocks.HOLLOW_BLEEDING_QUADHEART.asBlock());
+        genBlockCustomModel(gen, ModBlocks.BLEEDING_HEART.asBlock());
+        genBlockCustomModel(gen, ModBlocks.CANDY_BLEEDING_HEART.asBlock());
+        genBlockCustomModel(gen, ModBlocks.HOLLOW_BLEEDING_HEART.asBlock());
 
         genBlockCustomModel(gen, ModBlocks.BEE_BALM.asBlock());
 
@@ -118,9 +117,9 @@ public class ModModelProvider extends FabricModelProvider {
         gen.createSimpleFlatItemModel(ModBlocks.PINK_TWIN_POPPY.asBlock());
         gen.createSimpleFlatItemModel(ModBlocks.ORANGE_TWIN_POPPY.asBlock());
 
-        gen.createSimpleFlatItemModel(ModBlocks.BLEEDING_QUADHEART.asBlock());
-        gen.createSimpleFlatItemModel(ModBlocks.CANDY_BLEEDING_QUADHEART.asBlock());
-        gen.createSimpleFlatItemModel(ModBlocks.HOLLOW_BLEEDING_QUADHEART.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.BLEEDING_HEART.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.CANDY_BLEEDING_HEART.asBlock());
+        gen.createSimpleFlatItemModel(ModBlocks.HOLLOW_BLEEDING_HEART.asBlock());
 
         gen.createSimpleFlatItemModel(ModBlocks.BLUE_ROMENTA.asBlock());
         gen.createSimpleFlatItemModel(ModBlocks.PINK_ROMENTA.asBlock());

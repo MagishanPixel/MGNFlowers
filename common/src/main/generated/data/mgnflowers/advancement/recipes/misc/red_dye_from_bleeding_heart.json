@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_hollow_bleeding_quadheart": {
+    "has_bleeding_heart": {
       "conditions": {
         "items": [
           {
-            "items": "mgnflowers:hollow_bleeding_quadheart"
+            "items": "mgnflowers:bleeding_heart"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "mgnflowers:black_dye_from_hollow_bleeding_quadheart"
+        "recipe": "mgnflowers:red_dye_from_bleeding_heart"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_hollow_bleeding_quadheart"
+      "has_bleeding_heart"
     ]
   ],
   "rewards": {
     "recipes": [
-      "mgnflowers:black_dye_from_hollow_bleeding_quadheart"
+      "mgnflowers:red_dye_from_bleeding_heart"
     ]
   }
 }

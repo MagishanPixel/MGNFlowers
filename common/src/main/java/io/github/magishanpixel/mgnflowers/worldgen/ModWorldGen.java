@@ -97,6 +97,12 @@ public class ModWorldGen {
                 }
         );
 
+        worldGen.modifyBiome(MGNFlowers.newId("cherry_grove_flowers"), matches(Biomes.CHERRY_GROVE),
+                (biomeholder, modifier) -> {
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.CANDY_BLEEDING_HEART_PATCH.placedFeature());
+                }
+        );
+
         worldGen.modifyBiome(MGNFlowers.newId("savanna_flowers"), matches(ModTags.IS_SAVANNA),
                 (biomeholder, modifier) -> {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.SAVANNA_IRIS_PATCH.placedFeature());

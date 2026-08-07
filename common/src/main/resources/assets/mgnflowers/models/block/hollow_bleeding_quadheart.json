@@ -1,7 +1,0 @@
-{
-  "parent": "mgnflowers:block/templates/slightly_cross",
-  "textures": {
-    "0": "mgnflowers:block/hollow_bleeding_quadheart",
-    "particle": "mgnflowers:block/hollow_bleeding_quadheart"
-  }
-}

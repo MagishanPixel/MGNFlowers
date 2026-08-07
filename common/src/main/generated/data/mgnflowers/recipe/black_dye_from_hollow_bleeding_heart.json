@@ -3,11 +3,11 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "mgnflowers:bleeding_quadheart"
+      "item": "mgnflowers:hollow_bleeding_heart"
     }
   ],
   "result": {
     "count": 1,
-    "id": "minecraft:red_dye"
+    "id": "minecraft:black_dye"
   }
 }
