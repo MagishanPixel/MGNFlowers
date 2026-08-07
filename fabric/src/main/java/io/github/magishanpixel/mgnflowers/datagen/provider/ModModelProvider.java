@@ -1,13 +1,12 @@
-package io.github.magishanpixel.mgnflowers.datagen.gens;
+package io.github.magishanpixel.mgnflowers.datagen.provider;
 
 import com.google.gson.JsonObject;
+import io.github.magishanpixel.mgnflowers.MGNFlowers;
 import io.github.magishanpixel.mgnflowers.block.CustomFlowerBedBlock;
 import io.github.magishanpixel.mgnflowers.block.TallerFlowerBlock;
 import io.github.magishanpixel.mgnflowers.block.VineLotusBlock;
 import io.github.magishanpixel.mgnflowers.init.ModBlocks;
 import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
-import io.github.magishanpixel.mgnflowers.misc.PrefList;
-import io.github.magishanpixel.mgnflowers.misc.StraddColor;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.core.Direction;
@@ -49,9 +48,9 @@ public class ModModelProvider extends FabricModelProvider {
 
         genBlockCustomModel(gen, ModBlocks.BEE_BALM.asBlock());
 
-        genBlockCustomModel(gen, ModBlocks.PINK_LACECAP_HYDRANGEA.asBlock());
-        genBlockCustomModel(gen, ModBlocks.WHITE_LACECAP_HYDRANGEA.asBlock());
-        genBlockCustomModel(gen, ModBlocks.BLUE_LACECAP_HYDRANGEA.asBlock());
+        genRotVariantBlock(gen, ModBlocks.PINK_LACECAP_HYDRANGEA.asBlock());
+        genRotVariantBlock(gen, ModBlocks.WHITE_LACECAP_HYDRANGEA.asBlock());
+        genRotVariantBlock(gen, ModBlocks.BLUE_LACECAP_HYDRANGEA.asBlock());
         genBlockCustomModel(gen, ModBlocks.FIRE_LILY.asBlock());
 
         genBlockCustomModel(gen, ModBlocks.LAMPBLOSSOM.asBlock());
@@ -84,8 +83,6 @@ public class ModModelProvider extends FabricModelProvider {
         createTallFlower(gen, ModBlocks.TALL_ALLIUM.asBlock(), "", "tall_allium");
         createTallFlower(gen, ModBlocks.BLUE_TALL_ALLIUM.asBlock(), "blue", "tall_allium");
 
-        //createTallFlower(gen, ModBlocks.WHITE_VINE_LOTUS.asBlock(), "white", "vine_lotus", false);
-        //createTallFlower(gen, ModBlocks.PINK_VINE_LOTUS.asBlock(), "pink", "vine_lotus", false);
         createVineLotus(gen, ModBlocks.WHITE_VINE_LOTUS.asBlock(), "white");
         createVineLotus(gen, ModBlocks.PINK_VINE_LOTUS.asBlock(), "pink");
         createVineLotus(gen, ModBlocks.GLOWING_VINE_LOTUS.asBlock(), "glowing");
@@ -98,7 +95,6 @@ public class ModModelProvider extends FabricModelProvider {
         genBlockCustomModel(gen, ModBlocks.RED_HYACINTH.asBlock());
 
         createSingleTypeTallFlower(gen, ModBlocks.GLOWING_TALL_TULIP.asBlock(), "glowing_tall_tulip");
-        createSingleTypeTallFlower(gen, ModBlocks.WILD_DAGGA.asBlock(), "wild_dagga", false);
         createCustomFlowerBed(gen, ModBlocks.SAND_VERBENA.asBlock(), 4);
 
         createSunflowerBed(gen);
@@ -190,7 +186,6 @@ public class ModModelProvider extends FabricModelProvider {
         gen.generateFlatItem(ModBlocks.WHITE_CYCLAMEN.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.PINK_CYCLAMEN.asItem(), ModelTemplates.FLAT_ITEM);
 
-        gen.generateFlatItem(ModBlocks.WILD_DAGGA.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.SAVANNAH_SUNSET_IRIS.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.SAND_VERBENA.asItem(), ModelTemplates.FLAT_ITEM);
 
@@ -252,7 +247,7 @@ public class ModModelProvider extends FabricModelProvider {
     }
 
     private static ResourceLocation getBlockPath(String path) {
-        return MagishanLib.newId("block/" + path);
+        return MGNFlowers.newId("block/" + path);
     }
 
     private void genBlockCustomModel(BlockModelGenerators gen, Block block) {

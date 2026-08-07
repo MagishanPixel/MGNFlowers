@@ -1,5 +1,6 @@
-package io.github.magishanpixel.mgnflowers.datagen.gens;
+package io.github.magishanpixel.mgnflowers.datagen.provider;
 
+import io.github.magishanpixel.mgnflowers.MGNFlowers;
 import io.github.magishanpixel.mgnflowers.block.CustomFlowerBedBlock;
 import io.github.magishanpixel.mgnflowers.init.ModBlocks;
 import io.github.magishanpixel.mgnflowers.misc.FlowerProperty;
@@ -32,11 +33,15 @@ public class ModBlockLootableProvider extends FabricBlockLootTableProvider {
         createCustomFlowerBedDrops(ModBlocks.SUNFLOWER_BED.asBlock());
         createCustomFlowerBedDrops(ModBlocks.WATER_POPPY.asBlock());
         createCustomFlowerBedDrops(ModBlocks.WATER_HYACINTH.asBlock());
+        createCustomFlowerBedDrops(ModBlocks.WINTER_ACONITE.asBlock());
+        createCustomFlowerBedDrops(ModBlocks.WOOD_SORREL.asBlock());
+        createCustomFlowerBedDrops(ModBlocks.SAND_VERBENA.asBlock());
 
-        if (MagishanLib.dataGenList != null) {
-            for (Map.Entry<String, FlowerProperty> entry : MagishanLib.dataGenList.entrySet()) {
+
+        if (MGNFlowers.dataGenList != null) {
+            for (Map.Entry<String, FlowerProperty> entry : MGNFlowers.dataGenList.entrySet()) {
                 if (!entry.getValue().customDrop) {
-                    dropSelf(BuiltInRegistries.BLOCK.get(MagishanLib.newId(entry.getKey())));
+                    dropSelf(BuiltInRegistries.BLOCK.get(MGNFlowers.newId(entry.getKey())));
                 }
             }
         }

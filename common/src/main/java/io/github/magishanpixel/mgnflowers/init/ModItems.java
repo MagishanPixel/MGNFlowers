@@ -83,9 +83,6 @@ public class ModItems {
                     output.accept(ModBlocks.GROTTAL_BLOOM.asItem());
                     output.accept(ModBlocks.SAND_VERBENA);
                     output.accept(ModBlocks.WINTER_ACONITE);
-                    output.accept(ModBlocks.WILD_DAGGA);
-
-
                 }));
     }
 

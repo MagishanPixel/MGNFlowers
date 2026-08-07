@@ -26,8 +26,9 @@ public class LushVineLotusFeature extends Feature<NoneFeatureConfiguration> {
         BlockPos origin = context.origin();
 
         BlockState ogState = level.getBlockState(origin);
-
-        if ((ogState.is(Blocks.CLAY) || ogState.getFluidState().is(Fluids.WATER)) && level.getBlockState(origin.below()).is(Blocks.CLAY)) {
+        //(ogState.is(Blocks.CLAY) || ogState.getFluidState().is(Fluids.WATER)) && level.getBlockState(origin.below()).is(Blocks.CLAY)
+        if (ogState.isAir() || ogState.getFluidState().is(Fluids.WATER)) {
+            /*
             if (ogState.is(Blocks.CLAY)) {
                 boolean fond = false;
                 for (int y = 1; y <= 20; y++) {
@@ -46,33 +47,41 @@ public class LushVineLotusFeature extends Feature<NoneFeatureConfiguration> {
                 if (!fond) {
                     return false;
                 }
+            }*/
+            //level.getBlockState(origin).isAir() || level.getBlockState(origin).getFluidState().is(Fluids.WATER)
+
+
+
+
+            //return true;
+        }
+
+        //level.setBlock(origin, Blocks.REDSTONE_BLOCK.defaultBlockState(), 2);
+
+        int maxHeight = rand.nextIntBetweenInclusive(1, 3);
+        boolean firstStem = false;
+
+        for (int y = 0; y <= maxHeight; y++) {
+            BlockPos targPos = origin.above(y);
+            BlockState aboveState = level.getBlockState(targPos.above());
+            int numStem = 3;
+
+            if ((aboveState.isAir() || aboveState.getFluidState().is(Fluids.WATER)) && y < maxHeight) {
+                if (!firstStem) {
+                    firstStem = true;
+                    numStem = 1;
+                } else {
+                    numStem = 2;
+                }
             }
 
-            if (level.getBlockState(origin).isAir() || level.getBlockState(origin).getFluidState().is(Fluids.WATER)) {
-                int maxHeight = rand.nextIntBetweenInclusive(1, 3);
-                boolean firstStem = false;
+            level.setBlock(targPos, ModBlocks.GLOWING_VINE_LOTUS.defaultBlockState().setValue(TallerFlowerBlock.STEM, numStem).setValue(BlockStateProperties.WATERLOGGED, level.getBlockState(targPos).is(Blocks.WATER)), 2);
 
-                for (int y = 0; y <= maxHeight; y++) {
-                    BlockPos targPos = origin.above(y);
-                    BlockState aboveState = level.getBlockState(targPos.above());
-                    int numStem = 3;
-
-                    if ((aboveState.isAir() || aboveState.getFluidState().is(Fluids.WATER)) && y < maxHeight) {
-                        if (firstStem) {
-                            firstStem = true;
-                            numStem = 1;
-                        } else {
-                            numStem = 2;
-                        }
-                    }
-
-                    level.setBlock(targPos, ModBlocks.GLOWING_VINE_LOTUS.defaultBlockState().setValue(TallerFlowerBlock.STEM, numStem).setValue(BlockStateProperties.WATERLOGGED, level.getBlockState(targPos).is(Blocks.WATER)), 2);
-                }
-
-                return true;
+            if (numStem == 3) {
+                break;
             }
         }
 
-        return false;
+        return true;
     }
 }

@@ -1,5 +1,6 @@
 package io.github.magishanpixel.mgnflowers.worldgen;
 
+import io.github.magishanpixel.mgnflowers.MGNFlowers;
 import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -7,7 +8,6 @@ import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class ModKeyFeatures {
-    public static final KeyFeature ROMENTA_PATCH = of("romenta_patch");
     public static final KeyFeature TWIN_POPPY_PATCH = of("twin_poppy_patch");
 
     public static final KeyFeature DANDELION_BED_PATCH = of("dandelion_bed_patch");
@@ -38,19 +38,17 @@ public class ModKeyFeatures {
     public static final KeyFeature HYACINTH_PATCH = of("hyacinth_patch");
 
     public static final KeyFeature SAVANNA_IRIS_PATCH = of("savanna_iris_patch");
-    public static final KeyFeature WILD_DAGGA_PATCH = of("wild_dagga_patch");
-
     public static final KeyFeature GLACIER_LILYS_PATCH = of("glacier_lilys_patch");
     public static final KeyFeature WINTER_ACONITE_PATCH = of("winter_aconite_patch");
 
     public static final KeyFeature RARE_BEE_BALM = of("rare_bee_balm");
 
     public static final KeyFeature LUSH_FLOWERS_PATCH = of("lush_flowers_patch");
-    public static final KeyFeature VINE_LUSH_LOTUSES = of("vine_lush_lotuses");
+    public static final KeyFeature LUSH_VINE_LOTUSES = of("lush-vine_lotuses");
 
     public record KeyFeature(ResourceKey<ConfiguredFeature<?,?>> config, ResourceKey<PlacedFeature> placedFeature) { }
 
     private static KeyFeature of(String name) {
-        return new KeyFeature(ResourceKey.create(Registries.CONFIGURED_FEATURE, MagishanLib.newId(name)), ResourceKey.create(Registries.PLACED_FEATURE, MagishanLib.newId(name)));
+        return new KeyFeature(ResourceKey.create(Registries.CONFIGURED_FEATURE, MGNFlowers.newId(name)), ResourceKey.create(Registries.PLACED_FEATURE, MGNFlowers.newId(name)));
     }
 }

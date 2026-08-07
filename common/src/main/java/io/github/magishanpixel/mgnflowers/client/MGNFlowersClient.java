@@ -1,5 +1,6 @@
 package io.github.magishanpixel.mgnflowers.client;
 
+import io.github.magishanpixel.mgnflowers.MGNFlowers;
 import io.github.magishanpixel.mgnflowers.init.ModBlocks;
 import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import net.blay09.mods.balm.api.client.module.BalmClientModule;
@@ -15,7 +16,7 @@ public class MGNFlowersClient implements BalmClientModule {
 
     @Override
     public ResourceLocation getId() {
-        return MagishanLib.newId("client");
+        return MGNFlowers.newId("client");
     }
 
     @Override
@@ -92,7 +93,6 @@ public class MGNFlowersClient implements BalmClientModule {
         rend.setRenderLayer(ModBlocks.PINK_CYCLAMEN, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.WHITE_CYCLAMEN, RenderType.cutout());
 
-        rend.setRenderLayer(ModBlocks.WILD_DAGGA, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.SAVANNAH_SUNSET_IRIS, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.SAND_VERBENA, RenderType.cutout());
 

@@ -2,6 +2,7 @@ package io.github.magishanpixel.mgnflowers;
 
 import io.github.magishanpixel.mgnflowers.init.ModBlocks;
 import io.github.magishanpixel.mgnflowers.init.ModItems;
+import io.github.magishanpixel.mgnflowers.misc.FlowerProperty;
 import io.github.magishanpixel.mgnflowers.misc.MGNConstants;
 import io.github.magishanpixel.mgnflowers.worldgen.ModFeatures;
 import io.github.magishanpixel.mgnflowers.worldgen.ModWorldGen;
@@ -15,12 +16,20 @@ import net.blay09.mods.balm.world.level.block.BalmBlockRegistrar;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MGNFlowers implements BalmModule {
+    public static final Map<String, FlowerProperty> dataGenList = MGNConstants.isDevelopment ? new HashMap<>() : null;
+    public static ResourceLocation newId(String name) {
+        return ResourceLocation.fromNamespaceAndPath(MGNConstants.MOD_ID, name);
+    }
+
     public static void init() {}
 
     @Override
     public ResourceLocation getId() {
-        return ResourceLocation.fromNamespaceAndPath(MGNConstants.MOD_ID, "common");
+        return newId("common");
     }
 
     @Override

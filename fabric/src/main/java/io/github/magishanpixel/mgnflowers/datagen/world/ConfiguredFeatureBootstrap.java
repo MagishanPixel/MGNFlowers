@@ -12,17 +12,18 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.random.SimpleWeightedRandomList;
+import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomPatchConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.*;
+import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.synth.NormalNoise;
 
 import java.util.ArrayList;
@@ -31,11 +32,12 @@ import java.util.List;
 public class ConfiguredFeatureBootstrap {
     public static void boot(BootstrapContext<ConfiguredFeature<?,?>> context) {
 
+        /*
         createPatch(context, ModKeyFeatures.ROMENTA_PATCH.config(), 32, 6, 2, quickBlockStateList(
                 ModBlocks.BLUE_ROMENTA,
                 ModBlocks.PINK_ROMENTA,
                 ModBlocks.ORANGE_ROMENTA
-        ));
+        ));*/
 
         createPatch(context, ModKeyFeatures.TWIN_POPPY_PATCH.config(), 48, 8, 2, quickBlockStateList(
                 ModBlocks.PINK_TWIN_POPPY,
@@ -45,7 +47,7 @@ public class ConfiguredFeatureBootstrap {
                 ModBlocks.WHITE_TWIN_POPPY
         ));
 
-        createBedPatch(context, ModKeyFeatures.DANDELION_BED_PATCH.config(), 48, 6, 2, ModBlocks.DANDELION_BED.asBlock(), 4);
+        createBedPatch(context, ModKeyFeatures.DANDELION_BED_PATCH.config(), 96, 6, 2, ModBlocks.DANDELION_BED.asBlock(), 4);
         createPatch(context, ModKeyFeatures.SUNFLOWER_BED_PATCH.config(), 75, 6, 2, builderBedPatch(ModBlocks.SUNFLOWER_BED.asBlock(), 4, 2).add(Blocks.SUNFLOWER.defaultBlockState()));
 
         createPatch(context, ModKeyFeatures.TALL_TULIP_PATCH.config(), 48, 7, 2,
@@ -159,14 +161,25 @@ public class ConfiguredFeatureBootstrap {
         );
 
         createPatch(context, ModKeyFeatures.SAVANNA_IRIS_PATCH.config(), 32, 6, 2, quickBlockStateList(ModBlocks.SAVANNAH_SUNSET_IRIS));
-        createPatch(context, ModKeyFeatures.WILD_DAGGA_PATCH.config(), 48, 7, 2, ModFeatures.TALLER_FLOWER_FEATURE, new TallerFlowerConfig(5, List.of(ModBlocks.WILD_DAGGA.asHolder())));
+        //createPatch(context, ModKeyFeatures.WILD_DAGGA_PATCH.config(), 48, 7, 2, ModFeatures.TALLER_FLOWER_FEATURE, new TallerFlowerConfig(5, List.of(ModBlocks.WILD_DAGGA.asHolder())));
 
         createPatch(context, ModKeyFeatures.GLACIER_LILYS_PATCH.config(), 32, 6, 2, quickBlockStateList(ModBlocks.GLACIER_LILY));
         createBedPatch(context, ModKeyFeatures.WINTER_ACONITE_PATCH.config(), 64, 6, 2, ModBlocks.WINTER_ACONITE.asBlock(), 4);
 
         register(context, ModKeyFeatures.RARE_BEE_BALM.config(), Feature.SIMPLE_BLOCK, new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.BEE_BALM.defaultBlockState())));
         register(context, ModKeyFeatures.LUSH_FLOWERS_PATCH.config(), ModFeatures.LUSH_FLOWERS_FEATURE, new NoneFeatureConfiguration());
-        register(context, ModKeyFeatures.VINE_LUSH_LOTUSES.config(), ModFeatures.LUSH_VINE_LOTUS_FEATURE, new NoneFeatureConfiguration());
+        register(context, ModKeyFeatures.LUSH_VINE_LOTUSES.config(), Feature.WATERLOGGED_VEGETATION_PATCH, new VegetationPatchConfiguration(
+                BlockTags.LUSH_GROUND_REPLACEABLE,
+                BlockStateProvider.simple(Blocks.CLAY),
+                PlacementUtils.inlinePlaced(ModFeatures.LUSH_VINE_LOTUS_FEATURE, FeatureConfiguration.NONE),
+                CaveSurface.FLOOR,
+                ConstantInt.of(3),
+                0.8F,
+                5,
+                0.05F,
+                UniformInt.of(4, 7),
+                0.7F
+        ));
     }
 
     private static List<BlockState> quickBlockStateList(DeferredBlock... blocks) {

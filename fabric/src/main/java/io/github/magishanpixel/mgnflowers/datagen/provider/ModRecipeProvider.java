@@ -1,6 +1,6 @@
-package io.github.magishanpixel.mgnflowers.datagen.gens;
+package io.github.magishanpixel.mgnflowers.datagen.provider;
 
-import io.github.magishanpixel.mgnflowers.init.ModBlocks;
+import io.github.magishanpixel.mgnflowers.MGNFlowers;
 import io.github.magishanpixel.mgnflowers.misc.FlowerProperty;
 import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -24,8 +24,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void buildRecipes(RecipeOutput recipeOutput) {
-        if (MagishanLib.dataGenList != null) {
-            for (Map.Entry<String, FlowerProperty> entry : MagishanLib.dataGenList.entrySet()) {
+        if (MGNFlowers.dataGenList != null) {
+            for (Map.Entry<String, FlowerProperty> entry : MGNFlowers.dataGenList.entrySet()) {
                 DyeColor col = entry.getValue().dyeCol;
                 Item itemDye = switch (col) {
                     case WHITE -> Items.WHITE_DYE;
@@ -46,7 +46,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                     case BLACK -> Items.BLACK_DYE;
                 };
 
-                Item flower = BuiltInRegistries.ITEM.get(MagishanLib.newId(entry.getKey()));
+                Item flower = BuiltInRegistries.ITEM.get(MGNFlowers.newId(entry.getKey()));
 
                 ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, itemDye)
                         .requires(flower)

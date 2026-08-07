@@ -69,11 +69,6 @@ public class FlowerProperty {
             return this;
         }
 
-        public Builder notEnderHoldable() {
-            this.notHoldable = true;
-            return this;
-        }
-
         public FlowerProperty build() {
             return new FlowerProperty(glowVal, dyeCol, isOffset, customDrop, blockItem, notSmall, notHoldable);
         }

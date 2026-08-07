@@ -1,4 +1,4 @@
-package io.github.magishanpixel.mgnflowers.datagen.gens;
+package io.github.magishanpixel.mgnflowers.datagen.provider;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricDynamicRegistryProvider;

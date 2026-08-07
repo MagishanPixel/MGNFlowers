@@ -1,6 +1,5 @@
 package io.github.magishanpixel.mgnflowers.datagen.world;
 
-import io.github.magishanpixel.mgnflowers.init.ModBlocks;
 import io.github.magishanpixel.mgnflowers.worldgen.ModKeyFeatures;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
@@ -10,7 +9,6 @@ import net.minecraft.data.worldgen.BootstrapContext;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.util.valueproviders.ConstantInt;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -22,9 +20,9 @@ public class PlacedFeatureBootstrap {
     public static void boot(BootstrapContext<PlacedFeature> context) {
         var config = context.lookup(Registries.CONFIGURED_FEATURE);
 
-        basicPlaced(context, config, ModKeyFeatures.ROMENTA_PATCH);
+        //basicPlaced(context, config, ModKeyFeatures.ROMENTA_PATCH);
         basicPlaced(context, config, ModKeyFeatures.TWIN_POPPY_PATCH);
-        basicPlaced(context, config, ModKeyFeatures.DANDELION_BED_PATCH, 20);
+        basicPlaced(context, config, ModKeyFeatures.DANDELION_BED_PATCH, 5);
         basicPlaced(context, config, ModKeyFeatures.TALL_ALLIUM_PATCH, 4);
         basicPlaced(context, config, ModKeyFeatures.TALL_TULIP_PATCH);
         basicPlaced(context, config, ModKeyFeatures.SUNFLOWER_BED_PATCH, 7);
@@ -50,15 +48,15 @@ public class PlacedFeatureBootstrap {
         basicPlaced(context, config, ModKeyFeatures.JUNGLE_FLOWER_PATCH);
         basicPlaced(context, config, ModKeyFeatures.GINGER_LILY_PATCH);
         basicPlaced(context, config, ModKeyFeatures.SAVANNA_IRIS_PATCH);
-        basicPlaced(context, config, ModKeyFeatures.WILD_DAGGA_PATCH);
 
         basicPlaced(context, config, ModKeyFeatures.GLACIER_LILYS_PATCH);
         basicPlaced(context, config, ModKeyFeatures.WINTER_ACONITE_PATCH);
 
-        basicPlaced(context, config, ModKeyFeatures.RARE_BEE_BALM, 120);
+        basicPlaced(context, config, ModKeyFeatures.RARE_BEE_BALM, 90); // rare flower lmao
 
         register(context, config, ModKeyFeatures.LUSH_FLOWERS_PATCH, List.of(CountPlacement.of(125), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.matchesBlocks(Blocks.SHORT_GRASS, Blocks.MOSS_CARPET, Blocks.AIR), 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
-        register(context, config, ModKeyFeatures.VINE_LUSH_LOTUSES, List.of(CountPlacement.of(125), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.matchesBlocks(Blocks.WATER, Blocks.CLAY), 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
+        register(context, config, ModKeyFeatures.LUSH_VINE_LOTUSES, List.of(CountPlacement.of(62), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
+        //register(context, config, ModKeyFeatures.LUSH_FLOWERS_PATCH, List.of(CountPlacement.of(90), InSquarePlacement.spread(), PlacementUtils.RANGE_BOTTOM_TO_MAX_TERRAIN_HEIGHT, EnvironmentScanPlacement.scanningFor(Direction.DOWN, BlockPredicate.solid(), BlockPredicate.ONLY_IN_AIR_PREDICATE, 12), RandomOffsetPlacement.vertical(ConstantInt.of(1)), BiomeFilter.biome()));
 
     }
 

@@ -48,7 +48,7 @@ public class LushFlowersFeature extends Feature<NoneFeatureConfiguration> {
                         int numStem = 3;
 
                         if (level.getBlockState(targPos.above()).isAir() && y < maxHeight) {
-                            if (firstStem) {
+                            if (!firstStem) {
                                 firstStem = true;
                                 numStem = 1;
                             } else {
