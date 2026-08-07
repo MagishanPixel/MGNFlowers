@@ -33,7 +33,7 @@
         "fabric-api": "*",
         "minecraft": "${minecraft_version}",
         "java": ">=${java_version}",
-        "balm-fabric": "*"
+        "balm-fabric": ">=${balm_version_min}"
     }
 }
   
