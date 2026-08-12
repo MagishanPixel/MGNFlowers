@@ -4,7 +4,6 @@ import io.github.magishanpixel.mgnflowers.MGNFlowers;
 import io.github.magishanpixel.mgnflowers.block.CustomFlowerBedBlock;
 import io.github.magishanpixel.mgnflowers.init.ModBlocks;
 import io.github.magishanpixel.mgnflowers.misc.FlowerProperty;
-import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.core.HolderLookup;

@@ -1,7 +1,6 @@
 package io.github.magishanpixel.mgnflowers.worldgen;
 
 import io.github.magishanpixel.mgnflowers.MGNFlowers;
-import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -44,7 +43,7 @@ public class ModKeyFeatures {
     public static final KeyFeature RARE_BEE_BALM = of("rare_bee_balm");
 
     public static final KeyFeature LUSH_FLOWERS_PATCH = of("lush_flowers_patch");
-    public static final KeyFeature LUSH_VINE_LOTUSES = of("lush-vine_lotuses");
+    public static final KeyFeature LUSH_VINE_LOTUSES = of("lush_vine_lotuses");
 
     public static final KeyFeature CANDY_BLEEDING_HEART_PATCH = of("candy_bleeding_heart_patch");
 

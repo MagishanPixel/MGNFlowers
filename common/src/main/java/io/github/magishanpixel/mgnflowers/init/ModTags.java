@@ -1,7 +1,6 @@
 package io.github.magishanpixel.mgnflowers.init;
 
 import io.github.magishanpixel.mgnflowers.MGNFlowers;
-import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;

@@ -2,7 +2,6 @@ package io.github.magishanpixel.mgnflowers.worldgen;
 
 import io.github.magishanpixel.mgnflowers.MGNFlowers;
 import io.github.magishanpixel.mgnflowers.init.ModTags;
-import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import net.blay09.mods.balm.api.world.BalmWorldGen;
 import net.blay09.mods.balm.api.world.BiomePredicate;
 import net.minecraft.resources.ResourceKey;

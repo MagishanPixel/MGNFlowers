@@ -2,7 +2,6 @@ package io.github.magishanpixel.mgnflowers.datagen.provider;
 
 import io.github.magishanpixel.mgnflowers.MGNFlowers;
 import io.github.magishanpixel.mgnflowers.misc.FlowerProperty;
-import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.core.HolderLookup;

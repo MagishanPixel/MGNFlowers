@@ -5,6 +5,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -19,8 +20,9 @@ public class FlowerProperty {
     public final boolean notSmallFlower;
     public final boolean notHoldable;
     public final BiFunction<Block, Item.Properties, BlockItem> blockItem;
+    public final SoundType sound;
 
-    public FlowerProperty(GlowValue glowVal, DyeColor dyeCol, boolean isOffset, boolean hasCustomDrop, BiFunction<Block, Item.Properties, BlockItem> blockItem, boolean notSmallFlower, boolean notHoldable) {
+    public FlowerProperty(GlowValue glowVal, DyeColor dyeCol, boolean isOffset, boolean hasCustomDrop, BiFunction<Block, Item.Properties, BlockItem> blockItem, boolean notSmallFlower, boolean notHoldable, SoundType sound) {
         this.glowVal = glowVal;
         this.dyeCol = dyeCol;
         this.isOffset = isOffset;
@@ -28,6 +30,7 @@ public class FlowerProperty {
         this.blockItem = blockItem;
         this.notSmallFlower = notSmallFlower;
         this.notHoldable = notHoldable;
+        this.sound = sound;
     }
 
     public static class Builder {
@@ -37,6 +40,7 @@ public class FlowerProperty {
         private boolean customDrop = false;
         private boolean notSmall = false;
         private boolean notHoldable = false;
+        private SoundType sound = null;
         private BiFunction<Block, Item.Properties, BlockItem> blockItem = null;
 
         public Builder setGlow(GlowValue val) {
@@ -69,8 +73,13 @@ public class FlowerProperty {
             return this;
         }
 
+        public Builder sound(SoundType v) {
+            this.sound = v;
+            return this;
+        }
+
         public FlowerProperty build() {
-            return new FlowerProperty(glowVal, dyeCol, isOffset, customDrop, blockItem, notSmall, notHoldable);
+            return new FlowerProperty(glowVal, dyeCol, isOffset, customDrop, blockItem, notSmall, notHoldable, sound);
         }
     }
 
