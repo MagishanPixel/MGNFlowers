@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mgnflowers:white_dye_from_white_tall_tulip"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_tall_tulip": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mgnflowers:white_tall_tulip"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_white_tall_tulip"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mgnflowers:white_dye_from_white_tall_tulip"
+    ]
+  }
+}

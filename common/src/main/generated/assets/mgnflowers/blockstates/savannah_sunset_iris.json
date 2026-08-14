@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "mgnflowers:block/savannah_sunset_iris"
+      },
+      {
+        "model": "mgnflowers:block/savannah_sunset_iris",
+        "y": 90
+      },
+      {
+        "model": "mgnflowers:block/savannah_sunset_iris",
+        "y": 180
+      },
+      {
+        "model": "mgnflowers:block/savannah_sunset_iris",
+        "y": 270
+      }
+    ]
+  }
+}

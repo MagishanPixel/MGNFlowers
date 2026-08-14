@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "stem=0": {
+      "model": "mgnflowers:block/taller_flower/single/glowing_tall_tulip/bottom"
+    },
+    "stem=1": {
+      "model": "mgnflowers:block/taller_flower/single/glowing_tall_tulip/bottom"
+    },
+    "stem=2": {
+      "model": "mgnflowers:block/taller_flower/single/glowing_tall_tulip/middle"
+    },
+    "stem=3": {
+      "model": "mgnflowers:block/taller_flower/single/glowing_tall_tulip/top"
+    }
+  }
+}

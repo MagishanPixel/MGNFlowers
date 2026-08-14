@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_savannah_sunset_iris": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mgnflowers:savannah_sunset_iris"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mgnflowers:purple_dye_from_savannah_sunset_iris"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_savannah_sunset_iris"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mgnflowers:purple_dye_from_savannah_sunset_iris"
+    ]
+  }
+}

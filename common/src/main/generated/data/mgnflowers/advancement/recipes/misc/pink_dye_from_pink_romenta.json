@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_pink_romenta": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mgnflowers:pink_romenta"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mgnflowers:pink_dye_from_pink_romenta"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_pink_romenta"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mgnflowers:pink_dye_from_pink_romenta"
+    ]
+  }
+}

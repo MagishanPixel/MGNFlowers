@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mgnflowers:yellow_dye_from_wood_sorrel"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wood_sorrel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mgnflowers:wood_sorrel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wood_sorrel"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mgnflowers:yellow_dye_from_wood_sorrel"
+    ]
+  }
+}

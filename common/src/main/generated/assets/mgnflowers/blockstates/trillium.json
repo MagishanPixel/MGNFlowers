@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "mgnflowers:block/trillium"
+      },
+      {
+        "model": "mgnflowers:block/trillium",
+        "y": 90
+      },
+      {
+        "model": "mgnflowers:block/trillium",
+        "y": 180
+      },
+      {
+        "model": "mgnflowers:block/trillium",
+        "y": 270
+      }
+    ]
+  }
+}

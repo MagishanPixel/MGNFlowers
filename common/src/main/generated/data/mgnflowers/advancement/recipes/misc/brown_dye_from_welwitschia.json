@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "mgnflowers:brown_dye_from_welwitschia"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_welwitschia": {
+      "conditions": {
+        "items": [
+          {
+            "items": "mgnflowers:welwitschia"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_welwitschia"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "mgnflowers:brown_dye_from_welwitschia"
+    ]
+  }
+}

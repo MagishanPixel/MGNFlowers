@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "stem=0": {
+      "model": "mgnflowers:block/taller_flower/multi/ginger_lily/bases/ginger_lily_bottom"
+    },
+    "stem=1": {
+      "model": "mgnflowers:block/taller_flower/multi/ginger_lily/bases/ginger_lily_bottom"
+    },
+    "stem=2": {
+      "model": "mgnflowers:block/taller_flower/multi/ginger_lily/bases/ginger_lily_middle"
+    },
+    "stem=3": {
+      "model": "mgnflowers:block/taller_flower/multi/ginger_lily/white_ginger_lily_top"
+    }
+  }
+}

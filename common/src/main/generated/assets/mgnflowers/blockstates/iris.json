@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "mgnflowers:block/iris"
+      },
+      {
+        "model": "mgnflowers:block/iris",
+        "y": 90
+      },
+      {
+        "model": "mgnflowers:block/iris",
+        "y": 180
+      },
+      {
+        "model": "mgnflowers:block/iris",
+        "y": 270
+      }
+    ]
+  }
+}

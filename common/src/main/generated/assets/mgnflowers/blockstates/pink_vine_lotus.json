@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "sheared=false,stem=0": {
+      "model": "mgnflowers:block/pink_vine_lotus_short"
+    },
+    "sheared=false,stem=1": {
+      "model": "mgnflowers:block/vine_lotus_bottom"
+    },
+    "sheared=false,stem=2": {
+      "model": "mgnflowers:block/vine_lotus_middle"
+    },
+    "sheared=false,stem=3": {
+      "model": "mgnflowers:block/pink_vine_lotus_top"
+    },
+    "sheared=true,stem=0": {
+      "model": "mgnflowers:block/pink_vine_lotus_cut"
+    },
+    "sheared=true,stem=1": {
+      "model": "mgnflowers:block/pink_vine_lotus_cut"
+    },
+    "sheared=true,stem=2": {
+      "model": "mgnflowers:block/pink_vine_lotus_cut"
+    },
+    "sheared=true,stem=3": {
+      "model": "mgnflowers:block/pink_vine_lotus_cut"
+    }
+  }
+}

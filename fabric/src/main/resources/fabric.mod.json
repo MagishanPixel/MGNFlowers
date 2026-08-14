@@ -1,0 +1,39 @@
+{
+    "schemaVersion": 1,
+    "id": "${mod_id}",
+    "version": "${version}",
+    "name": "${mod_name}",
+    "description": "${description}",
+    "authors": [
+        "${mod_author}"
+    ],
+    "contact": {
+        "source": "https://github.com/MagishanPixel/OddFlowers"
+    },
+    "license": "${license}",
+    "icon": "${mod_id}.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            "io.github.magishanpixel.mgnflowers.MGNFlowers_FABRIC"
+        ],
+        "client" : [
+            "io.github.magishanpixel.mgnflowers.client.MGNFlowersClient_FABRIC"
+        ],
+        "fabric-datagen": [
+            "io.github.magishanpixel.mgnflowers.datagen.NGNFlowersDataGen"
+        ]
+    },
+    "mixins": [
+        "${mod_id}.mixins.json",
+        "${mod_id}.fabric.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=${fabric_loader_version}",
+        "fabric-api": "*",
+        "minecraft": "${minecraft_version}",
+        "java": ">=${java_version}",
+        "balm-fabric": ">=${balm_version_min}"
+    }
+}
+  

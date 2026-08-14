@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,flower_amount=1": {
+      "model": "mgnflowers:block/wood_sorrel1",
+      "y": 90
+    },
+    "facing=east,flower_amount=2": {
+      "model": "mgnflowers:block/wood_sorrel2",
+      "y": 90
+    },
+    "facing=east,flower_amount=3": {
+      "model": "mgnflowers:block/wood_sorrel3",
+      "y": 90
+    },
+    "facing=east,flower_amount=4": {
+      "model": "mgnflowers:block/wood_sorrel4",
+      "y": 90
+    },
+    "facing=north,flower_amount=1": {
+      "model": "mgnflowers:block/wood_sorrel1"
+    },
+    "facing=north,flower_amount=2": {
+      "model": "mgnflowers:block/wood_sorrel2"
+    },
+    "facing=north,flower_amount=3": {
+      "model": "mgnflowers:block/wood_sorrel3"
+    },
+    "facing=north,flower_amount=4": {
+      "model": "mgnflowers:block/wood_sorrel4"
+    },
+    "facing=south,flower_amount=1": {
+      "model": "mgnflowers:block/wood_sorrel1",
+      "y": 180
+    },
+    "facing=south,flower_amount=2": {
+      "model": "mgnflowers:block/wood_sorrel2",
+      "y": 180
+    },
+    "facing=south,flower_amount=3": {
+      "model": "mgnflowers:block/wood_sorrel3",
+      "y": 180
+    },
+    "facing=south,flower_amount=4": {
+      "model": "mgnflowers:block/wood_sorrel4",
+      "y": 180
+    },
+    "facing=west,flower_amount=1": {
+      "model": "mgnflowers:block/wood_sorrel1",
+      "y": 270
+    },
+    "facing=west,flower_amount=2": {
+      "model": "mgnflowers:block/wood_sorrel2",
+      "y": 270
+    },
+    "facing=west,flower_amount=3": {
+      "model": "mgnflowers:block/wood_sorrel3",
+      "y": 270
+    },
+    "facing=west,flower_amount=4": {
+      "model": "mgnflowers:block/wood_sorrel4",
+      "y": 270
+    }
+  }
+}
