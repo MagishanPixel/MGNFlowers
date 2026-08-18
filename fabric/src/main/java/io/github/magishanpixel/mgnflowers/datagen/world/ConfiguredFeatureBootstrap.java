@@ -163,6 +163,18 @@ public class ConfiguredFeatureBootstrap {
                 )))
         );
 
+        createPatch(context, ModKeyFeatures.TALL_TULIPS_FLOWER_FOREST_PATCH.config(), 96, 6, 2,
+                ModFeatures.NOISE_TALLER_FLOWER_FEATURE,
+                new NoiseTallerFlowerConfig(3,2345L, new NormalNoise.NoiseParameters(0, (double)1.0F, 0), 0.020833334F, List.of(
+                        ModBlocks.TURQUOISE_TALL_TULIP.asHolder(),
+                        ModBlocks.ORANGE_TALL_TULIP.asHolder(),
+                        ModBlocks.PINK_TALL_TULIP.asHolder(),
+                        ModBlocks.PURPLE_TALL_TULIP.asHolder(),
+                        ModBlocks.RED_TALL_TULIP.asHolder(),
+                        ModBlocks.WHITE_TALL_TULIP.asHolder()
+                ))
+        );
+
         createPatch(context, ModKeyFeatures.SAVANNA_IRIS_PATCH.config(), 32, 6, 2, quickBlockStateList(ModBlocks.SAVANNAH_SUNSET_IRIS));
 
         createPatch(context, ModKeyFeatures.GLACIER_LILYS_PATCH.config(), 32, 6, 2, quickBlockStateList(ModBlocks.GLACIER_LILY));

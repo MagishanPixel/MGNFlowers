@@ -43,11 +43,6 @@ public class VineLotusBlock extends TallerFlowerBlock implements SimpleWaterlogg
     }
 
     @Override
-    public boolean mayPlaceOn(BlockState state, BlockGetter level, BlockPos pos) {
-        return super.mayPlaceOn(state, level, pos);
-    }
-
-    @Override
     protected boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
         BlockState bottomState = level.getBlockState(pos.below());
 
@@ -75,7 +70,13 @@ public class VineLotusBlock extends TallerFlowerBlock implements SimpleWaterlogg
 
     @Override
     public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
-        return super.getStateForPlacement(context).setValue(WATERLOGGED, context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER);
+        BlockState state = super.getStateForPlacement(context);
+
+        if (state != null) {
+            state = state.setValue(WATERLOGGED, context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER);
+        }
+
+        return state;
     }
 
     @Override

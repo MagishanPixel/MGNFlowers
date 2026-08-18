@@ -1,6 +1,5 @@
 package io.github.magishanpixel.mgnflowers.worldgen;
 
-import io.github.magishanpixel.mgnflowers.misc.MagishanLib;
 import io.github.magishanpixel.mgnflowers.worldgen.features.*;
 import io.github.magishanpixel.mgnflowers.worldgen.features.config.NoiseTallerFlowerConfig;
 import io.github.magishanpixel.mgnflowers.worldgen.features.config.TallerFlowerConfig;

@@ -43,6 +43,7 @@ public class PlacedFeatureBootstrap {
 
         basicPlaced(context, config, ModKeyFeatures.FLOWER_FOREST_PATCH, 9);
         basicPlaced(context, config, ModKeyFeatures.HYACINTH_PATCH, 9);
+        basicPlaced(context, config, ModKeyFeatures.TALL_TULIPS_FLOWER_FOREST_PATCH, 9);
 
         basicPlaced(context, config, ModKeyFeatures.JUNGLE_FLOWER_PATCH);
         basicPlaced(context, config, ModKeyFeatures.GINGER_LILY_PATCH);

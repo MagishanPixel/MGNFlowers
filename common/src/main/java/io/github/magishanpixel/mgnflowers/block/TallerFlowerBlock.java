@@ -3,6 +3,8 @@ package io.github.magishanpixel.mgnflowers.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -48,17 +50,23 @@ public class TallerFlowerBlock extends FlowerBlock {
 
     @Override
     public BlockState updateShape(BlockState state, Direction facing, BlockState facingState, LevelAccessor level, BlockPos currentPos, BlockPos facingPos) {
+        BlockState resState = updateStem(state, level, currentPos, false);
         return super.updateShape(
-                updateStem(state, level, currentPos),
+                resState != null ? resState : state,
                 facing,facingState,level,currentPos,facingPos
         );
     }
 
-    private BlockState updateStem(BlockState state, LevelAccessor level, BlockPos pos) {
+    private BlockState updateStem(BlockState state, LevelAccessor level, BlockPos pos, boolean firstPlace) {
         BlockState up = level.getBlockState(pos.above());
         BlockState down = level.getBlockState(pos.below());
 
         BlockState resState = state;
+
+        if (!canSurvive(state, level, pos)) {
+            level.scheduleTick(pos, this, 1);
+            return null;
+        }
 
         if (up.is(this) && down.is(this)) {
             resState = resState.setValue(STEM, 2);
@@ -69,8 +77,11 @@ public class TallerFlowerBlock extends FlowerBlock {
         } else if (!up.is(this) && !down.is(this)) {
             if (canBeShort) {
                 resState = resState.setValue(STEM, 0);
+            } else if (firstPlace) {
+                resState = resState.setValue(STEM, 1);
             } else {
-                level.destroyBlock(pos, true);
+                level.scheduleTick(pos, this, 1);
+                return null;
             }
         }
 
@@ -78,8 +89,15 @@ public class TallerFlowerBlock extends FlowerBlock {
     }
 
     @Override
+    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        if (!canSurvive(state, level,pos) || (!canBeShort && !level.getBlockState(pos.above()).is(this))) {
+            level.destroyBlock(pos, true);
+        }
+    }
+
+    @Override
     public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
-        return updateStem(super.getStateForPlacement(context), context.getLevel(), context.getClickedPos());
+        return updateStem(super.getStateForPlacement(context), context.getLevel(), context.getClickedPos(), true);
     }
 
     @Override

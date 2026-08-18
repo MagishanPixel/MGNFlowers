@@ -17,6 +17,7 @@ public class ModWorldGen {
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.FLOWER_FOREST_PATCH.placedFeature());
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.HYACINTH_PATCH.placedFeature());
                     modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.RARE_BEE_BALM.placedFeature());
+                    modifier.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ModKeyFeatures.TALL_TULIPS_FLOWER_FOREST_PATCH.placedFeature());
                 }
         );
 

@@ -35,6 +35,7 @@ public class ModKeyFeatures {
 
     public static final KeyFeature FLOWER_FOREST_PATCH = of("flower_forest_patch");
     public static final KeyFeature HYACINTH_PATCH = of("hyacinth_patch");
+    public static final KeyFeature TALL_TULIPS_FLOWER_FOREST_PATCH = of("tall_tulips_flower_forest_patch");
 
     public static final KeyFeature SAVANNA_IRIS_PATCH = of("savanna_iris_patch");
     public static final KeyFeature GLACIER_LILYS_PATCH = of("glacier_lilys_patch");
