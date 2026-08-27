@@ -8,12 +8,14 @@ import net.blay09.mods.balm.world.level.block.BalmBlockRegistrar;
 import net.blay09.mods.balm.world.level.block.BalmBlockRegistration;
 import net.blay09.mods.balm.world.level.block.DeferredBlock;
 import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -104,6 +106,28 @@ public class ModBlocks {
     public static DeferredBlock GLACIER_LILY;
     public static DeferredBlock WINTER_ACONITE;
 
+    // FLOWER POTS POTTED_
+    // CROSS
+    public static DeferredBlock POTTED_BLUE_TWIN_POPPY;
+    public static DeferredBlock POTTED_ORANGE_TWIN_POPPY;
+    public static DeferredBlock POTTED_WHITE_TWIN_POPPY;
+    public static DeferredBlock POTTED_RED_TWIN_POPPY;
+    public static DeferredBlock POTTED_PINK_TWIN_POPPY;
+
+    public static DeferredBlock POTTED_PINK_ROMENTA;
+    public static DeferredBlock POTTED_BLUE_ROMENTA;
+    public static DeferredBlock POTTED_ORANGE_ROMENTA;
+
+    public static DeferredBlock POTTED_BIRD_OF_PARADISE;
+
+    public static DeferredBlock POTTED_BLEEDING_HEART;
+    public static DeferredBlock POTTED_CANDY_BLEEDING_HEART;
+    public static DeferredBlock POTTED_HOLLOW_BLEEDING_HEART;
+    public static DeferredBlock POTTED_WELWITSCHIA;
+
+    // MODELED
+    public static DeferredBlock POTTED_FIRE_LILY;
+
     public static void init(BalmBlockRegistrar blocks) {
         FloweryConstruct construct = new FloweryConstruct(blocks);
 
@@ -192,6 +216,27 @@ public class ModBlocks {
         RED_BEE_BALM = construct.registerBasic("red_bee_balm", MobEffects.HEAL, 1, DyeColor.RED);
         GLACIER_LILY = construct.registerBasic("glacier_lily", MobEffects.FIRE_RESISTANCE, 3, DyeColor.RED);
         WINTER_ACONITE = construct.registerSameProperty("winter_aconite", a -> new CustomFlowerBedBlock(a, 4), flowerProp().notSmall().disableDrop().sound(SoundType.AZALEA).disableOffset().dye(DyeColor.YELLOW).build());
+
+        // FLOWER POTS
+        // CROSS
+        POTTED_BLUE_TWIN_POPPY = construct.flowerPot(BLUE_TWIN_POPPY);
+        POTTED_ORANGE_TWIN_POPPY = construct.flowerPot(ORANGE_TWIN_POPPY);
+        POTTED_RED_TWIN_POPPY = construct.flowerPot(RED_TWIN_POPPY);
+        POTTED_WHITE_TWIN_POPPY = construct.flowerPot(WHITE_TWIN_POPPY);
+        POTTED_PINK_TWIN_POPPY = construct.flowerPot(PINK_TWIN_POPPY);
+
+        POTTED_BIRD_OF_PARADISE = construct.flowerPot(BIRD_OF_PARADISE);
+        POTTED_BLUE_ROMENTA = construct.flowerPot(BLUE_ROMENTA);
+        POTTED_ORANGE_ROMENTA = construct.flowerPot(ORANGE_ROMENTA);
+        POTTED_PINK_ROMENTA = construct.flowerPot(PINK_ROMENTA);
+
+        POTTED_WELWITSCHIA = construct.flowerPot(WELWITSCHIA);
+
+        POTTED_BLEEDING_HEART = construct.flowerPot(BLEEDING_HEART);
+        POTTED_HOLLOW_BLEEDING_HEART = construct.flowerPot(HOLLOW_BLEEDING_HEART);
+        POTTED_CANDY_BLEEDING_HEART = construct.flowerPot(CANDY_BLEEDING_HEART);
+
+        POTTED_FIRE_LILY = construct.flowerPot(FIRE_LILY);
     }
 
     private static FlowerProperty.Builder flowerProp() {
@@ -207,6 +252,10 @@ public class ModBlocks {
 
         public FloweryConstruct(BalmBlockRegistrar reg) {
             this.blocks = reg;
+        }
+
+        public DeferredBlock flowerPot(DeferredBlock block) {
+            return blocks.register("potted_" + ResourceLocation.parse(block.getRegisteredName()).getPath(), p -> new FlowerPotBlock(block.asBlock(), p), BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)).asDeferredBlock();
         }
 
         public DeferredBlock registerSameProperty(String name, Function<BlockBehaviour.Properties, Block> constructor, DyeColor dyeColor) {

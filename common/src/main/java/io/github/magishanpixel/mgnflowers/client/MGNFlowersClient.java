@@ -4,6 +4,7 @@ import io.github.magishanpixel.mgnflowers.MGNFlowers;
 import io.github.magishanpixel.mgnflowers.init.ModBlocks;
 import net.blay09.mods.balm.api.client.module.BalmClientModule;
 import net.blay09.mods.balm.client.renderer.chunk.BalmBlockRenderTypeRegistrar;
+import net.blay09.mods.balm.world.level.block.DeferredBlock;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
 
@@ -98,6 +99,29 @@ public class MGNFlowersClient implements BalmClientModule {
         rend.setRenderLayer(ModBlocks.GLACIER_LILY, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.RED_BEE_BALM, RenderType.cutout());
         rend.setRenderLayer(ModBlocks.WINTER_ACONITE, RenderType.cutout());
+
+        setCutout(rend,
+                ModBlocks.POTTED_BLUE_TWIN_POPPY,
+                ModBlocks.POTTED_RED_TWIN_POPPY,
+                ModBlocks.POTTED_ORANGE_TWIN_POPPY,
+                ModBlocks.POTTED_PINK_TWIN_POPPY,
+                ModBlocks.POTTED_WHITE_TWIN_POPPY,
+                ModBlocks.POTTED_BIRD_OF_PARADISE,
+                ModBlocks.POTTED_BLUE_ROMENTA,
+                ModBlocks.POTTED_ORANGE_ROMENTA,
+                ModBlocks.POTTED_PINK_ROMENTA,
+                ModBlocks.POTTED_BLEEDING_HEART,
+                ModBlocks.POTTED_HOLLOW_BLEEDING_HEART,
+                ModBlocks.POTTED_CANDY_BLEEDING_HEART,
+                ModBlocks.POTTED_FIRE_LILY,
+                ModBlocks.POTTED_WELWITSCHIA
+        );
+    }
+
+    private static void setCutout(BalmBlockRenderTypeRegistrar rend, DeferredBlock... list) {
+        for (DeferredBlock block : list) {
+            rend.setRenderLayer(block, RenderType.cutout());
+        }
     }
 
 

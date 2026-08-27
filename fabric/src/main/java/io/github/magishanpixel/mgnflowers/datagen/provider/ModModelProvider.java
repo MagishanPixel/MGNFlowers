@@ -129,6 +129,25 @@ public class ModModelProvider extends FabricModelProvider {
         gen.createSimpleFlatItemModel(ModBlocks.WELWITSCHIA.asBlock());
 
         gen.createSimpleFlatItemModel(ModBlocks.GLACIER_LILY.asBlock());
+
+        createCrossFlowerPot(gen, ModBlocks.POTTED_BLUE_TWIN_POPPY.asBlock(), ModBlocks.BLUE_TWIN_POPPY.asBlock());
+        createCrossFlowerPot(gen, ModBlocks.POTTED_ORANGE_TWIN_POPPY.asBlock(), ModBlocks.ORANGE_TWIN_POPPY.asBlock());
+        createCrossFlowerPot(gen, ModBlocks.POTTED_WHITE_TWIN_POPPY.asBlock(), ModBlocks.WHITE_TWIN_POPPY.asBlock());
+        createCrossFlowerPot(gen, ModBlocks.POTTED_RED_TWIN_POPPY.asBlock(), ModBlocks.RED_TWIN_POPPY.asBlock());
+        createCrossFlowerPot(gen, ModBlocks.POTTED_PINK_TWIN_POPPY.asBlock(), ModBlocks.PINK_TWIN_POPPY.asBlock());
+
+        createCrossFlowerPot(gen, ModBlocks.POTTED_PINK_ROMENTA.asBlock(), ModBlocks.PINK_ROMENTA.asBlock());
+        createCrossFlowerPot(gen, ModBlocks.POTTED_BLUE_ROMENTA.asBlock(), ModBlocks.BLUE_ROMENTA.asBlock());
+        createCrossFlowerPot(gen, ModBlocks.POTTED_ORANGE_ROMENTA.asBlock(), ModBlocks.ORANGE_ROMENTA.asBlock());
+
+        createCrossFlowerPot(gen, ModBlocks.POTTED_BIRD_OF_PARADISE.asBlock(), ModBlocks.BIRD_OF_PARADISE.asBlock());
+
+        createCrossFlowerPot(gen, ModBlocks.POTTED_BLEEDING_HEART.asBlock(), ModBlocks.BLEEDING_HEART.asBlock());
+        createCrossFlowerPot(gen, ModBlocks.POTTED_HOLLOW_BLEEDING_HEART.asBlock(), ModBlocks.HOLLOW_BLEEDING_HEART.asBlock());
+        createCrossFlowerPot(gen, ModBlocks.POTTED_CANDY_BLEEDING_HEART.asBlock(), ModBlocks.CANDY_BLEEDING_HEART.asBlock());
+
+        createCrossFlowerPot(gen, ModBlocks.POTTED_WELWITSCHIA.asBlock(), ModBlocks.POTTED_WELWITSCHIA.asBlock());
+
     }
 
     @Override
@@ -191,6 +210,23 @@ public class ModModelProvider extends FabricModelProvider {
         gen.generateFlatItem(ModBlocks.RED_BEE_BALM.asItem(), ModelTemplates.FLAT_ITEM);
         gen.generateFlatItem(ModBlocks.WINTER_ACONITE.asItem(), ModelTemplates.FLAT_ITEM);
     }
+
+    private void createCrossFlowerPot(BlockModelGenerators gen, Block potted, Block targFlower) {
+        ResourceLocation potId = BuiltInRegistries.BLOCK.getKey(potted);
+        ResourceLocation flowerId = BuiltInRegistries.BLOCK.getKey(targFlower);
+
+        JsonObject obj = new JsonObject();
+        obj.addProperty("parent", "minecraft:block/flower_pot_cross");
+
+        JsonObject textures = new JsonObject();
+        textures.addProperty("plant", getBlockPath(flowerId.getPath()).toString());
+        obj.add("textures", textures);
+
+        gen.modelOutput.accept(getBlockPath(potId.getPath()), () -> obj);
+
+        genBlockCustomModel(gen, potted);
+    }
+
 
     private void createCustomFlowerBed(BlockModelGenerators gen, Block flowerBedBlock, int maxCount) {
         ResourceLocation blockId = BuiltInRegistries.BLOCK.getKey(flowerBedBlock);
