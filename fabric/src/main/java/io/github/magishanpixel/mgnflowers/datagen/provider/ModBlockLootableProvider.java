@@ -45,6 +45,39 @@ public class ModBlockLootableProvider extends FabricBlockLootTableProvider {
             }
         }
 
+        dropPottedContents(ModBlocks.POTTED_BLUE_TWIN_POPPY.asBlock());
+        dropPottedContents(ModBlocks.POTTED_RED_TWIN_POPPY.asBlock());
+        dropPottedContents(ModBlocks.POTTED_ORANGE_TWIN_POPPY.asBlock());
+        dropPottedContents(ModBlocks.POTTED_PINK_TWIN_POPPY.asBlock());
+        dropPottedContents(ModBlocks.POTTED_WHITE_TWIN_POPPY.asBlock());
+        dropPottedContents(ModBlocks.POTTED_BIRD_OF_PARADISE.asBlock());
+        dropPottedContents(ModBlocks.POTTED_BLUE_ROMENTA.asBlock());
+        dropPottedContents(ModBlocks.POTTED_ORANGE_ROMENTA.asBlock());
+        dropPottedContents(ModBlocks.POTTED_PINK_ROMENTA.asBlock());
+        dropPottedContents(ModBlocks.POTTED_BLEEDING_HEART.asBlock());
+        dropPottedContents(ModBlocks.POTTED_HOLLOW_BLEEDING_HEART.asBlock());
+        dropPottedContents(ModBlocks.POTTED_CANDY_BLEEDING_HEART.asBlock());
+        dropPottedContents(ModBlocks.POTTED_WELWITSCHIA.asBlock());
+        dropPottedContents(ModBlocks.POTTED_IRIS.asBlock());
+        dropPottedContents(ModBlocks.POTTED_MOTH_IRIS.asBlock());
+        dropPottedContents(ModBlocks.POTTED_SAVANNAH_SUNSET_IRIS.asBlock());
+        dropPottedContents(ModBlocks.POTTED_FIRE_LILY.asBlock());
+        dropPottedContents(ModBlocks.POTTED_WHITE_LACECAP_HYDRANGEA.asBlock());
+        dropPottedContents(ModBlocks.POTTED_BLUE_LACECAP_HYDRANGEA.asBlock());
+        dropPottedContents(ModBlocks.POTTED_PINK_LACECAP_HYDRANGEA.asBlock());
+        dropPottedContents(ModBlocks.POTTED_BEE_BALM.asBlock());
+        dropPottedContents(ModBlocks.POTTED_RED_BEE_BALM.asBlock());
+        dropPottedContents(ModBlocks.POTTED_LAMPBLOSSOM.asBlock());
+        dropPottedContents(ModBlocks.POTTED_TRILLIUM.asBlock());
+        dropPottedContents(ModBlocks.POTTED_GROTTAL_BLOOM.asBlock());
+        dropPottedContents(ModBlocks.POTTED_BLUE_HYACINTH.asBlock());
+        dropPottedContents(ModBlocks.POTTED_WHITE_HYACINTH.asBlock());
+        dropPottedContents(ModBlocks.POTTED_PURPLE_HYACINTH.asBlock());
+        dropPottedContents(ModBlocks.POTTED_RED_HYACINTH.asBlock());
+        dropPottedContents(ModBlocks.POTTED_PINK_HYACINTH.asBlock());
+        dropPottedContents(ModBlocks.POTTED_YELLOW_HYACINTH.asBlock());
+        dropPottedContents(ModBlocks.POTTED_GLACIER_LILY.asBlock());
+
     }
 
 

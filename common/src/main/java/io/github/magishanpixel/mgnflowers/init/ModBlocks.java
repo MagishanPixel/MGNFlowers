@@ -8,12 +8,14 @@ import net.blay09.mods.balm.world.level.block.BalmBlockRegistrar;
 import net.blay09.mods.balm.world.level.block.BalmBlockRegistration;
 import net.blay09.mods.balm.world.level.block.DeferredBlock;
 import net.minecraft.core.Holder;
+import net.minecraft.resources.Identifier;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -104,6 +106,53 @@ public class ModBlocks {
     public static DeferredBlock GLACIER_LILY;
     public static DeferredBlock WINTER_ACONITE;
 
+    // FLOWER POTS POTTED_
+    // CROSS
+    public static DeferredBlock POTTED_BLUE_TWIN_POPPY;
+    public static DeferredBlock POTTED_ORANGE_TWIN_POPPY;
+    public static DeferredBlock POTTED_WHITE_TWIN_POPPY;
+    public static DeferredBlock POTTED_RED_TWIN_POPPY;
+    public static DeferredBlock POTTED_PINK_TWIN_POPPY;
+
+    public static DeferredBlock POTTED_PINK_ROMENTA;
+    public static DeferredBlock POTTED_BLUE_ROMENTA;
+    public static DeferredBlock POTTED_ORANGE_ROMENTA;
+
+    public static DeferredBlock POTTED_BIRD_OF_PARADISE;
+
+    public static DeferredBlock POTTED_BLEEDING_HEART;
+    public static DeferredBlock POTTED_CANDY_BLEEDING_HEART;
+    public static DeferredBlock POTTED_HOLLOW_BLEEDING_HEART;
+    public static DeferredBlock POTTED_WELWITSCHIA;
+
+    public static DeferredBlock POTTED_GLACIER_LILY;
+
+    // MODELED
+    // PAIN BUT WORTH IT LMAOOO-
+    public static DeferredBlock POTTED_IRIS;
+    public static DeferredBlock POTTED_MOTH_IRIS;
+    public static DeferredBlock POTTED_SAVANNAH_SUNSET_IRIS;
+
+    public static DeferredBlock POTTED_FIRE_LILY;
+
+    public static DeferredBlock POTTED_WHITE_LACECAP_HYDRANGEA;
+    public static DeferredBlock POTTED_BLUE_LACECAP_HYDRANGEA;
+    public static DeferredBlock POTTED_PINK_LACECAP_HYDRANGEA;
+
+    public static DeferredBlock POTTED_BEE_BALM;
+    public static DeferredBlock POTTED_RED_BEE_BALM;
+
+    public static DeferredBlock POTTED_LAMPBLOSSOM;
+    public static DeferredBlock POTTED_TRILLIUM;
+    public static DeferredBlock POTTED_GROTTAL_BLOOM;
+
+    public static DeferredBlock POTTED_BLUE_HYACINTH;
+    public static DeferredBlock POTTED_WHITE_HYACINTH;
+    public static DeferredBlock POTTED_PURPLE_HYACINTH;
+    public static DeferredBlock POTTED_RED_HYACINTH;
+    public static DeferredBlock POTTED_PINK_HYACINTH;
+    public static DeferredBlock POTTED_YELLOW_HYACINTH;
+
     public static void init(BalmBlockRegistrar blocks) {
         FloweryConstruct construct = new FloweryConstruct(blocks);
 
@@ -192,6 +241,49 @@ public class ModBlocks {
         RED_BEE_BALM = construct.registerBasic("red_bee_balm", MobEffects.INSTANT_HEALTH, 1, DyeColor.RED);
         GLACIER_LILY = construct.registerBasic("glacier_lily", MobEffects.FIRE_RESISTANCE, 3, DyeColor.RED);
         WINTER_ACONITE = construct.registerSameProperty("winter_aconite", a -> new CustomFlowerBedBlock(a, 4), flowerProp().notSmall().disableDrop().sound(SoundType.AZALEA).disableOffset().dye(DyeColor.YELLOW).build());
+
+        // FLOWER POTS
+        // CROSS
+        POTTED_BLUE_TWIN_POPPY = construct.flowerPot(BLUE_TWIN_POPPY);
+        POTTED_ORANGE_TWIN_POPPY = construct.flowerPot(ORANGE_TWIN_POPPY);
+        POTTED_RED_TWIN_POPPY = construct.flowerPot(RED_TWIN_POPPY);
+        POTTED_WHITE_TWIN_POPPY = construct.flowerPot(WHITE_TWIN_POPPY);
+        POTTED_PINK_TWIN_POPPY = construct.flowerPot(PINK_TWIN_POPPY);
+
+        POTTED_BIRD_OF_PARADISE = construct.flowerPot(BIRD_OF_PARADISE);
+        POTTED_BLUE_ROMENTA = construct.flowerPot(BLUE_ROMENTA);
+        POTTED_ORANGE_ROMENTA = construct.flowerPot(ORANGE_ROMENTA);
+        POTTED_PINK_ROMENTA = construct.flowerPot(PINK_ROMENTA);
+
+        POTTED_WELWITSCHIA = construct.flowerPot(WELWITSCHIA);
+        POTTED_GLACIER_LILY = construct.flowerPot(GLACIER_LILY);
+
+        POTTED_BLEEDING_HEART = construct.flowerPot(BLEEDING_HEART);
+        POTTED_HOLLOW_BLEEDING_HEART = construct.flowerPot(HOLLOW_BLEEDING_HEART);
+        POTTED_CANDY_BLEEDING_HEART = construct.flowerPot(CANDY_BLEEDING_HEART);
+
+        // MODELED
+        POTTED_IRIS = construct.flowerPot(IRIS);
+        POTTED_SAVANNAH_SUNSET_IRIS = construct.flowerPot(SAVANNAH_SUNSET_IRIS);
+        POTTED_MOTH_IRIS = construct.flowerPot(MOTH_IRIS);
+
+        POTTED_BLUE_LACECAP_HYDRANGEA = construct.flowerPot(BLUE_LACECAP_HYDRANGEA);
+        POTTED_WHITE_LACECAP_HYDRANGEA = construct.flowerPot(WHITE_LACECAP_HYDRANGEA);
+        POTTED_PINK_LACECAP_HYDRANGEA = construct.flowerPot(PINK_LACECAP_HYDRANGEA);
+
+        POTTED_BLUE_HYACINTH = construct.flowerPot(BLUE_HYACINTH);
+        POTTED_RED_HYACINTH = construct.flowerPot(RED_HYACINTH);
+        POTTED_PINK_HYACINTH = construct.flowerPot(PINK_HYACINTH);
+        POTTED_WHITE_HYACINTH = construct.flowerPot(WHITE_HYACINTH);
+        POTTED_YELLOW_HYACINTH = construct.flowerPot(YELLOW_HYACINTH);
+        POTTED_PURPLE_HYACINTH = construct.flowerPot(PURPLE_HYACINTH);
+
+        POTTED_LAMPBLOSSOM = construct.flowerPot(LAMPBLOSSOM, true, 12);
+        POTTED_GROTTAL_BLOOM = construct.flowerPot(GROTTAL_BLOOM, true, 12);
+        POTTED_TRILLIUM = construct.flowerPot(TRILLIUM);
+        POTTED_BEE_BALM = construct.flowerPot(BEE_BALM);
+        POTTED_RED_BEE_BALM = construct.flowerPot(RED_BEE_BALM);
+        POTTED_FIRE_LILY = construct.flowerPot(FIRE_LILY);
     }
 
     private static FlowerProperty.Builder flowerProp() {
@@ -207,6 +299,23 @@ public class ModBlocks {
 
         public FloweryConstruct(BalmBlockRegistrar reg) {
             this.blocks = reg;
+        }
+
+        public DeferredBlock flowerPot(DeferredBlock block) {
+            return flowerPot(block, false, 0);
+        }
+
+        public DeferredBlock flowerPot(DeferredBlock block, boolean glow, int glowness) {
+            BlockBehaviour.Properties prop = BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
+
+            if (glow) {
+                prop.emissiveRendering((blockState, blockGetter, blockPos) -> true);
+            }
+            if (glowness > 0) {
+                prop.lightLevel(v -> glowness);
+            }
+
+            return blocks.register("potted_" + Identifier.parse(block.getRegisteredName()).getPath(), p -> new FlowerPotBlock(block.asBlock(), p), prop).asDeferredBlock();
         }
 
         public DeferredBlock registerSameProperty(String name, Function<BlockBehaviour.Properties, Block> constructor, DyeColor dyeColor) {
