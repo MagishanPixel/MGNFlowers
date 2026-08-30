@@ -113,8 +113,26 @@ public class MGNFlowersClient implements BalmClientModule {
                 ModBlocks.POTTED_BLEEDING_HEART,
                 ModBlocks.POTTED_HOLLOW_BLEEDING_HEART,
                 ModBlocks.POTTED_CANDY_BLEEDING_HEART,
+                ModBlocks.POTTED_WELWITSCHIA,
+                ModBlocks.POTTED_IRIS,
+                ModBlocks.POTTED_MOTH_IRIS,
+                ModBlocks.POTTED_SAVANNAH_SUNSET_IRIS,
                 ModBlocks.POTTED_FIRE_LILY,
-                ModBlocks.POTTED_WELWITSCHIA
+                ModBlocks.POTTED_WHITE_LACECAP_HYDRANGEA,
+                ModBlocks.POTTED_BLUE_LACECAP_HYDRANGEA,
+                ModBlocks.POTTED_PINK_LACECAP_HYDRANGEA,
+                ModBlocks.POTTED_BEE_BALM,
+                ModBlocks.POTTED_RED_BEE_BALM,
+                ModBlocks.POTTED_LAMPBLOSSOM,
+                ModBlocks.POTTED_TRILLIUM,
+                ModBlocks.POTTED_GROTTAL_BLOOM,
+                ModBlocks.POTTED_BLUE_HYACINTH,
+                ModBlocks.POTTED_WHITE_HYACINTH,
+                ModBlocks.POTTED_PURPLE_HYACINTH,
+                ModBlocks.POTTED_RED_HYACINTH,
+                ModBlocks.POTTED_PINK_HYACINTH,
+                ModBlocks.POTTED_YELLOW_HYACINTH
+
         );
     }
 

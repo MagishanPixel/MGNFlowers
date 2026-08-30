@@ -125,8 +125,33 @@ public class ModBlocks {
     public static DeferredBlock POTTED_HOLLOW_BLEEDING_HEART;
     public static DeferredBlock POTTED_WELWITSCHIA;
 
+    public static DeferredBlock POTTED_GLACIER_LILY;
+
     // MODELED
+    // PAIN BUT WORTH IT LMAOOO-
+    public static DeferredBlock POTTED_IRIS;
+    public static DeferredBlock POTTED_MOTH_IRIS;
+    public static DeferredBlock POTTED_SAVANNAH_SUNSET_IRIS;
+
     public static DeferredBlock POTTED_FIRE_LILY;
+
+    public static DeferredBlock POTTED_WHITE_LACECAP_HYDRANGEA;
+    public static DeferredBlock POTTED_BLUE_LACECAP_HYDRANGEA;
+    public static DeferredBlock POTTED_PINK_LACECAP_HYDRANGEA;
+
+    public static DeferredBlock POTTED_BEE_BALM;
+    public static DeferredBlock POTTED_RED_BEE_BALM;
+
+    public static DeferredBlock POTTED_LAMPBLOSSOM;
+    public static DeferredBlock POTTED_TRILLIUM;
+    public static DeferredBlock POTTED_GROTTAL_BLOOM;
+
+    public static DeferredBlock POTTED_BLUE_HYACINTH;
+    public static DeferredBlock POTTED_WHITE_HYACINTH;
+    public static DeferredBlock POTTED_PURPLE_HYACINTH;
+    public static DeferredBlock POTTED_RED_HYACINTH;
+    public static DeferredBlock POTTED_PINK_HYACINTH;
+    public static DeferredBlock POTTED_YELLOW_HYACINTH;
 
     public static void init(BalmBlockRegistrar blocks) {
         FloweryConstruct construct = new FloweryConstruct(blocks);
@@ -236,6 +261,27 @@ public class ModBlocks {
         POTTED_HOLLOW_BLEEDING_HEART = construct.flowerPot(HOLLOW_BLEEDING_HEART);
         POTTED_CANDY_BLEEDING_HEART = construct.flowerPot(CANDY_BLEEDING_HEART);
 
+        // MODELED
+        POTTED_IRIS = construct.flowerPot(IRIS);
+        POTTED_SAVANNAH_SUNSET_IRIS = construct.flowerPot(SAVANNAH_SUNSET_IRIS);
+        POTTED_MOTH_IRIS = construct.flowerPot(MOTH_IRIS);
+
+        POTTED_BLUE_LACECAP_HYDRANGEA = construct.flowerPot(BLUE_LACECAP_HYDRANGEA);
+        POTTED_WHITE_LACECAP_HYDRANGEA = construct.flowerPot(WHITE_LACECAP_HYDRANGEA);
+        POTTED_PINK_LACECAP_HYDRANGEA = construct.flowerPot(PINK_LACECAP_HYDRANGEA);
+
+        POTTED_BLUE_HYACINTH = construct.flowerPot(BLUE_HYACINTH);
+        POTTED_RED_HYACINTH = construct.flowerPot(RED_HYACINTH);
+        POTTED_PINK_HYACINTH = construct.flowerPot(PINK_HYACINTH);
+        POTTED_WHITE_HYACINTH = construct.flowerPot(WHITE_HYACINTH);
+        POTTED_YELLOW_HYACINTH = construct.flowerPot(YELLOW_HYACINTH);
+        POTTED_PURPLE_HYACINTH = construct.flowerPot(PURPLE_HYACINTH);
+
+        POTTED_LAMPBLOSSOM = construct.flowerPot(LAMPBLOSSOM, true, 12);
+        POTTED_GROTTAL_BLOOM = construct.flowerPot(GROTTAL_BLOOM, true, 12);
+        POTTED_TRILLIUM = construct.flowerPot(TRILLIUM);
+        POTTED_BEE_BALM = construct.flowerPot(BEE_BALM);
+        POTTED_RED_BEE_BALM = construct.flowerPot(RED_BEE_BALM);
         POTTED_FIRE_LILY = construct.flowerPot(FIRE_LILY);
     }
 
@@ -255,7 +301,20 @@ public class ModBlocks {
         }
 
         public DeferredBlock flowerPot(DeferredBlock block) {
-            return blocks.register("potted_" + ResourceLocation.parse(block.getRegisteredName()).getPath(), p -> new FlowerPotBlock(block.asBlock(), p), BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)).asDeferredBlock();
+            return flowerPot(block, false, 0);
+        }
+
+        public DeferredBlock flowerPot(DeferredBlock block, boolean glow, int glowness) {
+            BlockBehaviour.Properties prop = BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
+
+            if (glow) {
+                prop.emissiveRendering((blockState, blockGetter, blockPos) -> true);
+            }
+            if (glowness > 0) {
+                prop.lightLevel(v -> glowness);
+            }
+
+            return blocks.register("potted_" + ResourceLocation.parse(block.getRegisteredName()).getPath(), p -> new FlowerPotBlock(block.asBlock(), p), prop).asDeferredBlock();
         }
 
         public DeferredBlock registerSameProperty(String name, Function<BlockBehaviour.Properties, Block> constructor, DyeColor dyeColor) {
