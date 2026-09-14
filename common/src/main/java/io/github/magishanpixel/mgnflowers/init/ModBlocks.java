@@ -256,6 +256,7 @@ public class ModBlocks {
         POTTED_PINK_ROMENTA = construct.flowerPot(PINK_ROMENTA);
 
         POTTED_WELWITSCHIA = construct.flowerPot(WELWITSCHIA);
+        POTTED_GLACIER_LILY = construct.flowerPot(GLACIER_LILY);
 
         POTTED_BLEEDING_HEART = construct.flowerPot(BLEEDING_HEART);
         POTTED_HOLLOW_BLEEDING_HEART = construct.flowerPot(HOLLOW_BLEEDING_HEART);

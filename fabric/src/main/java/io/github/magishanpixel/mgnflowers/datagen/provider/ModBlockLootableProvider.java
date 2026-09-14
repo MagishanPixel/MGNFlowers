@@ -76,6 +76,7 @@ public class ModBlockLootableProvider extends FabricBlockLootTableProvider {
         dropPottedContents(ModBlocks.POTTED_RED_HYACINTH.asBlock());
         dropPottedContents(ModBlocks.POTTED_PINK_HYACINTH.asBlock());
         dropPottedContents(ModBlocks.POTTED_YELLOW_HYACINTH.asBlock());
+        dropPottedContents(ModBlocks.POTTED_GLACIER_LILY.asBlock());
     }
 
 

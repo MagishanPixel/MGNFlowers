@@ -1,4 +1,11 @@
-MagishanPixel's Modding License
+## MagishanPixel Modding 1.0 License
 
-All Textures and Models from "assets/..." are under the "All Rights Reserved" license.
-The rest are under the "MIT" license.
+### Project
+All Textures and Models from `resources/assets/...` are under the **All Rights Reserved** license.
+
+All other files in the project are under the **MIT** license.
+
+### Mod
+You may include this mod in your modpack.
+
+Redistribution or reuploading of this mod are not allowed.

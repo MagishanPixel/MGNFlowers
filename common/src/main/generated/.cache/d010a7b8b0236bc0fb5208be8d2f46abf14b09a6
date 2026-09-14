@@ -1,4 +1,4 @@
-// 1.21.1	2026-08-30T13:34:50.8124936	MGN's Flowers/Block Loot Tables
+// 1.21.1	2026-08-30T14:02:05.4039671	MGN's Flowers/Block Loot Tables
 063aae1a76be3651c3441ba5f384ba306ca5fdf0 data\mgnflowers\loot_table\blocks\pink_lacecap_hydrangea.json
 e1ab976da34418a86032287df8e9cd3bb1ad7064 data\mgnflowers\loot_table\blocks\blue_twin_poppy.json
 6e0cfb10193899f046fcc62e6da2ae9c5e262028 data\mgnflowers\loot_table\blocks\blue_romenta.json
@@ -17,8 +17,8 @@ bbd84f8d5e91773a4ad28b8a178f2e22cb7ca5d8 data\mgnflowers\loot_table\blocks\glaci
 df33432f6c94924e24dd9f49ccec40ac0011e6b8 data\mgnflowers\loot_table\blocks\purple_tall_tulip.json
 92d78452bc470c7b09f6f699495a5e3e159e700d data\mgnflowers\loot_table\blocks\potted_savannah_sunset_iris.json
 2db76c4c870cb8e674c5e661f2c747dbec1d9d62 data\mgnflowers\loot_table\blocks\water_poppy.json
-158a2588724afc0448220728aa6e15e678b4acc7 data\mgnflowers\loot_table\blocks\orange_twin_poppy.json
 bf24a5ef20c72d25b34c37d13d226ed845858a92 data\mgnflowers\loot_table\blocks\pink_romenta.json
+158a2588724afc0448220728aa6e15e678b4acc7 data\mgnflowers\loot_table\blocks\orange_twin_poppy.json
 2d42fab947479453d38ef85a6de49a6e3fe6c2ad data\mgnflowers\loot_table\blocks\potted_moth_iris.json
 362db9463b3a7fb6f0bd4304747c7ae91c3d1e1b data\mgnflowers\loot_table\blocks\white_tall_tulip.json
 e5ed6b34b60912555bd824877840e8acacd9fd05 data\mgnflowers\loot_table\blocks\grottal_bloom.json
@@ -43,6 +43,7 @@ eb1ab4ecbafd50131266c4c62aa39e21c72d4ca6 data\mgnflowers\loot_table\blocks\pink_
 523aad9efc8c0b86f9ece101829beb548b0d717d data\mgnflowers\loot_table\blocks\orange_tall_tulip.json
 8dde484db39f0aba90ffd2d27d195c7c3fd28cc2 data\mgnflowers\loot_table\blocks\potted_pink_lacecap_hydrangea.json
 77d494e32917e3f156362299e2f5eecc34f1f1a5 data\mgnflowers\loot_table\blocks\blue_lacecap_hydrangea.json
+1c4b76afe5379ff9d8a922138c92f827f0e4be3a data\mgnflowers\loot_table\blocks\potted_glacier_lily.json
 7dba64a1bbc8ebc9293e29634dc1fa896931e63f data\mgnflowers\loot_table\blocks\tall_allium.json
 19fb2db588bd2e36bc532a2965833923c9d4efdf data\mgnflowers\loot_table\blocks\savannah_sunset_iris.json
 40e93dfd25ac69eaf0f77d95a725830a87d55d11 data\mgnflowers\loot_table\blocks\potted_white_lacecap_hydrangea.json
@@ -83,7 +84,7 @@ c59565bd8735e27dcd299818d318688443c9e2ed data\mgnflowers\loot_table\blocks\potte
 1f246dc7e762f192d0c4ba6e9bdf7ac794f59fae data\mgnflowers\loot_table\blocks\white_vine_lotus.json
 052564453636299de572116a90fb72427c0ad7c7 data\mgnflowers\loot_table\blocks\white_ginger_lily.json
 acebafe54ab1d2a2d76727507de17ae2968ff50a data\mgnflowers\loot_table\blocks\bee_balm.json
-2f5c7ecbf09eefe67b040ba4b9defcc36a6f38c1 data\mgnflowers\loot_table\blocks\purple_hyacinth.json
 d4b42e9662102a1f3d948d04e980b1473e90e2ac data\mgnflowers\loot_table\blocks\potted_red_bee_balm.json
+2f5c7ecbf09eefe67b040ba4b9defcc36a6f38c1 data\mgnflowers\loot_table\blocks\purple_hyacinth.json
 1ab6c9d6f0dbff707c583080c6dea51feb14f8bb data\mgnflowers\loot_table\blocks\potted_orange_twin_poppy.json
 88579d50676d2f55f0370dbfffb60cc16fa7b1e8 data\mgnflowers\loot_table\blocks\orange_romenta.json

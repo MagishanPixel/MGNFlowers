@@ -148,6 +148,7 @@ public class ModModelProvider extends FabricModelProvider {
         createCrossFlowerPot(gen, ModBlocks.POTTED_CANDY_BLEEDING_HEART.asBlock());
 
         createCrossFlowerPot(gen, ModBlocks.POTTED_WELWITSCHIA.asBlock());
+        createCrossFlowerPot(gen, ModBlocks.POTTED_GLACIER_LILY.asBlock());
 
         genBlockCustomModel(gen, ModBlocks.POTTED_IRIS.asBlock());
         genBlockCustomModel(gen, ModBlocks.POTTED_MOTH_IRIS.asBlock());

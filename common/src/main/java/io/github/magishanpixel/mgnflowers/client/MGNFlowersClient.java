@@ -131,7 +131,8 @@ public class MGNFlowersClient implements BalmClientModule {
                 ModBlocks.POTTED_PURPLE_HYACINTH,
                 ModBlocks.POTTED_RED_HYACINTH,
                 ModBlocks.POTTED_PINK_HYACINTH,
-                ModBlocks.POTTED_YELLOW_HYACINTH
+                ModBlocks.POTTED_YELLOW_HYACINTH,
+                ModBlocks.POTTED_GLACIER_LILY
 
         );
     }
