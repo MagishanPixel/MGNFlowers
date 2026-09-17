@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mgnflowers:orange_romenta"
+    }
+  ],
+  "result": {
+    "item": "minecraft:orange_dye"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:cherry_grove",
+  "features": ["mgnflowers:candy_bleeding_heart_patch"],
+  "step": "vegetal_decoration"
+}

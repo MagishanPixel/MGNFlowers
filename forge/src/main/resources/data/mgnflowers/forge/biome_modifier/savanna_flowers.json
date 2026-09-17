@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": ["minecraft:savanna","minecraft:savanna_plateau","minecraft:windswept_savanna"],
+  "features": ["mgnflowers:savanna_iris_patch"],
+  "step": "vegetal_decoration"
+}

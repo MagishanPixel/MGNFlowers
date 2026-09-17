@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": ["minecraft:plains","minecraft:sunflower_plains"],
+  "features": ["mgnflowers:twin_poppy_patch","mgnflowers:tall_tulip_patch"],
+  "step": "vegetal_decoration"
+}

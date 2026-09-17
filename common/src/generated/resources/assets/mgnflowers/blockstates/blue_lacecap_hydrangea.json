@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "mgnflowers:block/blue_lacecap_hydrangea"
+      },
+      {
+        "model": "mgnflowers:block/blue_lacecap_hydrangea",
+        "y": 90
+      },
+      {
+        "model": "mgnflowers:block/blue_lacecap_hydrangea",
+        "y": 180
+      },
+      {
+        "model": "mgnflowers:block/blue_lacecap_hydrangea",
+        "y": 270
+      }
+    ]
+  }
+}

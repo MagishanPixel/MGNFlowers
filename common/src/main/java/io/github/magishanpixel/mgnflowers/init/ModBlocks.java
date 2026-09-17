@@ -1,0 +1,382 @@
+package io.github.magishanpixel.mgnflowers.init;
+
+import io.github.magishanpixel.mgnflowers.MGNConstants;
+import io.github.magishanpixel.mgnflowers.MGNFlowers;
+import io.github.magishanpixel.mgnflowers.block.*;
+import io.github.magishanpixel.mgnflowers.item.WaterFlowerBedBlockItem;
+import io.github.magishanpixel.mgnflowers.misc.FlowerProperty;
+import io.github.magishanpixel.mgnflowers.misc.PrefList;
+import io.github.magishanpixel.mgnflowers.misc.StraddColor;
+import net.blay09.mods.balm.api.DeferredObject;
+import net.blay09.mods.balm.api.block.BalmBlocks;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
+
+import java.util.function.Function;
+
+public class ModBlocks {
+    public static DeferredObject<Block> MOTH_IRIS;
+    public static DeferredObject<Block> IRIS;
+    public static DeferredObject<Block> GROTTAL_BLOOM;
+
+    public static DeferredObject<Block> BLUE_TWIN_POPPY;
+    public static DeferredObject<Block> ORANGE_TWIN_POPPY;
+    public static DeferredObject<Block> WHITE_TWIN_POPPY;
+    public static DeferredObject<Block> RED_TWIN_POPPY;
+    public static DeferredObject<Block> PINK_TWIN_POPPY;
+
+    public static DeferredObject<Block> ORANGE_TALL_TULIP;
+    public static DeferredObject<Block> RED_TALL_TULIP;
+    public static DeferredObject<Block> WHITE_TALL_TULIP;
+    public static DeferredObject<Block> PINK_TALL_TULIP;
+    public static DeferredObject<Block> PURPLE_TALL_TULIP;
+    public static DeferredObject<Block> TURQUOISE_TALL_TULIP;
+
+    public static DeferredObject<Block> GLOWING_TALL_TULIP;
+
+    public static DeferredObject<Block> RED_GINGER_LILY;
+    public static DeferredObject<Block> WHITE_GINGER_LILY;
+    public static DeferredObject<Block> PINK_GINGER_LILY;
+    public static DeferredObject<Block> ORANGE_GINGER_LILY;
+
+    public static DeferredObject<Block> WATER_HYACINTH;
+
+    public static DeferredObject<Block> BLEEDING_HEART;
+    public static DeferredObject<Block> CANDY_BLEEDING_HEART;
+    public static DeferredObject<Block> HOLLOW_BLEEDING_HEART;
+
+    public static DeferredObject<Block> BEE_BALM;
+
+    public static DeferredObject<Block> LAMPBLOSSOM;
+
+    public static DeferredObject<Block> PINK_ROMENTA;
+    public static DeferredObject<Block> BLUE_ROMENTA;
+    public static DeferredObject<Block> ORANGE_ROMENTA;
+
+    public static DeferredObject<Block> BIRD_OF_PARADISE;
+
+    public static DeferredObject<Block> TALL_ALLIUM;
+    public static DeferredObject<Block> BLUE_TALL_ALLIUM;
+
+    public static DeferredObject<Block> WELWITSCHIA;
+    public static DeferredObject<Block> TORCH_GINGER;
+
+    public static DeferredObject<Block> DANDELION_BED;
+
+    public static DeferredObject<Block> BLUE_HYACINTH;
+    public static DeferredObject<Block> WHITE_HYACINTH;
+    public static DeferredObject<Block> PURPLE_HYACINTH;
+    public static DeferredObject<Block> RED_HYACINTH;
+    public static DeferredObject<Block> PINK_HYACINTH;
+    public static DeferredObject<Block> YELLOW_HYACINTH;
+
+    public static DeferredObject<Block> WHITE_VINE_LOTUS;
+    public static DeferredObject<Block> PINK_VINE_LOTUS;
+    public static DeferredObject<Block> GLOWING_VINE_LOTUS;
+
+    public static DeferredObject<Block> WATER_POPPY;
+    public static DeferredObject<Block> FIRE_LILY;
+
+    public static DeferredObject<Block> WHITE_LACECAP_HYDRANGEA;
+    public static DeferredObject<Block> BLUE_LACECAP_HYDRANGEA;
+    public static DeferredObject<Block> PINK_LACECAP_HYDRANGEA;
+
+    public static DeferredObject<Block> SUNFLOWER_BED;
+
+    public static DeferredObject<Block> PINK_CYCLAMEN;
+    public static DeferredObject<Block> WHITE_CYCLAMEN;
+
+    public static DeferredObject<Block> TRILLIUM;
+    public static DeferredObject<Block> WOOD_SORREL;
+
+    public static DeferredObject<Block> SAVANNAH_SUNSET_IRIS;
+    public static DeferredObject<Block> SAND_VERBENA;
+
+    public static DeferredObject<Block> RED_BEE_BALM;
+    public static DeferredObject<Block> GLACIER_LILY;
+    public static DeferredObject<Block> WINTER_ACONITE;
+
+    // FLOWER POTS POTTED_
+    // CROSS
+    public static DeferredObject<Block> POTTED_BLUE_TWIN_POPPY;
+    public static DeferredObject<Block> POTTED_ORANGE_TWIN_POPPY;
+    public static DeferredObject<Block> POTTED_WHITE_TWIN_POPPY;
+    public static DeferredObject<Block> POTTED_RED_TWIN_POPPY;
+    public static DeferredObject<Block> POTTED_PINK_TWIN_POPPY;
+
+    public static DeferredObject<Block> POTTED_PINK_ROMENTA;
+    public static DeferredObject<Block> POTTED_BLUE_ROMENTA;
+    public static DeferredObject<Block> POTTED_ORANGE_ROMENTA;
+
+    public static DeferredObject<Block> POTTED_BIRD_OF_PARADISE;
+
+    public static DeferredObject<Block> POTTED_BLEEDING_HEART;
+    public static DeferredObject<Block> POTTED_CANDY_BLEEDING_HEART;
+    public static DeferredObject<Block> POTTED_HOLLOW_BLEEDING_HEART;
+    public static DeferredObject<Block> POTTED_WELWITSCHIA;
+
+    public static DeferredObject<Block> POTTED_GLACIER_LILY;
+
+    // MODELED
+    // PAIN BUT WORTH IT LMAOOO-
+    public static DeferredObject<Block> POTTED_IRIS;
+    public static DeferredObject<Block> POTTED_MOTH_IRIS;
+    public static DeferredObject<Block> POTTED_SAVANNAH_SUNSET_IRIS;
+
+    public static DeferredObject<Block> POTTED_FIRE_LILY;
+
+    public static DeferredObject<Block> POTTED_WHITE_LACECAP_HYDRANGEA;
+    public static DeferredObject<Block> POTTED_BLUE_LACECAP_HYDRANGEA;
+    public static DeferredObject<Block> POTTED_PINK_LACECAP_HYDRANGEA;
+
+    public static DeferredObject<Block> POTTED_BEE_BALM;
+    public static DeferredObject<Block> POTTED_RED_BEE_BALM;
+
+    public static DeferredObject<Block> POTTED_LAMPBLOSSOM;
+    public static DeferredObject<Block> POTTED_TRILLIUM;
+    public static DeferredObject<Block> POTTED_GROTTAL_BLOOM;
+
+    public static DeferredObject<Block> POTTED_BLUE_HYACINTH;
+    public static DeferredObject<Block> POTTED_WHITE_HYACINTH;
+    public static DeferredObject<Block> POTTED_PURPLE_HYACINTH;
+    public static DeferredObject<Block> POTTED_RED_HYACINTH;
+    public static DeferredObject<Block> POTTED_PINK_HYACINTH;
+    public static DeferredObject<Block> POTTED_YELLOW_HYACINTH;
+
+    public static void init(BalmBlocks blocks) {
+        FloweryConstruct construct = new FloweryConstruct(blocks);
+
+        MOTH_IRIS = construct.registerBasic("moth_iris", MobEffects.LEVITATION, 2, flowerProp().dye(DyeColor.LIGHT_GRAY).disableOffset().build());
+        IRIS = construct.registerBasic("iris", MobEffects.ABSORPTION, 2, flowerProp().dye(DyeColor.PURPLE).disableOffset().build());
+        SAVANNAH_SUNSET_IRIS = construct.registerBasic("savannah_sunset_iris", MobEffects.ABSORPTION, 2, flowerProp().dye(DyeColor.PURPLE).disableOffset().build());
+        GROTTAL_BLOOM = construct.registerBasic("grottal_bloom", MobEffects.GLOWING, 4, flowerProp().sound(SoundType.AZALEA).setGlow(FlowerProperty.GlowValue.of(12, true)).dye(DyeColor.CYAN).build());
+
+        BLUE_TWIN_POPPY = construct.registerBasic(PrefList.TWIN_POPPY.colorOf(StraddColor.blue), MobEffects.WATER_BREATHING, 4, DyeColor.BLUE);
+        ORANGE_TWIN_POPPY = construct.registerBasic(PrefList.TWIN_POPPY.colorOf(StraddColor.orange), MobEffects.FIRE_RESISTANCE, 5, DyeColor.ORANGE);
+        WHITE_TWIN_POPPY = construct.registerBasic(PrefList.TWIN_POPPY.colorOf(StraddColor.white), MobEffects.CONFUSION, 6, DyeColor.WHITE);
+        RED_TWIN_POPPY = construct.registerBasic(PrefList.TWIN_POPPY.colorOf(StraddColor.red), MobEffects.ABSORPTION, 2, DyeColor.RED);
+        PINK_TWIN_POPPY = construct.registerBasic(PrefList.TWIN_POPPY.colorOf(StraddColor.pink), MobEffects.HEAL, 2, DyeColor.PINK);
+
+        ORANGE_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.colorOf(StraddColor.orange), a -> new TallerFlowerBlock(MobEffects.FIRE_RESISTANCE, 1, a), flowerProp().dye(DyeColor.ORANGE).notSmall().build());
+        RED_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.colorOf(StraddColor.red), a -> new TallerFlowerBlock(MobEffects.DAMAGE_RESISTANCE, 4, a), flowerProp().dye(DyeColor.RED).notSmall().build());
+        WHITE_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.colorOf(StraddColor.white), a -> new TallerFlowerBlock(MobEffects.LEVITATION, 3, a), flowerProp().dye(DyeColor.WHITE).notSmall().build());
+        PINK_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.colorOf(StraddColor.pink), a -> new TallerFlowerBlock(MobEffects.HEALTH_BOOST, 2, a), flowerProp().dye(DyeColor.PINK).notSmall().build());
+        PURPLE_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.colorOf(StraddColor.purple), a -> new TallerFlowerBlock(MobEffects.DIG_SLOWDOWN, 4, a), flowerProp().dye(DyeColor.PURPLE).notSmall().build());
+        TURQUOISE_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.of("turquoise", false), a -> new TallerFlowerBlock(MobEffects.WATER_BREATHING, 6, a), flowerProp().dye(DyeColor.LIGHT_BLUE).notSmall().build());
+        GLOWING_TALL_TULIP = construct.registerSameProperty(PrefList.TALL_TULIP.of("glowing", false), a -> new TallerFlowerBlock(MobEffects.GLOWING, 4, a.lightLevel(v -> v.getValue(TallerFlowerBlock.STEM) == 3 ? 12 : 0)), flowerProp().dye(DyeColor.ORANGE).notSmall().build());
+
+        RED_GINGER_LILY = construct.registerSameProperty(PrefList.GINGER_LILY.colorOf(StraddColor.red), a -> new TallerFlowerBlock(MobEffects.HEALTH_BOOST, 2, a), flowerProp().dye(DyeColor.RED).notSmall().build());
+        WHITE_GINGER_LILY = construct.registerSameProperty(PrefList.GINGER_LILY.colorOf(StraddColor.white), a -> new TallerFlowerBlock(MobEffects.GLOWING, 4, a), flowerProp().dye(DyeColor.WHITE).notSmall().build());
+        PINK_GINGER_LILY = construct.registerSameProperty(PrefList.GINGER_LILY.colorOf(StraddColor.pink), a -> new TallerFlowerBlock(MobEffects.HEAL, 2, a), flowerProp().dye(DyeColor.PINK).notSmall().build());
+        ORANGE_GINGER_LILY = construct.registerSameProperty(PrefList.GINGER_LILY.colorOf(StraddColor.orange), a -> new TallerFlowerBlock(MobEffects.FIRE_RESISTANCE, 6, a), flowerProp().dye(DyeColor.ORANGE).notSmall().build());
+
+        WATER_HYACINTH = construct.registerSameProperty("water_hyacinth", a -> new WaterFlowerBedBlock(a, WaterFlowerBedBlock.TYPE.WATER), flowerProp().setBlockItem(WaterFlowerBedBlockItem::new).notSmall().disableOffset().sound(SoundType.AZALEA).disableDrop().dye(DyeColor.PINK).build());
+
+        BLEEDING_HEART = construct.registerBasic("bleeding_heart", MobEffects.HEAL, 3, DyeColor.RED);
+        CANDY_BLEEDING_HEART = construct.registerBasic(PrefList.BLEEDING_HEART.of("candy", false), MobEffects.HEALTH_BOOST, 3, DyeColor.PINK);
+        HOLLOW_BLEEDING_HEART = construct.registerBasic(PrefList.BLEEDING_HEART.of("hollow", false), MobEffects.WITHER, 8, DyeColor.BLACK);
+
+        BEE_BALM = construct.registerBasic("bee_balm", MobEffects.DIG_SLOWDOWN, 4, DyeColor.YELLOW);
+
+        LAMPBLOSSOM = construct.registerBasic("lampblossom", MobEffects.GLOWING, 4, flowerProp().sound(SoundType.AZALEA).setGlow(FlowerProperty.GlowValue.of(12, true)).dye(DyeColor.ORANGE).build());
+
+        PINK_ROMENTA = construct.registerBasic(PrefList.ROMENTA.colorOf(StraddColor.pink), MobEffects.HEAL, 3, DyeColor.PINK);
+        BLUE_ROMENTA = construct.registerBasic(PrefList.ROMENTA.colorOf(StraddColor.blue), MobEffects.CONFUSION, 8, DyeColor.BLUE);
+        ORANGE_ROMENTA = construct.registerBasic(PrefList.ROMENTA.colorOf(StraddColor.orange), MobEffects.WATER_BREATHING, 4, DyeColor.ORANGE);
+
+        BIRD_OF_PARADISE = construct.registerBasic("bird_of_paradise", MobEffects.SLOW_FALLING, 5, DyeColor.ORANGE);
+
+        TALL_ALLIUM = construct.registerSameProperty("tall_allium", a -> new TallerFlowerBlock(MobEffects.FIRE_RESISTANCE, 4, a), flowerProp().dye(DyeColor.MAGENTA).notSmall().build());
+        BLUE_TALL_ALLIUM = construct.registerSameProperty("blue_tall_allium", a -> new TallerFlowerBlock(MobEffects.WATER_BREATHING, 6, a), flowerProp().dye(DyeColor.BLUE).notSmall().build());
+
+        WELWITSCHIA = construct.registerSameProperty("welwitschia", a -> new CustomFlowerBlock(MobEffects.FIRE_RESISTANCE, 3, (state, level, pos, defaultBool) -> state.is(BlockTags.SAND) || defaultBool, a), DyeColor.BROWN);
+        TORCH_GINGER = construct.registerSameProperty("torch_ginger", a -> new CustomFlowerBedBlock(a, 3),
+                flowerProp().notSmall().disableDrop().disableOffset().dye(DyeColor.RED).build());
+
+        DANDELION_BED = construct.registerSameProperty("dandelion_bed", a -> new CustomFlowerBedBlock(a, 4),
+                flowerProp().notSmall().disableDrop().disableOffset().dye(DyeColor.WHITE).build());
+
+        var SHAPE_hyacinth = Block.box(4.0, 0.0, 4.0, 12.0, 16.0, 12.0);
+
+        PURPLE_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.purple), a -> new CustomFlowerBlock(MobEffects.DIG_SLOWDOWN, 4, null, SHAPE_hyacinth, a), DyeColor.PURPLE);
+        BLUE_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.blue), a -> new CustomFlowerBlock(MobEffects.NIGHT_VISION, 4, null, SHAPE_hyacinth, a), DyeColor.BLUE);
+        RED_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.red), a -> new CustomFlowerBlock(MobEffects.HEAL, 4, null, SHAPE_hyacinth, a), DyeColor.RED);
+        WHITE_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.white), a -> new CustomFlowerBlock(MobEffects.LEVITATION, 4, null, SHAPE_hyacinth, a), DyeColor.WHITE);
+        YELLOW_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.yellow), a -> new CustomFlowerBlock(MobEffects.CONFUSION, 4, null, SHAPE_hyacinth, a), DyeColor.YELLOW);
+        PINK_HYACINTH = construct.registerSameProperty(PrefList.HYACINTH.colorOf(StraddColor.pink), a -> new CustomFlowerBlock(MobEffects.HEALTH_BOOST, 4, null, SHAPE_hyacinth, a), DyeColor.PINK);
+
+        WHITE_VINE_LOTUS = construct.registerSameProperty(PrefList.VINE_LOTUS.colorOf(StraddColor.white), a -> new VineLotusBlock(MobEffects.NIGHT_VISION, 3, a), flowerProp().notSmall().sound(SoundType.AZALEA).disableOffset().dye(DyeColor.WHITE).build());
+        PINK_VINE_LOTUS = construct.registerSameProperty(PrefList.VINE_LOTUS.colorOf(StraddColor.pink), a -> new VineLotusBlock(MobEffects.REGENERATION, 2, a), flowerProp().notSmall().sound(SoundType.AZALEA).disableOffset().dye(DyeColor.PINK).build());
+        GLOWING_VINE_LOTUS = construct.registerSameProperty(PrefList.VINE_LOTUS.of("glowing", false), a -> new VineLotusBlock(MobEffects.GLOWING, 4, a.emissiveRendering((blockState, blockGetter, blockPos) -> true).lightLevel(ModBlocks::glowingVineLotus)), flowerProp().sound(SoundType.AZALEA).notSmall().disableOffset().dye(DyeColor.ORANGE).build());
+
+        SUNFLOWER_BED = construct.registerSameProperty("sunflower_bed", a -> new CustomFlowerBedBlock(a, 4),
+                flowerProp().notSmall().disableOffset().disableDrop().dye(DyeColor.YELLOW).build());
+        WATER_POPPY = construct.registerSameProperty("water_poppy", a -> new WaterFlowerBedBlock(a, WaterFlowerBedBlock.TYPE.WATER),
+                flowerProp().notSmall().disableOffset().disableDrop().sound(SoundType.AZALEA).dye(DyeColor.RED).setBlockItem(WaterFlowerBedBlockItem::new).build());
+
+        FIRE_LILY = construct.registerBasic("fire_lily", MobEffects.ABSORPTION, 3, flowerProp().dye(DyeColor.ORANGE).sound(SoundType.AZALEA).build());
+        WHITE_LACECAP_HYDRANGEA = construct.registerBasic(PrefList.LACECAP_HYDRANGEA.colorOf(StraddColor.white), MobEffects.LEVITATION, 5, flowerProp().dye(DyeColor.WHITE).disableOffset().build());
+        PINK_LACECAP_HYDRANGEA = construct.registerBasic(PrefList.LACECAP_HYDRANGEA.colorOf(StraddColor.pink), MobEffects.HEALTH_BOOST, 5, flowerProp().dye(DyeColor.PINK).disableOffset().build());
+        BLUE_LACECAP_HYDRANGEA = construct.registerBasic(PrefList.LACECAP_HYDRANGEA.colorOf(StraddColor.blue), MobEffects.NIGHT_VISION, 5, flowerProp().dye(DyeColor.BLUE).disableOffset().build());
+
+        PINK_CYCLAMEN = construct.registerBasic(PrefList.CYCLAMEN.colorOf(StraddColor.pink), MobEffects.DIG_SLOWDOWN, 4, flowerProp().disableOffset().dye(DyeColor.PINK).build());
+        WHITE_CYCLAMEN = construct.registerBasic(PrefList.CYCLAMEN.colorOf(StraddColor.white), MobEffects.CONFUSION, 10, flowerProp().disableOffset().dye(DyeColor.WHITE).build());
+
+        TRILLIUM = construct.registerBasic("trillium", MobEffects.HEAL, 1, flowerProp().dye(DyeColor.WHITE).disableOffset().build());
+        WOOD_SORREL = construct.registerSameProperty("wood_sorrel", a -> new CustomFlowerBedBlock(a, 4),
+                flowerProp().disableOffset().disableDrop().dye(DyeColor.YELLOW).build());
+
+        SAND_VERBENA = construct.registerSameProperty("sand_verbena", a -> new SandFlowerBedBlock(a, 4),
+                flowerProp().notSmall().disableOffset().disableDrop().dye(DyeColor.PINK).sound(SoundType.AZALEA).build());
+        RED_BEE_BALM = construct.registerBasic("red_bee_balm", MobEffects.HEAL, 1, DyeColor.RED);
+        GLACIER_LILY = construct.registerBasic("glacier_lily", MobEffects.FIRE_RESISTANCE, 3, DyeColor.RED);
+        WINTER_ACONITE = construct.registerSameProperty("winter_aconite", a -> new CustomFlowerBedBlock(a, 4), flowerProp().notSmall().disableDrop().sound(SoundType.AZALEA).disableOffset().dye(DyeColor.YELLOW).build());
+
+        // FLOWER POTS
+        // CROSS
+        POTTED_BLUE_TWIN_POPPY = construct.flowerPot(BLUE_TWIN_POPPY);
+        POTTED_ORANGE_TWIN_POPPY = construct.flowerPot(ORANGE_TWIN_POPPY);
+        POTTED_RED_TWIN_POPPY = construct.flowerPot(RED_TWIN_POPPY);
+        POTTED_WHITE_TWIN_POPPY = construct.flowerPot(WHITE_TWIN_POPPY);
+        POTTED_PINK_TWIN_POPPY = construct.flowerPot(PINK_TWIN_POPPY);
+
+        POTTED_BIRD_OF_PARADISE = construct.flowerPot(BIRD_OF_PARADISE);
+        POTTED_BLUE_ROMENTA = construct.flowerPot(BLUE_ROMENTA);
+        POTTED_ORANGE_ROMENTA = construct.flowerPot(ORANGE_ROMENTA);
+        POTTED_PINK_ROMENTA = construct.flowerPot(PINK_ROMENTA);
+
+        POTTED_WELWITSCHIA = construct.flowerPot(WELWITSCHIA);
+        POTTED_GLACIER_LILY = construct.flowerPot(GLACIER_LILY);
+
+        POTTED_BLEEDING_HEART = construct.flowerPot(BLEEDING_HEART);
+        POTTED_HOLLOW_BLEEDING_HEART = construct.flowerPot(HOLLOW_BLEEDING_HEART);
+        POTTED_CANDY_BLEEDING_HEART = construct.flowerPot(CANDY_BLEEDING_HEART);
+
+        // MODELED
+        POTTED_IRIS = construct.flowerPot(IRIS);
+        POTTED_SAVANNAH_SUNSET_IRIS = construct.flowerPot(SAVANNAH_SUNSET_IRIS);
+        POTTED_MOTH_IRIS = construct.flowerPot(MOTH_IRIS);
+
+        POTTED_BLUE_LACECAP_HYDRANGEA = construct.flowerPot(BLUE_LACECAP_HYDRANGEA);
+        POTTED_WHITE_LACECAP_HYDRANGEA = construct.flowerPot(WHITE_LACECAP_HYDRANGEA);
+        POTTED_PINK_LACECAP_HYDRANGEA = construct.flowerPot(PINK_LACECAP_HYDRANGEA);
+
+        POTTED_BLUE_HYACINTH = construct.flowerPot(BLUE_HYACINTH);
+        POTTED_RED_HYACINTH = construct.flowerPot(RED_HYACINTH);
+        POTTED_PINK_HYACINTH = construct.flowerPot(PINK_HYACINTH);
+        POTTED_WHITE_HYACINTH = construct.flowerPot(WHITE_HYACINTH);
+        POTTED_YELLOW_HYACINTH = construct.flowerPot(YELLOW_HYACINTH);
+        POTTED_PURPLE_HYACINTH = construct.flowerPot(PURPLE_HYACINTH);
+
+        POTTED_LAMPBLOSSOM = construct.flowerPot(LAMPBLOSSOM, true, 12);
+        POTTED_GROTTAL_BLOOM = construct.flowerPot(GROTTAL_BLOOM, true, 12);
+        POTTED_TRILLIUM = construct.flowerPot(TRILLIUM);
+        POTTED_BEE_BALM = construct.flowerPot(BEE_BALM);
+        POTTED_RED_BEE_BALM = construct.flowerPot(RED_BEE_BALM);
+        POTTED_FIRE_LILY = construct.flowerPot(FIRE_LILY);
+    }
+
+    private static FlowerProperty.Builder flowerProp() {
+        return new FlowerProperty.Builder();
+    }
+
+    private static BlockBehaviour.Properties setPropFlower(BlockBehaviour.Properties prop) {
+        return prop.mapColor(MapColor.PLANT).noCollission().instabreak().sound(SoundType.GRASS).offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY);
+    }
+
+    private static class FloweryConstruct {
+        private final BalmBlocks blocks;
+
+        public FloweryConstruct(BalmBlocks reg) {
+            this.blocks = reg;
+        }
+
+        public DeferredObject<Block> flowerPot(DeferredObject<Block> block) {
+            return flowerPot(block, false, 0);
+        }
+
+        public DeferredObject<Block> flowerPot(DeferredObject<Block> block, boolean glow, int glowness) {
+            BlockBehaviour.Properties prop = BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY);
+
+            if (glow) {
+                prop.emissiveRendering((blockState, blockGetter, blockPos) -> true);
+            }
+            if (glowness > 0) {
+                prop.lightLevel(v -> glowness);
+            }
+
+            return blocks.registerBlock(l -> new FlowerPotBlock(block.get(), prop), MGNConstants.newId("potted_" + block.getIdentifier().getPath()));
+
+            //return blocks.registerBlock("potted_" + ResourceLocation.parse(block.getRegisteredName()).getPath(), p -> new FlowerPotBlock(block.asBlock(), p), prop).asDeferredObject<Block>();
+        }
+
+        public DeferredObject<Block> registerSameProperty(String name, Function<BlockBehaviour.Properties, Block> constructor, DyeColor dyeColor) {
+            return registerAsFlower(name, constructor, new FlowerProperty.Builder().dye(dyeColor).notSmall().build());
+        }
+
+        public DeferredObject<Block> registerSameProperty(String name, Function<BlockBehaviour.Properties, Block> constructor, FlowerProperty prop) {
+            return registerAsFlower(name, constructor, prop);
+        }
+
+        public DeferredObject<Block> registerBasic(String name, MobEffect suspiciousStew, int lastSeconds, DyeColor dyeColor) {
+            return registerAsFlower(name, a -> new FlowerBlock(suspiciousStew, lastSeconds, a), new FlowerProperty.Builder().dye(dyeColor).build());
+        }
+
+        public DeferredObject<Block> registerBasic(String name, MobEffect suspiciousStew, int lastSeconds, FlowerProperty prop) {
+            return registerAsFlower(name, a -> new FlowerBlock(suspiciousStew, lastSeconds, a), prop);
+        }
+
+        public DeferredObject<Block> registerAsFlower(String name, Function<BlockBehaviour.Properties, Block> constructors, FlowerProperty flowerProp) {
+            if (MGNConstants.isDevelopment) {
+                MGNFlowers.dataGenList.put(name, flowerProp);
+            }
+
+            ResourceLocation id = MGNConstants.newId(name);
+
+
+            BlockBehaviour.Properties prop = setPropFlower(BalmBlocks.blockProperties(id)).offsetType(!flowerProp.isOffset ? BlockBehaviour.OffsetType.NONE : BlockBehaviour.OffsetType.XZ);
+            if (flowerProp.glowVal != null) {
+                prop.emissiveRendering(flowerProp.glowVal.emit);
+                prop.lightLevel(flowerProp.glowVal.glowness);
+            }
+
+            DeferredObject<Block> reg = blocks.registerBlock(location -> constructors.apply(prop), id);
+
+            if (flowerProp.blockItem != null) {
+                blocks.registerBlockItem(location -> flowerProp.blockItem.apply(reg.get(), new Item.Properties()), id);
+            }  else {
+
+                blocks.registerBlockItem(location -> new BlockItem(reg.get(), new Item.Properties()), id);
+            }
+
+            return reg;
+
+
+
+        }
+    }
+
+    private static int glowingVineLotus(BlockState state) {
+        int a = state.getValue(TallerFlowerBlock.STEM);
+
+        if (a == 0 || a == 3) {
+            return 12;
+        }
+
+        return 6;
+    }
+}

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": ["minecraft:desert", "minecraft:badlands", "minecraft:eroded_badlands"],
+  "features": ["mgnflowers:welwitschia_patch","mgnflowers:sand_verbena_patch"],
+  "step": "vegetal_decoration"
+}

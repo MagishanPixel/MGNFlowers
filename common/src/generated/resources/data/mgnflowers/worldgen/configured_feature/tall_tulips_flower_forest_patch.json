@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:flower",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "mgnflowers:vine_lotus_feature",
+        "config": {
+          "flowers": [
+            "mgnflowers:turquoise_tall_tulip",
+            "mgnflowers:orange_tall_tulip",
+            "mgnflowers:pink_tall_tulip",
+            "mgnflowers:purple_tall_tulip",
+            "mgnflowers:red_tall_tulip",
+            "mgnflowers:white_tall_tulip"
+          ],
+          "max_height": 3,
+          "noise": {
+            "amplitudes": [
+              1.0,
+              0.0
+            ],
+            "firstOctave": 0
+          },
+          "scale": 0.020833334,
+          "seed": 2345
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "tries": 96,
+    "xz_spread": 6,
+    "y_spread": 2
+  }
+}

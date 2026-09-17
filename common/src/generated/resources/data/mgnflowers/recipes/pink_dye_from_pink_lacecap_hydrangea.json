@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mgnflowers:pink_lacecap_hydrangea"
+    }
+  ],
+  "result": {
+    "item": "minecraft:pink_dye"
+  }
+}

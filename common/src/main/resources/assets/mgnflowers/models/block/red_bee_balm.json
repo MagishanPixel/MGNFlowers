@@ -1,0 +1,7 @@
+{
+  "parent": "mgnflowers:block/bee_balm",
+  "textures": {
+    "0": "mgnflowers:block/red_bee_balm",
+    "particle": "mgnflowers:block/red_bee_balm"
+  }
+}

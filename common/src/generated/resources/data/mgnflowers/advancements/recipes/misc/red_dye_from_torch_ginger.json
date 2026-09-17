@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:red_dye_from_torch_ginger"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_torch_ginger": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mgnflowers:torch_ginger"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_torch_ginger",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:red_dye_from_torch_ginger"
+    ]
+  },
+  "sends_telemetry_event": false
+}

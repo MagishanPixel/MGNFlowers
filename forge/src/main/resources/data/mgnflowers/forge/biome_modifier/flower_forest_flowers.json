@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:flower_forest",
+  "features": ["mgnflowers:flower_forest_patch","mgnflowers:hyacinth_patch","mgnflowers:rare_bee_balm", "mgnflowers:tall_tulips_flower_forest_patch"],
+  "step": "vegetal_decoration"
+}

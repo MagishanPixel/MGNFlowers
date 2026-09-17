@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:snowy_taiga",
+  "features": ["mgnflowers:glacier_lilys_patch","mgnflowers:winter_aconite_patch"],
+  "step": "vegetal_decoration"
+}

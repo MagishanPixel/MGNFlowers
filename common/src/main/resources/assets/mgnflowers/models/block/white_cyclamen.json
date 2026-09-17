@@ -1,0 +1,7 @@
+{
+  "parent": "mgnflowers:block/pink_cyclamen",
+  "textures": {
+    "0": "mgnflowers:block/white_cyclamen",
+    "particle": "mgnflowers:block/white_cyclamen"
+  }
+}

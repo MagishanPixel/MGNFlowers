@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": ["minecraft:jungle","minecraft:sparse_jungle"],
+  "features": ["mgnflowers:torch_ginger_patch","mgnflowers:jungle_flower_patch"],
+  "step": "vegetal_decoration"
+}

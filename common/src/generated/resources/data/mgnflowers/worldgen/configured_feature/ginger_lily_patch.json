@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:flower",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "mgnflowers:taller_flower_feature",
+        "config": {
+          "flowers": [
+            "mgnflowers:orange_ginger_lily",
+            "mgnflowers:red_ginger_lily",
+            "mgnflowers:white_ginger_lily",
+            "mgnflowers:pink_ginger_lily"
+          ],
+          "max_height": 3
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "tries": 64,
+    "xz_spread": 6,
+    "y_spread": 2
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:lush_caves",
+  "features": ["mgnflowers:lush_flowers_patch","mgnflowers:lush_vine_lotuses"],
+  "step": "vegetal_decoration"
+}

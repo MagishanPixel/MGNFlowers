@@ -1,0 +1,7 @@
+{
+  "parent": "mgnflowers:block/templates/slightly_cross",
+  "textures": {
+    "0": "mgnflowers:block/white_tall_tulip_top",
+    "particle": "mgnflowers:block/white_tall_tulip_top"
+  }
+}

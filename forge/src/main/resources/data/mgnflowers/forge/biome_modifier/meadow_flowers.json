@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:meadow",
+  "features": ["mgnflowers:tall_allium_patch"],
+  "step": "vegetal_decoration"
+}

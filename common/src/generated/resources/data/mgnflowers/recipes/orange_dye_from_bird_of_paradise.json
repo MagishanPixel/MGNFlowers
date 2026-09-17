@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mgnflowers:bird_of_paradise"
+    }
+  ],
+  "result": {
+    "item": "minecraft:orange_dye"
+  }
+}

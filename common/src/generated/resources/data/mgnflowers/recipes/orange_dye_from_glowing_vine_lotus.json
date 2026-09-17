@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mgnflowers:glowing_vine_lotus"
+    }
+  ],
+  "result": {
+    "item": "minecraft:orange_dye"
+  }
+}

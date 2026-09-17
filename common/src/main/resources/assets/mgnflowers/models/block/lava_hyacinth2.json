@@ -1,0 +1,7 @@
+{
+  "parent": "mgnflowers:block/water_hyacinth2",
+  "textures": {
+    "0": "mgnflowers:block/lava_hyacinth",
+    "particle": "mgnflowers:block/lava_hyacinth"
+  }
+}

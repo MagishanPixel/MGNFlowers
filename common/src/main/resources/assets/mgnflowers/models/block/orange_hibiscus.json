@@ -1,0 +1,7 @@
+{
+  "parent": "mgnflowers:block/templates/hibiscus",
+  "textures": {
+    "0": "mgnflowers:block/orange_hibiscus",
+    "particle": "mgnflowers:block/orange_hibiscus"
+  }
+}

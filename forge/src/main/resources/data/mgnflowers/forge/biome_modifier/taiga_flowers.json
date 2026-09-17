@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": ["minecraft:taiga","minecraft:old_growth_spruce_taiga","minecraft:old_growth_pine_taiga"],
+  "features": ["mgnflowers:wood_sorrel_patch","mgnflowers:taiga_flower_patch"],
+  "step": "vegetal_decoration"
+}

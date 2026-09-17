@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "minecraft:dark_forest",
+  "features": ["mgnflowers:dark_forest_flower_patch","mgnflowers:cyclamen_patch"],
+  "step": "vegetal_decoration"
+}

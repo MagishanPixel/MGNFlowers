@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:light_blue_dye_from_turquoise_tall_tulip"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_turquoise_tall_tulip": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mgnflowers:turquoise_tall_tulip"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_turquoise_tall_tulip",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:light_blue_dye_from_turquoise_tall_tulip"
+    ]
+  },
+  "sends_telemetry_event": false
+}

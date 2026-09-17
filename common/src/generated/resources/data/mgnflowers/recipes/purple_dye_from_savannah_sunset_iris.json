@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mgnflowers:savannah_sunset_iris"
+    }
+  ],
+  "result": {
+    "item": "minecraft:purple_dye"
+  }
+}

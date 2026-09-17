@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mgnflowers:yellow_hyacinth"
+    }
+  ],
+  "result": {
+    "item": "minecraft:yellow_dye"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mgnflowers:red_ginger_lily"
+    }
+  ],
+  "result": {
+    "item": "minecraft:red_dye"
+  }
+}

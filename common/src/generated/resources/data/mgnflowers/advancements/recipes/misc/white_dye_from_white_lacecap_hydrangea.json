@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:white_dye_from_white_lacecap_hydrangea"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_lacecap_hydrangea": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "mgnflowers:white_lacecap_hydrangea"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_white_lacecap_hydrangea",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:white_dye_from_white_lacecap_hydrangea"
+    ]
+  },
+  "sends_telemetry_event": false
+}

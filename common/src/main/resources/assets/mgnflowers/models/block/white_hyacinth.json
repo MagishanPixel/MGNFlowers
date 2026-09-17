@@ -1,0 +1,6 @@
+{
+	"parent": "mgnflowers:block/blue_hyacinth",
+	"textures": {
+		"1": "mgnflowers:block/white_hyacinth"
+	}
+}

@@ -1,0 +1,36 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "mgnflowers:block/taller_flower/multi/tall_tulip/bases/tall_tulip_bottom"
+      },
+      "when": {
+        "stem": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/taller_flower/multi/tall_tulip/bases/tall_tulip_bottom"
+      },
+      "when": {
+        "stem": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/taller_flower/multi/tall_tulip/bases/tall_tulip_middle"
+      },
+      "when": {
+        "stem": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/taller_flower/multi/tall_tulip/red_tall_tulip_top"
+      },
+      "when": {
+        "stem": "3"
+      }
+    }
+  ]
+}

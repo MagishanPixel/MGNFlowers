@@ -1,0 +1,80 @@
+{
+  "type": "minecraft:flower",
+  "config": {
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:noise_provider",
+            "noise": {
+              "amplitudes": [
+                1.0,
+                0.0
+              ],
+              "firstOctave": 0
+            },
+            "scale": 0.020833334,
+            "seed": 2345,
+            "states": [
+              {
+                "Name": "mgnflowers:orange_romenta"
+              },
+              {
+                "Name": "mgnflowers:pink_romenta"
+              },
+              {
+                "Name": "mgnflowers:blue_romenta"
+              },
+              {
+                "Name": "mgnflowers:blue_twin_poppy"
+              },
+              {
+                "Name": "mgnflowers:red_twin_poppy"
+              },
+              {
+                "Name": "mgnflowers:pink_twin_poppy"
+              },
+              {
+                "Name": "mgnflowers:orange_twin_poppy"
+              },
+              {
+                "Name": "mgnflowers:blue_hyacinth"
+              },
+              {
+                "Name": "mgnflowers:pink_hyacinth"
+              },
+              {
+                "Name": "mgnflowers:red_hyacinth"
+              },
+              {
+                "Name": "mgnflowers:purple_hyacinth"
+              },
+              {
+                "Name": "mgnflowers:yellow_hyacinth"
+              },
+              {
+                "Name": "mgnflowers:white_hyacinth"
+              },
+              {
+                "Name": "mgnflowers:red_bee_balm"
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "tries": 96,
+    "xz_spread": 6,
+    "y_spread": 2
+  }
+}

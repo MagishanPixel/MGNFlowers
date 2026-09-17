@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "mgnflowers:water_hyacinth"
+    }
+  ],
+  "result": {
+    "item": "minecraft:pink_dye"
+  }
+}

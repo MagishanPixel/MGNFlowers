@@ -1,0 +1,7 @@
+{
+	"parent": "mgnflowers:block/white_vine_lotus_cut",
+	"textures": {
+		"0": "mgnflowers:block/glowing_vine_lotus",
+		"particle": "mgnflowers:block/glowing_vine_lotus"
+	}
+}

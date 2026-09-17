@@ -1,0 +1,49 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "mgnflowers:block/white_vine_lotus_short"
+      },
+      "when": {
+        "sheared": "false",
+        "stem": "0"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/vine_lotus_bottom"
+      },
+      "when": {
+        "sheared": "false",
+        "stem": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/vine_lotus_middle"
+      },
+      "when": {
+        "sheared": "false",
+        "stem": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/white_vine_lotus_top"
+      },
+      "when": {
+        "sheared": "false",
+        "stem": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "mgnflowers:block/white_vine_lotus_cut"
+      },
+      "when": {
+        "sheared": "true",
+        "stem": "0"
+      }
+    }
+  ]
+}
