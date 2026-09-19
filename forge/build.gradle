@@ -3,12 +3,6 @@ plugins {
     id 'net.neoforged.moddev.legacyforge'
 }
 
-mixin {
-    add(sourceSets.main, "${mod_id}.refmap.json")
-
-    config("${mod_id}.mixins.json")
-    config("${mod_id}.forge.mixins.json")
-}
 
 legacyForge {
     version = "${minecraft_version}-${forge_version}"
@@ -40,17 +34,6 @@ legacyForge {
 }
 
 sourceSets.main.resources.srcDir 'src/generated/resources'
-
-dependencies {
-    annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
-}
-
-jar {
-    finalizedBy('reobfJar')
-    manifest.attributes([
-            "MixinConfigs": "${mod_id}.mixins.json,${mod_id}.forge.mixins.json"
-    ])
-}
 
 apply from: rootProject.file('repositories.gradle')
 apply from: 'dependencies.gradle'
