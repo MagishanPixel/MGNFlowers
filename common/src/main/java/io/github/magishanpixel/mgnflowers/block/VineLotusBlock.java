@@ -12,6 +12,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -100,7 +101,7 @@ public class VineLotusBlock extends TallerFlowerBlock implements SimpleWaterlogg
     public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hit) {
         if (!state.getValue(SHEARED)) {
             ItemStack stack = player.getItemInHand(hand);
-            if (stack.is(ModTags.SHEAR_TOOL)) {
+            if (stack.is(Items.SHEARS)) {
                 if (state.getValue(STEM) == 0) {
                     if (!level.isClientSide()) {
                         level.setBlock(pos, state.setValue(SHEARED, true), 3);

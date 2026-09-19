@@ -354,6 +354,10 @@ public class ModBlocks {
                 prop.lightLevel(flowerProp.glowVal.glowness);
             }
 
+            if (flowerProp.sound != null) {
+                prop.sound(flowerProp.sound);
+            }
+
             DeferredObject<Block> reg = blocks.registerBlock(location -> constructors.apply(prop), id);
 
             if (flowerProp.blockItem != null) {
