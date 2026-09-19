@@ -6,7 +6,7 @@ I made this mod so I can learn about multi loader and porting the mod to differe
 | Versions          | Status     |
 |-------------------|------------|
 | 1.21.1            | ✅ Done     |
-| 1.20.1 (backport) | 🟧 Ongoing |
+| 1.20.1 (backport) | ✅ Done     |
 | 1.21.11           | ✅ Done     |
 | 26.1.2            | ◻️ Not yet |
 | 26.2              | ◻️ Not yet |
